@@ -278,6 +278,12 @@ export default {
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
+    if (url.pathname === "/api/debug-chart") {
+      // Temporary diagnostics for the CSI 300 week change.
+      const res = await yahoo(url.searchParams.get("sym") || "000300.SS");
+      const m = res.meta;
+      return json({ gmtoffset: m.gmtoffset, tz: m.exchangeTimezoneName, t: m.regularMarketTime, price: m.regularMarketPrice, gran: m.dataGranularity, range: m.range, ts: res.timestamp, close: res.indicators?.quote?.[0]?.close }, 200, 0);
+    }
     if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
     if (url.pathname === "/api/brief") {
       return new Response(JSON.stringify(brief), {
