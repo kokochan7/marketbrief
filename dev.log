@@ -1,0 +1,212 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.160.0
+────────────────────
+Your Worker has access to the following bindings:
+Binding            Resource      Mode
+env.ASSETS         Assets        local
+
+⎔ Starting local server...
+[wrangler:warn] Unable to fetch the `Request.cf` object! Falling back to a default placeholder...
+Error: Request was cancelled.
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at makeAppropriateNetworkError (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/response.js:488:38)
+    at httpNetworkFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1971:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async httpNetworkOrCacheFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1600:29)
+    at async httpFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1142:33)
+    at async mainFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:596:20)
+[wrangler:warn] Unable to fetch the `Request.cf` object! Falling back to a default placeholder...
+Error: Request was cancelled.
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at makeAppropriateNetworkError (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/response.js:488:38)
+    at httpNetworkFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1971:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async httpNetworkOrCacheFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1600:29)
+    at async httpFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:1142:33)
+    at async mainFetch (/home/claude/marketbrief/node_modules/undici/lib/web/fetch/index.js:596:20)
+Wrangler detected this dev session is running in an AI agent.
+The Local Explorer API is available at http://127.0.0.1:8787/cdn-cgi/local/explorer/api
+Useful routes:
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/workers - local Workers and bindings
+  POST http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/scheduled?worker=<name> - invoke a Worker's scheduled handler; cron is required (see the OpenAPI schema for the full request)
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/storage/kv/namespaces - KV namespaces
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/d1/database - D1 databases
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/r2/buckets - R2 buckets
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/workers/durable_objects/namespaces - Durable Object namespaces
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api/workflows - Workflows
+  POST http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/observability/query - run a read-only SQL query (SELECT/WITH only) over captured request traces and console logs. Tables: spans, logs (read attributes via json(attributes)). Example:
+    curl -X POST http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/observability/query -H 'Content-Type: application/json' -d '{"sql":"SELECT service, name, outcome, duration_ms FROM spans WHERE parent_id IS NULL LIMIT 20"}'
+  POST http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/observability/clear - clear all captured traces and logs
+If the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort):
+  GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api - OpenAPI schema
+[wrangler:info] Ready on http://127.0.0.1:8787
+[wrangler:info] GET / 200 OK (302ms)
+[wrangler:info] GET / 200 OK (8ms)
+[wrangler:info] GET /styles.css 200 OK (7ms)
+[wrangler:info] GET /live.js 200 OK (4ms)
+[wrangler:info] GET /tickers.js 200 OK (6ms)
+[wrangler:info] GET /odds.js 200 OK (7ms)
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 3qmp4b0hn3ts9o77vuo5uuji
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 8218uejs4ris2d3omvdcl0m2
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = k0a7ld49hv667f30e1klh11i
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = nee8d5jf0lf50ttr12asq0qo
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 3nvcu480b8v3ufkdg7666g8j
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 188oqtbi04a6dq9unp22qqeb
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = ho1fj8kstt257l7cd58bnke3
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = rmbp7ooah0opcn79v6jrh3sv
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = qghfb181cqbkbriadqpokhio
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = f3hf5sfu2c20o6641qu1s0b6
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = lra8e81vnoqqe2nnk2i71fe3
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = jrk5dsdl37j2l3j21fjat0sk
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = pgis3ekqdckse2ttbrps5d16
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = i326cbrtlh7l0vc4dg54vund
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 6argoeq11utgsausdl21bd98
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = s8491i20nvja83nvdh3nvjqn
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 1so8hd8ot2cq587g17fvrcv2
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 725jr07t9tups8q13dopuro0
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = h2htnkkkv2eh7koehcg6qgd2
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = kv7s6076849bmpgqnrip2vqd
+
+
+[wrangler:info] GET /api/live 200 OK (52ms)
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 17cooqr358uu89tnrbc2qhdj
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = mj78fd39n51g4s46m96bvqqg
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = tp51tv69h14tpg0emb95ng2m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 0iplb4pmbrutk6a1vkiuoe0u
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = rl2fk0rdd0adrvico32kl5sp
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = oibhukbqml7kqeo14b54reac
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = dr0uen8j410aosr13lniu150
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = 12d45ei618hi9dor5tm9ntmk
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1me = rust/worker/ffi.rs:110: failed: failed to lookup address information: Name or service not known[0m
+
+  stack: /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3b6eb59 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2a248b0 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@3dfa010 /home/claude/marketbrief/node_modules/@cloudflare/workerd-linux-64/bin/workerd@39b9cb0; sentryErrorContext = jsgInternalError; wdErrId = df5g35um0dq4itgt5rep50d0
+
+
+[wrangler:info] GET /api/odds 200 OK (16ms)
+[wrangler:info] GET / 200 OK (9ms)
+[wrangler:info] GET /styles.css 200 OK (5ms)
+[wrangler:info] GET /live.js 200 OK (7ms)
+[wrangler:info] GET /tickers.js 200 OK (11ms)
+[wrangler:info] GET /odds.js 200 OK (11ms)
+[wrangler:info] GET /api/live 200 OK (7ms)
+[wrangler:info] GET /api/odds 200 OK (8ms)
+[wrangler:info] GET / 200 OK (7ms)
+[wrangler:info] GET /styles.css 200 OK (5ms)
+[wrangler:info] GET /odds.js 200 OK (5ms)
+[wrangler:info] GET /tickers.js 200 OK (8ms)
+[wrangler:info] GET /live.js 200 OK (8ms)
+[wrangler:info] GET /api/live 200 OK (8ms)
+[wrangler:info] GET /api/odds 200 OK (6ms)

@@ -1,8 +1,9 @@
-// Hover cards for earnings tickers: price and day change from /api/quote, plus any
+// Hover cards (and on touch devices, a tap sheet) for earnings tickers: price and day change from /api/quote, plus any
 // Kalshi / Polymarket earnings markets for the ticker.
 // Clicking a ticker opens Google Finance (via the Worker's /go/ redirect).
 (function () {
   const TTL = 60000;
+  const CAN_HOVER = !!(window.matchMedia && window.matchMedia("(hover: hover)").matches);
   const cache = new Map(); // sym -> { at, data | promise }
   let tip, current, hideTimer;
 
@@ -73,7 +74,7 @@
   function quoteContent(sym, q) {
     if (!q) return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Loading…</div>`;
     if (q.error || typeof q.price !== "number") {
-      return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable. Click to open Google Finance.</div>`;
+      return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable${CAN_HOVER ? ". Click to open Google Finance." : " right now."}</div>`;
     }
     const c = q.chgPct;
     const has = typeof c === "number" && isFinite(c);
@@ -83,7 +84,7 @@
       <div class="tt-head"><b>${esc(sym)}</b>${q.name ? `<span>${esc(q.name)}</span>` : ""}</div>
       <div class="tt-price">${money(q.price, q.currency)} <span class="${cls}">${has ? sign + Math.abs(c).toFixed(2) + "%" : ""}</span></div>
       <div class="tt-sub">Regular session · as of ${etTime(q.time)}</div>
-      <div class="tt-sub">Click for Google Finance ↗</div>`;
+      ${CAN_HOVER ? '<div class="tt-sub">Click for Google Finance ↗</div>' : ""}`;
   }
 
   const pct = (v, suffix) => {
@@ -159,8 +160,62 @@
     }, 80);
   }
 
-  // Only use hover cards on devices that can hover; taps go straight to the link.
-  if (!window.matchMedia || !window.matchMedia("(hover: hover)").matches) return;
+  // Touch devices: tapping an earnings ticker opens a bottom sheet with the same
+  // details, plus a button to Google Finance. Live tiles still link straight out.
+  if (!CAN_HOVER) {
+    let sheet, sheetSym;
+    const closeSheet = () => {
+      if (!sheet) return;
+      sheet.classList.remove("is-open");
+      sheetSym = null;
+      setTimeout(() => sheet && !sheet.classList.contains("is-open") && (sheet.hidden = true), 200);
+    };
+    const getSheet = () => {
+      if (sheet) return sheet;
+      sheet = document.createElement("div");
+      sheet.className = "tkr-sheet";
+      sheet.hidden = true;
+      sheet.innerHTML = `<div class="sheet-backdrop" data-close></div>
+        <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Ticker details">
+          <button type="button" class="sheet-close" data-close aria-label="Close">×</button>
+          <div class="sheet-body"></div>
+          <a class="sheet-go" target="_blank" rel="noopener">Open in Google Finance ↗</a>
+        </div>`;
+      sheet.addEventListener("click", (e) => {
+        if (e.target.closest("[data-close]")) closeSheet();
+      });
+      document.addEventListener("keydown", (e) => e.key === "Escape" && closeSheet());
+      document.body.appendChild(sheet);
+      return sheet;
+    };
+    const openSheet = (el) => {
+      const s = getSheet();
+      const sym = el.dataset.sym;
+      sheetSym = sym;
+      const body = s.querySelector(".sheet-body");
+      body.innerHTML = content(sym, null);
+      s.querySelector(".sheet-go").href = el.href;
+      s.hidden = false;
+      requestAnimationFrame(() => s.classList.add("is-open"));
+      s.querySelector(".sheet-close").focus({ preventScroll: true });
+      fetchQuote(sym).then((q) => {
+        if (sheetSym === sym) body.innerHTML = content(sym, q);
+      });
+    };
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest("a.tkr");
+      if (!a) return;
+      e.preventDefault();
+      openSheet(a);
+    });
+    document.addEventListener("odds:update", () => {
+      if (sheetSym && sheet && !sheet.hidden) {
+        const cached = cache.get(sheetSym);
+        if (cached) cached.p.then((q) => sheetSym && (sheet.querySelector(".sheet-body").innerHTML = content(sheetSym, q)));
+      }
+    });
+    return;
+  }
 
   document.addEventListener("mouseover", (e) => {
     const a = e.target.closest && e.target.closest("a.tkr, a.tick");
