@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-13",
     "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-11T14:05:00Z",
-    "dataAsOf": "Wed 11/11 pre-market"
+    "updated": "2026-11-11T22:50:00Z",
+    "dataAsOf": "Wed 11/11 close"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Thu 11/12 · Cisco & AMAT, then PPI Friday",
-    "body": "Tuesday's hotter October CPI (core +0.3% m/m vs 0.2% expected) pushed the 10-year back to about 5% and has markets pricing a December hike as the base case. Cisco and Applied Materials report after Thursday's close, the week's big AI-infrastructure test after Monday's 2.4% relief rally faded, and October PPI lands Friday at 8:30a."
+    "body": "Wednesday's AI rebound (S&P +1.3%, Nasdaq +1.6%, CoreWeave +24.7%) followed Tuesday's hot October CPI, which left a December hike priced at about 85%. Cisco and Applied Materials report after Thursday's close, the next test of whether the AI trade can hold, with Nebius before the open and Cerebras after. October PPI lands Friday at 8:30a."
   },
   "days": [
     {
@@ -80,8 +80,8 @@
     {
       "date": "2026-11-11",
       "label": "Wed 11/11",
-      "tag": "Veterans Day",
-      "tone": "grey",
+      "tag": "AI rebound",
+      "tone": "green",
       "macro": [
         {
           "time": "All day",
@@ -105,7 +105,7 @@
         "ENS",
         "CAE"
       ],
-      "premarket": "7:35a: S&P futures +0.8%, Nasdaq 100 futures +1.9% as CoreWeave (+16%) and Nvidia (+4%) lead a chip rebound; Kospi up 2%+. WTI $86.6 (+0.7%) after tankers hit mines in Hormuz · cash Treasuries shut for Veterans Day (10Y ended Tue ≈ 4.98%)."
+      "result": "S&P +1.31% · Nasdaq +1.60% · Russell +0.88% · Dow +0.49% · CoreWeave +24.7%, chips lead · bond market closed"
     },
     {
       "date": "2026-11-12",
@@ -173,103 +173,109 @@
     }
   ],
   "mood": {
-    "asOf": "Week to date",
+    "asOf": "Wed 11/11 close",
     "fearGreed": {
-      "score": 31.69,
+      "score": 36.97,
       "label": "Fear",
-      "asOf": "Mon 11/9 close",
-      "weekAgo": 23.54,
+      "asOf": "Wed 11/11 close",
+      "weekAgo": 34.17,
       "monthAgo": 43.51,
-      "yearAgo": 29.94
+      "yearAgo": 30.46
     },
     "regime": {
-      "label": "Cautious",
-      "tone": "orange",
-      "text": "Monday's relief rally faded on a hot CPI. Hike risk and a 5% 10-year are back in charge."
+      "label": "Rebounding",
+      "tone": "teal",
+      "text": "CoreWeave's beat reignited the AI trade a day after hot CPI. A December hike is priced in; PPI Friday is the next test."
     },
     "vix": {
-      "value": "19.46",
+      "value": "17.49",
       "label": "Cooling",
       "tone": "teal",
-      "text": "Tue close · Friday 25.64 · Fri intraday high 27.76"
+      "text": "Wed close, −10.1% · Tue 19.46 · Fri 25.64"
     },
     "breadth": {
-      "value": "Small caps",
-      "text": "Russell 2000 +3.17% Mon led the rebound, gave back 0.68% Tue"
+      "value": "Chips",
+      "text": "Semis +5.6% Wed, every S&P sector but consumer discretionary rose · Russell +0.88% lagged"
     },
     "havens": {
-      "value": "No bid",
-      "text": "10Y 4.86% → 4.98% · gold ≈ −2.6% Tue to ~$4,030 after CPI"
+      "value": "Dollar",
+      "text": "Dollar index highest since April 2025 · gold −0.9% to ~$3,994 · Treasuries shut for Veterans Day (10Y ≈ 4.98% Tue)"
     }
   },
   "stories": [
     {
-      "title": "Hot CPI puts a December hike in play.",
-      "body": "October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print. No year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a quarter-point hike in December and said 50bp should be considered; Logan says two more hikes are needed. CME FedWatch put a December hike at about 89% after the report.",
+      "title": "CoreWeave reignites the AI trade.",
+      "body": "CoreWeave jumped 24.7% Wednesday, its biggest gain in more than three months, after Q3 revenue of $3.66B (+168%) beat its own guide and it raised 2026 guidance to $13.0–13.3B. Chips led: semis +5.6%, Sandisk +14%, Micron and Dell +12%, AMD +7%. Apple closed at a record near $356 (about $5.2 trillion). Microsoft, Meta and Amazon fell about 2%, so the rally was narrow at the top."
+    },
+    {
+      "title": "December hike is the base case.",
+      "body": "Tuesday's October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print; no year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a December hike and floated 50bp; Logan wants two more. Prediction markets price a 25bp hike at about 85% and 50bp at about 10%. Next: jobless claims Thursday (195K expected), October PPI Friday (+0.4% m/m expected) and a heavy Fed speaker slate.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 88,
+          "prob": 85,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
           "source": "polymarket",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 86.5,
+          "prob": 85.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
+        },
+        {
+          "source": "kalshi",
+          "label": "Fed hikes more than 25bp",
+          "prob": 10,
+          "ticker": "KXFEDDECISION-26DEC-H26",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         }
       ]
     },
     {
       "title": "Nvidia under a cloud.",
-      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy. The board says it has no reason to believe any secrets were compromised. It dragged all three indexes on Tuesday, and was rebounding about 4% pre-market Wednesday.",
+      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy; the board says it has no reason to believe any secrets were compromised. It bounced 2.9% to $173.73 Wednesday even as Baird cut it to Neutral and Morgan Stanley dropped it as a Top Pick. Earnings are Tue Nov 17.",
       "odds": [
         {
           "source": "polymarket",
           "label": "Huang out as CEO by Dec 31",
-          "prob": 13.5,
+          "prob": 16.5,
           "slug": "jensen-huang-announced-resignation-or-removal-by-december-31",
           "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
         }
       ]
     },
     {
-      "title": "CoreWeave beats, Anthropic sets IPO terms.",
-      "body": "CoreWeave's Q3 revenue of $3.66B (+168%) topped its own $3.45–3.60B guide, backlog reached about $132.5B and 2026 guidance went up to $13.0–13.3B. It expects adjusted profitability in the first half of 2028; shares jumped about 16% pre-market Wednesday despite $37–39B capex and $46.9B of debt. Anthropic set IPO terms at $70–78 a share, valuing it at up to $1.4 trillion, with trading as soon as next week."
+      "title": "Anthropic IPO could trade as soon as Nov 19.",
+      "body": "Anthropic set terms at $70–78 a share, raising up to $64.4B at a valuation of up to $1.4 trillion. CNBC's sources say it aims to start trading Thu Nov 19. Polymarket prices a listing by Nov 19 at about 81% and by Nov 30 at about 96%.",
+      "odds": [
+        {
+          "source": "polymarket",
+          "label": "Anthropic trading by Nov 19",
+          "prob": 81,
+          "slug": "will-anthropic-ipo-by-november-19-2026",
+          "url": "https://polymarket.com/event/anthropic-ipo-by"
+        }
+      ]
     },
     {
       "title": "Cisco and Applied Materials, Thursday after the close.",
-      "body": "The week's key AI-infrastructure prints, with Nebius before the open and Cerebras after the close the same day. Morgan Stanley cut Cisco to Equal Weight going in."
-    },
-    {
-      "title": "PPI and a Fed parade, Thu–Fri.",
-      "body": "October PPI Friday 8:30a is expected at +0.4% m/m after September's +1.3%. Jobless claims Thursday (195K expected) and a heavy speaker slate (Hammack, Barr, Goolsbee, Daly, Williams) will show how hard the Fed leans into December."
+      "body": "The next AI-infrastructure test after Wednesday's rebound, with Nebius before the open and Cerebras after the close the same day. Polymarket gives Applied Materials about an 88% chance of beating its $4.13 EPS estimate. Morgan Stanley cut Cisco to Equal Weight going in."
     },
     {
       "title": "Oil: no more strikes, but Hormuz still bites.",
-      "body": "Trump said further strikes on Iran aren't needed for now, though the US naval blockade stays and Iran says no talks are under way. Brent fell 3.7% Tuesday to below $92, then rebounded to about $92.70 (+1.3%) early Wednesday after reports of tankers hitting mines in the Strait of Hormuz; WTI was near $86.60. Lower energy prices are what the inflation picture needs."
+      "body": "Trump said further strikes on Iran aren't needed for now, but the US naval blockade stays and Iran says no talks are under way. Reports of tankers hitting mines in the Strait of Hormuz lifted crude early Wednesday; WTI settled up 0.4% at $86.42 and Brent was flat near $92.65, after Tuesday's 3.7% drop. Lower energy prices are what the inflation picture needs."
     }
   ],
   "earningsOdds": {
-    "RUM": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats GAAP EPS est. −$0.12",
-        "prob": 0,
-        "slug": "rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12",
-        "url": "https://polymarket.com/event/rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12"
-      }
-    ],
     "AMAT": [
       {
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $4.13",
-        "prob": 88.5,
+        "prob": 88,
         "slug": "amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13",
         "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
       }
@@ -289,7 +295,7 @@
         "source": "polymarket",
         "kind": "mention",
         "label": "Says “AI” 25+ times on the call",
-        "prob": 97,
+        "prob": 93,
         "slug": "will-cisco-say-ai-25-during-earnings-call-november-12",
         "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
       },
@@ -297,7 +303,7 @@
         "source": "polymarket",
         "kind": "mention",
         "label": "Says “Quantum” on the call",
-        "prob": 65,
+        "prob": 63.5,
         "slug": "will-cisco-say-quantum-during-earnings-call-november-12",
         "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
       },
@@ -305,7 +311,7 @@
         "source": "polymarket",
         "kind": "mention",
         "label": "Says “Backlog” on the call",
-        "prob": 48.5,
+        "prob": 49,
         "slug": "will-cisco-say-backlog-during-earnings-call-november-12",
         "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
       }
@@ -381,10 +387,6 @@
       "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
     },
     {
-      "label": "Reuters via Yahoo Finance · futures Nov 11",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-futures-rise-104431138.html"
-    },
-    {
       "label": "Yahoo Finance · live blog Nov 11",
       "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-123445799.html"
     },
@@ -411,7 +413,39 @@
     {
       "label": "Polymarket · RUM, AMAT, CBRS earnings markets",
       "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
+    },
+    {
+      "label": "AP via KRMG · how major US indexes fared Nov 11",
+      "url": "https://krmg.com/2026/11/11/how-major-us-stock-indexes-fared-wednesday-11-11-2026/"
+    },
+    {
+      "label": "Reuters via Investing.com · Trading Day Nov 11",
+      "url": "https://www.investing.com/news/economy-news/ai-cheer-banishes-rate-hike-fear-5019950"
+    },
+    {
+      "label": "Reuters via MarketScreener · stocks end higher Nov 11",
+      "url": "https://www.marketscreener.com/news/stocks-end-higher-as-coreweave-results-ease-ai-spending-worries-ce785edbd18cf726"
+    },
+    {
+      "label": "Motley Fool via Yahoo Finance · market close Nov 11",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-11-220503244.html"
+    },
+    {
+      "label": "CNBC · Anthropic sets IPO range, eyes Nov 19",
+      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
+    },
+    {
+      "label": "Polymarket · Anthropic IPO by…",
+      "url": "https://polymarket.com/event/anthropic-ipo-by"
+    },
+    {
+      "label": "Corteva · Q3 2026 results",
+      "url": "https://www.stocktitan.net/news/CTVA/corteva-reports-third-quarter-2026-results-updates-fy-2026-t58ch5rotlr0.html"
+    },
+    {
+      "label": "Tetra Tech · Q4 and FY2026 results",
+      "url": "https://www.businesswire.com/news/home/20261111493808/en/Tetra-Tech-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2026-Results"
     }
   ],
-  "oddsAsOf": "Wed 11/11 pre-market"
+  "oddsAsOf": "Wed 11/11 close"
 }
