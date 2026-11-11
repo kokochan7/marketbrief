@@ -161,7 +161,6 @@ function renderLive() {
       <span class="section-meta" id="live-meta">Loading…</span>
     </div>
     <div class="tape">${cells}</div>
-    <p class="fineprint" id="live-note">Day change vs prior close · week change vs last Friday's close. Quotes may be delayed. Source: Yahoo Finance (CoinGecko fallback for Bitcoin).</p>
   </section>`;
 }
 
@@ -207,7 +206,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
     .map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`)
     .join("");
 
-  const title = `Market Brief · ${e.range}`;
+  const title = `Kenny’s Market Brief · ${e.range}`;
   const desc = `${brief.mainEvent.title}. ${brief.mainEvent.body}`.slice(0, 280);
 
   return `<!doctype html>
@@ -229,7 +228,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
 <body>
 <main class="wrap">
   <header class="masthead">
-    <h1>Market Brief</h1>
+    <h1>Kenny&rsquo;s Market Brief</h1>
     <div class="masthead-right">
       <div class="range">${esc(e.range)}</div>
       <div class="kicker">${esc(kicker)}</div>

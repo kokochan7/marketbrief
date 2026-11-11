@@ -1,4 +1,4 @@
-# Market Brief
+# Kenny's Market Brief
 
 A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 (https://marketbrief.kennykao.workers.dev).
