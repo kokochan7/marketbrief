@@ -280,25 +280,22 @@ export default {
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
     if (url.pathname === "/api/debug-chart") {
       // Temporary diagnostics for the CSI 300 week change.
-      const sym = url.searchParams.get("sym") || "000300.SS";
-      const now = Math.floor(Date.now() / 1000);
-      const variants = [
-        "range=1mo&interval=1d",
-        "range=5d&interval=1d",
-        "range=3mo&interval=1d",
-        `period1=${now - 40 * 86400}&period2=${now}&interval=1d`,
-        "range=1mo&interval=1wk",
-      ];
       const out = {};
-      for (const v of variants) {
+      for (const [sym, v] of [["399300.SZ", "range=1mo&interval=1d"], ["000300.SS", "range=5d&interval=1h"], ["ASHR", "range=1mo&interval=1d"]]) {
         try {
           const res = await yahoo(sym, v);
           const c = res.indicators?.quote?.[0]?.close || [];
           const ts = res.timestamp || [];
-          out[v] = { n: ts.length, prev: res.meta.chartPreviousClose, last: ts.slice(-8).map((t, i) => [new Date((t + res.meta.gmtoffset) * 1000).toISOString().slice(0, 10), c.slice(-8)[i]]) };
+          out[sym + " " + v] = { n: ts.length, prev: res.meta.chartPreviousClose, price: res.meta.regularMarketPrice, last: ts.slice(-8).map((t, i) => [new Date((t + res.meta.gmtoffset) * 1000).toISOString().slice(0, 16), c.slice(-8)[i]]) };
         } catch (e) {
-          out[v] = { error: String(e) };
+          out[sym + " " + v] = { error: String(e) };
         }
+      }
+      try {
+        const r = await fetch("https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.000300&fields1=f1,f2,f3&fields2=f51,f53&klt=101&fqt=0&end=20500101&lmt=12", { headers: { "User-Agent": UA, Referer: "https://quote.eastmoney.com/" } });
+        out.eastmoney = { status: r.status, body: (await r.text()).slice(0, 1500) };
+      } catch (e) {
+        out.eastmoney = { error: String(e) };
       }
       return json(out, 200, 0);
     }
