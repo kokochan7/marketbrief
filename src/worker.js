@@ -8,8 +8,8 @@ const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const LIVE_TTL = 60; // seconds
 
-async function yahoo(sym) {
-  const path = `/v8/finance/chart/${encodeURIComponent(sym)}?range=1mo&interval=1d&includePrePost=false`;
+async function yahoo(sym, qs = "range=1mo&interval=1d") {
+  const path = `/v8/finance/chart/${encodeURIComponent(sym)}?${qs}&includePrePost=false`;
   let lastErr;
   for (const host of ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]) {
     try {
@@ -280,9 +280,27 @@ export default {
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
     if (url.pathname === "/api/debug-chart") {
       // Temporary diagnostics for the CSI 300 week change.
-      const res = await yahoo(url.searchParams.get("sym") || "000300.SS");
-      const m = res.meta;
-      return json({ gmtoffset: m.gmtoffset, tz: m.exchangeTimezoneName, t: m.regularMarketTime, price: m.regularMarketPrice, gran: m.dataGranularity, range: m.range, ts: res.timestamp, close: res.indicators?.quote?.[0]?.close }, 200, 0);
+      const sym = url.searchParams.get("sym") || "000300.SS";
+      const now = Math.floor(Date.now() / 1000);
+      const variants = [
+        "range=1mo&interval=1d",
+        "range=5d&interval=1d",
+        "range=3mo&interval=1d",
+        `period1=${now - 40 * 86400}&period2=${now}&interval=1d`,
+        "range=1mo&interval=1wk",
+      ];
+      const out = {};
+      for (const v of variants) {
+        try {
+          const res = await yahoo(sym, v);
+          const c = res.indicators?.quote?.[0]?.close || [];
+          const ts = res.timestamp || [];
+          out[v] = { n: ts.length, prev: res.meta.chartPreviousClose, last: ts.slice(-8).map((t, i) => [new Date((t + res.meta.gmtoffset) * 1000).toISOString().slice(0, 10), c.slice(-8)[i]]) };
+        } catch (e) {
+          out[v] = { error: String(e) };
+        }
+      }
+      return json(out, 200, 0);
     }
     if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
     if (url.pathname === "/api/brief") {
