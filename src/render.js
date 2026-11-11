@@ -105,11 +105,11 @@ function renderDays(days, today) {
           ${result}
         </div>
         <div class="cell cell-bmo" role="cell">
-          <span class="cell-head-mobile">Before the open</span>
+          <span class="cell-head-mobile">Earnings before the open</span>
           ${tickers(d.bmo)}
         </div>
         <div class="cell cell-amc" role="cell">
-          <span class="cell-head-mobile">After the close</span>
+          <span class="cell-head-mobile">Earnings after the close</span>
           ${tickers(d.amc)}
           ${note}
         </div>
@@ -245,8 +245,8 @@ export function renderPage(brief, { now = new Date() } = {}) {
           <div class="week-head" role="row">
             <div role="columnheader">Day</div>
             <div role="columnheader">Macro</div>
-            <div role="columnheader">Before the open</div>
-            <div role="columnheader">After the close</div>
+            <div role="columnheader">Earnings before the open</div>
+            <div role="columnheader">Earnings after the close</div>
           </div>
           ${renderDays(brief.days, today)}
         </div>
