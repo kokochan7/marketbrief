@@ -1,3 +1,4 @@
+import { INSTRUMENTS, instrumentUrl } from "./instruments.js";
 // Renders the Market Brief page from content/brief.json.
 // Everything from the content file is HTML-escaped; **bold** is the only markup allowed.
 
@@ -170,29 +171,15 @@ function renderMood(m) {
   </div>`;
 }
 
-const LIVE_SLOTS = [
-  ["spx", "S&P 500"],
-  ["ndx", "Nasdaq"],
-  ["dji", "Dow"],
-  ["rut", "Russell 2K"],
-  ["vix", "VIX"],
-  ["tnx", "US 10Y"],
-  ["brent", "Brent"],
-  ["wti", "WTI"],
-  ["gold", "Gold"],
-  ["silver", "Silver"],
-  ["btc", "Bitcoin"],
-  ["dxy", "Dollar (DXY)"],
-];
 
 function renderLive() {
-  const cells = LIVE_SLOTS.map(
-    ([k, label]) => `
-      <div class="tick" data-key="${k}">
-        <div class="tick-label">${label}</div>
+  const cells = INSTRUMENTS.map(
+    (it) => `
+      <a class="tick" data-key="${it.key}" data-name="${esc(it.name)}" href="${esc(instrumentUrl(it))}" data-gf="${it.url ? "0" : "1"}" target="_blank" rel="noopener">
+        <div class="tick-label">${esc(it.label)}</div>
         <div class="tick-value">—</div>
         <div class="tick-chg"><span class="d">&nbsp;</span><span class="w"></span></div>
-      </div>`
+      </a>`
   ).join("");
   return `
   <section class="live" id="live" aria-labelledby="live-h">

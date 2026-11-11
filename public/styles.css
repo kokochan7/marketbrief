@@ -58,12 +58,14 @@ section { margin-top: 30px; }
 .live.is-down .live-dot { background: var(--grey); animation: none; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.5);} 70% { box-shadow: 0 0 0 8px rgba(52,211,153,0);} 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0);} }
 .tape {
-  display: grid; grid-template-columns: repeat(6, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
 }
-.tick { padding: 12px 14px; border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); min-width: 0; }
-.tick:nth-child(6n) { border-right: 0; }
-.tick:nth-last-child(-n+6) { border-bottom: 0; }
+.tick { display: block; color: inherit; text-decoration: none; padding: 12px 14px; border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); min-width: 0; transition: background .15s; }
+.tick:hover, .tick:focus-visible { background: var(--panel-2); outline: none; }
+.tick:hover .tick-label, .tick:focus-visible .tick-label { color: var(--teal); }
+.tick:nth-child(5n) { border-right: 0; }
+.tick:nth-last-child(-n+5) { border-bottom: 0; }
 .tick-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tick-value { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 2px; white-space: nowrap; }
 .tick-chg { font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; display: flex; gap: 8px; flex-wrap: wrap; }
@@ -165,11 +167,6 @@ section { margin-top: 30px; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .tape { grid-template-columns: repeat(4, 1fr); }
-  .tick:nth-child(6n) { border-right: 1px solid var(--line-soft); }
-  .tick:nth-child(4n) { border-right: 0; }
-  .tick:nth-last-child(-n+6) { border-bottom: 1px solid var(--line-soft); }
-  .tick:nth-last-child(-n+4) { border-bottom: 0; }
   .mood-grid { grid-template-columns: 1fr 1fr; }
   .mood-card { border-bottom: 1px solid var(--line); }
   .mood-card:first-child { grid-column: 1 / -1; border-right: 0; }
@@ -181,11 +178,11 @@ section { margin-top: 30px; }
   .wrap { padding: 20px 16px 40px; }
   .masthead { flex-direction: column; align-items: flex-start; }
   .masthead-right { text-align: left; }
-  .tape { grid-template-columns: repeat(3, 1fr); }
-  .tick:nth-child(4n) { border-right: 1px solid var(--line-soft); }
-  .tick:nth-child(3n) { border-right: 0; }
-  .tick:nth-last-child(-n+4) { border-bottom: 1px solid var(--line-soft); }
-  .tick:nth-last-child(-n+3) { border-bottom: 0; }
+  .tape { grid-template-columns: repeat(2, 1fr); }
+  .tick:nth-child(5n) { border-right: 1px solid var(--line-soft); }
+  .tick:nth-child(2n) { border-right: 0; }
+  .tick:nth-last-child(-n+5) { border-bottom: 1px solid var(--line-soft); }
+  .tick:nth-last-child(-n+2) { border-bottom: 0; }
   .tick { padding: 10px; }
   .tick-value { font-size: 16px; }
   .main-event { padding: 20px; }
@@ -204,13 +201,7 @@ section { margin-top: 30px; }
   .data-cell:nth-last-child(-n+2) { border-bottom: 0; }
   .sources { columns: 1; }
 }
-@media (max-width: 380px) {
-  .tape { grid-template-columns: repeat(2, 1fr); }
-  .tick:nth-child(3n) { border-right: 1px solid var(--line-soft); }
-  .tick:nth-child(2n) { border-right: 0; }
-  .tick:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-soft); }
-  .tick:nth-last-child(-n+2) { border-bottom: 0; }
-}
+
 @media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
 
 /* Ticker links + hover cards */
@@ -227,6 +218,7 @@ a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(
 .tt-head span { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tt-price { margin-top: 6px; font-size: 18px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
 .tt-price span { font-size: 14px; margin-left: 6px; }
+.tt-chgs { margin-top: 2px; font-size: 13px; font-weight: 700; }
 .tt-sub { margin-top: 4px; font-size: 11.5px; color: var(--muted); }
 
 /* Prediction-market meters */

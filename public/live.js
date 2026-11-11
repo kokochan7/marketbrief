@@ -9,7 +9,7 @@
   function fmtPrice(key, q) {
     if (key === "tnx") return fmtNum(q.price, 3) + "%";
     if (key === "btc") return "$" + fmtNum(q.price, 0);
-    if (q.unit === "usd") return "$" + fmtNum(q.price, key === "silver" ? 3 : 2);
+    if (q.unit === "usd") return "$" + fmtNum(q.price, 2);
     return fmtNum(q.price, 2);
   }
 
@@ -34,6 +34,8 @@
   }
 
   function render(data) {
+    window.__live = data;
+    document.dispatchEvent(new CustomEvent("live:update"));
     let ok = 0;
     let newest = 0;
     for (const el of document.querySelectorAll(".tick")) {
@@ -57,7 +59,6 @@
       dEl.className = "d chg-" + d.cls;
       wEl.textContent = w.text;
       wEl.className = "w chg-" + w.cls;
-      el.title = `${q.src} · as of ${etTime(q.time)}`;
     }
     const meta = $("#live-meta");
     if (ok === 0) {

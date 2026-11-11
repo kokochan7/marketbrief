@@ -1,22 +1,8 @@
 import brief from "../content/brief.json";
 import { renderPage } from "./render.js";
 import { summarize } from "./quotes.js";
+import { INSTRUMENTS } from "./instruments.js";
 
-// Live quote symbols (Yahoo Finance chart API).
-const SYMBOLS = {
-  spx: { sym: "^GSPC" },
-  ndx: { sym: "^IXIC" },
-  dji: { sym: "^DJI" },
-  rut: { sym: "^RUT" },
-  vix: { sym: "^VIX" },
-  tnx: { sym: "^TNX", unit: "yield" },
-  brent: { sym: "BZ=F", unit: "usd" },
-  wti: { sym: "CL=F", unit: "usd" },
-  gold: { sym: "GC=F", unit: "usd" },
-  silver: { sym: "SI=F", unit: "usd" },
-  btc: { sym: "BTC-USD", unit: "usd" },
-  dxy: { sym: "DX-Y.NYB" },
-};
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
@@ -245,7 +231,7 @@ async function fearGreed() {
 
 async function buildLive() {
   const entries = await Promise.all(
-    Object.entries(SYMBOLS).map(async ([key, { sym, unit }]) => {
+    INSTRUMENTS.map(async ({ key, sym, unit }) => {
       try {
         return [key, summarize(await yahoo(sym), unit)];
       } catch (e) {

@@ -58,6 +58,37 @@
       <div class="tt-sub">Click for Google Finance ↗</div>`;
   }
 
+  const pct = (v, suffix) => {
+    if (typeof v !== "number" || !isFinite(v)) return "";
+    const cls = v > 0 ? "chg-up" : v < 0 ? "chg-down" : "chg-flat";
+    const sign = v > 0 ? "+" : v < 0 ? "−" : "";
+    return `<span class="${cls}">${sign}${Math.abs(v).toFixed(2)}%${suffix ? " " + suffix : ""}</span>`;
+  };
+  const bp = (v, suffix) => {
+    if (typeof v !== "number" || !isFinite(v)) return "";
+    const cls = v > 0 ? "chg-up" : v < 0 ? "chg-down" : "chg-flat";
+    const sign = v > 0 ? "+" : v < 0 ? "−" : "";
+    return `<span class="${cls}">${sign}${Math.abs(v).toFixed(1)}bp${suffix ? " " + suffix : ""}</span>`;
+  };
+
+  function liveContent(el) {
+    const key = el.dataset.key;
+    const label = el.querySelector(".tick-label")?.textContent || key;
+    const q = window.__live && window.__live.quotes && window.__live.quotes[key];
+    const head = `<div class="tt-head"><b>${esc(label)}</b><span>${esc(el.dataset.name || "")}</span></div>`;
+    if (!window.__live) return head + `<div class="tt-sub">Loading…</div>`;
+    if (!q || q.error || typeof q.price !== "number") return head + `<div class="tt-sub">Live quote unavailable. Click to open Google Finance.</div>`;
+    const value = el.querySelector(".tick-value")?.textContent || "";
+    const isY = q.unit === "yield";
+    const day = isY ? bp(q.chgBp, "day") : pct(q.chgPct, q.chgLabel || "day");
+    const wk = isY ? bp(q.wkBp, "wk") : pct(q.wkPct, "wk");
+    return `${head}
+      <div class="tt-price">${esc(value)}</div>
+      <div class="tt-chgs">${day}${wk ? " · " + wk : ""}</div>
+      <div class="tt-sub">${esc(q.src || "")} · as of ${etTime(q.time)}</div>
+      <div class="tt-sub">${el.dataset.gf === "0" ? "Click for Google ↗" : "Click for Google Finance ↗"}</div>`;
+  }
+
   function place(el) {
     const t = getTip();
     const r = el.getBoundingClientRect();
@@ -65,7 +96,8 @@
     const th = t.offsetHeight;
     let left = r.left + r.width / 2 - tw / 2;
     left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
-    let top = r.top - th - 8;
+    // Live tiles: show the card below the tile; tickers: above, unless there's no room.
+    let top = el.classList.contains("tick") ? r.bottom + 8 : r.top - th - 8;
     if (top < 8) top = r.bottom + 8;
     t.style.left = `${left + window.scrollX}px`;
     t.style.top = `${top + window.scrollY}px`;
@@ -73,9 +105,15 @@
 
   function show(el) {
     clearTimeout(hideTimer);
-    const sym = el.dataset.sym;
     current = el;
     const t = getTip();
+    if (el.classList.contains("tick")) {
+      t.innerHTML = liveContent(el);
+      t.hidden = false;
+      place(el);
+      return;
+    }
+    const sym = el.dataset.sym;
     t.innerHTML = content(sym, null);
     t.hidden = false;
     place(el);
@@ -97,18 +135,24 @@
   if (!window.matchMedia || !window.matchMedia("(hover: hover)").matches) return;
 
   document.addEventListener("mouseover", (e) => {
-    const a = e.target.closest && e.target.closest("a.tkr");
+    const a = e.target.closest && e.target.closest("a.tkr, a.tick");
     if (a && a !== current) show(a);
   });
   document.addEventListener("mouseout", (e) => {
-    const a = e.target.closest && e.target.closest("a.tkr");
+    const a = e.target.closest && e.target.closest("a.tkr, a.tick");
     if (a && !a.contains(e.relatedTarget)) hide();
   });
   document.addEventListener("focusin", (e) => {
-    if (e.target.matches && e.target.matches("a.tkr")) show(e.target);
+    if (e.target.matches && e.target.matches("a.tkr, a.tick")) show(e.target);
   });
   document.addEventListener("focusout", (e) => {
-    if (e.target.matches && e.target.matches("a.tkr")) hide();
+    if (e.target.matches && e.target.matches("a.tkr, a.tick")) hide();
   });
   window.addEventListener("scroll", () => current && place(current), { passive: true });
+  document.addEventListener("live:update", () => {
+    if (current && current.classList.contains("tick") && tip && !tip.hidden) {
+      tip.innerHTML = liveContent(current);
+      place(current);
+    }
+  });
 })();
