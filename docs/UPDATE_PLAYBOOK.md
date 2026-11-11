@@ -32,6 +32,24 @@ and the identifier the Worker uses for live updates: Kalshi market `ticker` (e.g
 or Polymarket market `slug` (from `gamma-api.polymarket.com/public-search?q=...`).
 Drop meters whose market has resolved or no longer fits the story.
 
+## Earnings prediction markets
+
+`earningsOdds` maps an earnings ticker (exactly as it appears in `days[].bmo` / `amc`)
+to a list of Kalshi / Polymarket markets on that report. Search for every ticker in
+the week, e.g. `gamma-api.polymarket.com/public-search?q=<Company> quarterly earnings`
+(Polymarket "beat" slugs look like `amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13`)
+and Kalshi earnings or earnings-call mention series. Only add markets for this
+week's report (check the date in the slug / close time). Each entry has `source`,
+`kind`, `label`, `prob`, `url` and the `slug` or `ticker`, as in the meters above.
+
+- `kind: "beat"` (beats EPS estimate) shows as a small "beat 89%" chip beside the
+  ticker; label it with the basis and estimate, e.g. "Beats non-GAAP EPS est. $4.13".
+  After the market settles the chip shows "Beat" or "Missed" by itself.
+- `kind: "mention"` (earnings-call word markets) only shows in the ticker's hover card.
+  Pick at most three, favouring the highest-volume ones.
+- Tickers with no market get no entry. Rebuild `earningsOdds` for each new week, and
+  refresh it daily (new markets get listed during the week).
+
 ## Sourcing rules
 
 - Prefer primary sources: BLS, BEA, Federal Reserve, US Treasury, company releases,

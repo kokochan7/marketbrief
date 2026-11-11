@@ -132,9 +132,11 @@ async function kalshiProb(ticker) {
   const bid = num(m.yes_bid_dollars) ?? cents(m.yes_bid);
   const ask = num(m.yes_ask_dollars) ?? cents(m.yes_ask);
   const last = num(m.last_price_dollars) ?? cents(m.last_price);
+  const closed = ["closed", "settled", "finalized", "determined"].includes(m.status);
+  if (closed && (m.result === "yes" || m.result === "no")) return { prob: m.result === "yes" ? 100 : 0, closed };
   // Kalshi shows the last traded price as the "chance"; fall back to the midpoint.
-  if (last !== null && last > 0) return last * 100;
-  return displayProb(bid, ask, null);
+  if (last !== null && last > 0) return { prob: last * 100, closed };
+  return { prob: displayProb(bid, ask, null), closed };
 }
 
 async function polymarketProb(slug) {
@@ -152,7 +154,9 @@ async function polymarketProb(slug) {
     const i = Math.max(0, outcomes.indexOf("Yes"));
     yes = num(prices[i]);
   } catch {}
-  return displayProb(num(m.bestBid), num(m.bestAsk), num(m.lastTradePrice) ?? yes);
+  // Once a market has closed, its final outcome price is the result.
+  if (m.closed && yes !== null) return { prob: yes * 100, closed: true };
+  return { prob: displayProb(num(m.bestBid), num(m.bestAsk), num(m.lastTradePrice) ?? yes), closed: false };
 }
 
 async function oddsHandler(request, ctx) {
@@ -161,23 +165,23 @@ async function oddsHandler(request, ctx) {
   const hit = await cache.match(key);
   if (hit) return hit;
   const jobs = [];
-  (brief.stories || []).forEach((s, i) =>
-    (s.odds || []).forEach((o, j) => {
-      const id = `${i}-${j}`;
-      const p =
-        o.source === "kalshi" && o.ticker
-          ? kalshiProb(o.ticker)
-          : o.source === "polymarket" && o.slug
-          ? polymarketProb(o.slug)
-          : Promise.reject(new Error("unknown source"));
-      jobs.push(
-        p.then(
-          (prob) => [id, prob === null ? { error: "no price" } : { prob }],
-          (e) => [id, { error: String(e?.message || e) }]
-        )
-      );
-    })
-  );
+  const add = (id, o) => {
+    const p =
+      o.source === "kalshi" && o.ticker
+        ? kalshiProb(o.ticker)
+        : o.source === "polymarket" && o.slug
+        ? polymarketProb(o.slug)
+        : Promise.reject(new Error("unknown source"));
+    jobs.push(
+      p.then(
+        (r) => [id, r.prob === null || r.prob === undefined ? { error: "no price" } : { prob: r.prob, closed: r.closed }],
+        (e) => [id, { error: String(e?.message || e) }]
+      )
+    );
+  };
+  (brief.stories || []).forEach((s, i) => (s.odds || []).forEach((o, j) => add(`${i}-${j}`, o)));
+  // Earnings-ticker markets: ids "e-<TICKER>-<n>".
+  for (const [sym, list] of Object.entries(brief.earningsOdds || {})) (list || []).forEach((o, j) => add(`e-${sym}-${j}`, o));
   const data = { generated: Date.now(), odds: Object.fromEntries(await Promise.all(jobs)) };
   const ok = Object.values(data.odds).some((o) => !o.error);
   const resp = json(data, 200, ok ? ODDS_TTL : 10);
@@ -229,11 +233,35 @@ async function fearGreed() {
   };
 }
 
+// Daily closes from Eastmoney (secid like "1.000300" = CSI 300 on Shanghai).
+async function eastmoneyDaily(secid) {
+  const r = await fetch(
+    `https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=${encodeURIComponent(secid)}&fields1=f1,f2,f3&fields2=f51,f53&klt=101&fqt=0&end=20500101&lmt=15`,
+    { headers: { "User-Agent": UA, Referer: "https://quote.eastmoney.com/" }, cf: { cacheTtl: 300 } }
+  );
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const j = await r.json();
+  return (j?.data?.klines || [])
+    .map((k) => {
+      const [date, close] = String(k).split(",");
+      return { date, close: Number(close) };
+    })
+    .filter((b) => /^\d{4}-\d{2}-\d{2}$/.test(b.date) && isFinite(b.close));
+}
+
 async function buildLive() {
   const entries = await Promise.all(
-    INSTRUMENTS.map(async ({ key, sym, unit }) => {
+    INSTRUMENTS.map(async ({ key, sym, unit, em }) => {
       try {
-        return [key, summarize(await yahoo(sym), unit)];
+        const res = await yahoo(sym);
+        // Yahoo serves only today's bar for some China indices; take daily history from Eastmoney.
+        let extra = [];
+        if (em && (res.timestamp || []).length < 5) {
+          try {
+            extra = await eastmoneyDaily(em);
+          } catch {}
+        }
+        return [key, summarize(res, unit, extra)];
       } catch (e) {
         if (key === "btc") {
           try {
@@ -278,27 +306,6 @@ export default {
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
-    if (url.pathname === "/api/debug-chart") {
-      // Temporary diagnostics for the CSI 300 week change.
-      const out = {};
-      for (const [sym, v] of [["399300.SZ", "range=1mo&interval=1d"], ["000300.SS", "range=5d&interval=1h"], ["ASHR", "range=1mo&interval=1d"]]) {
-        try {
-          const res = await yahoo(sym, v);
-          const c = res.indicators?.quote?.[0]?.close || [];
-          const ts = res.timestamp || [];
-          out[sym + " " + v] = { n: ts.length, prev: res.meta.chartPreviousClose, price: res.meta.regularMarketPrice, last: ts.slice(-8).map((t, i) => [new Date((t + res.meta.gmtoffset) * 1000).toISOString().slice(0, 16), c.slice(-8)[i]]) };
-        } catch (e) {
-          out[sym + " " + v] = { error: String(e) };
-        }
-      }
-      try {
-        const r = await fetch("https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.000300&fields1=f1,f2,f3&fields2=f51,f53&klt=101&fqt=0&end=20500101&lmt=12", { headers: { "User-Agent": UA, Referer: "https://quote.eastmoney.com/" } });
-        out.eastmoney = { status: r.status, body: (await r.text()).slice(0, 1500) };
-      } catch (e) {
-        out.eastmoney = { error: String(e) };
-      }
-      return json(out, 200, 0);
-    }
     if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
     if (url.pathname === "/api/brief") {
       return new Response(JSON.stringify(brief), {

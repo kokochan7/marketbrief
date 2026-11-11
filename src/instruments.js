@@ -8,7 +8,7 @@ export const INSTRUMENTS = [
   { key: "btc", label: "Bitcoin", name: "Bitcoin (USD)", sym: "BTC-USD", unit: "usd", google: "BTC-USD" },
   { key: "dxy", label: "Dollar (DXY)", name: "US Dollar Index", sym: "DX-Y.NYB", url: "https://www.google.com/search?q=US+Dollar+Index+DXY" }, // Google Finance has no DXY page
   { key: "kospi", label: "KOSPI", name: "KOSPI Composite Index (Korea)", sym: "^KS11", google: "KOSPI:KRX" },
-  { key: "csi300", label: "CSI 300", name: "CSI 300 Index (China)", sym: "000300.SS", google: "000300:SHA" },
+  { key: "csi300", label: "CSI 300", name: "CSI 300 Index (China)", sym: "000300.SS", em: "1.000300", google: "000300:SHA" },
 ];
 
 export const instrumentUrl = (it) => it.url || googleQuoteUrl(it.google);

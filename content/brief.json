@@ -252,6 +252,64 @@
       "body": "Trump said further strikes on Iran aren't needed for now, after appeals from Qatar and others, though the US naval blockade stays. Brent settled at $92.57 Monday and traded near $90.50 Tuesday; WTI settled at $86.85 Monday. Lower energy prices are what the inflation picture needs."
     }
   ],
+  "earningsOdds": {
+    "RUM": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats GAAP EPS est. −$0.12",
+        "prob": 12,
+        "slug": "rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12",
+        "url": "https://polymarket.com/event/rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12"
+      }
+    ],
+    "AMAT": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $4.13",
+        "prob": 89,
+        "slug": "amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13",
+        "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
+      }
+    ],
+    "CBRS": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats GAAP EPS est. −$0.14",
+        "prob": 10,
+        "slug": "cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14",
+        "url": "https://polymarket.com/event/cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14"
+      }
+    ],
+    "CSCO": [
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “AI” 25+ times on the call",
+        "prob": 97,
+        "slug": "will-cisco-say-ai-25-during-earnings-call-november-12",
+        "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “Quantum” on the call",
+        "prob": 65,
+        "slug": "will-cisco-say-quantum-during-earnings-call-november-12",
+        "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “Backlog” on the call",
+        "prob": 48.5,
+        "slug": "will-cisco-say-backlog-during-earnings-call-november-12",
+        "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
+      }
+    ]
+  },
   "sources": [
     {
       "label": "BLS · CPI, October 2026",

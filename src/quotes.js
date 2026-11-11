@@ -13,7 +13,9 @@ export function mondayOf(dateStr) {
   return d.toISOString().slice(0, 10);
 }
 
-export function summarize(res, unit) {
+// extraBars: optional [{ date, close }] daily closes from a second source, used
+// where Yahoo's own history is missing (it returns a single bar for CSI 300).
+export function summarize(res, unit, extraBars = []) {
   const m = res.meta;
   const price = m.regularMarketPrice;
   const t = m.regularMarketTime;
@@ -24,6 +26,10 @@ export function summarize(res, unit) {
   const bars = ts
     .map((x, i) => ({ date: localDate(x, off), close: closes[i] }))
     .filter((b) => typeof b.close === "number");
+  const have = new Set(bars.map((b) => b.date));
+  const extra = extraBars.filter((b) => typeof b.close === "number" && !have.has(b.date));
+  if (extra.length) bars.push(...extra);
+  bars.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
   const today = localDate(t, off);
   const before = bars.filter((b) => b.date < today);
   const prev = before.length ? before[before.length - 1].close : m.chartPreviousClose;
@@ -41,7 +47,7 @@ export function summarize(res, unit) {
     time: t * 1000,
     marketState: m.marketState || null,
     unit: unit || null,
-    src: "Yahoo Finance",
+    src: extra.length ? "Yahoo Finance, Eastmoney" : "Yahoo Finance",
   };
   if (unit === "yield") {
     out.chgBp = typeof prev === "number" ? (price - prev) * 100 : null;

@@ -1,4 +1,5 @@
-// Hover cards for earnings tickers: price and day change from /api/quote.
+// Hover cards for earnings tickers: price and day change from /api/quote, plus any
+// Kalshi / Polymarket earnings markets for the ticker.
 // Clicking a ticker opens Google Finance (via the Worker's /go/ redirect).
 (function () {
   const TTL = 60000;
@@ -42,7 +43,34 @@
     return String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   }
 
+  // Kalshi / Polymarket earnings markets for a ticker (page data, with live odds from odds.js).
+  let EODDS = {};
+  try {
+    EODDS = JSON.parse(document.getElementById("eodds-data")?.textContent || "{}");
+  } catch (e) {}
+  const SRC = { kalshi: "Kalshi", polymarket: "Polymarket" };
+  const fmtP = (p) => (p < 1 && p > 0 ? "<1%" : Math.round(p) + "%");
+
+  function oddsBlock(sym) {
+    const list = EODDS[sym];
+    if (!list || !list.length) return "";
+    const rows = list
+      .map((o, j) => {
+        const live = window.__odds && window.__odds[`e-${sym}-${j}`];
+        const ok = live && typeof live.prob === "number";
+        const p = ok ? live.prob : Number(o.prob);
+        const val = ok && live.closed ? (p >= 50 ? "Yes" : "No") : isFinite(p) ? fmtP(p) : "—";
+        return `<div class="tt-odd"><span class="tt-odd-p${p < 50 ? " is-low" : ""}">${val}</span><span>${esc(o.label)} <span class="tt-odd-src">${esc(SRC[o.source] || o.source)}</span></span></div>`;
+      })
+      .join("");
+    return `<div class="tt-odds"><div class="tt-odds-h">Prediction markets</div>${rows}</div>`;
+  }
+
   function content(sym, q) {
+    return quoteContent(sym, q) + oddsBlock(sym);
+  }
+
+  function quoteContent(sym, q) {
     if (!q) return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Loading…</div>`;
     if (q.error || typeof q.price !== "number") {
       return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable. Click to open Google Finance.</div>`;

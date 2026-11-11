@@ -11,17 +11,28 @@ const esc = (s) =>
 
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
-const tickers = (list) =>
-  list && list.length
-    ? list
-        .map(
-          (t) =>
-            `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}">${esc(t)}</a>`
-        )
-        .join(", ")
-    : '<span class="muted">—</span>';
-
 const ODDS_NAMES = { kalshi: "Kalshi", polymarket: "Polymarket" };
+
+// Earnings tickers. A ticker with a Kalshi/Polymarket "beat" market gets a small
+// odds chip next to it; every market for the ticker also shows in its hover card.
+function tickers(list, eodds = {}) {
+  if (!list || !list.length) return '<span class="muted">—</span>';
+  return list
+    .map((t, i) => {
+      const sep = i < list.length - 1 ? "," : "";
+      const markets = eodds[t] || [];
+      const link = `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}"${markets.length ? " data-eodds" : ""}>${esc(t)}</a>`;
+      const j = markets.findIndex((o) => o.kind === "beat");
+      if (j < 0) return link + sep;
+      const o = markets[j];
+      const p = Number(o.prob);
+      const chip = `<a class="eodds${p < 50 ? " is-low" : ""}" href="${esc(o.url)}" target="_blank" rel="noopener" data-odds="e-${esc(t)}-${j}" title="${esc(ODDS_NAMES[o.source] || o.source)}: ${esc(t)} ${esc(o.label)}"><span class="eodds-k">beat</span><span class="eodds-n">${fmtProb(o.prob)}</span></a>`;
+      // Keep ticker, chip and comma together so a line never starts with the comma.
+      return `<span class="tkr-e">${link}${chip}${sep}</span>`;
+    })
+    .join(" ");
+}
+
 const RING_R = 15;
 const RING_C = 2 * Math.PI * RING_R;
 
@@ -69,7 +80,7 @@ function fgColorPos(score) {
   return v.toFixed(1);
 }
 
-function renderDays(days, today) {
+function renderDays(days, today, eodds) {
   return days
     .map((d) => {
       const status = d.date < today ? "done" : d.date === today ? "today" : "upcoming";
@@ -106,11 +117,11 @@ function renderDays(days, today) {
         </div>
         <div class="cell cell-bmo" role="cell">
           <span class="cell-head-mobile">Earnings before the open</span>
-          ${tickers(d.bmo)}
+          ${tickers(d.bmo, eodds)}
         </div>
         <div class="cell cell-amc" role="cell">
           <span class="cell-head-mobile">Earnings after the close</span>
-          ${tickers(d.amc)}
+          ${tickers(d.amc, eodds)}
           ${note}
         </div>
       </div>`;
@@ -167,10 +178,17 @@ function renderLive() {
       </a>`
   ).join("");
   return `
-  <section class="live" id="live" aria-labelledby="live-h">
+  <section class="live is-manual" id="live" aria-labelledby="live-h">
     <div class="section-head">
       <h2 id="live-h" class="section-title"><span class="live-dot" aria-hidden="true"></span>Live markets</h2>
-      <span class="section-meta" id="live-meta">Loading…</span>
+      <div class="live-ctrl">
+        <span class="section-meta" id="live-meta">Loading…</span>
+        <div class="seg" role="radiogroup" aria-label="Refresh mode">
+          <button type="button" class="seg-btn" role="radio" data-mode="manual" aria-checked="true">Manual</button>
+          <button type="button" class="seg-btn" role="radio" data-mode="live" aria-checked="false">Live</button>
+        </div>
+        <button type="button" class="refresh-btn" id="refresh-btn" title="Refresh now" aria-label="Refresh now"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.61-3.89M13.5 2.5v3h-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
     </div>
     <div class="tape">${cells}</div>
   </section>`;
@@ -248,7 +266,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
             <div role="columnheader">Earnings before the open</div>
             <div role="columnheader">Earnings after the close</div>
           </div>
-          ${renderDays(brief.days, today)}
+          ${renderDays(brief.days, today, brief.earningsOdds || {})}
         </div>
       </section>
 
@@ -273,6 +291,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
     <ol class="stories">${stories}</ol>
   </section>
 </main>
+<script type="application/json" id="eodds-data">${JSON.stringify(brief.earningsOdds || {}).replace(/</g, "\\u003c")}</script>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>
 <script src="/odds.js?v=${esc(e.updated)}" defer></script>

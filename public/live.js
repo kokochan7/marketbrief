@@ -1,6 +1,11 @@
-// Fills the "Live markets" tape and the Fear & Greed card from /api/live.
+// Fills the "Live markets" tape and the Fear & Greed card from /api/live,
+// and owns the Manual / Live refresh mode. Manual (default) loads once per
+// page view and then only when the refresh button is pressed; Live refreshes
+// everything every minute while the tab is visible. Other scripts listen for
+// the "mb:refresh" event.
 (function () {
   const REFRESH_MS = 60000;
+  const MODE_KEY = "mb-refresh-mode";
   const $ = (s, el = document) => el.querySelector(s);
 
   const fmtNum = (v, d = 2) =>
@@ -66,7 +71,7 @@
       $("#live").classList.add("is-down");
     } else {
       $("#live").classList.remove("is-down");
-      meta.textContent = `As of ${etTime(newest)} · live`;
+      meta.textContent = `As of ${etTime(newest)}` + (mode === "live" ? " · live" : "");
     }
 
     const fg = data.fearGreed;
@@ -91,7 +96,12 @@
     el.dataset.tone = tone;
   }
 
+  let loading = false;
   async function load() {
+    if (loading) return;
+    loading = true;
+    const btn = $("#refresh-btn");
+    if (btn) btn.classList.add("is-spinning");
     try {
       const r = await fetch("/api/live", { cache: "no-store" });
       if (!r.ok) throw new Error(r.status);
@@ -102,13 +112,64 @@
         meta.textContent = "Live quotes unavailable right now";
         $("#live").classList.add("is-down");
       }
+    } finally {
+      loading = false;
+      if (btn) setTimeout(() => btn.classList.remove("is-spinning"), 400);
     }
   }
 
+  // Refresh everything on the page (live tape here, odds meters in odds.js).
+  function refreshAll() {
+    load();
+    document.dispatchEvent(new CustomEvent("mb:refresh"));
+  }
+
+  let mode = "manual";
+  try {
+    if (localStorage.getItem(MODE_KEY) === "live") mode = "live";
+  } catch (e) {}
+  let timer = null;
+
+  function setMode(m, save) {
+    mode = m === "live" ? "live" : "manual";
+    if (save) {
+      try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
+    }
+    const live = $("#live");
+    live.classList.toggle("is-manual", mode === "manual");
+    live.classList.toggle("is-live-mode", mode === "live");
+    for (const b of document.querySelectorAll(".seg-btn")) {
+      b.setAttribute("aria-checked", String(b.dataset.mode === mode));
+    }
+    clearInterval(timer);
+    timer = null;
+    if (mode === "live") {
+      timer = setInterval(() => {
+        if (!document.hidden) refreshAll();
+      }, REFRESH_MS);
+    }
+    const meta = $("#live-meta");
+    if (meta && window.__live) meta.textContent = meta.textContent.replace(/ · live$/, "") + (mode === "live" ? " · live" : "");
+  }
+
+  for (const b of document.querySelectorAll(".seg-btn")) {
+    b.addEventListener("click", () => {
+      if (b.dataset.mode === mode) return;
+      setMode(b.dataset.mode, true);
+      if (mode === "live") refreshAll();
+    });
+  }
+  const btn = $("#refresh-btn");
+  if (btn) btn.addEventListener("click", refreshAll);
+  // In Live mode, catch up straight away when the tab comes back into view.
+  let hiddenAt = 0;
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) hiddenAt = Date.now();
+    else if (mode === "live" && Date.now() - hiddenAt > REFRESH_MS) refreshAll();
+  });
+
   const initial = parseFloat($("#fg-score")?.textContent);
   if (!isNaN(initial)) setFgTone(initial);
-  load();
-  setInterval(() => {
-    if (!document.hidden) load();
-  }, REFRESH_MS);
+  setMode(mode, false);
+  load(); // one load per page view; odds.js does its own first load
 })();
