@@ -10,8 +10,8 @@ label it clearly rather than guess.
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
    names that moved or didn't report.
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, breadth,
-   safe havens) and `marketData` (closes and week-to-date change vs last Friday's close).
-3. Refresh `stories` so they reflect what's still ahead, and update `mainEvent` once its
+   safe havens). Prices themselves come from the live strip, so there is no price table to edit.
+3. Refresh `stories` (and the non-Kenny `levels`) so they reflect what's still ahead, and update `mainEvent` once its
    event has passed.
 4. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Wed 11/11 close").
 
@@ -20,8 +20,15 @@ label it clearly rather than guess.
 Start a new edition for the coming Monday to Friday: new `edition` range, five `days`
 with macro events (ET times, consensus where available) and notable before-open /
 after-close earnings, a fresh `mainEvent`, six `stories`, and last week's closing
-`mood` and `marketData`. Keep `levels` exactly as Kenny last set them unless he says
-otherwise.
+`mood`. Refresh `levels` (see below).
+
+## Levels to watch
+
+`levels.items` entries with `"owner": "kenny"` (currently NQ and GOOGL) are Kenny's own
+levels: never change or remove them unless he asks. Add 2-4 more for the week's key
+stocks (earnings names, big movers). Use support/resistance levels a dated source
+publishes, plus the options-implied earnings move where one exists, and add each source
+to `sources`. Drop names whose catalyst has passed, and never make up a level.
 
 ## Prediction-market meters
 

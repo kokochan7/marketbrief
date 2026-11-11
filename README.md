@@ -5,7 +5,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 
 ## How it works
 
-- **The brief** (main event, day-by-day calendar, market mood, stories, market data,
+- **The brief** (main event, day-by-day calendar, market mood, stories and
   levels) lives in [`content/brief.json`](content/brief.json). The Worker renders the
   page from it on each request, so editing that file and pushing to `main` is all it
   takes to publish a new edition.
@@ -25,8 +25,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | `days` | One entry per weekday. `date` (YYYY-MM-DD) drives the Done/Today badges. `tone`: `red`, `orange`, `green`, `teal`, `grey`. Macro `level`: `high` (red dot), `medium` (orange), `low` (grey). Add `result` once the day is done. |
 | `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, breadth, safe havens |
 | `stories` | Numbered stories; `title` is bolded. Optional `odds` adds Kalshi/Polymarket meters (see docs/UPDATE_PLAYBOOK.md) |
-| `marketData` | Snapshot tiles plus a note that explains the basis |
-| `levels` | Kenny's own levels to watch |
+| `levels` | Levels to watch. Entries with `"owner": "kenny"` are Kenny's own and are never changed automatically |
 | `sources` | Where each figure came from (kept in the file for checking; not shown on the page) |
 
 Text fields are escaped; `**bold**` is the only formatting supported.

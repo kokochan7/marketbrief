@@ -223,17 +223,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
     )
     .join("");
 
-  const md_ = brief.marketData;
-  const dataCells = md_.items
-    .map(
-      (it) => `
-      <div class="data-cell">
-        <div class="card-kicker">${esc(it.label)}</div>
-        <div class="data-value">${esc(it.value)}</div>
-        <div class="data-chg chg-${esc(it.dir || "flat")}">${esc(it.change)}</div>
-      </div>`
-    )
-    .join("");
 
   const levels = brief.levels.items
     .map(
@@ -317,19 +306,10 @@ export function renderPage(brief, { now = new Date() } = {}) {
     </section>
 
     <aside class="side">
-      <section aria-labelledby="data-h">
-        <div class="section-head">
-          <h2 id="data-h" class="section-title">${esc(md_.title)}</h2>
-          <span class="section-meta">${esc(md_.asOf)}</span>
-        </div>
-        <div class="data-grid">${dataCells}</div>
-        <p class="fineprint">${md(md_.note)}</p>
-      </section>
-
       <section aria-labelledby="levels-h">
         <div class="section-head">
           <h2 id="levels-h" class="section-title">Levels to watch</h2>
-          <span class="section-meta">${esc(brief.levels.note)}</span>
+          ${brief.levels.note ? `<span class="section-meta">${esc(brief.levels.note)}</span>` : ""}
         </div>
         <div class="levels">${levels}</div>
       </section>
