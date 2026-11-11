@@ -30,8 +30,10 @@ If today is a US market holiday, make no edits.
    names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, breadth,
    safe havens). Prices themselves come from the live strip, so there is no price table to edit.
-3. Refresh `stories` so they reflect what's still ahead, and update `mainEvent` once its
-   event has passed.
+3. Refresh `stories`: it is a rolling list of six, most important first, not a fixed
+   weekly set. Update stories that moved (new numbers, results), replace ones that have
+   played out or gone stale with the day's new stories, and keep their odds current.
+   Update `mainEvent` once its event has passed.
 4. Refresh `earningsOdds` for the rest of the week (see "Earnings prediction markets"):
    add newly listed markets, drop tickers that have already reported.
 5. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Thu 11/12 close").
