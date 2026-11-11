@@ -23,7 +23,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | --- | --- |
 | `edition` | Week range, `updated` timestamp (UTC ISO), `dataAsOf` label |
 | `mainEvent` | Kicker, title, one-paragraph summary |
-| `days` | One entry per weekday. `date` (YYYY-MM-DD) drives the Done/Today badges. `tone`: `red`, `orange`, `green`, `teal`, `grey`. Macro `level`: `high` (red dot), `medium` (orange), `low` (grey). Add `result` once the day is done. |
+| `days` | One entry per weekday. `date` (YYYY-MM-DD) drives the Done/Today badges. Optional `premarket` line shows until `result` is added. `tone`: `red`, `orange`, `green`, `teal`, `grey`. Macro `level`: `high` (red dot), `medium` (orange), `low` (grey). Add `result` once the day is done. |
 | `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, breadth, safe havens |
 | `stories` | Numbered stories; `title` is bolded. Optional `odds` adds Kalshi/Polymarket meters (see docs/UPDATE_PLAYBOOK.md) |
 | `earningsOdds` | Optional Kalshi/Polymarket earnings markets by ticker: "beat" chips in the week table, all markets in hover cards (see docs/UPDATE_PLAYBOOK.md) |

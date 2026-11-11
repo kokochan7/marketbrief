@@ -97,6 +97,11 @@ function renderDays(days, today, eodds) {
       const result = d.result
         ? `<p class="day-result"><span class="result-label">Result</span> ${md(d.result)}</p>`
         : "";
+      // Pre-market line (overnight news, futures, 8:30 data); dropped once the day's result is in.
+      const pre =
+        d.premarket && !d.result
+          ? `<p class="day-result day-pre"><span class="result-label">Pre-market</span> ${md(d.premarket)}</p>`
+          : "";
       const note = d.note ? `<p class="day-note">${md(d.note)}</p>` : "";
       const statusBadge =
         status === "today"
@@ -113,7 +118,7 @@ function renderDays(days, today, eodds) {
         <div class="cell cell-macro" role="cell">
           <span class="cell-head-mobile">Macro</span>
           <ul class="macro-list">${macro}</ul>
-          ${result}
+          ${pre}${result}
         </div>
         <div class="cell cell-bmo" role="cell">
           <span class="cell-head-mobile">Earnings before the open</span>

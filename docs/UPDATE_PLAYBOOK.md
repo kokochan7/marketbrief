@@ -4,23 +4,49 @@ This is the checklist for refreshing `content/brief.json`, by hand or by a sched
 Claude session. Accuracy comes first: if a number can't be confirmed, leave it out or
 label it clearly rather than guess.
 
+## Pre-market (weekdays, about 8:45am ET)
+
+Runs after the 8:30 data, before the 9:30 open. Edit only what the morning changes:
+
+1. For today's entry in `days`, write a `premarket` line (one or two short sentences):
+   S&P 500 and Nasdaq 100 futures % change, 10Y yield, oil, plus the overnight story
+   that matters (Asia/Europe moves, big news). It shows as "Pre-market" in today's row
+   and disappears once the evening `result` is added.
+2. Add actuals to any 8:30 release in today's `macro`, e.g.
+   "Jobless claims 201K vs 195K est, prior 189K". Keep the time and level as they are.
+3. Earnings before the open: check each `bmo` name reported (fix names that moved or
+   didn't report) and work the notable beats/misses and stock moves into `stories`.
+   Refresh `earningsOdds` (see below).
+4. Update `stories` and `mainEvent` for overnight news only if something changed.
+   Leave `mood` for the evening run.
+5. Set `edition.updated` and `edition.dataAsOf` (e.g. "Thu 11/12 pre-market").
+
+If today is a US market holiday, make no edits.
+
 ## Daily (weekdays, after the 4pm ET close)
 
 1. For today's entry in `days`, add a `result` line: S&P 500, Nasdaq and Russell 2000 %
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
-   names that moved or didn't report.
+   names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, breadth,
    safe havens). Prices themselves come from the live strip, so there is no price table to edit.
 3. Refresh `stories` so they reflect what's still ahead, and update `mainEvent` once its
    event has passed.
-4. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Thu 11/12 close").
+4. Refresh `earningsOdds` for the rest of the week (see "Earnings prediction markets"):
+   add newly listed markets, drop tickers that have already reported.
+5. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Thu 11/12 close").
 
-## Weekly (Saturday or Sunday)
+## Weekly (Sunday, about 6:30pm ET)
 
 Start a new edition for the coming Monday to Friday: new `edition` range, five `days`
 with macro events (ET times, consensus where available) and notable before-open /
-after-close earnings, a fresh `mainEvent`, six `stories`, and last week's closing
-`mood`.
+after-close earnings, a fresh `mainEvent`, six `stories`, last week's closing `mood`,
+and `earningsOdds` for the week's tickers (see "Earnings prediction markets").
+
+US stock index futures reopen at 6pm ET Sunday. Give Monday's entry a `premarket` line
+with the early futures read (S&P 500 and Nasdaq 100 futures %, plus oil or anything
+moving overnight), e.g. "Sun 6:30p: S&P futures +0.2%, Nasdaq futures +0.4%, WTI −1%".
+Label it as Sunday evening so it isn't mistaken for Monday morning.
 
 ## Prediction-market meters
 
