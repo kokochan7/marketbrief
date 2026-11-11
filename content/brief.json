@@ -4,8 +4,8 @@
     "weekEnd": "2026-11-13",
     "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-11T03:07:00Z",
-    "dataAsOf": "Tue 11/10 close"
+    "updated": "2026-11-11T14:05:00Z",
+    "dataAsOf": "Wed 11/11 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
@@ -104,7 +104,8 @@
         "TTEK",
         "ENS",
         "CAE"
-      ]
+      ],
+      "premarket": "7:35a: S&P futures +0.8%, Nasdaq 100 futures +1.9% as CoreWeave (+16%) and Nvidia (+4%) lead a chip rebound; Kospi up 2%+. WTI $86.6 (+0.7%) after tankers hit mines in Hormuz · cash Treasuries shut for Veterans Day (10Y ended Tue ≈ 4.98%)."
     },
     {
       "date": "2026-11-12",
@@ -224,7 +225,7 @@
     },
     {
       "title": "Nvidia under a cloud.",
-      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy. The board says it has no reason to believe any secrets were compromised. It dragged all three indexes on Tuesday.",
+      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy. The board says it has no reason to believe any secrets were compromised. It dragged all three indexes on Tuesday, and was rebounding about 4% pre-market Wednesday.",
       "odds": [
         {
           "source": "polymarket",
@@ -236,8 +237,8 @@
       ]
     },
     {
-      "title": "CoreWeave beats and raises.",
-      "body": "Q3 revenue of $3.66B (+168%) topped its own $3.45–3.60B guide, backlog reached about $132.5B and 2026 revenue guidance went up to $13.0–13.3B. Capex is guided to $37–39B with debt at $46.9B, so funding remains the debate. Early after-hours trade was mixed."
+      "title": "CoreWeave beats, Anthropic sets IPO terms.",
+      "body": "CoreWeave's Q3 revenue of $3.66B (+168%) topped its own $3.45–3.60B guide, backlog reached about $132.5B and 2026 guidance went up to $13.0–13.3B. It expects adjusted profitability in the first half of 2028; shares jumped about 16% pre-market Wednesday despite $37–39B capex and $46.9B of debt. Anthropic set IPO terms at $70–78 a share, valuing it at up to $1.4 trillion, with trading as soon as next week."
     },
     {
       "title": "Cisco and Applied Materials, Thursday after the close.",
@@ -248,8 +249,8 @@
       "body": "October PPI Friday 8:30a is expected at +0.4% m/m after September's +1.3%. Jobless claims Thursday (195K expected) and a heavy speaker slate (Hammack, Barr, Goolsbee, Daly, Williams) will show how hard the Fed leans into December."
     },
     {
-      "title": "Oil off the boil.",
-      "body": "Trump said further strikes on Iran aren't needed for now, after appeals from Qatar and others, though the US naval blockade stays. Brent settled at $92.57 Monday and traded near $90.50 Tuesday; WTI settled at $86.85 Monday. Lower energy prices are what the inflation picture needs."
+      "title": "Oil: no more strikes, but Hormuz still bites.",
+      "body": "Trump said further strikes on Iran aren't needed for now, though the US naval blockade stays and Iran says no talks are under way. Brent fell 3.7% Tuesday to below $92, then rebounded to about $92.70 (+1.3%) early Wednesday after reports of tankers hitting mines in the Strait of Hormuz; WTI was near $86.60. Lower energy prices are what the inflation picture needs."
     }
   ],
   "earningsOdds": {
@@ -258,7 +259,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats GAAP EPS est. −$0.12",
-        "prob": 12,
+        "prob": 0,
         "slug": "rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12",
         "url": "https://polymarket.com/event/rum-quarterly-earnings-gaap-eps-11-11-2026-neg0pt12"
       }
@@ -268,7 +269,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $4.13",
-        "prob": 89,
+        "prob": 88.5,
         "slug": "amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13",
         "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
       }
@@ -278,7 +279,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats GAAP EPS est. −$0.14",
-        "prob": 10,
+        "prob": 11,
         "slug": "cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14",
         "url": "https://polymarket.com/event/cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14"
       }
@@ -378,7 +379,39 @@
     {
       "label": "Polymarket · Jensen Huang resignation or removal",
       "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · futures Nov 11",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-futures-rise-104431138.html"
+    },
+    {
+      "label": "Yahoo Finance · live blog Nov 11",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-123445799.html"
+    },
+    {
+      "label": "TheStreet · market today Nov 11",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"
+    },
+    {
+      "label": "Saxo · Market Quick Take Nov 11",
+      "url": "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---us-treasury-yields-rip-higher---11-november-2026-11112026"
+    },
+    {
+      "label": "HDFC Sky · oil prices Nov 11",
+      "url": "https://hdfcsky.com/news/brent-crude-oil-price-today-november-11-2026-brent-rises-1-14percent-to-92-5-as-strait-of-hormuz-attacks-dent-peace-hopes"
+    },
+    {
+      "label": "RUM Group · Q3 2026 results",
+      "url": "https://www.globenewswire.com/news-release/2026/11/11/3400614/0/en/rum-group-inc-reports-record-third-quarter-2026-results.html"
+    },
+    {
+      "label": "InMode · Q3 2026 results",
+      "url": "https://www.prnewswire.com/news-releases/inmode-reports-third-quarter-2026-financial-results-quarterly-gaap-revenues-of-92-1-million-reaffirms-full-year-2026-financial-outlook-302935662.html"
+    },
+    {
+      "label": "Polymarket · RUM, AMAT, CBRS earnings markets",
+      "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
     }
   ],
-  "oddsAsOf": "Tue 11/10"
+  "oddsAsOf": "Wed 11/11 pre-market"
 }
