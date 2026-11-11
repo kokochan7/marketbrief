@@ -212,3 +212,19 @@ section { margin-top: 30px; }
   .tick:nth-last-child(-n+2) { border-bottom: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+
+/* Ticker links + hover cards */
+a.tkr { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(185, 198, 209, 0.45); transition: color .15s, border-color .15s; }
+a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(--teal); outline: none; }
+.tkr-tip {
+  position: absolute; z-index: 50; min-width: 180px; max-width: 260px;
+  background: #13293a; border: 1px solid #24465c; border-radius: 10px;
+  padding: 10px 12px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  font-size: 13px; color: var(--text-2); pointer-events: none;
+}
+.tt-head { display: flex; flex-direction: column; gap: 1px; }
+.tt-head b { color: var(--text); font-size: 14px; letter-spacing: .04em; }
+.tt-head span { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tt-price { margin-top: 6px; font-size: 18px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
+.tt-price span { font-size: 14px; margin-left: 6px; }
+.tt-sub { margin-top: 4px; font-size: 11.5px; color: var(--muted); }

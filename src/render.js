@@ -11,7 +11,14 @@ const esc = (s) =>
 const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
 const tickers = (list) =>
-  list && list.length ? esc(list.join(", ")) : '<span class="muted">—</span>';
+  list && list.length
+    ? list
+        .map(
+          (t) =>
+            `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}">${esc(t)}</a>`
+        )
+        .join(", ")
+    : '<span class="muted">—</span>';
 
 function etDateKey(d = new Date()) {
   // YYYY-MM-DD in US Eastern time
@@ -202,9 +209,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
     )
     .join("");
 
-  const sources = brief.sources
-    .map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`)
-    .join("");
 
   const title = `Kenny’s Market Brief · ${e.range}`;
   const desc = `${brief.mainEvent.title}. ${brief.mainEvent.body}`.slice(0, 280);
@@ -296,15 +300,9 @@ export function renderPage(brief, { now = new Date() } = {}) {
     </aside>
   </div>
 
-  <footer class="footer">
-    <details>
-      <summary>Sources</summary>
-      <ul class="sources">${sources}</ul>
-    </details>
-    <p class="fineprint">For information only, not investment advice. Figures are checked against the sources listed; live quotes can be delayed and may differ from official closes.</p>
-  </footer>
 </main>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
+<script src="/tickers.js?v=${esc(e.updated)}" defer></script>
 </body>
 </html>`;
 }

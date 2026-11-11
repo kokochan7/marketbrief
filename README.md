@@ -27,7 +27,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | `stories` | Numbered stories; `title` is bolded |
 | `marketData` | Snapshot tiles plus a note that explains the basis |
 | `levels` | Kenny's own levels to watch |
-| `sources` | Links shown in the footer |
+| `sources` | Where each figure came from (kept in the file for checking; not shown on the page) |
 
 Text fields are escaped; `**bold**` is the only formatting supported.
 

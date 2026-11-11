@@ -43,6 +43,81 @@ async function yahoo(sym) {
   throw lastErr;
 }
 
+// ---- Single-ticker quotes (hover cards) and Google Finance links ----
+
+const TICKER_RE = /^[A-Z0-9][A-Z0-9.\-]{0,9}$/;
+
+// Yahoo exchange codes -> Google Finance exchange names.
+const GOOGLE_EXCHANGE = {
+  NMS: "NASDAQ", NGM: "NASDAQ", NCM: "NASDAQ", NAS: "NASDAQ",
+  NYQ: "NYSE", NYS: "NYSE",
+  ASE: "NYSEAMERICAN", AMEX: "NYSEAMERICAN",
+  PCX: "NYSEARCA",
+  BTS: "BATS",
+};
+
+const yahooSymbol = (t) => t.replace(/\./g, "-"); // MOG.A -> MOG-A
+
+function googleUrl(ticker, exchange) {
+  const ex = GOOGLE_EXCHANGE[exchange];
+  return ex
+    ? `https://www.google.com/finance/quote/${encodeURIComponent(ticker)}:${ex}`
+    : `https://www.google.com/finance?q=${encodeURIComponent(ticker)}`;
+}
+
+async function tickerQuote(ticker, ctx) {
+  const cache = caches.default;
+  const key = new Request(`https://quote.cache/${ticker}`);
+  const hit = await cache.match(key);
+  if (hit) return hit.json();
+  const res = await yahoo(yahooSymbol(ticker));
+  const q = summarize(res);
+  const m = res.meta;
+  const data = {
+    ticker,
+    name: m.longName || m.shortName || null,
+    currency: m.currency || "USD",
+    exchange: m.exchangeName || null,
+    price: q.price,
+    prevClose: q.prevClose,
+    chgPct: q.chgPct,
+    time: q.time,
+    google: googleUrl(ticker, m.exchangeName),
+    src: "Yahoo Finance",
+  };
+  ctx.waitUntil(
+    cache.put(key, new Response(JSON.stringify(data), { headers: { "Cache-Control": `public, max-age=${LIVE_TTL}` } }))
+  );
+  return data;
+}
+
+async function quoteHandler(url, ctx) {
+  const t = (url.searchParams.get("s") || "").toUpperCase();
+  if (!TICKER_RE.test(t)) return json({ error: "bad ticker" }, 400);
+  try {
+    return json(await tickerQuote(t, ctx), 200, LIVE_TTL);
+  } catch (e) {
+    return json({ ticker: t, error: String(e?.message || e), google: googleUrl(t) }, 502, 10);
+  }
+}
+
+async function goHandler(url, ctx) {
+  const t = decodeURIComponent(url.pathname.slice(4)).toUpperCase();
+  if (!TICKER_RE.test(t)) return new Response("Bad ticker", { status: 400 });
+  let dest = googleUrl(t);
+  try {
+    dest = (await tickerQuote(t, ctx)).google;
+  } catch {}
+  return Response.redirect(dest, 302);
+}
+
+function json(data, status = 200, maxAge = 60) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": `public, max-age=${maxAge}` },
+  });
+}
+
 async function coingeckoBtc() {
   const r = await fetch(
     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true",
@@ -134,6 +209,8 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
+    if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
+    if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
     if (url.pathname === "/api/brief") {
       return new Response(JSON.stringify(brief), {
         headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" },
