@@ -211,15 +211,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
     .join("");
 
 
-  const levels = brief.levels.items
-    .map(
-      (l) => `
-      <div class="level">
-        <div class="level-top"><span class="level-sym">${esc(l.symbol)}</span><span class="level-val">${esc(l.level)}</span></div>
-        <p>${md(l.text)}</p>
-      </div>`
-    )
-    .join("");
 
 
   const title = `Kenny’s Market Brief · ${e.range}`;
@@ -277,12 +268,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
         </div>
       </section>
 
-      <section class="sec-stories" aria-labelledby="stories-h">
-        <div class="section-head">
-          <h2 id="stories-h" class="section-title">Stories to watch</h2>
-        </div>
-        <ol class="stories">${stories}</ol>
-      </section>
     </div>
 
     <aside class="col-side">
@@ -294,15 +279,15 @@ export function renderPage(brief, { now = new Date() } = {}) {
         ${renderMood(brief.mood)}
       </section>
 
-      <section class="sec-levels" aria-labelledby="levels-h">
-        <div class="section-head">
-          <h2 id="levels-h" class="section-title">Levels to watch</h2>
-          ${brief.levels.note ? `<span class="section-meta">${esc(brief.levels.note)}</span>` : ""}
-        </div>
-        <div class="levels">${levels}</div>
-      </section>
     </aside>
   </div>
+
+  <section class="sec-stories" aria-labelledby="stories-h">
+    <div class="section-head">
+      <h2 id="stories-h" class="section-title">Stories to watch</h2>
+    </div>
+    <ol class="stories">${stories}</ol>
+  </section>
 </main>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>

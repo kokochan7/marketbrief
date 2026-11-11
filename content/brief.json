@@ -252,37 +252,6 @@
       "body": "Trump said further strikes on Iran aren't needed for now, after appeals from Qatar and others, though the US naval blockade stays. Brent settled at $92.57 Monday and traded near $90.50 Tuesday; WTI settled at $86.85 Monday. Lower energy prices are what the inflation picture needs."
     }
   ],
-  "levels": {
-    "items": [
-      {
-        "symbol": "NQ",
-        "level": "28,700",
-        "text": "A break above could see continuation; a rejection puts QQQ 675–660 in play.",
-        "owner": "kenny"
-      },
-      {
-        "symbol": "GOOGL",
-        "level": "275 – 250",
-        "text": "Key area to eye for long-term hold buys.",
-        "owner": "kenny"
-      },
-      {
-        "symbol": "NVDA",
-        "level": "$164",
-        "text": "Key pivot after the Huang-probe selloff; a break targets about $143. Resistance $181–182, then $192–194."
-      },
-      {
-        "symbol": "AMAT",
-        "level": "$317 / $411",
-        "text": "Reports Thu after the close; options imply ±8.8%. Channel support at $317, first resistance $410.79, then $473."
-      },
-      {
-        "symbol": "CSCO",
-        "level": "$91.74 / $101.60",
-        "text": "Reports Thu after the close; options imply about ±7.9%. Support $91.74 then $84; $101.60 is now resistance."
-      }
-    ]
-  },
   "sources": [
     {
       "label": "BLS · CPI, October 2026",
@@ -351,26 +320,6 @@
     {
       "label": "Polymarket · Jensen Huang resignation or removal",
       "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
-    },
-    {
-      "label": "TradingKey · NVDA levels, 10 Nov",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299104-nvidia-stock-forecast-hits-recent-low-jensen-huang-investigation-succession-risk-tradingkey"
-    },
-    {
-      "label": "TradingKey · AMAT levels, 10 Nov",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262297744-applied-materials-stock-bounces-11-percent-into-earnings-410-hurdle-november-10-2026-tradingkey"
-    },
-    {
-      "label": "TipRanks · AMAT implied move",
-      "url": "https://www.tipranks.com/news/applied-materials-stock-amat-heres-why-options-traders-expect-a-major-post-earnings-reaction"
-    },
-    {
-      "label": "TradingKey · CSCO levels, 9 Nov",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262295974-cisco-ai-networking-profit-margins-earnings-tradingkey"
-    },
-    {
-      "label": "Investing.com · CSCO implied move (Bloomberg options data)",
-      "url": "https://www.investing.com/news/stock-market-news/cisco-systems-options-suggest-79-stock-move-on-earnings-93CH-5005505"
     }
   ],
   "oddsAsOf": "Tue 10/11"
