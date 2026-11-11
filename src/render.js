@@ -64,21 +64,6 @@ function etDateKey(d = new Date()) {
   }).format(d);
 }
 
-function formatUpdated(iso) {
-  const d = new Date(iso);
-  if (isNaN(d)) return "";
-  const s = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "America/New_York",
-    weekday: "short",
-    day: "numeric",
-    month: "short",
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  }).format(d);
-  return `${s} ET`;
-}
-
 function fgColorPos(score) {
   const v = Math.max(0, Math.min(100, Number(score) || 0));
   return v.toFixed(1);
@@ -238,7 +223,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
     <h1>Kenny&rsquo;s Market Brief</h1>
     <div class="masthead-right">
       <div class="range">${esc(e.range)} <span class="kicker">${esc(kicker)}</span></div>
-      <div class="updated">Updated ${esc(formatUpdated(e.updated))} · data as of ${esc(e.dataAsOf)}</div>
     </div>
   </header>
 

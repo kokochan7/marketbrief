@@ -2,20 +2,20 @@
   "edition": {
     "weekStart": "2026-11-09",
     "weekEnd": "2026-11-13",
-    "range": "9 – 13 November 2026",
+    "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-11T02:10:00Z",
-    "dataAsOf": "Tue 10/11 close"
+    "updated": "2026-11-11T03:07:00Z",
+    "dataAsOf": "Tue 11/10 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Thu 12/11 · Cisco & AMAT, then PPI Friday",
+    "title": "Thu 11/12 · Cisco & AMAT, then PPI Friday",
     "body": "Tuesday's hotter October CPI (core +0.3% m/m vs 0.2% expected) pushed the 10-year back to about 5% and has markets pricing a December hike as the base case. Cisco and Applied Materials report after Thursday's close, the week's big AI-infrastructure test after Monday's 2.4% relief rally faded, and October PPI lands Friday at 8:30a."
   },
   "days": [
     {
       "date": "2026-11-09",
-      "label": "Mon 9/11",
+      "label": "Mon 11/9",
       "tag": "Relief rally",
       "tone": "green",
       "macro": [
@@ -25,7 +25,7 @@
           "text": "Wholesale inventories (Sep)"
         }
       ],
-      "result": "S&P +2.35%, best day since 8 Apr · Nasdaq +2.74% · Russell +3.17% · Inventories +0.7% vs 0.6% est",
+      "result": "S&P +2.35%, best day since Apr 8 · Nasdaq +2.74% · Russell +3.17% · Inventories +0.7% vs 0.6% est",
       "bmo": [
         "KKR",
         "FERG",
@@ -45,7 +45,7 @@
     },
     {
       "date": "2026-11-10",
-      "label": "Tue 10/11",
+      "label": "Tue 11/10",
       "tag": "Hot CPI",
       "tone": "red",
       "macro": [
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-11-12",
-      "label": "Thu 12/11",
+      "label": "Thu 11/12",
       "tag": "Cisco + AMAT",
       "tone": "orange",
       "macro": [
@@ -151,7 +151,7 @@
     },
     {
       "date": "2026-11-13",
-      "label": "Fri 13/11",
+      "label": "Fri 11/13",
       "tag": "PPI",
       "tone": "red",
       "macro": [
@@ -176,7 +176,7 @@
     "fearGreed": {
       "score": 31.69,
       "label": "Fear",
-      "asOf": "Mon 9/11 close",
+      "asOf": "Mon 11/9 close",
       "weekAgo": 23.54,
       "monthAgo": 43.51,
       "yearAgo": 29.94
@@ -208,14 +208,14 @@
       "odds": [
         {
           "source": "kalshi",
-          "label": "Fed hikes 25bp on 9 Dec",
+          "label": "Fed hikes 25bp on Dec 9",
           "prob": 88,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
           "source": "polymarket",
-          "label": "Fed hikes 25bp on 9 Dec",
+          "label": "Fed hikes 25bp on Dec 9",
           "prob": 86.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
@@ -228,7 +228,7 @@
       "odds": [
         {
           "source": "polymarket",
-          "label": "Huang out as CEO by 31 Dec",
+          "label": "Huang out as CEO by Dec 31",
           "prob": 13.5,
           "slug": "jensen-huang-announced-resignation-or-removal-by-december-31",
           "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
@@ -266,7 +266,7 @@
       "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
     },
     {
-      "label": "Federal Reserve · 28 Oct FOMC statement",
+      "label": "Federal Reserve · Oct 28 FOMC statement",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
     },
     {
@@ -286,15 +286,15 @@
       "url": "https://www.cnn.com/markets/fear-and-greed"
     },
     {
-      "label": "TheStreet · market wrap 10 Nov",
+      "label": "TheStreet · market wrap Nov 10",
       "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
     },
     {
-      "label": "Yahoo Finance · market wrap 9 Nov",
+      "label": "Yahoo Finance · market wrap Nov 9",
       "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-9-145714241.html"
     },
     {
-      "label": "Kitco · gold, oil and Fed odds 10 Nov",
+      "label": "Kitco · gold, oil and Fed odds Nov 10",
       "url": "https://www.kitco.com/news/article/2026-11-10/gold-silver-retreat-high-core-cpi-lifts-december-fed-hike-odds-kitco-am"
     },
     {
@@ -322,5 +322,5 @@
       "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
     }
   ],
-  "oddsAsOf": "Tue 10/11"
+  "oddsAsOf": "Tue 11/10"
 }

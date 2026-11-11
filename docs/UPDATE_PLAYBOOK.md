@@ -13,7 +13,7 @@ label it clearly rather than guess.
    safe havens). Prices themselves come from the live strip, so there is no price table to edit.
 3. Refresh `stories` so they reflect what's still ahead, and update `mainEvent` once its
    event has passed.
-4. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Wed 11/11 close").
+4. Set `edition.updated` (UTC ISO time) and `edition.dataAsOf` (e.g. "Thu 11/12 close").
 
 ## Weekly (Saturday or Sunday)
 
@@ -37,6 +37,6 @@ Drop meters whose market has resolved or no longer fits the story.
 - Prefer primary sources: BLS, BEA, Federal Reserve, US Treasury, company releases,
   exchange data. Use at least two sources for market closes.
 - Every figure needs an as-of label; every source used goes in `sources`.
-- Dates in labels are DD/MM (e.g. "Thu 12/11"). Times are ET.
+- Dates are Month/Day everywhere (e.g. "Thu 11/12", "Dec 9", "November 16 – 20, 2026"). Times are ET.
 - `**bold**` is the only markup. Validate the JSON (`node -e "JSON.parse(require('fs').readFileSync('content/brief.json'))"`)
   and run `npm test` before pushing to `main`.
