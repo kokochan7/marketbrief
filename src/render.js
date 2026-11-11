@@ -22,15 +22,15 @@ const tickers = (list) =>
     : '<span class="muted">—</span>';
 
 const ODDS_NAMES = { kalshi: "Kalshi", polymarket: "Polymarket" };
-const RING_R = 22;
+const RING_R = 15;
 const RING_C = 2 * Math.PI * RING_R;
 
 function ring(prob) {
   const p = Math.max(0, Math.min(100, Number(prob) || 0));
   const off = RING_C * (1 - p / 100);
-  return `<svg class="ring" viewBox="0 0 56 56" aria-hidden="true">
-      <circle class="ring-track" cx="28" cy="28" r="${RING_R}"></circle>
-      <circle class="ring-fill" cx="28" cy="28" r="${RING_R}" stroke-dasharray="${RING_C.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 28 28)"></circle>
+  return `<svg class="ring" viewBox="0 0 40 40" aria-hidden="true">
+      <circle class="ring-track" cx="20" cy="20" r="${RING_R}"></circle>
+      <circle class="ring-fill" cx="20" cy="20" r="${RING_R}" stroke-dasharray="${RING_C.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 20 20)"></circle>
     </svg>`;
 }
 
@@ -246,54 +246,55 @@ export function renderPage(brief, { now = new Date() } = {}) {
   <header class="masthead">
     <h1>Kenny&rsquo;s Market Brief</h1>
     <div class="masthead-right">
-      <div class="range">${esc(e.range)}</div>
-      <div class="kicker">${esc(kicker)}</div>
+      <div class="range">${esc(e.range)} <span class="kicker">${esc(kicker)}</span></div>
+      <div class="updated">Updated ${esc(formatUpdated(e.updated))} · data as of ${esc(e.dataAsOf)}</div>
     </div>
   </header>
-  <p class="updated">Brief updated ${esc(formatUpdated(e.updated))} · data as of ${esc(e.dataAsOf)}</p>
 
   ${renderLive()}
 
-  <section class="main-event">
-    <div class="eyebrow">${esc(brief.mainEvent.kicker)}</div>
-    <h2>${esc(brief.mainEvent.title)}</h2>
-    <p>${md(brief.mainEvent.body)}</p>
-  </section>
+  <div class="layout">
+    <div class="col-main">
+      <section class="main-event sec-event">
+        <div class="eyebrow">${esc(brief.mainEvent.kicker)}</div>
+        <h2>${esc(brief.mainEvent.title)}</h2>
+        <p>${md(brief.mainEvent.body)}</p>
+      </section>
 
-  <section aria-labelledby="week-h">
-    <div class="section-head">
-      <h2 id="week-h" class="section-title">The week, day by day</h2>
-      <span class="section-meta">Times ET</span>
+      <section class="sec-week" aria-labelledby="week-h">
+        <div class="section-head">
+          <h2 id="week-h" class="section-title">The week, day by day</h2>
+          <span class="section-meta">Times ET</span>
+        </div>
+        <div class="week" role="table">
+          <div class="week-head" role="row">
+            <div role="columnheader">Day</div>
+            <div role="columnheader">Macro</div>
+            <div role="columnheader">Before the open</div>
+            <div role="columnheader">After the close</div>
+          </div>
+          ${renderDays(brief.days, today)}
+        </div>
+      </section>
+
+      <section class="sec-stories" aria-labelledby="stories-h">
+        <div class="section-head">
+          <h2 id="stories-h" class="section-title">Stories to watch</h2>
+        </div>
+        <ol class="stories">${stories}</ol>
+      </section>
     </div>
-    <div class="week" role="table">
-      <div class="week-head" role="row">
-        <div role="columnheader">Day</div>
-        <div role="columnheader">Macro</div>
-        <div role="columnheader">Before the open</div>
-        <div role="columnheader">After the close</div>
-      </div>
-      ${renderDays(brief.days, today)}
-    </div>
-  </section>
 
-  <section aria-labelledby="mood-h">
-    <div class="section-head">
-      <h2 id="mood-h" class="section-title">Market mood</h2>
-      <span class="section-meta">${esc(brief.mood.asOf)}</span>
-    </div>
-    ${renderMood(brief.mood)}
-  </section>
+    <aside class="col-side">
+      <section class="sec-mood" aria-labelledby="mood-h">
+        <div class="section-head">
+          <h2 id="mood-h" class="section-title">Market mood</h2>
+          <span class="section-meta">${esc(brief.mood.asOf)}</span>
+        </div>
+        ${renderMood(brief.mood)}
+      </section>
 
-  <div class="split">
-    <section aria-labelledby="stories-h">
-      <div class="section-head">
-        <h2 id="stories-h" class="section-title">Stories to watch</h2>
-      </div>
-      <ol class="stories">${stories}</ol>
-    </section>
-
-    <aside class="side">
-      <section aria-labelledby="levels-h">
+      <section class="sec-levels" aria-labelledby="levels-h">
         <div class="section-head">
           <h2 id="levels-h" class="section-title">Levels to watch</h2>
           ${brief.levels.note ? `<span class="section-meta">${esc(brief.levels.note)}</span>` : ""}
@@ -302,7 +303,6 @@ export function renderPage(brief, { now = new Date() } = {}) {
       </section>
     </aside>
   </div>
-
 </main>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>

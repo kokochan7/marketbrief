@@ -1,6 +1,6 @@
 // Updates the Kalshi / Polymarket meters on stories from /api/odds.
 (function () {
-  const R = 22;
+  const R = 15;
   const C = 2 * Math.PI * R;
   const fmt = (p) => (p < 1 && p > 0 ? "<1%" : Math.round(p) + "%");
 

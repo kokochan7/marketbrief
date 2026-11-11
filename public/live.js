@@ -66,7 +66,7 @@
       $("#live").classList.add("is-down");
     } else {
       $("#live").classList.remove("is-down");
-      meta.textContent = `Latest quote ${etTime(newest)} · refreshes every minute`;
+      meta.textContent = `As of ${etTime(newest)} · live`;
     }
 
     const fg = data.fearGreed;
