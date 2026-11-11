@@ -7,13 +7,11 @@
     "updated": "2026-11-11T02:10:00Z",
     "dataAsOf": "Tue 10/11 close"
   },
-
   "mainEvent": {
     "kicker": "The main event",
     "title": "Thu 12/11 · Cisco & AMAT, then PPI Friday",
     "body": "Tuesday's hotter October CPI (core +0.3% m/m vs 0.2% expected) pushed the 10-year back to about 5% and has markets pricing a December hike as the base case. Cisco and Applied Materials report after Thursday's close, the week's big AI-infrastructure test after Monday's 2.4% relief rally faded, and October PPI lands Friday at 8:30a."
   },
-
   "days": [
     {
       "date": "2026-11-09",
@@ -21,11 +19,29 @@
       "tag": "Relief rally",
       "tone": "green",
       "macro": [
-        { "time": "10:00a", "level": "low", "text": "Wholesale inventories (Sep)" }
+        {
+          "time": "10:00a",
+          "level": "low",
+          "text": "Wholesale inventories (Sep)"
+        }
       ],
       "result": "S&P +2.35%, best day since 8 Apr · Nasdaq +2.74% · Russell +3.17% · Inventories +0.7% vs 0.6% est",
-      "bmo": ["KKR", "FERG", "NRG", "B", "RBA", "MNDY"],
-      "amc": ["TTWO", "RKLB", "ASTS", "HIMS", "OXY", "SKYD"]
+      "bmo": [
+        "KKR",
+        "FERG",
+        "NRG",
+        "B",
+        "RBA",
+        "MNDY"
+      ],
+      "amc": [
+        "TTWO",
+        "RKLB",
+        "ASTS",
+        "HIMS",
+        "OXY",
+        "SKYD"
+      ]
     },
     {
       "date": "2026-11-10",
@@ -33,12 +49,33 @@
       "tag": "Hot CPI",
       "tone": "red",
       "macro": [
-        { "time": "8:30a", "level": "high", "text": "CPI (Oct)" },
-        { "time": "1:00p", "level": "low", "text": "10-yr note auction ($39B)" }
+        {
+          "time": "8:30a",
+          "level": "high",
+          "text": "CPI (Oct)"
+        },
+        {
+          "time": "1:00p",
+          "level": "low",
+          "text": "10-yr note auction ($39B)"
+        }
       ],
       "result": "CPI +0.4% m/m vs 0.3% est · core +0.3% vs 0.2% · S&P −0.38% · Nasdaq −0.74% · 10Y ≈ 5%",
-      "bmo": ["TDG", "SE", "ONON", "VG", "WIX", "EMBJ"],
-      "amc": ["CRWV", "PBR", "SONO", "STUB", "FLY"]
+      "bmo": [
+        "TDG",
+        "SE",
+        "ONON",
+        "VG",
+        "WIX",
+        "EMBJ"
+      ],
+      "amc": [
+        "CRWV",
+        "PBR",
+        "SONO",
+        "STUB",
+        "FLY"
+      ]
     },
     {
       "date": "2026-11-11",
@@ -46,11 +83,28 @@
       "tag": "Veterans Day",
       "tone": "grey",
       "macro": [
-        { "time": "All day", "level": "low", "text": "Veterans Day: stocks open, bond market closed" },
-        { "time": "7:00a", "level": "low", "text": "MBA mortgage applications" }
+        {
+          "time": "All day",
+          "level": "low",
+          "text": "Veterans Day: stocks open, bond market closed"
+        },
+        {
+          "time": "7:00a",
+          "level": "low",
+          "text": "MBA mortgage applications"
+        }
       ],
-      "bmo": ["MOG.A", "INMD", "RUM"],
-      "amc": ["CTVA", "TTEK", "ENS", "CAE"]
+      "bmo": [
+        "MOG.A",
+        "INMD",
+        "RUM"
+      ],
+      "amc": [
+        "CTVA",
+        "TTEK",
+        "ENS",
+        "CAE"
+      ]
     },
     {
       "date": "2026-11-12",
@@ -58,13 +112,42 @@
       "tag": "Cisco + AMAT",
       "tone": "orange",
       "macro": [
-        { "time": "8:30a", "level": "medium", "text": "Jobless claims (est 195K, prior 189K)" },
-        { "time": "10:00a", "level": "low", "text": "Existing home sales (Oct)" },
-        { "time": "1:00p", "level": "low", "text": "30-yr bond auction ($22B)" },
-        { "time": "6:30p", "level": "medium", "text": "Fed's Williams speaks" }
+        {
+          "time": "8:30a",
+          "level": "medium",
+          "text": "Jobless claims (est 195K, prior 189K)"
+        },
+        {
+          "time": "10:00a",
+          "level": "low",
+          "text": "Existing home sales (Oct)"
+        },
+        {
+          "time": "1:00p",
+          "level": "low",
+          "text": "30-yr bond auction ($22B)"
+        },
+        {
+          "time": "6:30p",
+          "level": "medium",
+          "text": "Fed's Williams speaks"
+        }
       ],
-      "bmo": ["NBIS", "BN", "LUNR", "YETI", "SPB"],
-      "amc": ["CSCO", "AMAT", "CBRS", "GEMI", "FLO", "DLO"]
+      "bmo": [
+        "NBIS",
+        "BN",
+        "LUNR",
+        "YETI",
+        "SPB"
+      ],
+      "amc": [
+        "CSCO",
+        "AMAT",
+        "CBRS",
+        "GEMI",
+        "FLO",
+        "DLO"
+      ]
     },
     {
       "date": "2026-11-13",
@@ -72,15 +155,22 @@
       "tag": "PPI",
       "tone": "red",
       "macro": [
-        { "time": "8:30a", "level": "high", "text": "PPI (Oct), est +0.4% m/m" },
-        { "time": "10:50a", "level": "low", "text": "Fed's Bowman speaks" }
+        {
+          "time": "8:30a",
+          "level": "high",
+          "text": "PPI (Oct), est +0.4% m/m"
+        },
+        {
+          "time": "10:50a",
+          "level": "low",
+          "text": "Fed's Bowman speaks"
+        }
       ],
       "bmo": [],
       "amc": [],
       "note": "Japan's megabanks MUFG, SMFG and MFG report (time TBA)"
     }
   ],
-
   "mood": {
     "asOf": "Week to date",
     "fearGreed": {
@@ -111,15 +201,39 @@
       "text": "10Y 4.86% → 4.98% · gold ≈ −2.6% Tue to ~$4,030 after CPI"
     }
   },
-
   "stories": [
     {
       "title": "Hot CPI puts a December hike in play.",
-      "body": "October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print. No year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a quarter-point hike in December and said 50bp should be considered; Logan says two more hikes are needed. Kalshi has an 86% chance of +25bp on 9 Dec, and CME FedWatch about 89%."
+      "body": "October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print. No year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a quarter-point hike in December and said 50bp should be considered; Logan says two more hikes are needed. CME FedWatch put a December hike at about 89% after the report.",
+      "odds": [
+        {
+          "source": "kalshi",
+          "label": "Fed hikes 25bp on 9 Dec",
+          "prob": 88,
+          "ticker": "KXFEDDECISION-26DEC-H25",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
+        },
+        {
+          "source": "polymarket",
+          "label": "Fed hikes 25bp on 9 Dec",
+          "prob": 86.5,
+          "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
+          "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
+        }
+      ]
     },
     {
       "title": "Nvidia under a cloud.",
-      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy. The board says it has no reason to believe any secrets were compromised. It dragged all three indexes on Tuesday."
+      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy. The board says it has no reason to believe any secrets were compromised. It dragged all three indexes on Tuesday.",
+      "odds": [
+        {
+          "source": "polymarket",
+          "label": "Huang out as CEO by 31 Dec",
+          "prob": 13.5,
+          "slug": "jensen-huang-announced-resignation-or-removal-by-december-31",
+          "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
+        }
+      ]
     },
     {
       "title": "CoreWeave beats and raises.",
@@ -138,21 +252,49 @@
       "body": "Trump said further strikes on Iran aren't needed for now, after appeals from Qatar and others, though the US naval blockade stays. Brent settled at $92.57 Monday and traded near $90.50 Tuesday; WTI settled at $86.85 Monday. Lower energy prices are what the inflation picture needs."
     }
   ],
-
   "marketData": {
     "title": "Market data",
     "asOf": "Tue close · week to date",
     "items": [
-      { "label": "S&P 500", "value": "7,520.93", "change": "+1.95% wk", "dir": "up" },
-      { "label": "Nasdaq", "value": "25,065.88", "change": "+1.98% wk", "dir": "up" },
-      { "label": "Dow", "value": "52,231.89", "change": "+1.84% wk", "dir": "up" },
-      { "label": "US 10Y", "value": "4.98%", "change": "+12bp wk", "dir": "up" },
-      { "label": "Brent", "value": "$92.57", "change": "Mon settle", "dir": "flat" },
-      { "label": "BTC", "value": "$75,267", "change": "−0.7% wk", "dir": "down" }
+      {
+        "label": "S&P 500",
+        "value": "7,520.93",
+        "change": "+1.95% wk",
+        "dir": "up"
+      },
+      {
+        "label": "Nasdaq",
+        "value": "25,065.88",
+        "change": "+1.98% wk",
+        "dir": "up"
+      },
+      {
+        "label": "Dow",
+        "value": "52,231.89",
+        "change": "+1.84% wk",
+        "dir": "up"
+      },
+      {
+        "label": "US 10Y",
+        "value": "4.98%",
+        "change": "+12bp wk",
+        "dir": "up"
+      },
+      {
+        "label": "Brent",
+        "value": "$92.57",
+        "change": "Mon settle",
+        "dir": "flat"
+      },
+      {
+        "label": "BTC",
+        "value": "$75,267",
+        "change": "−0.7% wk",
+        "dir": "down"
+      }
     ],
     "note": "Tue 10/11 closes vs Fri 6/11 closes (S&P 7,376.86, Nasdaq 24,579.42, Dow 51,285.73). 10Y is Cboe ^TNX (4.859 Fri). Brent is the Jan contract, Monday settle; Tuesday's settle not yet confirmed. BTC is the CoinGecko daily close for Mon 9/11 vs Fri 6/11 ($75,775). Live prices are at the top of the page."
   },
-
   "levels": {
     "note": "Kenny's levels",
     "items": [
@@ -168,22 +310,75 @@
       }
     ]
   },
-
   "sources": [
-    { "label": "BLS · CPI, October 2026", "url": "https://www.bls.gov/news.release/cpi.nr0.htm" },
-    { "label": "BLS · Employment Situation, October 2026", "url": "https://www.bls.gov/news.release/empsit.nr0.htm" },
-    { "label": "BLS · November release schedule", "url": "https://www.bls.gov/schedule/2026/11_sched.htm" },
-    { "label": "Federal Reserve · 28 Oct FOMC statement", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm" },
-    { "label": "Federal Reserve · FOMC calendar", "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
-    { "label": "US Treasury · daily par yield curve", "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611" },
-    { "label": "Kalshi · December Fed decision", "url": "https://kalshi.com/markets/kxfeddecision" },
-    { "label": "CNN · Fear & Greed Index", "url": "https://www.cnn.com/markets/fear-and-greed" },
-    { "label": "TheStreet · market wrap 10 Nov", "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026" },
-    { "label": "Yahoo Finance · market wrap 9 Nov", "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-9-145714241.html" },
-    { "label": "Kitco · gold, oil and Fed odds 10 Nov", "url": "https://www.kitco.com/news/article/2026-11-10/gold-silver-retreat-high-core-cpi-lifts-december-fed-hike-odds-kitco-am" },
-    { "label": "Kiplinger · earnings calendar", "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks" },
-    { "label": "StockTitan · earnings and results", "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-9-2026" },
-    { "label": "Finviz · economic calendar", "url": "https://finviz.com/calendar/economic?dateFrom=2026-11-09" },
-    { "label": "CoinGecko · Bitcoin daily closes", "url": "https://www.coingecko.com/en/coins/bitcoin/historical_data" }
-  ]
+    {
+      "label": "BLS · CPI, October 2026",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
+    },
+    {
+      "label": "BLS · Employment Situation, October 2026",
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
+    },
+    {
+      "label": "BLS · November release schedule",
+      "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
+    },
+    {
+      "label": "Federal Reserve · 28 Oct FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
+    },
+    {
+      "label": "Federal Reserve · FOMC calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    {
+      "label": "US Treasury · daily par yield curve",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
+    },
+    {
+      "label": "Kalshi · December Fed decision",
+      "url": "https://kalshi.com/markets/kxfeddecision"
+    },
+    {
+      "label": "CNN · Fear & Greed Index",
+      "url": "https://www.cnn.com/markets/fear-and-greed"
+    },
+    {
+      "label": "TheStreet · market wrap 10 Nov",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+    },
+    {
+      "label": "Yahoo Finance · market wrap 9 Nov",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-nov-9-145714241.html"
+    },
+    {
+      "label": "Kitco · gold, oil and Fed odds 10 Nov",
+      "url": "https://www.kitco.com/news/article/2026-11-10/gold-silver-retreat-high-core-cpi-lifts-december-fed-hike-odds-kitco-am"
+    },
+    {
+      "label": "Kiplinger · earnings calendar",
+      "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
+    },
+    {
+      "label": "StockTitan · earnings and results",
+      "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-9-2026"
+    },
+    {
+      "label": "Finviz · economic calendar",
+      "url": "https://finviz.com/calendar/economic?dateFrom=2026-11-09"
+    },
+    {
+      "label": "CoinGecko · Bitcoin daily closes",
+      "url": "https://www.coingecko.com/en/coins/bitcoin/historical_data"
+    },
+    {
+      "label": "Polymarket · Fed decision in December",
+      "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
+    },
+    {
+      "label": "Polymarket · Jensen Huang resignation or removal",
+      "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
+    }
+  ],
+  "oddsAsOf": "Tue 10/11"
 }

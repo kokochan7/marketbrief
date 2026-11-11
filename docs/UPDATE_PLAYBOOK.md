@@ -23,6 +23,16 @@ after-close earnings, a fresh `mainEvent`, six `stories`, and last week's closin
 `mood` and `marketData`. Keep `levels` exactly as Kenny last set them unless he says
 otherwise.
 
+## Prediction-market meters
+
+A story can carry an `odds` array of Kalshi / Polymarket meters. Only add one when a
+market matches the story directly. Each entry needs `source` (`kalshi` or
+`polymarket`), a short `label`, a snapshot `prob` (0-100), a `url` to the market page,
+and the identifier the Worker uses for live updates: Kalshi market `ticker` (e.g.
+`KXFEDDECISION-26DEC-H25`, from `api.elections.kalshi.com/trade-api/v2/events/<event>?with_nested_markets=true`)
+or Polymarket market `slug` (from `gamma-api.polymarket.com/public-search?q=...`).
+Drop meters whose market has resolved or no longer fits the story.
+
 ## Sourcing rules
 
 - Prefer primary sources: BLS, BEA, Federal Reserve, US Treasury, company releases,

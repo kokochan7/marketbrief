@@ -20,6 +20,39 @@ const tickers = (list) =>
         .join(", ")
     : '<span class="muted">—</span>';
 
+const ODDS_NAMES = { kalshi: "Kalshi", polymarket: "Polymarket" };
+const RING_R = 22;
+const RING_C = 2 * Math.PI * RING_R;
+
+function ring(prob) {
+  const p = Math.max(0, Math.min(100, Number(prob) || 0));
+  const off = RING_C * (1 - p / 100);
+  return `<svg class="ring" viewBox="0 0 56 56" aria-hidden="true">
+      <circle class="ring-track" cx="28" cy="28" r="${RING_R}"></circle>
+      <circle class="ring-fill" cx="28" cy="28" r="${RING_R}" stroke-dasharray="${RING_C.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}" transform="rotate(-90 28 28)"></circle>
+    </svg>`;
+}
+
+function fmtProb(p) {
+  const v = Number(p);
+  if (!isFinite(v)) return "—";
+  return v < 1 && v > 0 ? "<1%" : `${Math.round(v)}%`;
+}
+
+function renderOdds(odds, storyIdx) {
+  if (!odds || !odds.length) return "";
+  const items = odds
+    .map(
+      (o, j) => `
+      <a class="odds odds-${esc(o.source)}" href="${esc(o.url)}" target="_blank" rel="noopener" data-odds="${storyIdx}-${j}" title="${esc(ODDS_NAMES[o.source] || o.source)}: ${esc(o.label)}">
+        <span class="ring-wrap">${ring(o.prob)}<span class="ring-num">${fmtProb(o.prob)}</span></span>
+        <span class="odds-text"><span class="odds-src">${esc(ODDS_NAMES[o.source] || o.source)}</span><span class="odds-label">${esc(o.label)}</span></span>
+      </a>`
+    )
+    .join("");
+  return `<div class="odds-row">${items}</div>`;
+}
+
 function etDateKey(d = new Date()) {
   // YYYY-MM-DD in US Eastern time
   return new Intl.DateTimeFormat("en-CA", {
@@ -182,7 +215,10 @@ export function renderPage(brief, { now = new Date() } = {}) {
       (s, i) => `
       <li class="story">
         <span class="story-num">${i + 1}</span>
-        <p><strong>${esc(s.title)}</strong> ${md(s.body)}</p>
+        <div>
+          <p><strong>${esc(s.title)}</strong> ${md(s.body)}</p>
+          ${renderOdds(s.odds, i)}
+        </div>
       </li>`
     )
     .join("");
@@ -303,6 +339,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
 </main>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>
+<script src="/odds.js?v=${esc(e.updated)}" defer></script>
 </body>
 </html>`;
 }

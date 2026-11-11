@@ -118,6 +118,87 @@ function json(data, status = 200, maxAge = 60) {
   });
 }
 
+// ---- Prediction-market odds for stories (Kalshi + Polymarket) ----
+
+const ODDS_TTL = 120;
+
+const num = (v) => {
+  const n = typeof v === "string" ? parseFloat(v) : v;
+  return typeof n === "number" && isFinite(n) ? n : null;
+};
+
+// Probability (0-100) the way Polymarket displays it: bid/ask midpoint when the
+// spread is tight, otherwise the last trade.
+function displayProb(bid, ask, last) {
+  if (bid !== null && ask !== null && ask >= bid && ask - bid <= 0.1 && ask > 0) return ((bid + ask) / 2) * 100;
+  if (last !== null) return last * 100;
+  return null;
+}
+
+async function kalshiProb(ticker) {
+  const r = await fetch(`https://api.elections.kalshi.com/trade-api/v2/markets/${encodeURIComponent(ticker)}`, {
+    headers: { Accept: "application/json", "User-Agent": UA },
+  });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const m = (await r.json()).market;
+  if (!m) throw new Error("no market");
+  const cents = (v) => (num(v) === null ? null : num(v) / 100);
+  const bid = num(m.yes_bid_dollars) ?? cents(m.yes_bid);
+  const ask = num(m.yes_ask_dollars) ?? cents(m.yes_ask);
+  const last = num(m.last_price_dollars) ?? cents(m.last_price);
+  // Kalshi shows the last traded price as the "chance"; fall back to the midpoint.
+  if (last !== null && last > 0) return last * 100;
+  return displayProb(bid, ask, null);
+}
+
+async function polymarketProb(slug) {
+  const r = await fetch(`https://gamma-api.polymarket.com/markets?slug=${encodeURIComponent(slug)}`, {
+    headers: { Accept: "application/json", "User-Agent": UA },
+  });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const arr = await r.json();
+  const m = Array.isArray(arr) ? arr[0] : null;
+  if (!m) throw new Error("no market");
+  let yes = null;
+  try {
+    const outcomes = JSON.parse(m.outcomes || "[]");
+    const prices = JSON.parse(m.outcomePrices || "[]");
+    const i = Math.max(0, outcomes.indexOf("Yes"));
+    yes = num(prices[i]);
+  } catch {}
+  return displayProb(num(m.bestBid), num(m.bestAsk), num(m.lastTradePrice) ?? yes);
+}
+
+async function oddsHandler(request, ctx) {
+  const cache = caches.default;
+  const key = new Request(new URL("/api/odds", request.url).toString());
+  const hit = await cache.match(key);
+  if (hit) return hit;
+  const jobs = [];
+  (brief.stories || []).forEach((s, i) =>
+    (s.odds || []).forEach((o, j) => {
+      const id = `${i}-${j}`;
+      const p =
+        o.source === "kalshi" && o.ticker
+          ? kalshiProb(o.ticker)
+          : o.source === "polymarket" && o.slug
+          ? polymarketProb(o.slug)
+          : Promise.reject(new Error("unknown source"));
+      jobs.push(
+        p.then(
+          (prob) => [id, prob === null ? { error: "no price" } : { prob }],
+          (e) => [id, { error: String(e?.message || e) }]
+        )
+      );
+    })
+  );
+  const data = { generated: Date.now(), odds: Object.fromEntries(await Promise.all(jobs)) };
+  const ok = Object.values(data.odds).some((o) => !o.error);
+  const resp = json(data, 200, ok ? ODDS_TTL : 10);
+  ctx.waitUntil(cache.put(key, resp.clone()));
+  return resp;
+}
+
 async function coingeckoBtc() {
   const r = await fetch(
     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true",
@@ -210,6 +291,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
+    if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
     if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
     if (url.pathname === "/api/brief") {
       return new Response(JSON.stringify(brief), {
