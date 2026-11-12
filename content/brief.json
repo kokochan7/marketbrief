@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-13",
     "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-11T22:50:00Z",
-    "dataAsOf": "Wed 11/11 close"
+    "updated": "2026-11-12T13:53:00Z",
+    "dataAsOf": "Thu 11/12 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Thu 11/12 · Cisco & AMAT, then PPI Friday",
-    "body": "Wednesday's AI rebound (S&P +1.3%, Nasdaq +1.6%, CoreWeave +24.7%) followed Tuesday's hot October CPI, which left a December hike priced at about 85%. Cisco and Applied Materials report after Thursday's close, the next test of whether the AI trade can hold, with Nebius before the open and Cerebras after. October PPI lands Friday at 8:30a."
+    "title": "Thu 11/12 · Huang out at Nvidia, then Cisco & AMAT",
+    "body": "Nvidia said at 8:48a that **Jensen Huang has resigned** as CEO and from the board, effective immediately, after reports the board met late Wednesday to consider removing him. CFO Colette Kress is interim CEO and earnings stay on Tue 11/17. Cisco and Applied Materials report after Thursday's close, with Cerebras, the next test for the AI trade. October PPI lands Friday at 8:30a."
   },
   "days": [
     {
@@ -110,13 +110,13 @@
     {
       "date": "2026-11-12",
       "label": "Thu 11/12",
-      "tag": "Cisco + AMAT",
+      "tag": "Huang resigns",
       "tone": "orange",
       "macro": [
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Jobless claims (est 195K, prior 189K)"
+          "text": "Jobless claims 200K vs 195K est, prior 191K (rev. from 189K)"
         },
         {
           "time": "10:00a",
@@ -148,7 +148,8 @@
         "GEMI",
         "FLO",
         "DLO"
-      ]
+      ],
+      "premarket": "8:00a: S&P futures −0.4%, Nasdaq 100 futures −0.9%, Dow flat · 10Y ≈ 5.00% · WTI −0.8% near $85.9 · gold −1.4%, below $4,000 · Europe at records. NVDA −7.6% pre-market, then at 8:48a Nvidia said **Huang resigned**; Colette Kress is interim CEO."
     },
     {
       "date": "2026-11-13",
@@ -204,12 +205,12 @@
   },
   "stories": [
     {
-      "title": "CoreWeave reignites the AI trade.",
-      "body": "CoreWeave jumped 24.7% Wednesday, its biggest gain in more than three months, after Q3 revenue of $3.66B (+168%) beat its own guide and it raised 2026 guidance to $13.0–13.3B. Chips led: semis +5.6%, Sandisk +14%, Micron and Dell +12%, AMD +7%. Apple closed at a record near $356 (about $5.2 trillion). Microsoft, Meta and Amazon fell about 2%, so the rally was narrow at the top."
+      "title": "Jensen Huang resigns at Nvidia.",
+      "body": "Nvidia said at 8:48a Thursday that Jensen Huang resigned as president, CEO and director, effective immediately. CFO Colette Kress is interim CEO while staying CFO, former Synopsys CEO Harvey Jones becomes the board's first chair, and the search will weigh internal and external candidates. It follows WSJ and FT reports that the board met late Wednesday to consider removing him, after the NYT reported a second affair. NVDA was down 7.6% at $160.50 pre-market before the release (Wed close $173.73), while AMD (+2.3%) and Broadcom (+1.4%) rose. Earnings stay on Tue 11/17 after the close."
     },
     {
       "title": "December hike is the base case.",
-      "body": "Tuesday's October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print; no year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a December hike and floated 50bp; Logan wants two more. Prediction markets price a 25bp hike at about 85% and 50bp at about 10%. Next: jobless claims Thursday (195K expected), October PPI Friday (+0.4% m/m expected) and a heavy Fed speaker slate.",
+      "body": "Tuesday's October CPI rose 0.4% (0.3% expected) and core 0.3% (0.2% expected), a third straight 0.3% core print; no year-on-year figure was published because October 2025 data was never collected during the shutdown. Waller backs a December hike and floated 50bp; Logan wants two more. Prediction markets price a 25bp hike at about 85% and 50bp at about 10%. Jobless claims rose to 200K Thursday (195K expected), still low. Next: October PPI Friday (+0.4% m/m expected) and a heavy Fed speaker slate.",
       "odds": [
         {
           "source": "kalshi",
@@ -235,17 +236,12 @@
       ]
     },
     {
-      "title": "Nvidia under a cloud.",
-      "body": "NVDA fell 4.3% Monday and 5.5% Tuesday after its board opened an independent investigation into reports involving CEO Jensen Huang and an alleged Chinese spy; the board says it has no reason to believe any secrets were compromised. It bounced 2.9% to $173.73 Wednesday even as Baird cut it to Neutral and Morgan Stanley dropped it as a Top Pick. Earnings are Tue Nov 17.",
-      "odds": [
-        {
-          "source": "polymarket",
-          "label": "Huang out as CEO by Dec 31",
-          "prob": 16.5,
-          "slug": "jensen-huang-announced-resignation-or-removal-by-december-31",
-          "url": "https://polymarket.com/event/jensen-huang-announced-resignation-or-removal-by-december-31"
-        }
-      ]
+      "title": "Nebius beats, but the AI trade cools.",
+      "body": "Nebius reported Q3 revenue of $980.8M (+571%), above the roughly $907M consensus, and a loss of $0.13 a share, narrower than expected, yet the stock fell 9–12% pre-market. CoreWeave, which jumped 24.7% Wednesday on its beat and raised 2026 guidance, was down about 7% pre-market, and Intel, Marvell and Micron fell 2.7–3.5%. Wednesday's rally had been led by semis (+5.6%)."
+    },
+    {
+      "title": "Cisco and Applied Materials, Thursday after the close.",
+      "body": "The next AI-infrastructure test, landing the day Nvidia's CEO resigned, with Cerebras also reporting after the close. Polymarket gives Applied Materials about a 71% chance of beating its $4.13 EPS estimate, down from 88% Wednesday. Morgan Stanley cut Cisco to Equal Weight going in."
     },
     {
       "title": "Anthropic IPO could trade as soon as Nov 19.",
@@ -261,10 +257,6 @@
       ]
     },
     {
-      "title": "Cisco and Applied Materials, Thursday after the close.",
-      "body": "The next AI-infrastructure test after Wednesday's rebound, with Nebius before the open and Cerebras after the close the same day. Polymarket gives Applied Materials about an 88% chance of beating its $4.13 EPS estimate. Morgan Stanley cut Cisco to Equal Weight going in."
-    },
-    {
       "title": "Oil: no more strikes, but Hormuz still bites.",
       "body": "Trump said further strikes on Iran aren't needed for now, but the US naval blockade stays and Iran says no talks are under way. Reports of tankers hitting mines in the Strait of Hormuz lifted crude early Wednesday; WTI settled up 0.4% at $86.42 and Brent was flat near $92.65, after Tuesday's 3.7% drop. Lower energy prices are what the inflation picture needs."
     }
@@ -275,7 +267,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $4.13",
-        "prob": 88,
+        "prob": 71,
         "slug": "amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13",
         "url": "https://polymarket.com/event/amat-quarterly-earnings-nongaap-eps-11-12-2026-4pt13"
       }
@@ -285,7 +277,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats GAAP EPS est. −$0.14",
-        "prob": 11,
+        "prob": 10.5,
         "slug": "cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14",
         "url": "https://polymarket.com/event/cbrs-quarterly-earnings-gaap-eps-11-12-2026-neg0pt14"
       }
@@ -294,16 +286,8 @@
       {
         "source": "polymarket",
         "kind": "mention",
-        "label": "Says “AI” 25+ times on the call",
-        "prob": 93,
-        "slug": "will-cisco-say-ai-25-during-earnings-call-november-12",
-        "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
-      },
-      {
-        "source": "polymarket",
-        "kind": "mention",
         "label": "Says “Quantum” on the call",
-        "prob": 63.5,
+        "prob": 63,
         "slug": "will-cisco-say-quantum-during-earnings-call-november-12",
         "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
       },
@@ -311,8 +295,16 @@
         "source": "polymarket",
         "kind": "mention",
         "label": "Says “Backlog” on the call",
-        "prob": 49,
+        "prob": 47.5,
         "slug": "will-cisco-say-backlog-during-earnings-call-november-12",
+        "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “Splunk” on the call",
+        "prob": 96,
+        "slug": "will-cisco-say-splunk-during-earnings-call-november-12",
         "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
       }
     ]
@@ -445,7 +437,59 @@
     {
       "label": "Tetra Tech · Q4 and FY2026 results",
       "url": "https://www.businesswire.com/news/home/20261111493808/en/Tetra-Tech-Reports-Strong-Fourth-Quarter-and-Fiscal-Year-2026-Results"
+    },
+    {
+      "label": "NVIDIA · Announces CEO transition (Nov 12, 8:48a)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/12/3401635/0/en/nvidia-announces-ceo-transition.html"
+    },
+    {
+      "label": "Fox Business · Nvidia pre-market Nov 12",
+      "url": "https://www.foxbusiness.com/markets/nvidia-shares-plunge-more-7-premarket-trading-ceo-uncertainty-rattles-ai-stocks"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · futures Nov 12",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-fall-nvidia-turmoil-093910045.html"
+    },
+    {
+      "label": "Yahoo Finance · live blog Nov 12",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-12-sp-500-nasdaq-dow-nvidia-invest-110027430.html"
+    },
+    {
+      "label": "Investing.com via Yahoo · futures and Nvidia Nov 12",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/tsx-futures-subdued-amid-reports-121009808.html"
+    },
+    {
+      "label": "Seeking Alpha · jobless claims Nov 12",
+      "url": "https://seekingalpha.com/news/4671399-initial-jobless-claims-rise-more-than-expected-in-past-week-continuing-claims-stay-low"
+    },
+    {
+      "label": "US Dept. of Labor · weekly claims",
+      "url": "https://www.dol.gov/ui/data.pdf"
+    },
+    {
+      "label": "Nebius · Q3 2026 results",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-reports-third-quarter-2026-121100964.html"
+    },
+    {
+      "label": "FinanceFeeds · Nebius estimates and pre-market",
+      "url": "https://financefeeds.com/nebius-nbis-earnings-bullish-155-bearish-120/"
+    },
+    {
+      "label": "Brookfield Corporation · Q3 2026 results",
+      "url": "https://bn.brookfield.com/press-releases/brookfield-corporation-reports-16-increase-earnings"
+    },
+    {
+      "label": "Intuitive Machines · Q3 2026 results",
+      "url": "https://www.stocktitan.net/news/LUNR/intuitive-machines-reports-third-quarter-2026-financial-results-01864qyu9eav.html"
+    },
+    {
+      "label": "YETI · Q3 2026 results (SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001670592/000167059226000043/yeti-20261112xex991pressre.htm"
+    },
+    {
+      "label": "Polymarket · Cisco earnings-call mentions",
+      "url": "https://polymarket.com/event/what-will-cisco-say-during-their-next-earnings-call-november-12"
     }
   ],
-  "oddsAsOf": "Wed 11/11 close"
+  "oddsAsOf": "Thu 11/12 pre-market"
 }
