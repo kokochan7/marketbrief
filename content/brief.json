@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-13",
     "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-13T15:25:00Z",
-    "dataAsOf": "Fri 11/13 pre-market"
+    "updated": "2026-11-13T23:30:00Z",
+    "dataAsOf": "Fri 11/13 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Fri 11/13 · October PPI after the Nvidia shock",
-    "body": "October PPI rose **0.3%** m/m, cooler than the 0.4% expected, after a 1.4% jump in September (revised from 1.3%); it is up 6.5% from a year ago, the most since November 2022. Core (ex food and energy) rose 0.3% as expected. Futures firmed after the print, with the 10-year near **5.13%**. A December hike was priced at about 89% before the data, and Bowman speaks at 10:50a. Nvidia, now run by interim CEO Colette Kress, reports Tue 11/17 after the close."
+    "title": "Fri 11/13 · Cooler PPI, but chips slide again",
+    "body": "October PPI rose **0.3%** m/m, cooler than the 0.4% expected (core 0.3% as expected), but it is up 6.5% from a year ago and markets still price a December hike at about **89%**. Stocks slipped as HSBC downgraded Nvidia and chips sold off: S&P −0.4%, Nasdaq −0.9%, Dow +0.1%. The S&P still gained **2.5%** for the week, its first weekly gain since early October. The 10-year ended near **5.15%**. Next week: Nvidia reports Tue 11/17 after the close, its first quarter without Jensen Huang, and Anthropic aims to start trading Thu 11/19."
   },
   "days": [
     {
@@ -154,7 +154,7 @@
     {
       "date": "2026-11-13",
       "label": "Fri 11/13",
-      "tag": "PPI",
+      "tag": "Chips slide",
       "tone": "red",
       "macro": [
         {
@@ -171,68 +171,68 @@
       "bmo": [],
       "amc": [],
       "note": "Japan's megabanks MUFG, SMFG and MFG report (time TBA)",
-      "premarket": "8:39a: S&P futures +0.37%, Nasdaq 100 futures +0.19% after a cooler PPI · 10Y ≈ 5.13% · WTI ≈ $88, slightly lower · Nikkei +0.5%, Hang Seng −1.6%, KOSPI −1.0% · NVDA ≈ +2%, Modine up 25%+ on Samsung talks, MSFT lower on an Outlook outage"
+      "result": "S&P −0.40% · Nasdaq −0.91% · Russell −0.31% · Dow +0.10% · week: S&P +2.5%, Nasdaq +2.3%, Dow +2.1%, Russell +1.3% · PPI cooler than est · NVDA −2.0% on HSBC downgrade, AMD ≈ −9% · 10Y ≈ 5.15% · FAA nationwide ground stop at 3:54p"
     }
   ],
   "mood": {
-    "asOf": "Thu 11/12 close",
+    "asOf": "Fri 11/13 close",
     "fearGreed": {
-      "score": 39.94,
+      "score": 38.6,
       "label": "Fear",
-      "asOf": "Thu 11/12 close",
-      "weekAgo": 19.99,
-      "monthAgo": 45.23,
-      "yearAgo": 34.57
+      "asOf": "Fri 11/13 close",
+      "weekAgo": 24.35,
+      "monthAgo": 45.6,
+      "yearAgo": 24.54
     },
     "regime": {
-      "label": "Rotating",
+      "label": "Defensive",
       "tone": "orange",
-      "text": "Huang's exit hit Nvidia, but money rotated into AMD, Broadcom and energy. Yields and oil jumped, keeping a December hike priced; PPI Friday is next."
+      "text": "Money left tech for staples, communication services and energy as chips slid on Nvidia's leadership vacuum. A cooler PPI didn't shift the December hike, and the 10-year held above 5.1%. Still the first up week since early October."
     },
     "vix": {
-      "value": "18.70",
+      "value": "19.30",
       "label": "Rising",
       "tone": "orange",
-      "text": "Thu close, +6.9% · Wed 17.49 · Fri 25.64"
+      "text": "Fri close, +3.2% · Thu 18.70 · down from 25.64 a week ago"
     },
     "breadth": {
-      "value": "Weak",
-      "text": "9 of 11 S&P sectors fell, materials −1.5% worst, energy +1.5% best · Russell −1.66% lagged · semis −0.5%"
+      "value": "Narrow",
+      "text": "Tech −2.0% worst; staples +1.4%, communication services +1.1%, energy +1.0% best · Dow +0.1% while Nasdaq −0.9% · Russell −0.3%"
     },
     "havens": {
-      "value": "Dollar",
-      "text": "Dollar index at a 2026 high near 103.2 · gold −3% to a one-year low under $3,900 · 10Y ≈ 5.10% (+10bp), 2Y ≈ 4.87% (+12bp)"
+      "value": "Staples",
+      "text": "Defensives led · 10Y ≈ 5.15%, highest since October · gold near $3,890, little changed after Thursday's one-year low · bitcoin below $70K for the first time in about three months"
     }
   },
   "stories": [
     {
-      "title": "Jensen Huang resigns at Nvidia.",
-      "body": "Nvidia said at 8:48a Thursday that Jensen Huang resigned as president, CEO and director, effective immediately, after reports of extramarital affairs. CFO Colette Kress is interim CEO and former Synopsys CEO Harvey Jones becomes board chair. NVDA fell as much as 14% at the open, then closed −4.3% at $166.19; it is down 11% this week and more than 30% below its Oct 6 peak. Money rotated to rivals: AMD +5.9%, Broadcom +5.5%, Arista +5.1%. Super Micro fell 11% on reports of Justice Department inquiries. NVDA was up about 2% pre-market Friday. Earnings stay on Tue 11/17. Polymarket gives about 25% that a permanent CEO is named by Dec 31.",
+      "title": "Nvidia slides again as HSBC cuts to Hold.",
+      "body": "HSBC downgraded Nvidia to Hold Friday with a $170 target, saying the stock will struggle until a permanent CEO is named, after Jensen Huang resigned Thursday following reports of extramarital affairs (CFO Colette Kress is interim CEO). NVDA closed −2.0% at $162.85, down more than 12% this week, with its market value just above $4 trillion. Thursday's winners reversed: AMD fell almost 9% and Broadcom about 5%. Nvidia reports Tue 11/17 after the close, its first quarter without Huang. Polymarket now gives about 53% that a permanent CEO is named by Dec 31, up from 25% Thursday.",
       "odds": [
         {
           "source": "polymarket",
           "label": "New Nvidia CEO named by Dec 31",
-          "prob": 25,
+          "prob": 52.5,
           "slug": "new-nvidia-ceo-named-by-december-31-2026",
           "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
         }
       ]
     },
     {
-      "title": "Yields jump; December hike stays the base case.",
-      "body": "The 10-year rose about 10bp to roughly 5.10% Thursday and the 2-year about 12bp to 4.87%, after a soft 30-year auction and hawkish Fed talk: Hammack wants policy in restrictive territory and Daly and Goolsbee see more tightening likely. Tuesday's October CPI rose 0.4% (core 0.3%, a third straight 0.3%). Jobless claims rose to 200K (195K expected). Prediction markets price a 25bp hike on Dec 9 at about 85% and 50bp at about 10%. Friday's October PPI came in cooler at +0.3% (0.4% expected, core 0.3% as expected), though it is up 6.5% from a year ago; the 10-year eased to about 5.13% after the print.",
+      "title": "Cooler PPI, but a December hike stays the base case.",
+      "body": "October PPI rose 0.3% (0.4% expected; core 0.3% as expected), though it is up 6.5% from a year ago, the most since November 2022. That followed Tuesday's 0.4% CPI (core 0.3%, a third straight 0.3%) and hawkish Fed talk this week. The 10-year ended Friday near 5.15%, its highest since October, after touching about 5.17% intraday. Prediction markets price a 25bp hike on Dec 9 at about 89% and 50bp at about 10%.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 85,
+          "prob": 89,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
           "source": "polymarket",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 85.5,
+          "prob": 88.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
         },
@@ -246,16 +246,16 @@
       ]
     },
     {
+      "title": "FAA halts all US departures.",
+      "body": "The FAA ordered a nationwide ground stop at 3:54p ET Friday after a telecommunications outage hit all Air Route Traffic Control Centers, according to Transportation Secretary Sean Duffy; departing flights were held until further notice. Homeland Security Secretary Markwayne Mullin said there was no sign so far of an attack. It is the first nationwide ground stop since January 2023. Airlines slipped into the close: United −1.7%, American −1.0%, Southwest −0.6%, Delta −0.4%. When flights resume was not confirmed as of Friday evening; watch airline stocks Monday."
+    },
+    {
+      "title": "Oil flat; IEA sees first surplus since the Iran war.",
+      "body": "WTI settled −0.2% at $88.56 and Brent +$0.02 at $95.84 Friday, after Thursday's jump on Trump saying the US doesn't need a deal with Iran. Brent posted a second weekly decline. The IEA said the market will be in surplus this quarter for the first time since the war began, as high prices weigh on demand. Shipping risk remains: Verisk Maplecroft counted 36 confirmed attacks on commercial ships around the Gulf and Hormuz in October, the most since the war began, and more ships were hit this week."
+    },
+    {
       "title": "Cisco and Applied Materials beat; Cerebras misses.",
       "body": "Cisco posted record fiscal Q1 revenue of $18.5B (+24%) and non-GAAP EPS of $1.40, raised its full-year revenue outlook to $74.8–75.8B and now expects about $9B of AI infrastructure revenue from hyperscalers, more than double its prior view; shares rose after hours. Applied Materials earned $4.16 a share on revenue of $10.41B (about $10.3B expected) and guided Q1 to about $11.1B and $4.35, above estimates; shares, −3.6% in the session, edged up after hours. Cerebras grew revenue 55% to $210.8M, short of about $214.7M expected, with a GAAP loss of $0.67 a share, but raised its full-year outlook and reported $26.1B of remaining performance obligations. Cerebras jumped about 16% pre-market Friday."
-    },
-    {
-      "title": "Oil jumps as Trump says no Iran deal needed.",
-      "body": "Trump said the US does not need a deal with Iran, casting doubt on reported talks. WTI settled up $2.21 (+2.6%) at $88.74 and Brent up $3.06 (+3.3%) at $95.82, despite EIA builds in crude and fuel stocks. Energy (+1.5%) was the best S&P sector, while airlines slid on fuel costs: United −6.0%, Delta −5.2%. Higher oil is the wrong direction for the inflation picture going into PPI."
-    },
-    {
-      "title": "Neoclouds slide despite Nebius beat.",
-      "body": "Nebius reported Q3 revenue of $980.8M (+571%), above the roughly $907M consensus, but its full-year revenue landed at the low end of its range and the stock was down about 16% by early afternoon. CoreWeave, up 24.7% Wednesday on its beat, gave back about 7%. The selloff in AI-cloud names came as Nvidia's leadership crisis rattled the AI trade."
     },
     {
       "title": "Anthropic IPO could trade as soon as Nov 19.",
@@ -544,7 +544,47 @@
     {
       "label": "Brisk Markets · PPI reaction, yields and futures",
       "url": "https://www.briskmarkets.com/blog/us-ppi-report-slows-to-0-3-but-annual-prices-hit-four-year-high/"
+    },
+    {
+      "label": "AP via KRMG · how major US indexes fared Nov 13",
+      "url": "https://krmg.com/2026/11/13/how-major-us-stock-indexes-fared-friday-11-13-2026/"
+    },
+    {
+      "label": "Yahoo Finance · live blog Nov 13",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html"
+    },
+    {
+      "label": "24/7 Wall St · closing bell and sectors Nov 13",
+      "url": "https://247wallst.com/cards/us-stocks-are-mixed-as-technology-lags-and-consumer-staples-leads-spy-market-explainer-01m7bf4xjn2ac2hhrpa9dgysqx"
+    },
+    {
+      "label": "Motley Fool · Nvidia slides after HSBC downgrade (Nov 13)",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/13/stock-market-today-nov-13-nvidia-slides-after-hsbc-downgrades-stock-to-hold-on-ceo-uncertainty/"
+    },
+    {
+      "label": "ad-hoc-news · VIX close Nov 13",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/vix-rises-3-21-prozent-to-19-30-as-tech-concerns-unsettle-markets/70506908"
+    },
+    {
+      "label": "Trading Economics · US 10-year yield Nov 13",
+      "url": "https://tradingeconomics.com/united-states/government-bond-yield"
+    },
+    {
+      "label": "Bloomberg via Rigzone · oil settles Nov 13",
+      "url": "https://www.rigzone.com/news/crude_fluctuates_as_iran_tensions_persist-13-nov-2026-185085-article"
+    },
+    {
+      "label": "Investing.com · FAA nationwide ground stop",
+      "url": "https://ca.investing.com/news/stock-market-news/faa-orders-nationwide-ground-stop-citing-extraordinary-safety-concerns-4957787"
+    },
+    {
+      "label": "Stocktwits · FAA ground stop, airline stocks end lower",
+      "url": "https://stocktwits.com/news-articles/markets/equity/faa-grounds-all-incoming-flights-nationwide-in-extraordinary-advisory-airline-stocks-end-lower/cNbR0ApR9QT"
+    },
+    {
+      "label": "Yahoo Finance · FAA ground stop, airline stocks fall",
+      "url": "https://finance.yahoo.com/markets/article/faa-orders-nationwide-ground-stop-for-all-flights-airline-stocks-fall-213202648.html"
     }
   ],
-  "oddsAsOf": "Thu 11/12 close"
+  "oddsAsOf": "Fri 11/13 close"
 }
