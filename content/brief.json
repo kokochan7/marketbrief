@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-13",
     "range": "November 9 – 13, 2026",
     "kicker": "This week",
-    "updated": "2026-11-12T22:47:00Z",
-    "dataAsOf": "Thu 11/12 close"
+    "updated": "2026-11-13T15:25:00Z",
+    "dataAsOf": "Fri 11/13 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Fri 11/13 · October PPI after the Nvidia shock",
-    "body": "October PPI lands at 8:30a (+0.4% m/m expected), after Tuesday's hot CPI and a jump in yields Thursday that lifted the 10-year to about **5.10%**. Markets price a December hike at about 85%, and Bowman leads Friday's Fed speakers. Nvidia, now run by interim CEO Colette Kress, reports Tue 11/17 after the close."
+    "body": "October PPI rose **0.3%** m/m, cooler than the 0.4% expected, after a 1.4% jump in September (revised from 1.3%); it is up 6.5% from a year ago, the most since November 2022. Core (ex food and energy) rose 0.3% as expected. Futures firmed after the print, with the 10-year near **5.13%**. A December hike was priced at about 89% before the data, and Bowman speaks at 10:50a. Nvidia, now run by interim CEO Colette Kress, reports Tue 11/17 after the close."
   },
   "days": [
     {
@@ -160,7 +160,7 @@
         {
           "time": "8:30a",
           "level": "high",
-          "text": "PPI (Oct), est +0.4% m/m"
+          "text": "PPI (Oct) +0.3% m/m vs 0.4% est, prior 1.4% (rev. from 1.3%) · 6.5% y/y vs 6.6% est · core +0.3% vs 0.3%"
         },
         {
           "time": "10:50a",
@@ -170,7 +170,8 @@
       ],
       "bmo": [],
       "amc": [],
-      "note": "Japan's megabanks MUFG, SMFG and MFG report (time TBA)"
+      "note": "Japan's megabanks MUFG, SMFG and MFG report (time TBA)",
+      "premarket": "8:39a: S&P futures +0.37%, Nasdaq 100 futures +0.19% after a cooler PPI · 10Y ≈ 5.13% · WTI ≈ $88, slightly lower · Nikkei +0.5%, Hang Seng −1.6%, KOSPI −1.0% · NVDA ≈ +2%, Modine up 25%+ on Samsung talks, MSFT lower on an Outlook outage"
     }
   ],
   "mood": {
@@ -206,7 +207,7 @@
   "stories": [
     {
       "title": "Jensen Huang resigns at Nvidia.",
-      "body": "Nvidia said at 8:48a Thursday that Jensen Huang resigned as president, CEO and director, effective immediately, after reports of extramarital affairs. CFO Colette Kress is interim CEO and former Synopsys CEO Harvey Jones becomes board chair. NVDA fell as much as 14% at the open, then closed −4.3% at $166.19; it is down 11% this week and more than 30% below its Oct 6 peak. Money rotated to rivals: AMD +5.9%, Broadcom +5.5%, Arista +5.1%. Super Micro fell 11% on reports of Justice Department inquiries. Earnings stay on Tue 11/17. Polymarket gives about 25% that a permanent CEO is named by Dec 31.",
+      "body": "Nvidia said at 8:48a Thursday that Jensen Huang resigned as president, CEO and director, effective immediately, after reports of extramarital affairs. CFO Colette Kress is interim CEO and former Synopsys CEO Harvey Jones becomes board chair. NVDA fell as much as 14% at the open, then closed −4.3% at $166.19; it is down 11% this week and more than 30% below its Oct 6 peak. Money rotated to rivals: AMD +5.9%, Broadcom +5.5%, Arista +5.1%. Super Micro fell 11% on reports of Justice Department inquiries. NVDA was up about 2% pre-market Friday. Earnings stay on Tue 11/17. Polymarket gives about 25% that a permanent CEO is named by Dec 31.",
       "odds": [
         {
           "source": "polymarket",
@@ -219,7 +220,7 @@
     },
     {
       "title": "Yields jump; December hike stays the base case.",
-      "body": "The 10-year rose about 10bp to roughly 5.10% Thursday and the 2-year about 12bp to 4.87%, after a soft 30-year auction and hawkish Fed talk: Hammack wants policy in restrictive territory and Daly and Goolsbee see more tightening likely. Tuesday's October CPI rose 0.4% (core 0.3%, a third straight 0.3%). Jobless claims rose to 200K (195K expected). Prediction markets price a 25bp hike on Dec 9 at about 85% and 50bp at about 10%. Next: October PPI Friday (+0.4% m/m expected).",
+      "body": "The 10-year rose about 10bp to roughly 5.10% Thursday and the 2-year about 12bp to 4.87%, after a soft 30-year auction and hawkish Fed talk: Hammack wants policy in restrictive territory and Daly and Goolsbee see more tightening likely. Tuesday's October CPI rose 0.4% (core 0.3%, a third straight 0.3%). Jobless claims rose to 200K (195K expected). Prediction markets price a 25bp hike on Dec 9 at about 85% and 50bp at about 10%. Friday's October PPI came in cooler at +0.3% (0.4% expected, core 0.3% as expected), though it is up 6.5% from a year ago; the 10-year eased to about 5.13% after the print.",
       "odds": [
         {
           "source": "kalshi",
@@ -246,7 +247,7 @@
     },
     {
       "title": "Cisco and Applied Materials beat; Cerebras misses.",
-      "body": "Cisco posted record fiscal Q1 revenue of $18.5B (+24%) and non-GAAP EPS of $1.40, raised its full-year revenue outlook to $74.8–75.8B and now expects about $9B of AI infrastructure revenue from hyperscalers, more than double its prior view; shares rose after hours. Applied Materials earned $4.16 a share on revenue of $10.41B (about $10.3B expected) and guided Q1 to about $11.1B and $4.35, above estimates; shares, −3.6% in the session, edged up after hours. Cerebras grew revenue 55% to $210.8M, short of about $214.7M expected, with a GAAP loss of $0.67 a share, but raised its full-year outlook and reported $26.1B of remaining performance obligations."
+      "body": "Cisco posted record fiscal Q1 revenue of $18.5B (+24%) and non-GAAP EPS of $1.40, raised its full-year revenue outlook to $74.8–75.8B and now expects about $9B of AI infrastructure revenue from hyperscalers, more than double its prior view; shares rose after hours. Applied Materials earned $4.16 a share on revenue of $10.41B (about $10.3B expected) and guided Q1 to about $11.1B and $4.35, above estimates; shares, −3.6% in the session, edged up after hours. Cerebras grew revenue 55% to $210.8M, short of about $214.7M expected, with a GAAP loss of $0.67 a share, but raised its full-year outlook and reported $26.1B of remaining performance obligations. Cerebras jumped about 16% pre-market Friday."
     },
     {
       "title": "Oil jumps as Trump says no Iran deal needed.",
@@ -511,6 +512,38 @@
     {
       "label": "Polymarket · new Nvidia CEO named by Dec 31",
       "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
+    },
+    {
+      "label": "BLS · PPI, October 2026",
+      "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
+    },
+    {
+      "label": "StockTitan · October PPI vs Dow Jones consensus",
+      "url": "https://www.stocktitan.net/articles/october-2026-ppi-report"
+    },
+    {
+      "label": "Bloomingbit · October PPI misses forecasts",
+      "url": "https://en.bloomingbit.io/feed/news/124386"
+    },
+    {
+      "label": "TipRanks · futures after October PPI (8:39a)",
+      "url": "https://www.tipranks.com/news/u-s-stocks-rise-on-lighter-than-expected-october-ppi"
+    },
+    {
+      "label": "TradingKey · US pre-market Nov 13",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262304609-nvda-nvidia-msft-us-ppi-tradingkey"
+    },
+    {
+      "label": "Upstox · futures and Asia Nov 13",
+      "url": "https://upstox.com/news/market-news/us-stocks/dow-jones-s-and-p-500-nasdaq-futures-hint-positive-open-on-nov-13-nvidia-cisco-other-stocks-to-watch/article-203453/"
+    },
+    {
+      "label": "Kitco · gold, yields and Fed odds Nov 13",
+      "url": "https://www.kitco.com/news/article/2026-11-13/gold-rebounds-13-month-low-ppi-complicates-fed-outlook-kitco-am-report"
+    },
+    {
+      "label": "Brisk Markets · PPI reaction, yields and futures",
+      "url": "https://www.briskmarkets.com/blog/us-ppi-report-slows-to-0-3-but-annual-prices-hit-four-year-high/"
     }
   ],
   "oddsAsOf": "Thu 11/12 close"
