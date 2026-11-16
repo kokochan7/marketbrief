@@ -14,7 +14,8 @@
   --orange: #f5a524;
   --grey: #7b8794;
   --radius: 10px;
-  --gap: 14px;
+  --gap: 16px;
+  --pad: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -48,13 +49,13 @@ h1, h2, p { margin: 0; }
 .kicker { color: var(--text-2); margin-left: 8px; }
 
 section { margin-top: var(--gap); }
-.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 10px; margin-bottom: 6px; }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 10px; margin-bottom: 8px; min-height: 17px; }
 .section-title { color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11.5px; font-weight: 800; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
 .section-meta { color: var(--muted); }
 .muted { color: var(--muted); }
 
 /* Live tape */
-.live { margin-top: 12px; }
+.live { margin-top: var(--gap); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
 .live.is-down .live-dot, .live.is-manual .live-dot { background: var(--grey); animation: none; }
 .live.is-manual:not(.is-down) .live-dot { background: var(--teal); }
@@ -83,7 +84,7 @@ section { margin-top: var(--gap); }
   display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 1px;
   background: var(--line-soft); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
 }
-.tick { display: block; color: inherit; text-decoration: none; padding: 8px 10px; background: var(--panel); min-width: 0; transition: background .15s; }
+.tick { display: block; color: inherit; text-decoration: none; padding: 9px var(--pad); background: var(--panel); min-width: 0; transition: background .15s; }
 .tick:hover, .tick:focus-visible { background: var(--panel-2); outline: none; }
 .tick:hover .tick-label, .tick:focus-visible .tick-label { color: var(--teal); }
 .tick-label { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -103,29 +104,38 @@ section { margin-top: var(--gap); }
 .chg-down { color: var(--red); }
 .chg-flat { color: var(--muted); }
 
-/* Two-column layout */
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; align-items: start; }
-.col-side > section:first-child { margin-top: var(--gap); }
+/* Two-column layout. Both columns stretch to the same height and the week table and the
+   Market Mood grid grow to fill it, so the two columns always end on the same line. */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 0 20px; align-items: stretch; }
+.col-main, .col-side { display: flex; flex-direction: column; min-width: 0; }
+.sec-week, .sec-mood { flex: 1 0 auto; display: flex; flex-direction: column; }
+.mood-grid { flex: 1 0 auto; }
+/* Seven rows (see renderMood). When the week column is taller, the spare height goes to the
+   last row, the sector heatmap, whose tiles grow to fill it. */
+.mood-grid { grid-template-rows: repeat(6, auto) 1fr; }
+#sec-card { display: flex; flex-direction: column; }
+#sec-card .sec-grid { flex: 1; grid-auto-rows: minmax(38px, 1fr); }
 
 /* Main event */
 .main-event {
   background: linear-gradient(180deg, #12324a 0%, #0f2a3e 100%);
-  border: 1px solid #1b4058; border-radius: 12px; padding: 12px 16px;
+  border: 1px solid #1b4058; border-radius: var(--radius); padding: 13px 16px 14px;
 }
 .eyebrow { color: var(--teal); }
 .main-event h2 { margin: 3px 0 4px; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.25; }
 .main-event p { color: var(--text-2); font-size: 13.5px; line-height: 1.5; }
 
 /* Week table */
-.week { border-top: 1px solid var(--line); }
-.week-head, .day-row { display: grid; grid-template-columns: 112px minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
-.week-head { color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--line); }
-.day-row { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); border-left: 3px solid var(--grey); }
+.week { flex: 1 0 auto; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.week-head, .day-row { display: grid; grid-template-columns: 112px minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.week-head { color: var(--muted); padding: 8px var(--pad) 7px; border-bottom: 1px solid var(--line); background: rgba(4, 12, 19, .25); }
+.day-row { flex: 1 0 auto; padding: 9px var(--pad) 9px calc(var(--pad) - 3px); border-bottom: 1px solid var(--line-soft); border-left: 3px solid var(--grey); }
+.day-row:last-child { border-bottom: 0; }
 .day-row.tone-orange { border-left-color: var(--orange); }
 .day-row.tone-red { border-left-color: var(--red); }
 .day-row.tone-green { border-left-color: var(--green); }
 .day-row.tone-teal { border-left-color: var(--teal); }
-.day-row.is-today { background: linear-gradient(90deg, rgba(45, 212, 191, 0.20), rgba(45, 212, 191, 0.07)); border-left-width: 5px; box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.45); border-radius: 0 6px 6px 0; }
+.day-row.is-today { background: linear-gradient(90deg, rgba(45, 212, 191, 0.20), rgba(45, 212, 191, 0.07)); border-left-width: 5px; box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.45); padding-left: calc(var(--pad) - 5px); }
 .day-row.is-today .day-label { color: var(--teal); }
 .day-row.is-done { opacity: .78; }
 .day-label { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -227,32 +237,34 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .tt-chgs { margin-top: 1px; font-size: 12.5px; font-weight: 700; }
 .tt-sub { margin-top: 3px; font-size: 11px; color: var(--muted); }
 
-/* Stories */
-.stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 22px; }
-.story { display: grid; grid-template-columns: 22px 1fr; gap: 9px; }
+/* Stories: equal-height cards per row, prediction-market chips pinned to the bottom */
+.stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.story { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.story-body { display: flex; flex-direction: column; min-width: 0; }
+.story-body .odds-row { margin-top: auto; padding-top: 10px; }
 .story-num { width: 22px; height: 22px; border-radius: 6px; background: var(--teal); color: #052422; font-weight: 800; display: grid; place-items: center; font-size: 12px; margin-top: 1px; }
 .story p { color: var(--text-2); font-size: 13px; line-height: 1.5; }
 
 /* Prediction-market meters */
-.odds-row { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 6px; }
-.odds { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: var(--text-2); padding: 3px 10px 3px 3px; border: 1px solid var(--line); border-radius: 30px; background: var(--panel); transition: border-color .15s; }
+.odds-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.odds { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; color: var(--text-2); padding: 2px 10px 2px 2px; border: 1px solid var(--line); border-radius: 30px; background: var(--bg); max-width: 100%; transition: border-color .15s; }
 .odds:hover, .odds:focus-visible { border-color: var(--teal); outline: none; }
-.ring-wrap { position: relative; width: 36px; height: 36px; flex: none; }
-.ring { width: 36px; height: 36px; display: block; }
+.ring-wrap { position: relative; width: 32px; height: 32px; flex: none; }
+.ring { width: 32px; height: 32px; display: block; }
 .ring-track { fill: none; stroke: #1f3a4d; stroke-width: 4; }
 .ring-fill { fill: none; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s ease; }
 .odds-kalshi .ring-fill { stroke: #2dd4bf; }
 .odds-polymarket .ring-fill { stroke: #6b8cff; }
-.ring-num { position: absolute; inset: 0; display: grid; place-items: center; font-size: 10.5px; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
-.odds-text { display: flex; flex-direction: column; line-height: 1.2; }
+.ring-num { position: absolute; inset: 0; display: grid; place-items: center; font-size: 9px; letter-spacing: -.02em; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
+.odds-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .odds-src { font-size: 9.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .odds-kalshi .odds-src { color: #2dd4bf; }
 .odds-polymarket .odds-src { color: #8ea6ff; }
-.odds-label { font-size: 11.5px; color: var(--text-2); }
+.odds-label { font-size: 11.5px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Mood (side column) */
 .mood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.mood-card { padding: 9px 12px; background: var(--panel); min-width: 0; }
+.mood-card { padding: 10px var(--pad); background: var(--panel); min-width: 0; }
 .mood-card.wide { grid-column: 1 / -1; }
 a.mood-card { display: block; color: inherit; text-decoration: none; transition: background .15s; }
 a.mood-card:hover, a.mood-card:focus-visible { background: var(--panel-2); outline: none; }
@@ -275,8 +287,10 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
 .fed-fw { display: inline-block; }
 /* Sector heatmap */
 .sec-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; margin-top: 6px; }
-.sec { display: flex; flex-direction: column; padding: 4px 6px; border-radius: 5px; background: #16303f; color: var(--text); text-decoration: none; min-width: 0; transition: outline-color .15s; outline: 1px solid transparent; }
+.sec { display: flex; flex-direction: column; padding: 4px 7px; border-radius: 5px; background: #16303f; color: var(--text); text-decoration: none; min-width: 0; transition: outline-color .15s; outline: 1px solid transparent; }
 .sec:hover, .sec:focus-visible { outline-color: var(--teal); }
+.sec.is-bench { box-shadow: inset 0 0 0 1px rgba(232, 238, 243, .35); }
+.sec.is-bench .sec-l { color: var(--text); }
 .sec-l { font-size: 10px; font-weight: 700; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sec-v { font-size: 12.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .card-kicker { color: var(--text-2); font-size: 10px; }
@@ -306,8 +320,21 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
 @media (max-width: 1200px) {
   .tape { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .tick:last-child:nth-child(5n+4) { grid-column: span 2; }
-  .layout { grid-template-columns: minmax(0, 1fr) 300px; }
   .stories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Laptops and tablets: a side column would be too narrow next to the week table, so the
+   sections stack (main event, mood, week) and Market Mood becomes a four-column band. */
+@media (max-width: 1400px) and (min-width: 821px) {
+  .layout { display: flex; flex-direction: column; }
+  .col-main, .col-side { display: contents; }
+  .sec-event { order: 1; }
+  .sec-mood { order: 2; }
+  .sec-week { order: 3; }
+  .mood-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: none; }
+  .mood-card.wide { grid-column: span 2; }
+  #sec-card { grid-column: 1 / -1; }
+  #sec-card .sec-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: auto; }
 }
 
 /* Phones and small tablets: one readable column, larger text */
@@ -344,7 +371,8 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
   .main-event p { font-size: 15px; line-height: 1.55; }
 
   .week-head { display: none; }
-  .day-row { grid-template-columns: 1fr 1fr; gap: 8px 14px; padding: 12px 12px; }
+  .day-row { grid-template-columns: 1fr 1fr; gap: 8px 14px; padding: 12px 12px 12px 9px; }
+  .day-row.is-today { padding-left: 7px; }
   .cell-day, .cell-macro { grid-column: 1 / -1; }
   .cell-head-mobile { display: block; }
   .day-label { font-size: 16px; }
@@ -355,7 +383,9 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
   .day-result { font-size: 13.5px; }
   .day-note { font-size: 13.5px; }
 
-  .story { grid-template-columns: 26px 1fr; gap: 10px; }
+  .story { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 14px; }
+  .stories { gap: 10px; }
+  .odds-label { white-space: normal; }
   .story-num { width: 26px; height: 26px; font-size: 13px; }
   .story p { font-size: 15px; line-height: 1.6; }
   .odds-label { font-size: 12.5px; }

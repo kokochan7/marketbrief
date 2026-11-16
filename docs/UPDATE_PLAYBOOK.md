@@ -71,7 +71,7 @@ Label it as Sunday evening so it isn't mistaken for Monday morning.
 The page fetches these by itself: the live strip (SPY, QQQ, US 10Y, WTI, gold, bitcoin,
 DXY, KOSPI, CSI 300, plus SPY/QQQ pre-market, after-hours and overnight prices), Fear &
 Greed, Kalshi odds for the next Fed meeting, Cboe's put/call ratio and the sector heatmap
-(week % of the 11 sector SPDR ETFs).
+(week % of SPY plus the 11 sector SPDR ETFs).
 
 ## Prediction-market meters
 

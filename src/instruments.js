@@ -17,7 +17,9 @@ export const INSTRUMENTS = [
 ];
 
 // Sector heatmap in Market Mood: the 11 Select Sector SPDR ETFs.
+// The S&P 500 (SPY) leads the grid as the benchmark the sectors are read against; it also fills the 4x3 grid.
 export const SECTORS = [
+  { sym: "SPY", label: "S&P 500", name: "S&P 500 benchmark", bench: true },
   { sym: "XLK", label: "Tech", name: "Technology" },
   { sym: "XLC", label: "Comms", name: "Communication Services" },
   { sym: "XLY", label: "Discr.", name: "Consumer Discretionary" },

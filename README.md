@@ -14,7 +14,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
   Worker at `/api/live` (Yahoo Finance, CoinGecko fallback for bitcoin, CNN), cached for 60
   seconds. `/api/live` also carries S&P / Nasdaq / Dow futures (`es`, `nq`, `ym`) for the
   Sunday edition's futures read; they aren't shown on the page.
-- **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (11
+- **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (S&P 500 benchmark plus 11
   sector SPDR ETFs, Yahoo), Kalshi odds for the next Fed meeting and Cboe's put/call ratio.
   The high-yield spread, % of S&P 500 stocks above their 200-day average and the CME FedWatch
   line are filled into `brief.json` by the evening update (their sources block automated

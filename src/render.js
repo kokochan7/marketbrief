@@ -240,7 +240,7 @@ function renderMood(m, wctx) {
     : `<div class="fed-fw"><a href="${FEDWATCH_URL}" target="_blank" rel="noopener">CME FedWatch ↗</a></div>`;
 
   const sectors = SECTORS.map(
-    (x) => `<a class="sec" href="${esc(yahooQuoteUrl(x.sym))}" target="_blank" rel="noopener" data-sec="${esc(x.sym)}" title="${esc(x.name)} (${esc(x.sym)})"><span class="sec-l">${esc(x.label)}</span><span class="sec-v">—</span></a>`
+    (x) => `<a class="sec${x.bench ? " is-bench" : ""}" href="${esc(yahooQuoteUrl(x.sym))}" target="_blank" rel="noopener" data-sec="${esc(x.sym)}" title="${esc(x.name)} (${esc(x.sym)})"><span class="sec-l">${esc(x.label)}</span><span class="sec-v">—</span></a>`
   ).join("");
 
   return `
@@ -257,33 +257,33 @@ function renderMood(m, wctx) {
     ${moodCard(link("regime"), `
       <div class="card-kicker">Risk regime</div>
       <span class="pill pill-${esc(m.regime.tone)}">${esc(m.regime.label)}</span>
-      <div class="card-sub">${md(m.regime.text, wctx)}</div>`, { title: t("regime") })}
+      <div class="card-sub">${md(m.regime.text, wctx)}</div>`, { title: t("regime"), cls: "wide" })}
     ${moodCard(link("vix"), `
       <div class="card-kicker">VIX</div>
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
       <div class="card-sub">${md(m.vix.text, wctx)}</div>`, { title: t("vix") })}
+    ${moodCard(link("putCall"), `
+      <div class="card-kicker">Put/call ratio</div>
+      <div class="big" id="pc-total">—</div>
+      <div class="card-sub" id="pc-sub">Total options · Cboe</div>
+      <div class="card-asof" id="pc-asof"></div>`, { id: "pc-card", title: t("putCall") })}
+    ${moodCard(link("credit"), `
+      <div class="card-kicker">High-yield spread</div>
+      ${credit}`, { title: t("credit") })}
+    ${moodCard(link("above200"), `
+      <div class="card-kicker">Above 200-day</div>
+      ${above}`, { title: t("above200") })}
     <div class="mood-card wide" id="fed-card">
       <div class="card-kicker">Fed odds <span class="fed-meet" id="fed-meet"></span></div>
       <div class="fed-rows" id="fed-rows"><div class="card-sub">Loading Kalshi odds…</div></div>
       <div class="card-sub fed-links"><a href="https://kalshi.com/markets/kxfeddecision" target="_blank" rel="noopener" id="fed-kalshi">Kalshi ↗</a></div>
       ${fedwatch}
     </div>
-    ${moodCard(link("credit"), `
-      <div class="card-kicker">High-yield spread</div>
-      ${credit}`, { title: t("credit") })}
-    ${moodCard(link("putCall"), `
-      <div class="card-kicker">Put/call ratio</div>
-      <div class="big" id="pc-total">—</div>
-      <div class="card-sub" id="pc-sub">Total options · Cboe</div>
-      <div class="card-asof" id="pc-asof"></div>`, { id: "pc-card", title: t("putCall") })}
-    ${moodCard(link("above200"), `
-      <div class="card-kicker">Above 200-day</div>
-      ${above}`, { title: t("above200") })}
     ${moodCard(link("havens"), `
       <div class="card-kicker">Safe havens</div>
       <div class="big">${esc(m.havens.value)}</div>
-      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens") })}
+      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens"), cls: "wide" })}
     <div class="mood-card wide" id="sec-card">
       <div class="card-kicker">Sectors <span class="muted" id="sec-basis">this week</span></div>
       <div class="sec-grid">${sectors}</div>
@@ -330,7 +330,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
       (s, i) => `
       <li class="story">
         <span class="story-num">${i + 1}</span>
-        <div>
+        <div class="story-body">
           <p><strong>${timeify(esc(s.title), wctx)}</strong> ${md(s.body, wctx)}</p>
           ${renderOdds(s.odds, i)}
         </div>
