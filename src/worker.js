@@ -300,10 +300,49 @@ async function liveHandler(request, ctx) {
   return resp;
 }
 
+// TEMP probe (remove): what Yahoo returns for extended-hours sessions.
+async function probeHandler(url) {
+  const sym = (url.searchParams.get("s") || "SPY").toUpperCase();
+  const out = { sym };
+  try {
+    const r1 = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
+    const sc = r1.headers.get("set-cookie") || "";
+    out.cookieStatus = r1.status;
+    const cookie = sc.split(/,(?=\s*\w+=)/).map((c) => c.split(";")[0].trim()).filter(Boolean).join("; ");
+    out.cookieNames = cookie.split("; ").map((c) => c.split("=")[0]);
+    const r2 = await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: cookie } });
+    const crumb = (await r2.text()).trim();
+    out.crumbStatus = r2.status;
+    out.crumbLen = crumb.length;
+    const r3 = await fetch(`https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(sym)}&crumb=${encodeURIComponent(crumb)}`, { headers: { "User-Agent": UA, Cookie: cookie } });
+    out.quoteStatus = r3.status;
+    const j = await r3.json();
+    const q = j?.quoteResponse?.result?.[0] || {};
+    out.quoteKeys = Object.keys(q);
+    out.quote = Object.fromEntries(Object.entries(q).filter(([k]) => /pre|post|overnight|market|regular|session|exchange|quoteType|tz|gmt/i.test(k)));
+  } catch (e) {
+    out.quoteErr = String(e?.message || e);
+  }
+  try {
+    const res = await yahoo(sym, "range=1d&interval=5m").catch(() => null);
+    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=5m&includePrePost=true`, { headers: { "User-Agent": UA } });
+    const c = (await r.json())?.chart?.result?.[0];
+    const ts = c?.timestamp || [];
+    const cl = c?.indicators?.quote?.[0]?.close || [];
+    out.chartMeta = c?.meta;
+    out.chartTail = ts.slice(-4).map((t, i) => [new Date(t * 1000).toISOString(), cl[cl.length - 4 + i]]);
+    out.chartBars = ts.length;
+  } catch (e) {
+    out.chartErr = String(e?.message || e);
+  }
+  return json(out, 200, 0);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
+    if (url.pathname === "/api/_probe") return probeHandler(url);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
     if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
