@@ -52,6 +52,12 @@ async function yahooAuth(force) {
 
 // symbols -> { SYM: ext | null }. Never throws; extended-hours data is optional.
 async function yahooExtended(symbols) {
+  const list = await yahooQuoteList(symbols);
+  return Object.fromEntries(list.map((q) => [q.symbol, extendedFrom(q)]));
+}
+
+// Yahoo v7 quote for many symbols in one request (cookie + crumb). Returns [] on failure.
+async function yahooQuoteList(symbols) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const { cookie, crumb } = await yahooAuth(attempt > 0);
@@ -60,14 +66,13 @@ async function yahooExtended(symbols) {
         { headers: { "User-Agent": UA, Cookie: cookie, Accept: "application/json" } }
       );
       if (r.status === 401 || r.status === 403) continue;
-      if (!r.ok) return {};
-      const list = (await r.json())?.quoteResponse?.result || [];
-      return Object.fromEntries(list.map((q) => [q.symbol, extendedFrom(q)]));
+      if (!r.ok) return [];
+      return (await r.json())?.quoteResponse?.result || [];
     } catch (e) {
-      if (attempt > 0) return {};
+      if (attempt > 0) return [];
     }
   }
-  return {};
+  return [];
 }
 
 // ---- Single-ticker quotes (hover cards) and Yahoo Finance links ----
@@ -313,7 +318,7 @@ async function buildLive() {
   return { generated: Date.now(), quotes: Object.fromEntries(entries), fearGreed: fg };
 }
 
-// ---- Market Mood extras (/api/mood): sector heatmap, Fed odds, put/call ----
+// ---- Market Mood extras (/api/mood): sector heatmap and Fed odds ----
 
 async function buildSectors() {
   const rows = await Promise.all(
@@ -361,44 +366,6 @@ async function kalshiFed() {
   };
 }
 
-const pnum = (v) => {
-  const n = parseFloat(String(v ?? "").replace(/[%,+]/g, ""));
-  return isFinite(n) ? n : null;
-};
-
-// Cboe daily options statistics: total / equity / index put-call ratios for the latest day published.
-async function cboePutCall() {
-  const etNow = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
-  for (let back = 0; back < 7; back++) {
-    const d = new Date(etNow.getTime() - back * 864e5);
-    const dow = d.getDay();
-    if (dow === 0 || dow === 6) continue;
-    const date = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-    const r = await fetch(`https://cdn.cboe.com/data/us/options/market_statistics/daily/${date}_daily_options`, {
-      headers: { "User-Agent": UA, Accept: "application/json" },
-      cf: { cacheTtl: 300 },
-    });
-    if (!r.ok) continue;
-    let j;
-    try {
-      j = await r.json();
-    } catch {
-      continue;
-    }
-    const ratios = Array.isArray(j.ratios) ? j.ratios : [];
-    const get = (re) => {
-      const x = ratios.find((o) => re.test(o.name || ""));
-      return x ? pnum(x.value) : null;
-    };
-    const total = get(/^TOTAL PUT\/CALL/i);
-    if (total === null) continue;
-    // Today's file fills in during the session; flag it until after the close.
-    const intraday = back === 0 && etNow.getHours() * 60 + etNow.getMinutes() < 16 * 60 + 30;
-    return { date, total, equity: get(/^EQUITY PUT\/CALL/i), index: get(/^INDEX PUT\/CALL/i), intraday, src: "Cboe" };
-  }
-  throw new Error("no recent Cboe file");
-}
-
 const settle = (p) => p.then((v) => v, (e) => ({ error: String(e?.message || e) }));
 
 async function moodHandler(request, ctx) {
@@ -406,10 +373,32 @@ async function moodHandler(request, ctx) {
   const key = new Request(new URL("/api/mood", request.url).toString(), { method: "GET" });
   const hit = await cache.match(key);
   if (hit) return hit;
-  const [sectors, fed, putCall] = await Promise.all([settle(buildSectors()), settle(kalshiFed()), settle(cboePutCall())]);
-  const data = { generated: Date.now(), sectors, fed, putCall };
-  const ok = !sectors.error || !fed.error || !putCall.error;
+  const [sectors, fed] = await Promise.all([settle(buildSectors()), settle(kalshiFed())]);
+  const data = { generated: Date.now(), sectors, fed };
+  const ok = !sectors.error || !fed.error;
   const resp = json(data, 200, ok ? 300 : 15);
+  ctx.waitUntil(cache.put(key, resp.clone()));
+  return resp;
+}
+
+// Latest day move of every earnings ticker in this week's table, for the green/red colouring.
+// One Yahoo v7 request for all of them; the symbol list comes from brief.json, not the query.
+async function movesHandler(request, ctx) {
+  const cache = caches.default;
+  const key = new Request(new URL("/api/moves", request.url).toString(), { method: "GET" });
+  const hit = await cache.match(key);
+  if (hit) return hit;
+  const tickers = [...new Set((brief.days || []).flatMap((d) => [...(d.bmo || []), ...(d.amc || [])]))].filter((t) => TICKER_RE.test(t));
+  const bySym = Object.fromEntries(tickers.map((t) => [yahooSymbol(t), t]));
+  const list = tickers.length ? await yahooQuoteList(Object.keys(bySym)) : [];
+  const moves = {};
+  for (const q of list) {
+    const t = bySym[q.symbol];
+    const p = num(q.regularMarketChangePercent);
+    if (t && p !== null) moves[t] = { chgPct: p, price: num(q.regularMarketPrice), time: (num(q.regularMarketTime) || 0) * 1000 };
+  }
+  const ok = Object.keys(moves).length > 0;
+  const resp = json({ generated: Date.now(), moves, ...(ok ? {} : { error: "no quotes" }) }, 200, ok ? 60 : 15);
   ctx.waitUntil(cache.put(key, resp.clone()));
   return resp;
 }
@@ -438,6 +427,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
     if (url.pathname === "/api/mood") return moodHandler(request, ctx);
+    if (url.pathname === "/api/moves") return movesHandler(request, ctx);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
     if (url.pathname.startsWith("/go/")) return goHandler(url);

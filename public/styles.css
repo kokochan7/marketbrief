@@ -100,6 +100,8 @@ section { margin-top: var(--gap); }
   .tick-ext .x-t { display: none; }
   .tick-ext .x-i { display: inline-block; }
 }
+.tick-chg .d.chg-up::before { content: "↗"; margin-right: 2px; }
+.tick-chg .d.chg-down::before { content: "↘"; margin-right: 2px; }
 .chg-up { color: var(--green); }
 .chg-down { color: var(--red); }
 .chg-flat { color: var(--muted); }
@@ -110,9 +112,9 @@ section { margin-top: var(--gap); }
 .col-main, .col-side { display: flex; flex-direction: column; min-width: 0; }
 .sec-week, .sec-mood { flex: 1 0 auto; display: flex; flex-direction: column; }
 .mood-grid { flex: 1 0 auto; }
-/* Seven rows (see renderMood). When the week column is taller, the spare height goes to the
+/* Five rows (see renderMood). When the week column is taller, the spare height goes to the
    last row, the sector heatmap, whose tiles grow to fill it. */
-.mood-grid { grid-template-rows: repeat(6, auto) 1fr; }
+.mood-grid { grid-template-rows: repeat(4, auto) 1fr; }
 #sec-card { display: flex; flex-direction: column; }
 #sec-card .sec-grid { flex: 1; grid-auto-rows: minmax(38px, 1fr); }
 
@@ -165,6 +167,14 @@ section { margin-top: var(--gap); }
 a.tkr { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(185, 198, 209, 0.45); transition: color .15s, border-color .15s; }
 a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(--teal); outline: none; }
 .tkr-e { white-space: nowrap; }
+/* Latest day move (moves.js): green ↗ up, red ↘ down */
+a.tkr.is-up { color: var(--green); border-bottom-color: rgba(52, 211, 153, .45); }
+a.tkr.is-down { color: var(--red); border-bottom-color: rgba(248, 113, 113, .45); }
+a.tkr.is-up:hover, a.tkr.is-down:hover, a.tkr.is-up:focus-visible, a.tkr.is-down:focus-visible { color: var(--teal); border-bottom-color: var(--teal); }
+.tkr-mv { font-size: .95em; font-weight: 800; margin-left: 1px; }
+.tkr-mv:empty { display: none; }
+.tkr-mv.is-up { color: var(--green); }
+.tkr-mv.is-down { color: var(--red); }
 /* Mobile ticker sheet (touch devices) */
 .tkr-sheet { position: fixed; inset: 0; z-index: 60; }
 .tkr-sheet[hidden] { display: none; }
@@ -241,7 +251,7 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .story { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
 .story-body { display: flex; flex-direction: column; min-width: 0; }
-.story-body .odds-row { margin-top: auto; padding-top: 10px; }
+.story-body .odds-row { padding-top: 10px; }
 .story-num { width: 22px; height: 22px; border-radius: 6px; background: var(--teal); color: #052422; font-weight: 800; display: grid; place-items: center; font-size: 12px; margin-top: 1px; }
 .story p { color: var(--text-2); font-size: 13px; line-height: 1.5; }
 
@@ -324,11 +334,10 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
 }
 
 /* Laptops and tablets: a side column would be too narrow next to the week table, so the
-   sections stack (main event, mood, week) and Market Mood becomes a four-column band. */
+   sections stack (mood, then week) and Market Mood becomes a four-column band. */
 @media (max-width: 1400px) and (min-width: 821px) {
   .layout { display: flex; flex-direction: column; }
   .col-main, .col-side { display: contents; }
-  .sec-event { order: 1; }
   .sec-mood { order: 2; }
   .sec-week { order: 3; }
   .mood-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: none; }
@@ -359,7 +368,6 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
   /* Flatten the two columns so sections can be ordered for reading */
   .layout { display: flex; flex-direction: column; gap: 0; }
   .col-main, .col-side { display: contents; }
-  .sec-event { order: 1; }
   .sec-mood { order: 2; }
   .sec-week { order: 3; }
   .stories { grid-template-columns: 1fr; }

@@ -15,7 +15,9 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
   seconds. `/api/live` also carries S&P / Nasdaq / Dow futures (`es`, `nq`, `ym`) for the
   Sunday edition's futures read; they aren't shown on the page.
 - **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (S&P 500 benchmark plus 11
-  sector SPDR ETFs, Yahoo), Kalshi odds for the next Fed meeting and Cboe's put/call ratio.
+  sector SPDR ETFs, Yahoo) and Kalshi odds for the next Fed meeting.
+- **Earnings ticker colours** come from `/api/moves` (cached 1 minute): one Yahoo quote request
+  for every ticker in `days`, coloured green ↗ / red ↘ by the latest day move.
   The high-yield spread, % of S&P 500 stocks above their 200-day average and the CME FedWatch
   line are filled into `brief.json` by the evening update (their sources block automated
   fetches from the Worker).
@@ -31,7 +33,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | `edition` | Week range, `updated` timestamp (UTC ISO), `dataAsOf` label |
 | `mainEvent` | Kicker, title, one-paragraph summary |
 | `days` | One entry per weekday. `date` (YYYY-MM-DD) drives the Done/Today badges. Optional `premarket` line shows until `result` is added. `tone`: `red`, `orange`, `green`, `teal`, `grey`. Macro `level`: `high` (red dot), `medium` (orange), `low` (grey). Add `result` once the day is done. |
-| `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, safe havens, and the evening-filled `credit`, `above200` and `fedwatch` (see docs/UPDATE_PLAYBOOK.md). Any tile can take an optional `url` (https) to link it or override the default |
+| `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, safe havens, and the evening-filled `fedwatch` (see docs/UPDATE_PLAYBOOK.md). Any tile can take an optional `url` (https) to link it or override the default |
 | `stories` | Numbered stories; `title` is bolded. Optional `odds` adds Kalshi/Polymarket meters (see docs/UPDATE_PLAYBOOK.md) |
 | `earningsOdds` | Optional Kalshi/Polymarket earnings markets by ticker: "beat" chips in the week table, all markets in hover cards (see docs/UPDATE_PLAYBOOK.md) |
 | `sources` | Where each figure came from (kept in the file for checking; not shown on the page) |

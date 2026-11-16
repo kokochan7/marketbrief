@@ -68,9 +68,10 @@ function tickers(list, eodds = {}) {
     .map((t, i) => {
       const sep = i < list.length - 1 ? "," : "";
       const markets = eodds[t] || [];
-      const link = `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}"${markets.length ? " data-eodds" : ""}>${esc(t)}</a>`;
+      // The empty .tkr-mv slot gets a green ↗ / red ↘ from moves.js (latest day move).
+      const link = `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}"${markets.length ? " data-eodds" : ""}>${esc(t)}</a><span class="tkr-mv" aria-hidden="true"></span>`;
       const j = markets.findIndex((o) => o.kind === "beat");
-      if (j < 0) return link + sep;
+      if (j < 0) return `<span class="tkr-e">${link}${sep}</span>`;
       const o = markets[j];
       const p = Number(o.prob);
       const chip = `<a class="eodds${p < 50 ? " is-low" : ""}" href="${esc(o.url)}" target="_blank" rel="noopener" data-odds="e-${esc(t)}-${j}" title="${esc(ODDS_NAMES[o.source] || o.source)}: ${esc(t)} ${esc(o.label)}"><span class="eodds-k">beat</span><span class="eodds-n">${fmtProb(o.prob)}</span></a>`;
@@ -187,9 +188,6 @@ function renderDays(days, today, eodds) {
 const MOOD_LINKS = {
   fearGreed: "https://www.cnn.com/markets/fear-and-greed",
   vix: "https://finance.yahoo.com/quote/%5EVIX/",
-  credit: "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
-  putCall: "https://www.cboe.com/us/options/market_statistics/daily/",
-  above200: "https://www.barchart.com/stocks/quotes/$S5TH/overview",
 };
 const FEDWATCH_URL = "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html";
 
@@ -202,10 +200,6 @@ function moodCard(url, inner, { id, title, cls } = {}) {
     : `<div class="${c}"${attrs}>${inner}</div>`;
 }
 
-const isNum = (v) => typeof v === "number" && isFinite(v);
-const signed = (v, d, suf) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(d)}${suf}`;
-const tone = (v) => (v > 0 ? "chg-up" : v < 0 ? "chg-down" : "chg-flat");
-
 function renderMood(m, wctx) {
   const fg = m.fearGreed;
   const link = (k) => (m[k] && m[k].url) || MOOD_LINKS[k];
@@ -217,23 +211,6 @@ function renderMood(m, wctx) {
     }
   };
   const t = (k) => (link(k) ? `Open ${host(link(k))} ↗` : "");
-  const asof = (x) => (x && x.asOf ? `<div class="card-asof">As of ${timeify(esc(x.asOf), wctx)}</div>` : "");
-  const pending = '<div class="big muted">—</div><div class="card-sub">Filled in by the evening update</div>';
-
-  // High-yield credit spread (ICE BofA US HY OAS, from FRED via the evening update).
-  const cr = m.credit;
-  const credit = cr && isNum(cr.value)
-    ? `<div class="big">${cr.value.toFixed(2)}%</div>
-      <div class="card-sub">${isNum(cr.weekAgo) ? `<span class="${tone(-(cr.value - cr.weekAgo))}">${signed((cr.value - cr.weekAgo) * 100, 0, "bp")}</span> on the week · ` : ""}ICE BofA US HY OAS</div>${asof(cr)}`
-    : pending;
-
-  // % of S&P 500 stocks above their 200-day average (Barchart $S5TH, via the evening update).
-  const ab = m.above200;
-  const above = ab && isNum(ab.value)
-    ? `<div class="big">${Math.round(ab.value)}%</div>
-      <div class="card-sub">${isNum(ab.weekAgo) ? `<span class="${tone(ab.value - ab.weekAgo)}">${signed(ab.value - ab.weekAgo, 0, " pts")}</span> on the week · ` : ""}of S&amp;P 500 stocks</div>${asof(ab)}`
-    : pending;
-
   const fw = m.fedwatch;
   const fedwatch = fw && fw.text
     ? `<div class="fed-fw"><a href="${FEDWATCH_URL}" target="_blank" rel="noopener">CME FedWatch</a> ${md(fw.text, wctx)}${fw.asOf ? ` <span class="muted">· ${timeify(esc(fw.asOf), wctx)}</span>` : ""}</div>`
@@ -263,27 +240,16 @@ function renderMood(m, wctx) {
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
       <div class="card-sub">${md(m.vix.text, wctx)}</div>`, { title: t("vix") })}
-    ${moodCard(link("putCall"), `
-      <div class="card-kicker">Put/call ratio</div>
-      <div class="big" id="pc-total">—</div>
-      <div class="card-sub" id="pc-sub">Total options · Cboe</div>
-      <div class="card-asof" id="pc-asof"></div>`, { id: "pc-card", title: t("putCall") })}
-    ${moodCard(link("credit"), `
-      <div class="card-kicker">High-yield spread</div>
-      ${credit}`, { title: t("credit") })}
-    ${moodCard(link("above200"), `
-      <div class="card-kicker">Above 200-day</div>
-      ${above}`, { title: t("above200") })}
+    ${moodCard(link("havens"), `
+      <div class="card-kicker">Safe havens</div>
+      <div class="big">${esc(m.havens.value)}</div>
+      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens") })}
     <div class="mood-card wide" id="fed-card">
       <div class="card-kicker">Fed odds <span class="fed-meet" id="fed-meet"></span></div>
       <div class="fed-rows" id="fed-rows"><div class="card-sub">Loading Kalshi odds…</div></div>
       <div class="card-sub fed-links"><a href="https://kalshi.com/markets/kxfeddecision" target="_blank" rel="noopener" id="fed-kalshi">Kalshi ↗</a></div>
       ${fedwatch}
     </div>
-    ${moodCard(link("havens"), `
-      <div class="card-kicker">Safe havens</div>
-      <div class="big">${esc(m.havens.value)}</div>
-      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens"), cls: "wide" })}
     <div class="mood-card wide" id="sec-card">
       <div class="card-kicker">Sectors <span class="muted" id="sec-basis">this week</span></div>
       <div class="sec-grid">${sectors}</div>
@@ -371,14 +337,14 @@ export function renderPage(brief, { now = new Date() } = {}) {
 
   ${renderLive()}
 
+  <section class="main-event sec-event">
+    <div class="eyebrow">${esc(brief.mainEvent.kicker)}</div>
+    <h2>${timeify(esc(brief.mainEvent.title), wctx)}</h2>
+    <p>${md(brief.mainEvent.body, wctx)}</p>
+  </section>
+
   <div class="layout">
     <div class="col-main">
-      <section class="main-event sec-event">
-        <div class="eyebrow">${esc(brief.mainEvent.kicker)}</div>
-        <h2>${timeify(esc(brief.mainEvent.title), wctx)}</h2>
-        <p>${md(brief.mainEvent.body, wctx)}</p>
-      </section>
-
       <section class="sec-week" aria-labelledby="week-h">
         <div class="section-head">
           <h2 id="week-h" class="section-title">The Week</h2>
@@ -421,6 +387,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>
 <script src="/mood.js?v=${esc(e.updated)}" defer></script>
+<script src="/moves.js?v=${esc(e.updated)}" defer></script>
 <script src="/odds.js?v=${esc(e.updated)}" defer></script>
 </body>
 </html>`;

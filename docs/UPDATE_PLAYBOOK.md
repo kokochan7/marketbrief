@@ -29,17 +29,10 @@ If today is a US market holiday, make no edits.
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
    names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, safe havens,
-   and the three hand-filled tiles below). Keep any tile `url` fields; a tile can take an
-   optional https `url` when one page backs it. `breadth` is no longer shown (the live sector
-   heatmap replaced it), so it can be left as is.
-   - `credit`: ICE BofA US High Yield OAS from FRED `BAMLH0A0HYM2` (web-fetch
-     `https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2`, last rows; FRED lags a
-     day). `{"value": 3.20, "weekAgo": 3.42, "asOf": "Thu 11/12"}`, values in percent,
-     `weekAgo` = the observation five trading days earlier.
-   - `above200`: % of S&P 500 stocks above their 200-day average (Barchart `$S5TH`, or
-     StockCharts `$SPXA200R`). `{"value": 58.4, "weekAgo": 55.1, "asOf": "Fri 11/13"}`.
-     These pages often block automated fetches; use web search, and set it to `null` if no
-     dated figure can be confirmed (the tile then says it's waiting for the evening update).
+   and `fedwatch` below). Keep any tile `url` fields; a tile can take an optional https `url`
+   when one page backs it. `breadth` is no longer shown (the live sector heatmap replaced
+   it), so it can be left as is. The high-yield spread, put/call and % above 200-day tiles
+   were removed at Kenny's request (11/16): don't add `credit` or `above200` back.
    - `fedwatch`: CME FedWatch odds for the next FOMC meeting, one short line, e.g.
      `{"text": "25bp hike 75% · hold 10% · 50bp hike 15%", "asOf": "Fri 11/13"}`. Only from a
      dated source (CME's page or a news report quoting it); otherwise `null`. Kalshi odds
@@ -70,8 +63,9 @@ Label it as Sunday evening so it isn't mistaken for Monday morning.
 
 The page fetches these by itself: the live strip (SPY, QQQ, US 10Y, WTI, gold, bitcoin,
 DXY, KOSPI, CSI 300, plus SPY/QQQ pre-market, after-hours and overnight prices), Fear &
-Greed, Kalshi odds for the next Fed meeting, Cboe's put/call ratio and the sector heatmap
-(week % of SPY plus the 11 sector SPDR ETFs).
+Greed, Kalshi odds for the next Fed meeting, the sector heatmap (week % of SPY plus the 11
+sector SPDR ETFs) and the green ↗ / red ↘ colouring of the week table's earnings tickers
+(latest day move, from `/api/moves`, which reads the tickers straight from `days`).
 
 ## Prediction-market meters
 

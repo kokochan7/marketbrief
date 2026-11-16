@@ -1,5 +1,5 @@
 // Fills the live parts of Market Mood from /api/mood: the sector heatmap (week % change of
-// the 11 sector SPDR ETFs), Kalshi odds for the next Fed meeting, and Cboe's put/call ratio.
+// the 11 sector SPDR ETFs), and Kalshi odds for the next Fed meeting.
 // Loads once per page view and again on each refresh (live.js "mb:refresh").
 (function () {
   const $ = (s) => document.querySelector(s);
@@ -59,23 +59,6 @@
     if (k && f.url) k.href = f.url;
   }
 
-  function putCall(pc) {
-    const t = $("#pc-total");
-    if (!pc || pc.error || typeof pc.total !== "number") {
-      t.textContent = "—";
-      $("#pc-sub").textContent = "Cboe data unavailable right now";
-      return;
-    }
-    t.textContent = pc.total.toFixed(2);
-    const parts = ["Total"];
-    if (typeof pc.equity === "number") parts.push(`equity ${pc.equity.toFixed(2)}`);
-    if (typeof pc.index === "number") parts.push(`index ${pc.index.toFixed(2)}`);
-    $("#pc-sub").textContent = parts.join(" · ");
-    const [y, m, d] = pc.date.split("-").map(Number);
-    const wd = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" });
-    $("#pc-asof").textContent = `Cboe · ${wd} ${m}/${d}${pc.intraday ? " so far" : " close"}`;
-  }
-
   let loading = false;
   async function load() {
     if (loading) return;
@@ -86,7 +69,6 @@
       const data = await r.json();
       sectors(data.sectors);
       fed(data.fed);
-      putCall(data.putCall);
     } catch (e) {
       const rows = $("#fed-rows");
       if (rows && /Loading/.test(rows.textContent)) rows.innerHTML = '<div class="card-sub">Kalshi odds unavailable right now</div>';
