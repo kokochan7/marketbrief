@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-15T23:41:00Z",
-    "dataAsOf": "Fri 11/13 close · Sun 11/15 evening futures"
+    "updated": "2026-11-16T13:51:00Z",
+    "dataAsOf": "Mon 11/16 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Tue 11/17 · Nvidia reports, its first quarter without Huang",
-    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell 13% last week after Jensen Huang resigned. It is a packed week: October retail sales Tuesday 8:30a, Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
+    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell 13% last week after Jensen Huang resigned, and the FT reported Monday that Huang is weighing a comeback. It is a packed week: October retail sales Tuesday 8:30a, Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
   },
   "days": [
     {
@@ -22,7 +22,7 @@
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Empire State mfg (Nov), est 17.6–19, prior 25.5"
+          "text": "Empire State mfg (Nov) **7.8** vs est 17–18, prior 25.5 · new orders 3.0, prices paid 45.9"
         },
         {
           "time": "9:05a",
@@ -55,7 +55,7 @@
         "PAGS"
       ],
       "note": "Trip.com (TCOM) expected, time TBA",
-      "premarket": "Sun 6:30p: S&P and Nasdaq futures edging higher, per CNBC and Traders Union headlines (exact % not confirmed) · WTI $88.50, −0.1% (6:28p) · gold −0.1% · bitcoin ≈ $65.3K, +1.8%"
+      "premarket": "8:41a: S&P futures −0.75%, Nasdaq 100 futures −1.45%, Dow futures −0.3% · 10Y 5.14% · WTI $87.89, −0.8% · Asia chip rout: Taiex −6.0% (TSMC −5.7%), Kospi −3.6% · FT says Jensen Huang is weighing a return as Nvidia CEO; NVDA about −2% pre-market · Empire State mfg drops to 7.8"
     },
     {
       "date": "2026-11-17",
@@ -264,26 +264,26 @@
   "stories": [
     {
       "title": "Nvidia reports Tuesday under a cloud.",
-      "body": "Nvidia reports fiscal Q3 after Tuesday's close, its first quarter since Jensen Huang resigned Thursday; interim CEO Colette Kress leads the call. Consensus is about $2.47–2.49 non-GAAP EPS on roughly $109B of revenue against guidance of $108B ±2%, and analysts want a January-quarter outlook near $125B. On Fox News Sunday Morning Futures, Treasury Secretary Bessent said he wants answers within 10 days on whether Nvidia used shell companies to sell top chips to China (\"Nothing above the H200s can be sold to the Chinese\"). The FT reports Nvidia approached Arm CEO Rene Haas; Nvidia calls candidate talk premature. NVDA fell 13% last week to $162.85.",
+      "body": "Nvidia reports fiscal Q3 after Tuesday's close with interim CEO Colette Kress on the call. The FT reported Monday that Jensen Huang, who resigned Thursday, is considering a return as CEO, with allies forming a \"war room\" of Silicon Valley executives to lobby the board and the White House; Nvidia did not immediately comment. The turmoil hit Asian chips overnight: Taiwan's Taiex fell 6.0% (TSMC −5.7%) and Korea's Kospi 3.6%, and NVDA was about 2% lower pre-market from Friday's $162.85, with AMD, Broadcom and Micron down about 4–6% (Reuters, TradingKey). Consensus is about $2.47–2.49 non-GAAP EPS on roughly $109B of revenue (guidance $108B ±2%). Treasury Secretary Bessent wants answers within 10 days on whether Nvidia used shell companies to sell top chips to China. Polymarket's odds of a new permanent CEO named by Dec 31 fell to about 21% from about 52% Sunday evening.",
       "odds": [
         {
           "source": "polymarket",
           "label": "New Nvidia CEO named by Dec 31",
-          "prob": 52.5,
+          "prob": 20.5,
           "slug": "new-nvidia-ceo-named-by-december-31-2026",
           "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
         },
         {
           "source": "polymarket",
           "label": "Kress is the next Nvidia CEO",
-          "prob": 22.4,
+          "prob": 16.1,
           "slug": "will-colette-kress-be-the-next-ceo-of-nvidia",
           "url": "https://polymarket.com/event/next-ceo-of-nvidia"
         },
         {
           "source": "polymarket",
           "label": "Rene Haas is the next Nvidia CEO",
-          "prob": 6.7,
+          "prob": 10,
           "slug": "will-rene-haas-be-the-next-ceo-of-nvidia",
           "url": "https://polymarket.com/event/next-ceo-of-nvidia"
         }
@@ -304,26 +304,26 @@
     },
     {
       "title": "Warsh, retail sales and Fed minutes test the hike case.",
-      "body": "Fed Chair Warsh speaks Monday at noon, October retail sales land Tuesday at 8:30a (about +0.2% expected after +0.8%), and Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. More than a dozen Fed speeches fill the week. After last week's hot CPI and a 10-year that ended near 5.15%, prediction markets price a 25bp hike on Dec 9 at about 87–89% and a bigger move at about 11%.",
+      "body": "Fed Chair Warsh speaks Monday at noon after a weak Empire State survey (7.8 vs about 17–18 expected, prices paid down 14 points), October retail sales land Tuesday at 8:30a (about +0.2% expected after +0.8%), and Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. More than a dozen Fed speeches fill the week. After last week's hot CPI and a 10-year that ended near 5.15%, prediction markets price a 25bp hike on Dec 9 at about 87–88% and a bigger move at about 10%.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 89,
+          "prob": 87,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
           "source": "polymarket",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 86.5,
+          "prob": 87.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
         },
         {
           "source": "kalshi",
           "label": "Fed hikes more than 25bp",
-          "prob": 11,
+          "prob": 10,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         }
@@ -335,7 +335,7 @@
     },
     {
       "title": "Retailers report into the holiday season.",
-      "body": "Home Depot (est. about $3.84–3.87 EPS) and Disney report Tuesday morning; Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B, guided $0.62–0.64), with Ross, Gap and Intuit after Thursday's close and BJ's Friday. Polymarket gives Disney about 94% to beat $1.69 and Home Depot about 46% to beat $3.95. Tuesday's retail sales set the tone."
+      "body": "Home Depot (est. about $3.84–3.87 EPS) and Disney report Tuesday morning; Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B, guided $0.62–0.64), with Ross, Gap and Intuit after Thursday's close and BJ's Friday. Polymarket gives Disney about 82% to beat $1.69 and Home Depot about 47% to beat $3.95. Tuesday's retail sales set the tone."
     },
     {
       "title": "Airlines dig out after the nationwide ground stop.",
@@ -348,7 +348,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $2.53",
-        "prob": 91,
+        "prob": 87.5,
         "slug": "nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53",
         "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
       },
@@ -364,7 +364,7 @@
         "source": "polymarket",
         "kind": "mention",
         "label": "Says “Successor” or “Succession” on the call",
-        "prob": 61.5,
+        "prob": 63,
         "slug": "will-nvidia-say-successor-succession-during-earnings-call-november-17",
         "url": "https://polymarket.com/event/what-will-nvidia-say-during-their-next-earnings-call-november-17"
       },
@@ -382,7 +382,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $3.95",
-        "prob": 46.5,
+        "prob": 47.5,
         "slug": "hd-quarterly-earnings-nongaap-eps-11-17-2026-3pt95",
         "url": "https://polymarket.com/event/hd-quarterly-earnings-nongaap-eps-11-17-2026-3pt95"
       }
@@ -392,7 +392,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $1.69",
-        "prob": 94,
+        "prob": 82,
         "slug": "dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69",
         "url": "https://polymarket.com/event/dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69"
       }
@@ -566,7 +566,51 @@
     {
       "label": "Polymarket · NVDA, HD, DIS earnings beat markets",
       "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
+    },
+    {
+      "label": "NY Fed · Empire State Manufacturing Survey, November 2026",
+      "url": "https://www.newyorkfed.org/medialibrary/media/survey/empire/empire2026/2026_11_empire-state-manufacturing-survey.pdf"
+    },
+    {
+      "label": "Seeking Alpha · Empire State index slumps (Nov 16)",
+      "url": "https://seekingalpha.com/news/4672973-empire-state-manufacturing-index-slumps-beyond-estimates-in-november"
+    },
+    {
+      "label": "Reuters via AOL · S&P 500, Nasdaq futures fall ahead of Nvidia earnings (Nov 16)",
+      "url": "https://www.aol.com/articles/p-500-nasdaq-futures-slide-104314000.html"
+    },
+    {
+      "label": "TradingKey · US pre-market Nov 16",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262307008-us-nvda-nasdaq-futures-nvidia-jensen-huang-anthropic-ipo-tradingkey"
+    },
+    {
+      "label": "Reuters via RTE · Huang discussing Nvidia return with allies (FT)",
+      "url": "https://www.rte.ie/news/business/2026/1116/1599339-jensen-huang-nvidia/"
+    },
+    {
+      "label": "Forbes · Nvidia slips pre-market as Huang weighs comeback",
+      "url": "https://www.forbes.com/sites/zacharyfolk/2026/11/16/nvidia-shares-slip-in-premarket-as-jensen-huang-reportedly-weighs-ceo-comeback/"
+    },
+    {
+      "label": "Focus Taiwan · Taiex posts 2nd-largest point drop (Nov 16)",
+      "url": "https://focustaiwan.tw/business/202611160014"
+    },
+    {
+      "label": "ad-hoc-news · Taiwan Weighted closes down 6.03%",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/taiwan-weighted-closes-down-6-03-prozent-as-ai-concerns-weigh-on-technology-stocks/70520713"
+    },
+    {
+      "label": "Market Brief live data · futures, 10Y, WTI Mon 8:41a",
+      "url": "https://marketbrief.kennykao.workers.dev/api/live"
+    },
+    {
+      "label": "Baidu · Q3 2026 results (StockTitan)",
+      "url": "https://www.stocktitan.net/news/BIDU/baidu-announces-third-quarter-2026-4scc1ia18zdt.html"
+    },
+    {
+      "label": "XPeng · Q3 2026 results (GlobeNewswire)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/16/3403237/0/en/xpeng-reports-third-quarter-2026-unaudited-financial-results.html"
     }
   ],
-  "oddsAsOf": "Sun 11/15 evening"
+  "oddsAsOf": "Mon 11/16 pre-market"
 }
