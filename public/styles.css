@@ -254,6 +254,11 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .mood-grid { display: grid; grid-template-columns: 1fr 1fr; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .mood-card { padding: 10px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; }
 .mood-card:first-child { grid-column: 1 / -1; border-right: 0; }
+a.mood-card { display: block; color: inherit; text-decoration: none; transition: background .15s; }
+a.mood-card:hover, a.mood-card:focus-visible { background: var(--panel-2); outline: none; }
+a.mood-card:hover .card-kicker, a.mood-card:focus-visible .card-kicker { color: var(--teal); }
+a.mood-card .card-kicker::after { content: " ↗"; opacity: 0; transition: opacity .15s; }
+a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::after { opacity: .8; }
 .mood-card:nth-child(3), .mood-card:nth-child(5) { border-right: 0; }
 .mood-card:nth-child(n+4) { border-bottom: 0; }
 .card-kicker { color: var(--text-2); font-size: 10px; }

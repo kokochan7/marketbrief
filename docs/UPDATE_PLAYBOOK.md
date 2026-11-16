@@ -29,7 +29,8 @@ If today is a US market holiday, make no edits.
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
    names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, breadth,
-   safe havens). Prices themselves come from the live strip, so there is no price table to edit.
+   safe havens). Keep any tile `url` fields; Fear & Greed, VIX and breadth already link to
+   their source pages, and a tile can take an optional https `url` when one page backs it. Prices themselves come from the live strip, so there is no price table to edit.
 3. Refresh `stories`: it is a rolling list of six, most important first, not a fixed
    weekly set. Update stories that moved (new numbers, results), replace ones that have
    played out or gone stale with the day's new stories, and keep their odds current.

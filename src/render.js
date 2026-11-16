@@ -182,11 +182,36 @@ function renderDays(days, today, eodds) {
     .join("");
 }
 
+// Market Mood tiles link to their source page. Defaults below; any tile can set its own
+// `url` in brief.json (e.g. mood.regime.url), and a tile with no link stays plain.
+const MOOD_LINKS = {
+  fearGreed: "https://www.cnn.com/markets/fear-and-greed",
+  vix: "https://finance.yahoo.com/quote/%5EVIX/",
+  breadth: "https://finance.yahoo.com/sectors/",
+};
+
+function moodCard(url, inner, id, title) {
+  const ok = /^https:\/\//.test(url || "");
+  const attrs = `${id ? ` id="${id}"` : ""}${title && ok ? ` title="${esc(title)}"` : ""}`;
+  return ok
+    ? `<a class="mood-card is-link" href="${esc(url)}" target="_blank" rel="noopener"${attrs}>${inner}</a>`
+    : `<div class="mood-card"${attrs}>${inner}</div>`;
+}
+
 function renderMood(m, wctx) {
   const fg = m.fearGreed;
+  const link = (k) => (m[k] && m[k].url) || MOOD_LINKS[k];
+  const host = (u) => {
+    try {
+      return new URL(u).hostname.replace(/^www\./, "");
+    } catch (e) {
+      return "";
+    }
+  };
+  const t = (k) => (link(k) ? `Open ${host(link(k))} ↗` : "");
   return `
   <div class="mood-grid">
-    <div class="mood-card" id="fg-card">
+    ${moodCard(link("fearGreed"), `
       <div class="card-kicker">CNN Fear &amp; Greed Index</div>
       <div class="fg-row">
         <span class="fg-score" id="fg-score">${esc(Math.round(fg.score))}</span>
@@ -194,29 +219,24 @@ function renderMood(m, wctx) {
       </div>
       <div class="fg-bar" aria-hidden="true"><span class="fg-marker" id="fg-marker" style="left:${fgColorPos(fg.score)}%"></span></div>
       <div class="card-sub" id="fg-sub">Week ago ${esc(Math.round(fg.weekAgo))}, month ${esc(Math.round(fg.monthAgo))}, year ${esc(Math.round(fg.yearAgo))}</div>
-      <div class="card-asof" id="fg-asof">As of ${timeify(esc(fg.asOf), wctx)}</div>
-    </div>
-    <div class="mood-card">
+      <div class="card-asof" id="fg-asof">As of ${timeify(esc(fg.asOf), wctx)}</div>`, "fg-card", t("fearGreed"))}
+    ${moodCard(link("regime"), `
       <div class="card-kicker">Risk regime</div>
       <span class="pill pill-${esc(m.regime.tone)}">${esc(m.regime.label)}</span>
-      <div class="card-sub">${md(m.regime.text, wctx)}</div>
-    </div>
-    <div class="mood-card">
+      <div class="card-sub">${md(m.regime.text, wctx)}</div>`, "", t("regime"))}
+    ${moodCard(link("vix"), `
       <div class="card-kicker">VIX</div>
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
-      <div class="card-sub">${md(m.vix.text, wctx)}</div>
-    </div>
-    <div class="mood-card">
+      <div class="card-sub">${md(m.vix.text, wctx)}</div>`, "", t("vix"))}
+    ${moodCard(link("breadth"), `
       <div class="card-kicker">Breadth</div>
       <div class="big">${esc(m.breadth.value)}</div>
-      <div class="card-sub">${md(m.breadth.text, wctx)}</div>
-    </div>
-    <div class="mood-card">
+      <div class="card-sub">${md(m.breadth.text, wctx)}</div>`, "", t("breadth"))}
+    ${moodCard(link("havens"), `
       <div class="card-kicker">Safe havens</div>
       <div class="big">${esc(m.havens.value)}</div>
-      <div class="card-sub">${md(m.havens.text, wctx)}</div>
-    </div>
+      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, "", t("havens"))}
   </div>`;
 }
 
