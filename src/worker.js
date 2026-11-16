@@ -334,57 +334,31 @@ async function liveHandler(request, ctx) {
 // TEMP probe (remove): which data sources the Worker can reach.
 async function probeHandler() {
   const out = {};
-  const get = async (k, u, opts = {}, pick) => {
+  const BH = { "User-Agent": UA, Accept: "text/csv,text/html,application/json;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9" };
+  try {
+    const r = await fetch("https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-11-13_daily_options", { headers: BH });
+    const j = await r.json();
+    out.cboeKeys = Object.keys(j);
+    out.cboeShape = Object.fromEntries(Object.entries(j).map(([k, v]) => [k, Array.isArray(v) ? { arr: v.length, first: JSON.stringify(v[0]).slice(0, 160) } : typeof v === "object" && v ? Object.keys(v).slice(0, 12) : v]));
+  } catch (e) { out.cboeErr = String(e); }
+  for (const [k, u] of [["fred1", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2&cosd=2026-10-01"], ["fred2", "https://fred.stlouisfed.org/data/BAMLH0A0HYM2.txt"], ["fred3", "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"]]) {
     try {
-      const r = await fetch(u, { headers: { "User-Agent": UA, Accept: "*/*", ...(opts.headers || {}) } });
+      const r = await fetch(u, { headers: BH });
       const t = await r.text();
-      out[k] = { status: r.status, len: t.length, pick: pick ? pick(t) : t.slice(0, 400) };
-    } catch (e) {
-      out[k] = { err: String(e?.message || e) };
-    }
-  };
-  const tail = (n) => (t) => t.trim().split("\n").slice(-n).join(" | ");
-  const { cookie, crumb } = await yahooAuth().catch(() => ({}));
-  await Promise.all([
-    get("cnbc", "https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=US2Y%7CUS10Y&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json", {}, (t) => {
-      try {
-        const j = JSON.parse(t);
-        return (j.FormattedQuoteResult?.FormattedQuote || []).map((q) => [q.symbol, q.last, q.change, q.last_time, q.previous_day_closing]);
-      } catch (e) { return t.slice(0, 300); }
-    }),
-    get("fredDGS2", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2", {}, tail(3)),
-    get("fredHY", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2", {}, tail(3)),
-    get("kalshiFed", "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=KXFEDDECISION&status=open&with_nested_markets=true&limit=5", {}, (t) => {
-      try {
-        const j = JSON.parse(t);
-        return (j.events || []).map((e) => ({ ev: e.event_ticker, title: e.title, sub: e.sub_title, m: (e.markets || []).map((m) => [m.ticker, m.yes_sub_title, m.last_price_dollars ?? m.last_price, m.close_time]) }));
-      } catch (e) { return t.slice(0, 300); }
-    }),
-    get("yopt", `https://query2.finance.yahoo.com/v7/finance/options/NVDA?crumb=${encodeURIComponent(crumb || "")}`, { headers: { Cookie: cookie || "" } }, (t) => {
-      try {
-        const r = JSON.parse(t).optionChain.result[0];
-        const o = r.options[0] || {};
-        return { exp: r.expirationDates.slice(0, 4), strikes: r.strikes.length, q: { p: r.quote.regularMarketPrice, et: r.quote.earningsTimestamp, ets: r.quote.earningsTimestampStart, call: r.quote.earningsCallTimestampStart }, firstExp: o.expirationDate, call0: (o.calls || []).slice(0, 1), nCalls: (o.calls || []).length };
-      } catch (e) { return t.slice(0, 300); }
-    }),
-    get("cboeHtml", "https://www.cboe.com/us/options/market_statistics/daily/?dt=2026-11-13", {}, (t) => {
-      const i = t.search(/put\/call/i);
-      return i < 0 ? "no put/call text" : t.slice(i - 100, i + 300).replace(/\s+/g, " ");
-    }),
-    get("cboeCdn", "https://cdn.cboe.com/data/us/options/market_statistics/daily/2026-11-13_daily_options", {}),
-    get("barchart", "https://www.barchart.com/stocks/quotes/%24S5TH/overview", {}, (t) => {
-      const m = t.match(/"lastPrice":"?([\d.]+)/);
-      const i = t.indexOf("S5TH");
-      return { last: m && m[1], around: i < 0 ? null : t.slice(i, i + 200).replace(/\s+/g, " ") };
-    }),
-    get("ycharts2y", "https://query1.finance.yahoo.com/v8/finance/chart/2YY=F?range=5d&interval=1d", {}, (t) => {
-      try { const m = JSON.parse(t).chart.result[0].meta; return [m.regularMarketPrice, m.regularMarketTime, m.shortName]; } catch (e) { return t.slice(0, 200); }
-    }),
-    get("yES", "https://query1.finance.yahoo.com/v8/finance/chart/ES=F?range=5d&interval=1d", {}, (t) => {
-      try { const m = JSON.parse(t).chart.result[0].meta; return [m.regularMarketPrice, m.regularMarketTime, m.shortName]; } catch (e) { return t.slice(0, 200); }
-    }),
-    get("ypc", "https://query1.finance.yahoo.com/v8/finance/chart/%5EPCALL?range=5d&interval=1d", {}, (t) => t.slice(0, 200)),
-  ]);
+      out[k] = [r.status, t.length, t.trim().split("\n").slice(-2).join(" | ").slice(0, 160)];
+    } catch (e) { out[k] = String(e); }
+  }
+  try {
+    const { cookie, crumb } = await yahooAuth();
+    const r = await fetch(`https://query2.finance.yahoo.com/v7/finance/options/HD?crumb=${encodeURIComponent(crumb)}`, { headers: { "User-Agent": UA, Cookie: cookie } });
+    const res = (await r.json()).optionChain.result[0];
+    const q = res.quote;
+    out.opt = { et: q.earningsTimestamp, ets: q.earningsTimestampStart, ete: q.earningsTimestampEnd, est: q.isEarningsDateEstimate, exp: res.expirationDates.slice(0, 5), price: q.regularMarketPrice };
+    const o = res.options[0];
+    const near = (o.calls || []).filter((c) => Math.abs(c.strike - q.regularMarketPrice) < 6).map((c) => [c.strike, c.bid, c.ask, c.lastPrice, c.impliedVolatility]);
+    const nearP = (o.puts || []).filter((c) => Math.abs(c.strike - q.regularMarketPrice) < 6).map((c) => [c.strike, c.bid, c.ask, c.lastPrice]);
+    out.optNear = { exp: o.expirationDate, near, nearP };
+  } catch (e) { out.optErr = String(e); }
   return json(out, 200, 0);
 }
 
