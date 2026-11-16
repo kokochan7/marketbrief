@@ -41,7 +41,7 @@ If today is a US market holiday, make no edits.
 ## Weekly (Sunday, about 6:30pm ET)
 
 Start a new edition for the coming Monday to Friday: new `edition` range, five `days`
-with macro events (ET times, consensus where available) and notable before-open /
+with macro events (ET times in the 8:30a form, see "Times"; consensus where available) and notable before-open /
 after-close earnings, a fresh `mainEvent`, six `stories`, last week's closing `mood`,
 and `earningsOdds` for the week's tickers (see "Earnings prediction markets").
 
@@ -78,11 +78,27 @@ week's report (check the date in the slug / close time). Each entry has `source`
 - Tickers with no market get no entry. Rebuild `earningsOdds` for each new week, and
   refresh it daily (new markets get listed during the week).
 
+## Times
+
+Write every time in `brief.json` as **US Eastern wall-clock time** (whatever ET is that
+day, EST or EDT) in the compact form `h:mma` / `h:mmp`: `8:30a`, `9:05a`, `12:00p`, `4:20p`.
+The page converts each one to the viewer's own time zone and labels it (EST, PST, CET...),
+so a Pacific viewer sees `5:30a PST` for `8:30a`.
+
+- Don't add "ET" after times, and don't convert them yourself.
+- A weekday right before a time moves with it, e.g. `Sun 6:30p` (shown as `Mon 8:30a` in Tokyo).
+- Write both ends of a range (`9:30a–4:00p`, not `9:30–4p`). No 24-hour times (`16:00`).
+- `4pm`, `4:00 PM`, `noon` and a trailing `ET` are understood, but stick to the compact form.
+- Macro `time` is a time like `8:30a`, or a word such as `TBA`.
+- Times written as words ("after the close", "before the open") are left as they are.
+- `npm test` checks the macro times and that the page renders.
+
 ## Sourcing rules
 
 - Prefer primary sources: BLS, BEA, Federal Reserve, US Treasury, company releases,
   exchange data. Use at least two sources for market closes.
 - Every figure needs an as-of label; every source used goes in `sources`.
-- Dates are Month/Day everywhere (e.g. "Thu 11/12", "Dec 9", "November 16 – 20, 2026"). Times are ET.
+- Dates are Month/Day everywhere (e.g. "Thu 11/12", "Dec 9", "November 16 – 20, 2026").
+  Times follow "Times" below.
 - `**bold**` is the only markup. Validate the JSON (`node -e "JSON.parse(require('fs').readFileSync('content/brief.json'))"`)
   and run `npm test` before pushing to `main`.

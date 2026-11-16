@@ -29,14 +29,16 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | `earningsOdds` | Optional Kalshi/Polymarket earnings markets by ticker: "beat" chips in the week table, all markets in hover cards (see docs/UPDATE_PLAYBOOK.md) |
 | `sources` | Where each figure came from (kept in the file for checking; not shown on the page) |
 
-Text fields are escaped; `**bold**` is the only formatting supported.
+Text fields are escaped; `**bold**` is the only formatting supported. Times are written in
+US Eastern time as `8:30a` / `4:20p` and shown in each viewer's own time zone
+(`public/localtime.js`); see "Times" in docs/UPDATE_PLAYBOOK.md.
 
 ## Develop and deploy
 
 ```bash
 npm install
 npm run dev      # local preview at http://localhost:8787
-npm test         # checks the day/week change maths
+npm test         # checks the day/week change maths, time conversion and page render
 npm run deploy   # manual deploy (needs Cloudflare login)
 ```
 

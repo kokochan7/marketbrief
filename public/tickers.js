@@ -5,7 +5,10 @@
   const TTL = 60000;
   const CAN_HOVER = !!(window.matchMedia && window.matchMedia("(hover: hover)").matches);
   const cache = new Map(); // sym -> { at, data | promise }
-  let tip, current, hideTimer;
+  const GAP = 8; // px between the link and its card; the card's ::before bridges it
+  const HIDE_MS = 250; // time to move the pointer from a ticker onto its card
+  const SWITCH_MS = 140; // passing over another ticker on the way to the card doesn't steal it
+  let tip, current, hideTimer, switchTimer, switchTo;
 
   function getTip() {
     if (tip) return tip;
@@ -13,6 +16,18 @@
     tip.className = "tkr-tip";
     tip.setAttribute("role", "tooltip");
     tip.hidden = true;
+    // Keep the card open while the pointer is on it, so its prediction-market links can be clicked.
+    tip.addEventListener("mouseenter", () => {
+      clearTimeout(hideTimer);
+      cancelSwitch();
+    });
+    tip.addEventListener("mouseleave", (e) => {
+      if (current && e.relatedTarget && current.contains(e.relatedTarget)) return;
+      hide();
+    });
+    tip.addEventListener("focusout", (e) => {
+      if (!tip.contains(e.relatedTarget) && e.relatedTarget !== current) hide();
+    });
     document.body.appendChild(tip);
     return tip;
   }
@@ -32,8 +47,9 @@
     return cur && cur !== "USD" ? `${n} ${cur}` : `$${n}`;
   };
 
+  // "Sun 6:19 PM PST": the viewer's own time zone (localtime.js), Eastern as a fallback.
   const etTime = (ms) =>
-    new Intl.DateTimeFormat("en-US", {
+    window.MBTime ? window.MBTime.stamp(ms) : new Intl.DateTimeFormat("en-US", {
       timeZone: "America/New_York",
       weekday: "short",
       hour: "numeric",
@@ -61,7 +77,10 @@
         const ok = live && typeof live.prob === "number";
         const p = ok ? live.prob : Number(o.prob);
         const val = ok && live.closed ? (p >= 50 ? "Yes" : "No") : isFinite(p) ? fmtP(p) : "—";
-        return `<div class="tt-odd"><span class="tt-odd-p${p < 50 ? " is-low" : ""}">${val}</span><span>${esc(o.label)} <span class="tt-odd-src">${esc(SRC[o.source] || o.source)}</span></span></div>`;
+        const inner = `<span class="tt-odd-p${p < 50 ? " is-low" : ""}">${val}</span><span><span class="tt-odd-l">${esc(o.label)}</span> <span class="tt-odd-src">${esc(SRC[o.source] || o.source)} ↗</span></span>`;
+        return /^https:\/\//.test(o.url || "")
+          ? `<a class="tt-odd" href="${esc(o.url)}" target="_blank" rel="noopener">${inner}</a>`
+          : `<div class="tt-odd">${inner}</div>`;
       })
       .join("");
     return `<div class="tt-odds"><div class="tt-odds-h">Prediction markets</div>${rows}</div>`;
@@ -126,8 +145,13 @@
     let left = r.left + r.width / 2 - tw / 2;
     left = Math.max(8, Math.min(left, window.innerWidth - tw - 8));
     // Live tiles: show the card below the tile; tickers: above, unless there's no room.
-    let top = el.classList.contains("tick") ? r.bottom + 8 : r.top - th - 8;
-    if (top < 8) top = r.bottom + 8;
+    let below = el.classList.contains("tick");
+    let top = below ? r.bottom + GAP : r.top - th - GAP;
+    if (top < 8) {
+      top = r.bottom + GAP;
+      below = true;
+    }
+    t.classList.toggle("is-below", below);
     t.style.left = `${left + window.scrollX}px`;
     t.style.top = `${top + window.scrollY}px`;
   }
@@ -153,11 +177,20 @@
     });
   }
 
-  function hide() {
-    hideTimer = setTimeout(() => {
+  function hide(now) {
+    clearTimeout(hideTimer);
+    const go = () => {
+      cancelSwitch();
       current = null;
       if (tip) tip.hidden = true;
-    }, 80);
+    };
+    if (now) go();
+    else hideTimer = setTimeout(go, HIDE_MS);
+  }
+
+  function cancelSwitch() {
+    clearTimeout(switchTimer);
+    switchTo = null;
   }
 
   // Touch devices: tapping an earnings ticker opens a bottom sheet with the same
@@ -219,17 +252,36 @@
 
   document.addEventListener("mouseover", (e) => {
     const a = e.target.closest && e.target.closest("a.tkr, a.tick");
-    if (a && a !== current) show(a);
+    if (!a) return;
+    clearTimeout(hideTimer);
+    if (a === current) return cancelSwitch();
+    if (a === switchTo) return;
+    cancelSwitch();
+    // A card is already open for another link: wait a beat, in case the pointer is only
+    // crossing this one on its way to that card.
+    if (current && tip && !tip.hidden) {
+      switchTo = a;
+      switchTimer = setTimeout(() => {
+        switchTo = null;
+        show(a);
+      }, SWITCH_MS);
+    } else show(a);
   });
   document.addEventListener("mouseout", (e) => {
     const a = e.target.closest && e.target.closest("a.tkr, a.tick");
-    if (a && !a.contains(e.relatedTarget)) hide();
+    if (!a || a.contains(e.relatedTarget)) return;
+    if (a === switchTo) cancelSwitch();
+    if (tip && tip.contains(e.relatedTarget)) return;
+    if (a === current || !switchTo) hide();
   });
   document.addEventListener("focusin", (e) => {
     if (e.target.matches && e.target.matches("a.tkr, a.tick")) show(e.target);
   });
   document.addEventListener("focusout", (e) => {
-    if (e.target.matches && e.target.matches("a.tkr, a.tick")) hide();
+    if (e.target.matches && e.target.matches("a.tkr, a.tick") && !(tip && tip.contains(e.relatedTarget))) hide();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && current) hide(true);
   });
   window.addEventListener("scroll", () => current && place(current), { passive: true });
   document.addEventListener("live:update", () => {

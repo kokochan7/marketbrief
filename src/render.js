@@ -9,7 +9,54 @@ const esc = (s) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+// Times in the brief are US Eastern wall-clock times written like "8:30a", "12:00p" or
+// "Sun 6:30p" (also accepted: "4:20 pm", "4pm", "noon", with or without a trailing ET/EST/EDT).
+// Each one is wrapped in <time class="lt" data-et="YYYY-MM-DDTHH:MM">, shown in Eastern time
+// here, and converted to the viewer's own time zone by public/localtime.js.
+const TIME_RE =
+  /(?:\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+)?(?:\b(1[0-2]|0?[1-9]):([0-5]\d)(?:([ap])(?:\.?m\.?)?(?![A-Za-z])|\s?([AaPp])\.?[Mm]\b\.?)|\b(1[0-2]|0?[1-9])\s?([AaPp])\.?[Mm]\b\.?|\b([Nn]oon)\b)(?:\s?(?:ET|EST|EDT)\b)?/g;
+
+function etAbbr(dateKey) {
+  // EST or EDT for that date (noon Eastern, well clear of the 2am switch).
+  try {
+    const d = new Date(`${dateKey}T17:00:00Z`);
+    const p = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", timeZoneName: "short" }).formatToParts(d);
+    const n = p.find((x) => x.type === "timeZoneName")?.value;
+    if (n) return n;
+  } catch (e) {}
+  return "ET";
+}
+
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+// The date within three days of dateKey that falls on weekday wd ("Sun 6:30p" on Monday's row is the day before).
+// With week=true, dateKey is the edition's Monday: Mon-Fri are that week, Sat/Sun the weekend before it.
+function nearestWeekday(dateKey, wd, week) {
+  const base = new Date(`${dateKey}T12:00:00Z`);
+  let diff = WEEKDAYS.indexOf(wd) - base.getUTCDay();
+  if (week) diff = wd === "Sat" ? -2 : wd === "Sun" ? -1 : diff;
+  else if (diff > 3) diff -= 7;
+  else if (diff < -3) diff += 7;
+  return new Date(base.getTime() + diff * 864e5).toISOString().slice(0, 10);
+}
+
+// ctx: { date: "YYYY-MM-DD" (the day the time belongs to; the edition's Monday for free text, with week: true),
+//        zone: true to print the zone after each time }
+export function timeify(html, ctx) {
+  if (!ctx || !ctx.date) return html;
+  return html.replace(TIME_RE, (all, wd, h1, m1, apA, apB, h2, apC, noon) => {
+    let h, mi, ap;
+    if (noon) [h, mi, ap] = [12, 0, "p"];
+    else if (h1) [h, mi, ap] = [+h1, +m1, (apA || apB).toLowerCase()];
+    else [h, mi, ap] = [+h2, 0, apC.toLowerCase()];
+    const h24 = (h % 12) + (ap === "p" ? 12 : 0);
+    const date = wd ? nearestWeekday(ctx.date, wd, ctx.week) : ctx.date;
+    const et = `${date}T${String(h24).padStart(2, "0")}:${String(mi).padStart(2, "0")}`;
+    const shown = `${wd ? wd + " " : ""}${h}:${String(mi).padStart(2, "0")}${ap}${ctx.zone ? " " + etAbbr(date) : ""}`;
+    return `<time class="lt" data-et="${et}"${wd ? ' data-wd="1"' : ""}${ctx.zone ? ' data-z="1"' : ""}>${shown}</time>`;
+  });
+}
+
+const md = (s, ctx) => timeify(esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"), ctx);
 
 const ODDS_NAMES = { kalshi: "Kalshi", polymarket: "Polymarket" };
 
@@ -83,26 +130,27 @@ function fgColorPos(score) {
 function renderDays(days, today, eodds) {
   return days
     .map((d) => {
+      const dctx = { date: d.date };
       const status = d.date < today ? "done" : d.date === today ? "today" : "upcoming";
       const macro = (d.macro || [])
         .map(
           (m) => `
           <li class="macro-item">
             <span class="dot dot-${esc(m.level || "low")}" aria-hidden="true"></span>
-            <span class="macro-time">${esc(m.time)}</span>
-            <span class="macro-text">${md(m.text)}</span>
+            <span class="macro-time">${timeify(esc(m.time), dctx)}</span>
+            <span class="macro-text">${md(m.text, dctx)}</span>
           </li>`
         )
         .join("");
       const result = d.result
-        ? `<p class="day-result"><span class="result-label">Result</span> ${md(d.result)}</p>`
+        ? `<p class="day-result"><span class="result-label">Result</span> ${md(d.result, dctx)}</p>`
         : "";
       // Pre-market line (overnight news, futures, 8:30 data); dropped once the day's result is in.
       const pre =
         d.premarket && !d.result
-          ? `<p class="day-result day-pre"><span class="result-label">Pre-market</span> ${md(d.premarket)}</p>`
+          ? `<p class="day-result day-pre"><span class="result-label">Pre-market</span> ${md(d.premarket, dctx)}</p>`
           : "";
-      const note = d.note ? `<p class="day-note">${md(d.note)}</p>` : "";
+      const note = d.note ? `<p class="day-note">${md(d.note, dctx)}</p>` : "";
       const statusBadge =
         status === "today"
           ? '<span class="status status-today">Today</span>'
@@ -134,7 +182,7 @@ function renderDays(days, today, eodds) {
     .join("");
 }
 
-function renderMood(m) {
+function renderMood(m, wctx) {
   const fg = m.fearGreed;
   return `
   <div class="mood-grid">
@@ -146,28 +194,28 @@ function renderMood(m) {
       </div>
       <div class="fg-bar" aria-hidden="true"><span class="fg-marker" id="fg-marker" style="left:${fgColorPos(fg.score)}%"></span></div>
       <div class="card-sub" id="fg-sub">Week ago ${esc(Math.round(fg.weekAgo))}, month ${esc(Math.round(fg.monthAgo))}, year ${esc(Math.round(fg.yearAgo))}</div>
-      <div class="card-asof" id="fg-asof">As of ${esc(fg.asOf)}</div>
+      <div class="card-asof" id="fg-asof">As of ${timeify(esc(fg.asOf), wctx)}</div>
     </div>
     <div class="mood-card">
       <div class="card-kicker">Risk regime</div>
       <span class="pill pill-${esc(m.regime.tone)}">${esc(m.regime.label)}</span>
-      <div class="card-sub">${md(m.regime.text)}</div>
+      <div class="card-sub">${md(m.regime.text, wctx)}</div>
     </div>
     <div class="mood-card">
       <div class="card-kicker">VIX</div>
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
-      <div class="card-sub">${md(m.vix.text)}</div>
+      <div class="card-sub">${md(m.vix.text, wctx)}</div>
     </div>
     <div class="mood-card">
       <div class="card-kicker">Breadth</div>
       <div class="big">${esc(m.breadth.value)}</div>
-      <div class="card-sub">${md(m.breadth.text)}</div>
+      <div class="card-sub">${md(m.breadth.text, wctx)}</div>
     </div>
     <div class="mood-card">
       <div class="card-kicker">Safe havens</div>
       <div class="big">${esc(m.havens.value)}</div>
-      <div class="card-sub">${md(m.havens.text)}</div>
+      <div class="card-sub">${md(m.havens.text, wctx)}</div>
     </div>
   </div>`;
 }
@@ -203,6 +251,8 @@ export function renderPage(brief, { now = new Date() } = {}) {
   const e = brief.edition;
   const today = etDateKey(now);
   const inWeek = today >= e.weekStart && today <= e.weekEnd;
+  // Free text outside the week table: times carry their zone ("4:20p EST").
+  const wctx = { date: e.weekStart, zone: true, week: true };
   const kicker = inWeek ? "This week" : today < e.weekStart ? "The week ahead" : e.kicker || "Last week";
 
   const stories = brief.stories
@@ -211,7 +261,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
       <li class="story">
         <span class="story-num">${i + 1}</span>
         <div>
-          <p><strong>${esc(s.title)}</strong> ${md(s.body)}</p>
+          <p><strong>${timeify(esc(s.title), wctx)}</strong> ${md(s.body, wctx)}</p>
           ${renderOdds(s.odds, i)}
         </div>
       </li>`
@@ -255,14 +305,14 @@ export function renderPage(brief, { now = new Date() } = {}) {
     <div class="col-main">
       <section class="main-event sec-event">
         <div class="eyebrow">${esc(brief.mainEvent.kicker)}</div>
-        <h2>${esc(brief.mainEvent.title)}</h2>
-        <p>${md(brief.mainEvent.body)}</p>
+        <h2>${timeify(esc(brief.mainEvent.title), wctx)}</h2>
+        <p>${md(brief.mainEvent.body, wctx)}</p>
       </section>
 
       <section class="sec-week" aria-labelledby="week-h">
         <div class="section-head">
-          <h2 id="week-h" class="section-title">The week, day by day</h2>
-          <span class="section-meta">Times ET</span>
+          <h2 id="week-h" class="section-title">The Week</h2>
+          <span class="section-meta" data-tz-label="${esc(e.weekStart)}T17:00:00Z" data-tz-prefix="Times ">Times ${esc(etAbbr(e.weekStart))}</span>
         </div>
         <div class="week" role="table">
           <div class="week-head" role="row">
@@ -283,7 +333,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
           <h2 id="mood-h" class="section-title">Market mood</h2>
           <span class="section-meta">${esc(brief.mood.asOf)}</span>
         </div>
-        ${renderMood(brief.mood)}
+        ${renderMood(brief.mood, wctx)}
       </section>
 
     </aside>
@@ -297,6 +347,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
   </section>
 </main>
 <script type="application/json" id="eodds-data">${JSON.stringify(brief.earningsOdds || {}).replace(/</g, "\\u003c")}</script>
+<script src="/localtime.js?v=${esc(e.updated)}"></script>
 <script src="/live.js?v=${esc(e.updated)}" defer></script>
 <script src="/tickers.js?v=${esc(e.updated)}" defer></script>
 <script src="/odds.js?v=${esc(e.updated)}" defer></script>

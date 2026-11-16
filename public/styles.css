@@ -131,7 +131,10 @@ section { margin-top: var(--gap); }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--grey); transform: translateY(-1px); }
 .dot-high { background: var(--red); }
 .dot-medium { background: var(--orange); }
-.macro-time { font-size: 11.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.macro-time { font-size: 11.5px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* Day change marker when a time falls on another day in the viewer's zone (e.g. 6:10p EST -> 12:10a+1 CET) */
+.lt-shift { font-size: .72em; font-weight: 700; color: var(--orange); margin-left: 1px; vertical-align: .35em; line-height: 0; }
+.has-dayshift .macro-item { grid-template-columns: 8px 56px 1fr; }
 .macro-text { font-weight: 600; }
 .day-result { margin-top: 4px; font-size: 12px; color: var(--text-2); line-height: 1.4; }
 .result-label { color: var(--teal); font-size: 9.5px; margin-right: 3px; }
@@ -182,16 +185,23 @@ a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(
 .eodds:hover, .eodds:focus-visible { outline: 1px solid currentColor; }
 .tt-odds { margin-top: 7px; padding-top: 6px; border-top: 1px solid var(--line); }
 .tt-odds-h { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
-.tt-odd { display: flex; gap: 7px; align-items: baseline; font-size: 11.5px; color: var(--text-2); margin-top: 2px; }
+.tt-odd { display: flex; gap: 7px; align-items: baseline; font-size: 11.5px; color: var(--text-2); margin-top: 2px; text-decoration: none; }
+a.tt-odd { margin-left: -5px; margin-right: -5px; padding: 2px 5px; border-radius: 5px; }
+a.tt-odd:hover, a.tt-odd:focus-visible { background: rgba(45, 212, 191, .1); outline: none; }
+a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
 .tt-odd-p { min-width: 34px; font-weight: 800; color: var(--teal); font-variant-numeric: tabular-nums; }
 .tt-odd-p.is-low { color: var(--orange); }
-.tt-odd-src { color: var(--muted); font-size: 10.5px; }
+.tt-odd-src { color: var(--muted); font-size: 10.5px; white-space: nowrap; }
 .tkr-tip {
   position: absolute; z-index: 50; min-width: 170px; max-width: 250px;
   background: #13293a; border: 1px solid #24465c; border-radius: 9px;
   padding: 9px 11px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  font-size: 12.5px; color: var(--text-2); pointer-events: none;
+  font-size: 12.5px; color: var(--text-2);
 }
+/* Invisible bridge over the gap between a ticker and its card, so the card stays open
+   while the pointer moves onto it. */
+.tkr-tip::before { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 10px; }
+.tkr-tip.is-below::before { top: auto; bottom: 100%; }
 .tt-head { display: flex; flex-direction: column; gap: 1px; }
 .tt-head b { color: var(--text); font-size: 13px; letter-spacing: .04em; }
 .tt-head span { color: var(--muted); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -303,6 +313,7 @@ a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(
   .day-label { font-size: 16px; }
   .cell { font-size: 14px; }
   .macro-item { grid-template-columns: 8px 54px 1fr; }
+  .has-dayshift .macro-item { grid-template-columns: 8px 64px 1fr; }
   .macro-time { font-size: 13px; }
   .day-result { font-size: 13.5px; }
   .day-note { font-size: 13.5px; }

@@ -26,8 +26,9 @@
     return { text: text + (suffix ? " " + suffix : ""), cls: v > 0 ? "up" : v < 0 ? "down" : "flat" };
   }
 
+  // "Sun 6:19 PM PST": the viewer's own time zone (localtime.js), Eastern as a fallback.
   const etTime = (ms) =>
-    new Intl.DateTimeFormat("en-US", {
+    window.MBTime ? window.MBTime.stamp(ms) : new Intl.DateTimeFormat("en-US", {
       timeZone: "America/New_York",
       weekday: "short",
       hour: "numeric",
