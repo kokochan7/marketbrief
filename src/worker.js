@@ -303,35 +303,34 @@ async function liveHandler(request, ctx) {
 // TEMP probe (remove): what Yahoo returns for extended-hours sessions.
 async function probeHandler(url) {
   const sym = (url.searchParams.get("s") || "SPY").toUpperCase();
-  const out = { sym };
-  try {
-    const r1 = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
-    const sc = r1.headers.get("set-cookie") || "";
-    out.cookieStatus = r1.status;
-    const cookie = sc.split(/,(?=\s*\w+=)/).map((c) => c.split(";")[0].trim()).filter(Boolean).join("; ");
-    out.cookieNames = cookie.split("; ").map((c) => c.split("=")[0]);
-    const r2 = await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: cookie } });
-    const crumb = (await r2.text()).trim();
-    out.crumbStatus = r2.status;
-    out.crumbLen = crumb.length;
-    const r3 = await fetch(`https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(sym)}&crumb=${encodeURIComponent(crumb)}`, { headers: { "User-Agent": UA, Cookie: cookie } });
-    out.quoteStatus = r3.status;
-    const j = await r3.json();
-    const q = j?.quoteResponse?.result?.[0] || {};
-    out.quoteKeys = Object.keys(q);
-    out.quote = Object.fromEntries(Object.entries(q).filter(([k]) => /pre|post|overnight|market|regular|session|exchange|quoteType|tz|gmt/i.test(k)));
-  } catch (e) {
-    out.quoteErr = String(e?.message || e);
+  const out = { sym, now: new Date().toISOString() };
+  const r1 = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
+  const sc = r1.headers.get("set-cookie") || "";
+  const cookie = sc.split(/,(?=\s*\w+=)/).map((c) => c.split(";")[0].trim()).filter(Boolean).join("; ");
+  const r2 = await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: cookie } });
+  const crumb = (await r2.text()).trim();
+  const base = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(sym)}&crumb=${encodeURIComponent(crumb)}`;
+  const variants = {
+    a: base + "&overnightPrice=true",
+    b: base + "&fields=overnightMarketPrice,overnightMarketChange,overnightMarketChangePercent,overnightMarketTime,fulldayPrice,fulldayChange,fulldayChangePercent,fulldayTime,preMarketPrice,preMarketTime,postMarketPrice,postMarketTime,regularMarketPrice,marketState",
+    c: base + "&formatted=false&overnightPrice=true&includePrePost=true&lang=en-US&region=US",
+  };
+  for (const [k, u] of Object.entries(variants)) {
+    try {
+      const r = await fetch(u, { headers: { "User-Agent": UA, Cookie: cookie } });
+      const q = (await r.json())?.quoteResponse?.result?.[0] || {};
+      out[k] = { status: r.status, sel: Object.fromEntries(Object.entries(q).filter(([x]) => /full|overnight|post|pre(?!vious)|marketState|regularMarket(Price|Time)$/i.test(x))) };
+    } catch (e) {
+      out[k] = String(e?.message || e);
+    }
   }
   try {
-    const res = await yahoo(sym, "range=1d&interval=5m").catch(() => null);
-    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=5m&includePrePost=true`, { headers: { "User-Agent": UA } });
+    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=1m&includePrePost=true&includeOvernight=true`, { headers: { "User-Agent": UA } });
     const c = (await r.json())?.chart?.result?.[0];
     const ts = c?.timestamp || [];
     const cl = c?.indicators?.quote?.[0]?.close || [];
-    out.chartMeta = c?.meta;
-    out.chartTail = ts.slice(-4).map((t, i) => [new Date(t * 1000).toISOString(), cl[cl.length - 4 + i]]);
-    out.chartBars = ts.length;
+    out.chartTail = ts.slice(-3).map((t, i) => [new Date(t * 1000).toISOString(), cl[cl.length - 3 + i]]);
+    out.chartFull = c && { p: c.meta.fulldayPrice, c: c.meta.fulldayChange, t: c.meta.fulldayTime, keys: Object.keys(c.meta).filter((x) => /full|overnight/i.test(x)) };
   } catch (e) {
     out.chartErr = String(e?.message || e);
   }
