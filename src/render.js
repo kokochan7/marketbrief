@@ -68,8 +68,8 @@ function tickers(list, eodds = {}) {
     .map((t, i) => {
       const sep = i < list.length - 1 ? "," : "";
       const markets = eodds[t] || [];
-      // The empty .tkr-mv slot gets a green ↗ / red ↘ from moves.js (latest day move).
-      const link = `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}"${markets.length ? " data-eodds" : ""}>${esc(t)}</a><span class="tkr-mv" aria-hidden="true"></span>`;
+      // moves.js colours the ticker green / red by its latest day move.
+      const link = `<a class="tkr" href="/go/${encodeURIComponent(t)}" target="_blank" rel="noopener" data-sym="${esc(t)}"${markets.length ? " data-eodds" : ""}>${esc(t)}</a>`;
       const j = markets.findIndex((o) => o.kind === "beat");
       if (j < 0) return `<span class="tkr-e">${link}${sep}</span>`;
       const o = markets[j];
@@ -183,12 +183,9 @@ function renderDays(days, today, eodds) {
     .join("");
 }
 
-// Market Mood tiles link to their source page. Defaults below; any tile can set its own
-// `url` in brief.json (e.g. mood.regime.url), and a tile with no link stays plain.
-const MOOD_LINKS = {
-  fearGreed: "https://www.cnn.com/markets/fear-and-greed",
-  vix: "https://finance.yahoo.com/quote/%5EVIX/",
-};
+// Fear & Greed and VIX are plain tiles (not links, Kenny 11/16). Regime and safe havens link
+// only when brief.json gives them an https `url` (e.g. mood.regime.url).
+const MOOD_LINKS = {};
 const FEDWATCH_URL = "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html";
 
 function moodCard(url, inner, { id, title, cls } = {}) {
@@ -222,7 +219,7 @@ function renderMood(m, wctx) {
 
   return `
   <div class="mood-grid">
-    ${moodCard(link("fearGreed"), `
+    ${moodCard(null, `
       <div class="card-kicker">CNN Fear &amp; Greed Index</div>
       <div class="fg-row">
         <span class="fg-score" id="fg-score">${esc(Math.round(fg.score))}</span>
@@ -230,16 +227,16 @@ function renderMood(m, wctx) {
       </div>
       <div class="fg-bar" aria-hidden="true"><span class="fg-marker" id="fg-marker" style="left:${fgColorPos(fg.score)}%"></span></div>
       <div class="card-sub" id="fg-sub">Week ago ${esc(Math.round(fg.weekAgo))}, month ${esc(Math.round(fg.monthAgo))}, year ${esc(Math.round(fg.yearAgo))}</div>
-      <div class="card-asof" id="fg-asof">As of ${timeify(esc(fg.asOf), wctx)}</div>`, { id: "fg-card", title: t("fearGreed"), cls: "wide" })}
+      <div class="card-asof" id="fg-asof">As of ${timeify(esc(fg.asOf), wctx)}</div>`, { id: "fg-card", cls: "wide" })}
     ${moodCard(link("regime"), `
       <div class="card-kicker">Risk regime</div>
       <span class="pill pill-${esc(m.regime.tone)}">${esc(m.regime.label)}</span>
       <div class="card-sub">${md(m.regime.text, wctx)}</div>`, { title: t("regime"), cls: "wide" })}
-    ${moodCard(link("vix"), `
+    ${moodCard(null, `
       <div class="card-kicker">VIX</div>
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
-      <div class="card-sub">${md(m.vix.text, wctx)}</div>`, { title: t("vix") })}
+      <div class="card-sub">${md(m.vix.text, wctx)}</div>`)}
     ${moodCard(link("havens"), `
       <div class="card-kicker">Safe havens</div>
       <div class="big">${esc(m.havens.value)}</div>

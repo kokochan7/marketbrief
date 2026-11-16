@@ -33,7 +33,7 @@ a { color: var(--teal); }
 strong { color: var(--text); font-weight: 700; }
 h1, h2, p { margin: 0; }
 
-.wrap { max-width: 1480px; margin: 0 auto; padding: 14px 20px 28px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 14px 20px 28px; }
 
 /* Masthead */
 .masthead {
@@ -100,15 +100,13 @@ section { margin-top: var(--gap); }
   .tick-ext .x-t { display: none; }
   .tick-ext .x-i { display: inline-block; }
 }
-.tick-chg .d.chg-up::before { content: "↗"; margin-right: 2px; }
-.tick-chg .d.chg-down::before { content: "↘"; margin-right: 2px; }
 .chg-up { color: var(--green); }
 .chg-down { color: var(--red); }
 .chg-flat { color: var(--muted); }
 
 /* Two-column layout. Both columns stretch to the same height and the week table and the
    Market Mood grid grow to fill it, so the two columns always end on the same line. */
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 0 20px; align-items: stretch; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 0 20px; align-items: stretch; }
 .col-main, .col-side { display: flex; flex-direction: column; min-width: 0; }
 .sec-week, .sec-mood { flex: 1 0 auto; display: flex; flex-direction: column; }
 .mood-grid { flex: 1 0 auto; }
@@ -129,7 +127,7 @@ section { margin-top: var(--gap); }
 
 /* Week table */
 .week { flex: 1 0 auto; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.week-head, .day-row { display: grid; grid-template-columns: 112px minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.week-head, .day-row { display: grid; grid-template-columns: 104px minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
 .week-head { color: var(--muted); padding: 8px var(--pad) 7px; border-bottom: 1px solid var(--line); background: rgba(4, 12, 19, .25); }
 .day-row { flex: 1 0 auto; padding: 9px var(--pad) 9px calc(var(--pad) - 3px); border-bottom: 1px solid var(--line-soft); border-left: 3px solid var(--grey); }
 .day-row:last-child { border-bottom: 0; }
@@ -167,14 +165,10 @@ section { margin-top: var(--gap); }
 a.tkr { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(185, 198, 209, 0.45); transition: color .15s, border-color .15s; }
 a.tkr:hover, a.tkr:focus-visible { color: var(--teal); border-bottom-color: var(--teal); outline: none; }
 .tkr-e { white-space: nowrap; }
-/* Latest day move (moves.js): green ↗ up, red ↘ down */
+/* Latest day move (moves.js): green up, red down */
 a.tkr.is-up { color: var(--green); border-bottom-color: rgba(52, 211, 153, .45); }
 a.tkr.is-down { color: var(--red); border-bottom-color: rgba(248, 113, 113, .45); }
 a.tkr.is-up:hover, a.tkr.is-down:hover, a.tkr.is-up:focus-visible, a.tkr.is-down:focus-visible { color: var(--teal); border-bottom-color: var(--teal); }
-.tkr-mv { font-size: .95em; font-weight: 800; margin-left: 1px; }
-.tkr-mv:empty { display: none; }
-.tkr-mv.is-up { color: var(--green); }
-.tkr-mv.is-down { color: var(--red); }
 /* Mobile ticker sheet (touch devices) */
 .tkr-sheet { position: fixed; inset: 0; z-index: 60; }
 .tkr-sheet[hidden] { display: none; }
@@ -335,7 +329,7 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
 
 /* Laptops and tablets: a side column would be too narrow next to the week table, so the
    sections stack (mood, then week) and Market Mood becomes a four-column band. */
-@media (max-width: 1400px) and (min-width: 821px) {
+@media (max-width: 1319px) and (min-width: 821px) {
   .layout { display: flex; flex-direction: column; }
   .col-main, .col-side { display: contents; }
   .sec-mood { order: 2; }

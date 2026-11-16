@@ -17,7 +17,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 - **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (S&P 500 benchmark plus 11
   sector SPDR ETFs, Yahoo) and Kalshi odds for the next Fed meeting.
 - **Earnings ticker colours** come from `/api/moves` (cached 1 minute): one Yahoo quote request
-  for every ticker in `days`, coloured green ↗ / red ↘ by the latest day move.
+  for every ticker in `days`, coloured green / red by the latest day move.
   The high-yield spread, % of S&P 500 stocks above their 200-day average and the CME FedWatch
   line are filled into `brief.json` by the evening update (their sources block automated
   fetches from the Worker).

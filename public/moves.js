@@ -1,5 +1,5 @@
 // Colours the earnings tickers in the week table by their latest day move from /api/moves:
-// green with ↗ when up, red with ↘ when down. Loads once per page view and on each refresh.
+// green when up, red when down. Loads once per page view and on each refresh.
 (function () {
   const links = document.querySelectorAll("a.tkr[data-sym]");
   if (!links.length) return;
@@ -9,21 +9,11 @@
   function paint(moves) {
     for (const a of links) {
       const m = moves[a.dataset.sym];
-      const slot = a.nextElementSibling && a.nextElementSibling.classList.contains("tkr-mv") ? a.nextElementSibling : null;
       a.classList.remove("is-up", "is-down");
-      if (slot) slot.className = "tkr-mv";
-      if (!m || typeof m.chgPct !== "number") {
-        if (slot) slot.textContent = "";
-        continue;
-      }
-      // Rounds to 0.00% counts as flat: no colour, no arrow.
+      if (!m || typeof m.chgPct !== "number") continue;
+      // Rounds to 0.00% counts as flat: no colour.
       const v = Math.round(m.chgPct * 100) / 100;
-      const dir = v > 0 ? "up" : v < 0 ? "down" : "";
-      if (dir) a.classList.add("is-" + dir);
-      if (slot) {
-        slot.textContent = dir === "up" ? "↗" : dir === "down" ? "↘" : "";
-        if (dir) slot.classList.add("is-" + dir);
-      }
+      if (v) a.classList.add(v > 0 ? "is-up" : "is-down");
       a.setAttribute("aria-label", `${a.dataset.sym}, ${fmt(m.chgPct)} on the day`);
     }
   }

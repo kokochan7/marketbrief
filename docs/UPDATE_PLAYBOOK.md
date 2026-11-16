@@ -29,8 +29,9 @@ If today is a US market holiday, make no edits.
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
    names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
 2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, safe havens,
-   and `fedwatch` below). Keep any tile `url` fields; a tile can take an optional https `url`
-   when one page backs it. `breadth` is no longer shown (the live sector heatmap replaced
+   and `fedwatch` below). Keep any tile `url` fields; the regime and safe-havens tiles can
+   take an optional https `url` when one page backs it. Fear & Greed and VIX stay plain
+   (not links), at Kenny's request. `breadth` is no longer shown (the live sector heatmap replaced
    it), so it can be left as is. The high-yield spread, put/call and % above 200-day tiles
    were removed at Kenny's request (11/16): don't add `credit` or `above200` back.
    - `fedwatch`: CME FedWatch odds for the next FOMC meeting, one short line, e.g.
@@ -64,7 +65,7 @@ Label it as Sunday evening so it isn't mistaken for Monday morning.
 The page fetches these by itself: the live strip (SPY, QQQ, US 10Y, WTI, gold, bitcoin,
 DXY, KOSPI, CSI 300, plus SPY/QQQ pre-market, after-hours and overnight prices), Fear &
 Greed, Kalshi odds for the next Fed meeting, the sector heatmap (week % of SPY plus the 11
-sector SPDR ETFs) and the green ↗ / red ↘ colouring of the week table's earnings tickers
+sector SPDR ETFs) and the green / red colouring of the week table's earnings tickers
 (latest day move, from `/api/moves`, which reads the tickers straight from `days`).
 
 ## Prediction-market meters
