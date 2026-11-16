@@ -9,7 +9,8 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
   page from it on each request, so editing that file and pushing to `main` is all it
   takes to publish a new edition.
 - **Live markets** (top strip: SPY, QQQ, US 10Y, WTI crude, gold, Bitcoin, DXY, KOSPI,
-  CSI 300, defined in `src/instruments.js`; each tile opens Google Finance) and the
+  CSI 300, defined in `src/instruments.js`; each tile opens Yahoo Finance, and stocks/ETFs
+  show their pre-market, after-hours or overnight price under the main price) and the
   **Fear & Greed** card are fetched by the Worker at
   `/api/live` from Yahoo Finance (CoinGecko fallback for Bitcoin) and CNN, cached for 60
   seconds, and refreshed in the browser every minute. If a source is down, the tile shows

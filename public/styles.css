@@ -90,6 +90,15 @@ section { margin-top: var(--gap); }
 .tick-value { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tick-chg { font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; display: flex; gap: 6px; flex-wrap: wrap; }
 .tick.is-missing .tick-value { color: var(--muted); }
+.tick-ext { margin-top: 1px; font-size: 10.5px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; display: flex; flex-wrap: wrap; gap: 0 4px; }
+.tick-ext[hidden] { display: none; }
+.tick-ext .x-l { color: var(--muted); font-weight: 600; display: inline-flex; align-items: center; }
+.tick-ext .x-i { display: none; width: 10px; height: 10px; color: #8fb3ff; }
+.tick { container-type: inline-size; }
+@container (max-width: 160px) {
+  .tick-ext .x-t { display: none; }
+  .tick-ext .x-i { display: inline-block; }
+}
 .chg-up { color: var(--green); }
 .chg-down { color: var(--red); }
 .chg-flat { color: var(--muted); }
@@ -200,6 +209,12 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 }
 /* Invisible bridge over the gap between a ticker and its card, so the card stays open
    while the pointer moves onto it. */
+.tkr-tip { cursor: pointer; }
+.tkr-tip:hover .tt-go { color: var(--teal); }
+.tt-ext { margin-top: 5px; padding-top: 4px; border-top: 1px dashed var(--line); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tt-ext-p { color: var(--text); }
+.tt-ext .tt-sub { margin-top: 0; font-weight: 400; }
+.sheet-body .tt-ext { font-size: 15px; }
 .tkr-tip::before { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 10px; }
 .tkr-tip.is-below::before { top: auto; bottom: 100%; }
 .tt-head { display: flex; flex-direction: column; gap: 1px; }
@@ -282,7 +297,8 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
   .range { font-size: 15px; }
 
   .tape { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tick { padding: 7px 10px; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "label value" "chg chg"; align-items: baseline; column-gap: 6px; }
+  .tick { padding: 7px 10px; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "label value" "chg chg" "ext ext"; align-items: baseline; column-gap: 6px; }
+  .tick-ext { grid-area: ext; justify-content: flex-end; font-size: 11px; }
   .tick:nth-child(3n) { border-right: 1px solid var(--line-soft); }
   .tick:nth-child(2n) { border-right: 0; }
   .tick:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-soft); }

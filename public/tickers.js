@@ -1,6 +1,6 @@
 // Hover cards (and on touch devices, a tap sheet) for earnings tickers: price and day change from /api/quote, plus any
 // Kalshi / Polymarket earnings markets for the ticker.
-// Clicking a ticker opens Google Finance (via the Worker's /go/ redirect).
+// Clicking a ticker, or anywhere on its card, opens Yahoo Finance (via the Worker's /go/ redirect).
 (function () {
   const TTL = 60000;
   const CAN_HOVER = !!(window.matchMedia && window.matchMedia("(hover: hover)").matches);
@@ -24,6 +24,11 @@
     tip.addEventListener("mouseleave", (e) => {
       if (current && e.relatedTarget && current.contains(e.relatedTarget)) return;
       hide();
+    });
+    // Clicking anywhere on the card (other than its own links) opens the ticker on Yahoo Finance.
+    tip.addEventListener("click", (e) => {
+      if (!current || (e.target.closest && e.target.closest("a"))) return;
+      window.open(current.href, "_blank", "noopener");
     });
     tip.addEventListener("focusout", (e) => {
       if (!tip.contains(e.relatedTarget) && e.relatedTarget !== current) hide();
@@ -93,7 +98,7 @@
   function quoteContent(sym, q) {
     if (!q) return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Loading…</div>`;
     if (q.error || typeof q.price !== "number") {
-      return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable${CAN_HOVER ? ". Click to open Google Finance." : " right now."}</div>`;
+      return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable${CAN_HOVER ? ". Click to open Yahoo Finance." : " right now."}</div>`;
     }
     const c = q.chgPct;
     const has = typeof c === "number" && isFinite(c);
@@ -102,8 +107,17 @@
     return `
       <div class="tt-head"><b>${esc(sym)}</b>${q.name ? `<span>${esc(q.name)}</span>` : ""}</div>
       <div class="tt-price">${money(q.price, q.currency)} <span class="${cls}">${has ? sign + Math.abs(c).toFixed(2) + "%" : ""}</span></div>
-      <div class="tt-sub">Regular session · as of ${etTime(q.time)}</div>
-      ${CAN_HOVER ? '<div class="tt-sub">Click for Google Finance ↗</div>' : ""}`;
+      <div class="tt-sub">${q.ext ? "At close" : "Regular session · as of"} ${etTime(q.time)}</div>
+      ${extLine(q.ext)}
+      ${CAN_HOVER ? '<div class="tt-sub tt-go">Click for Yahoo Finance ↗</div>' : ""}`;
+  }
+
+  // Pre-market / after-hours / overnight trade, shown under the main price.
+  const SESSION_LABEL = { pre: "Pre-market", post: "After hours", overnight: "Overnight" };
+  function extLine(x) {
+    if (!x || typeof x.price !== "number") return "";
+    const label = SESSION_LABEL[x.session] || "Extended hours";
+    return `<div class="tt-ext"><span class="tt-ext-p">${money(x.price)}</span> ${pct(x.chgPct)}<div class="tt-sub">${label} · ${etTime(x.time)}</div></div>`;
   }
 
   const pct = (v, suffix) => {
@@ -125,7 +139,7 @@
     const q = window.__live && window.__live.quotes && window.__live.quotes[key];
     const head = `<div class="tt-head"><b>${esc(label)}</b><span>${esc(el.dataset.name || "")}</span></div>`;
     if (!window.__live) return head + `<div class="tt-sub">Loading…</div>`;
-    if (!q || q.error || typeof q.price !== "number") return head + `<div class="tt-sub">Live quote unavailable. Click to open Google Finance.</div>`;
+    if (!q || q.error || typeof q.price !== "number") return head + `<div class="tt-sub">Live quote unavailable. Click to open Yahoo Finance.</div>`;
     const value = el.querySelector(".tick-value")?.textContent || "";
     const isY = q.unit === "yield";
     const day = isY ? bp(q.chgBp, "day") : pct(q.chgPct, q.chgLabel || "day");
@@ -134,7 +148,8 @@
       <div class="tt-price">${esc(value)}</div>
       <div class="tt-chgs">${day}${wk ? " · " + wk : ""}</div>
       <div class="tt-sub">${esc(q.src || "")} · as of ${etTime(q.time)}</div>
-      <div class="tt-sub">${el.dataset.gf === "0" ? "Click for Google ↗" : "Click for Google Finance ↗"}</div>`;
+      ${extLine(q.ext)}
+      <div class="tt-sub tt-go">Click for Yahoo Finance ↗</div>`;
   }
 
   function place(el) {
@@ -194,7 +209,7 @@
   }
 
   // Touch devices: tapping an earnings ticker opens a bottom sheet with the same
-  // details, plus a button to Google Finance. Live tiles still link straight out.
+  // details, plus a button to Yahoo Finance. Live tiles still link straight out.
   if (!CAN_HOVER) {
     let sheet, sheetSym;
     const closeSheet = () => {
@@ -212,7 +227,7 @@
         <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Ticker details">
           <button type="button" class="sheet-close" data-close aria-label="Close">×</button>
           <div class="sheet-body"></div>
-          <a class="sheet-go" target="_blank" rel="noopener">Open in Google Finance ↗</a>
+          <a class="sheet-go" target="_blank" rel="noopener">Open in Yahoo Finance ↗</a>
         </div>`;
       sheet.addEventListener("click", (e) => {
         if (e.target.closest("[data-close]")) closeSheet();

@@ -35,6 +35,10 @@
       minute: "2-digit",
     }).format(new Date(ms)) + " ET";
 
+  const SESSION_LABEL = { pre: "Pre-market", post: "After hours", overnight: "Overnight" };
+  const MOON = '<svg class="x-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 10.2A6 6 0 0 1 5.8 2.5a6 6 0 1 0 7.7 7.7z" fill="currentColor"/></svg>';
+  const SUN = '<svg class="x-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+
   function fgLabel(r) {
     return String(r || "").replace(/\b\w/g, (c) => c.toUpperCase());
   }
@@ -65,6 +69,22 @@
       dEl.className = "d chg-" + d.cls;
       wEl.textContent = w.text;
       wEl.className = "w chg-" + w.cls;
+      // Pre-market / after-hours / overnight price, in a smaller line under the main price.
+      const xEl = $(".tick-ext", el);
+      if (xEl) {
+        const x = q.ext;
+        if (x && typeof x.price === "number") {
+          const c = chg(x.chgPct, false, "");
+          // No "$" here, to fit narrow tiles: "Overnight 753.29 −0.14%".
+          // Narrow tiles swap the label for Yahoo-style icons (sun = pre-market, moon = after hours / overnight).
+          const label = SESSION_LABEL[x.session] || "Extended hours";
+          xEl.innerHTML = `<span class="x-l"><span class="x-t">${label}</span>${x.session === "pre" ? SUN : MOON}</span><span>${fmtNum(x.price, 2)}</span><span class="chg-${c.cls}">${c.text}</span>`;
+          xEl.title = `${SESSION_LABEL[x.session] || "Extended hours"} trading, as of ${etTime(x.time)}`;
+          xEl.hidden = false;
+        } else {
+          xEl.hidden = true;
+        }
+      }
     }
     const meta = $("#live-meta");
     if (ok === 0) {

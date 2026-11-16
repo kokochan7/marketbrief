@@ -23,3 +23,15 @@ const ok3 = cn.wkRefDate === "2026-11-06" && Math.abs(cn.wkPct - ((4047.437 - 40
 console.log(JSON.stringify(cn));
 if (!ok || !ok2 || !ok3) { console.error("FAIL"); process.exit(1); }
 console.log("quotes maths OK");
+
+// Extended hours: newest session after the regular close wins; change is vs the close.
+import { extendedFrom } from "../src/quotes.js";
+const base = { quoteType: "ETF", hasPrePostMarketData: true, regularMarketPrice: 754.37, regularMarketTime: 1794603600 };
+const now = 1794799549000 + 60000;
+const on = extendedFrom({ ...base, postMarketPrice: 749.6, postMarketTime: 1794617997, overnightMarketPrice: 753.29, overnightMarketTime: 1794799549 }, now);
+const pre = extendedFrom({ ...base, regularMarketTime: 1794603600, preMarketPrice: 760, preMarketTime: 1794603000 }, now); // before the close: ignored
+const fut = extendedFrom({ ...base, quoteType: "FUTURE", postMarketPrice: 1, postMarketTime: 1794617997 }, now);
+const ok4 = on && on.session === "overnight" && Math.abs(on.chgPct - -0.14316) < 0.001 && on.time === 1794799549000 && pre === null && fut === null;
+console.log(JSON.stringify(on));
+if (!ok4) { console.error("FAIL extended"); process.exit(1); }
+console.log("extended hours OK");

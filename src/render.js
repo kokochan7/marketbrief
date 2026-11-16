@@ -224,10 +224,11 @@ function renderMood(m, wctx) {
 function renderLive() {
   const cells = INSTRUMENTS.map(
     (it) => `
-      <a class="tick" data-key="${it.key}" data-name="${esc(it.name)}" href="${esc(instrumentUrl(it))}" data-gf="${it.url ? "0" : "1"}" target="_blank" rel="noopener">
+      <a class="tick" data-key="${it.key}" data-name="${esc(it.name)}" href="${esc(instrumentUrl(it))}" target="_blank" rel="noopener">
         <div class="tick-label">${esc(it.label)}</div>
         <div class="tick-value">—</div>
         <div class="tick-chg"><span class="d">&nbsp;</span><span class="w"></span></div>
+        <div class="tick-ext" hidden></div>
       </a>`
   ).join("");
   return `
@@ -250,10 +251,8 @@ function renderLive() {
 export function renderPage(brief, { now = new Date() } = {}) {
   const e = brief.edition;
   const today = etDateKey(now);
-  const inWeek = today >= e.weekStart && today <= e.weekEnd;
   // Free text outside the week table: times carry their zone ("4:20p EST").
   const wctx = { date: e.weekStart, zone: true, week: true };
-  const kicker = inWeek ? "This week" : today < e.weekStart ? "The week ahead" : e.kicker || "Last week";
 
   const stories = brief.stories
     .map(
@@ -295,7 +294,7 @@ export function renderPage(brief, { now = new Date() } = {}) {
   <header class="masthead">
     <h1>Kenny&rsquo;s Market Brief</h1>
     <div class="masthead-right">
-      <div class="range">${esc(e.range)} <span class="kicker">${esc(kicker)}</span></div>
+      <div class="range">${esc(e.range)}</div>
     </div>
   </header>
 

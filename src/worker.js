@@ -1,7 +1,7 @@
 import brief from "../content/brief.json";
 import { renderPage } from "./render.js";
-import { summarize } from "./quotes.js";
-import { INSTRUMENTS } from "./instruments.js";
+import { summarize, extendedFrom } from "./quotes.js";
+import { INSTRUMENTS, yahooQuoteUrl } from "./instruments.js";
 
 
 const UA =
@@ -29,34 +29,60 @@ async function yahoo(sym, qs = "range=1mo&interval=1d") {
   throw lastErr;
 }
 
-// ---- Single-ticker quotes (hover cards) and Google Finance links ----
+// ---- Extended-hours prices (pre-market, after hours, overnight) ----
+// Yahoo's v7 quote API carries these; it needs a session cookie and "crumb".
+let yAuth = null; // { cookie, crumb, at }
+
+async function yahooAuth(force) {
+  if (!force && yAuth && Date.now() - yAuth.at < 6 * 3600e3) return yAuth;
+  const r1 = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
+  const sc = r1.headers.get("set-cookie") || "";
+  const cookie = sc
+    .split(/,(?=\s*[\w-]+=)/)
+    .map((c) => c.split(";")[0].trim())
+    .filter(Boolean)
+    .join("; ");
+  if (!cookie) throw new Error("no cookie");
+  const r2 = await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: cookie } });
+  const crumb = (await r2.text()).trim();
+  if (!r2.ok || !crumb || crumb.length > 40 || /[<{\s]/.test(crumb)) throw new Error("no crumb");
+  yAuth = { cookie, crumb, at: Date.now() };
+  return yAuth;
+}
+
+// symbols -> { SYM: ext | null }. Never throws; extended-hours data is optional.
+async function yahooExtended(symbols) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const { cookie, crumb } = await yahooAuth(attempt > 0);
+      const r = await fetch(
+        `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${symbols.map(encodeURIComponent).join(",")}&overnightPrice=true&crumb=${encodeURIComponent(crumb)}`,
+        { headers: { "User-Agent": UA, Cookie: cookie, Accept: "application/json" } }
+      );
+      if (r.status === 401 || r.status === 403) continue;
+      if (!r.ok) return {};
+      const list = (await r.json())?.quoteResponse?.result || [];
+      return Object.fromEntries(list.map((q) => [q.symbol, extendedFrom(q)]));
+    } catch (e) {
+      if (attempt > 0) return {};
+    }
+  }
+  return {};
+}
+
+// ---- Single-ticker quotes (hover cards) and Yahoo Finance links ----
 
 const TICKER_RE = /^[A-Z0-9][A-Z0-9.\-]{0,9}$/;
 
-// Yahoo exchange codes -> Google Finance exchange names.
-const GOOGLE_EXCHANGE = {
-  NMS: "NASDAQ", NGM: "NASDAQ", NCM: "NASDAQ", NAS: "NASDAQ",
-  NYQ: "NYSE", NYS: "NYSE",
-  ASE: "NYSEAMERICAN", AMEX: "NYSEAMERICAN",
-  PCX: "NYSEARCA",
-  BTS: "BATS",
-};
-
 const yahooSymbol = (t) => t.replace(/\./g, "-"); // MOG.A -> MOG-A
-
-function googleUrl(ticker, exchange) {
-  const ex = GOOGLE_EXCHANGE[exchange];
-  return ex
-    ? `https://www.google.com/finance/quote/${encodeURIComponent(ticker)}:${ex}`
-    : `https://www.google.com/finance?q=${encodeURIComponent(ticker)}`;
-}
 
 async function tickerQuote(ticker, ctx) {
   const cache = caches.default;
   const key = new Request(`https://quote.cache/${ticker}`);
   const hit = await cache.match(key);
   if (hit) return hit.json();
-  const res = await yahoo(yahooSymbol(ticker));
+  const ysym = yahooSymbol(ticker);
+  const [res, ext] = await Promise.all([yahoo(ysym), yahooExtended([ysym])]);
   const q = summarize(res);
   const m = res.meta;
   const data = {
@@ -68,7 +94,8 @@ async function tickerQuote(ticker, ctx) {
     prevClose: q.prevClose,
     chgPct: q.chgPct,
     time: q.time,
-    google: googleUrl(ticker, m.exchangeName),
+    ext: ext[ysym] || null,
+    url: yahooQuoteUrl(ysym),
     src: "Yahoo Finance",
   };
   ctx.waitUntil(
@@ -83,18 +110,15 @@ async function quoteHandler(url, ctx) {
   try {
     return json(await tickerQuote(t, ctx), 200, LIVE_TTL);
   } catch (e) {
-    return json({ ticker: t, error: String(e?.message || e), google: googleUrl(t) }, 502, 10);
+    return json({ ticker: t, error: String(e?.message || e), url: yahooQuoteUrl(yahooSymbol(t)) }, 502, 10);
   }
 }
 
-async function goHandler(url, ctx) {
+// /go/<TICKER>: the ticker's Yahoo Finance page.
+async function goHandler(url) {
   const t = decodeURIComponent(url.pathname.slice(4)).toUpperCase();
   if (!TICKER_RE.test(t)) return new Response("Bad ticker", { status: 400 });
-  let dest = googleUrl(t);
-  try {
-    dest = (await tickerQuote(t, ctx)).google;
-  } catch {}
-  return Response.redirect(dest, 302);
+  return Response.redirect(yahooQuoteUrl(yahooSymbol(t)), 302);
 }
 
 function json(data, status = 200, maxAge = 60) {
@@ -250,6 +274,7 @@ async function eastmoneyDaily(secid) {
 }
 
 async function buildLive() {
+  const extP = yahooExtended(INSTRUMENTS.map((i) => i.sym));
   const entries = await Promise.all(
     INSTRUMENTS.map(async ({ key, sym, unit, em }) => {
       try {
@@ -278,6 +303,12 @@ async function buildLive() {
   } catch (e) {
     fg = { error: String(e?.message || e) };
   }
+  // Pre-market / after-hours / overnight price for stocks and ETFs (SPY, QQQ).
+  const ext = await extP;
+  for (const [key, q] of entries) {
+    const it = INSTRUMENTS.find((i) => i.key === key);
+    if (q && !q.error && ext[it.sym]) q.ext = ext[it.sym];
+  }
   return { generated: Date.now(), quotes: Object.fromEntries(entries), fearGreed: fg };
 }
 
@@ -300,51 +331,13 @@ async function liveHandler(request, ctx) {
   return resp;
 }
 
-// TEMP probe (remove): what Yahoo returns for extended-hours sessions.
-async function probeHandler(url) {
-  const sym = (url.searchParams.get("s") || "SPY").toUpperCase();
-  const out = { sym, now: new Date().toISOString() };
-  const r1 = await fetch("https://fc.yahoo.com/", { headers: { "User-Agent": UA }, redirect: "manual" });
-  const sc = r1.headers.get("set-cookie") || "";
-  const cookie = sc.split(/,(?=\s*\w+=)/).map((c) => c.split(";")[0].trim()).filter(Boolean).join("; ");
-  const r2 = await fetch("https://query2.finance.yahoo.com/v1/test/getcrumb", { headers: { "User-Agent": UA, Cookie: cookie } });
-  const crumb = (await r2.text()).trim();
-  const base = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(sym)}&crumb=${encodeURIComponent(crumb)}`;
-  const variants = {
-    a: base + "&overnightPrice=true",
-    b: base + "&fields=overnightMarketPrice,overnightMarketChange,overnightMarketChangePercent,overnightMarketTime,fulldayPrice,fulldayChange,fulldayChangePercent,fulldayTime,preMarketPrice,preMarketTime,postMarketPrice,postMarketTime,regularMarketPrice,marketState",
-    c: base + "&formatted=false&overnightPrice=true&includePrePost=true&lang=en-US&region=US",
-  };
-  for (const [k, u] of Object.entries(variants)) {
-    try {
-      const r = await fetch(u, { headers: { "User-Agent": UA, Cookie: cookie } });
-      const q = (await r.json())?.quoteResponse?.result?.[0] || {};
-      out[k] = { status: r.status, sel: Object.fromEntries(Object.entries(q).filter(([x]) => /full|overnight|post|pre(?!vious)|marketState|regularMarket(Price|Time)$/i.test(x))) };
-    } catch (e) {
-      out[k] = String(e?.message || e);
-    }
-  }
-  try {
-    const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=1m&includePrePost=true&includeOvernight=true`, { headers: { "User-Agent": UA } });
-    const c = (await r.json())?.chart?.result?.[0];
-    const ts = c?.timestamp || [];
-    const cl = c?.indicators?.quote?.[0]?.close || [];
-    out.chartTail = ts.slice(-3).map((t, i) => [new Date(t * 1000).toISOString(), cl[cl.length - 3 + i]]);
-    out.chartFull = c && { p: c.meta.fulldayPrice, c: c.meta.fulldayChange, t: c.meta.fulldayTime, keys: Object.keys(c.meta).filter((x) => /full|overnight/i.test(x)) };
-  } catch (e) {
-    out.chartErr = String(e?.message || e);
-  }
-  return json(out, 200, 0);
-}
-
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api/live") return liveHandler(request, ctx);
-    if (url.pathname === "/api/_probe") return probeHandler(url);
     if (url.pathname === "/api/quote") return quoteHandler(url, ctx);
     if (url.pathname === "/api/odds") return oddsHandler(request, ctx);
-    if (url.pathname.startsWith("/go/")) return goHandler(url, ctx);
+    if (url.pathname.startsWith("/go/")) return goHandler(url);
     if (url.pathname === "/api/brief") {
       return new Response(JSON.stringify(brief), {
         headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "public, max-age=60" },

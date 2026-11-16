@@ -60,3 +60,35 @@ export function summarize(res, unit, extraBars = []) {
   return out;
 }
 
+// ---- Extended-hours prices from Yahoo's v7 quote API (fetched with overnightPrice=true) ----
+const SESSION_FIELDS = {
+  pre: ["preMarketPrice", "preMarketChange", "preMarketChangePercent", "preMarketTime"],
+  post: ["postMarketPrice", "postMarketChange", "postMarketChangePercent", "postMarketTime"],
+  overnight: ["overnightMarketPrice", "overnightMarketChange", "overnightMarketChangePercent", "overnightMarketTime"],
+};
+
+// The most recent extended-hours trade after the last regular-session close, the way
+// Yahoo Finance shows it under the close: { session, price, chg, chgPct, time } or null.
+export function extendedFrom(q, nowMs = Date.now()) {
+  if (!q || !q.hasPrePostMarketData || !["EQUITY", "ETF"].includes(q.quoteType)) return null;
+  const rt = q.regularMarketTime || 0;
+  const close = q.regularMarketPrice;
+  let best = null;
+  for (const [session, [pk, ck, pck, tk]] of Object.entries(SESSION_FIELDS)) {
+    const price = q[pk];
+    const time = q[tk];
+    if (typeof price !== "number" || !time || time <= rt) continue;
+    if (best && time <= best.time) continue;
+    let chg = typeof q[ck] === "number" ? q[ck] : null;
+    let chgPct = typeof q[pck] === "number" ? q[pck] : null;
+    if (typeof close === "number" && close) {
+      chg = price - close;
+      chgPct = (chg / close) * 100;
+    }
+    best = { session, price, chg, chgPct, time };
+  }
+  if (!best) return null;
+  // Stale (more than 4 days old, e.g. a long weekend's leftovers): don't show.
+  if (nowMs / 1000 - best.time > 4 * 86400) return null;
+  return { ...best, time: best.time * 1000 };
+}
