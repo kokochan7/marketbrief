@@ -1,6 +1,6 @@
 import brief from "../content/brief.json";
 import { renderPage } from "./render.js";
-import { summarize, extendedFrom, impliedMove, mondayOf } from "./quotes.js";
+import { summarize, extendedFrom } from "./quotes.js";
 import { INSTRUMENTS, SECTORS, yahooQuoteUrl } from "./instruments.js";
 
 
@@ -70,43 +70,6 @@ async function yahooExtended(symbols) {
   return {};
 }
 
-// Options-implied earnings move: ATM straddle of the first expiry after the next report.
-// null when there's no report in the next two weeks or no usable quotes. Never throws.
-async function yahooOptions(sym, date) {
-  const { cookie, crumb } = await yahooAuth();
-  const r = await fetch(
-    `https://query2.finance.yahoo.com/v7/finance/options/${encodeURIComponent(sym)}?crumb=${encodeURIComponent(crumb)}${date ? `&date=${date}` : ""}`,
-    { headers: { "User-Agent": UA, Cookie: cookie, Accept: "application/json" } }
-  );
-  if (r.status === 401 || r.status === 403) yAuth = null;
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  const res = (await r.json())?.optionChain?.result?.[0];
-  if (!res) throw new Error("no chain");
-  return res;
-}
-
-// The ticker's report day and timing from this week's table, if it's in it.
-function briefReport(ticker) {
-  for (const d of brief.days || []) {
-    if ((d.bmo || []).includes(ticker)) return { date: d.date, amc: false };
-    if ((d.amc || []).includes(ticker)) return { date: d.date, amc: true };
-  }
-  return null;
-}
-
-async function optionsMove(sym, ticker) {
-  try {
-    const report = briefReport(ticker);
-    const first = await yahooOptions(sym);
-    const pick = impliedMove.pickExpiry(first.quote, first.expirationDates || [], Date.now(), report);
-    if (!pick) return null;
-    const chain = pick === (first.options?.[0]?.expirationDate ?? null) ? first : await yahooOptions(sym, pick);
-    return impliedMove(chain.quote, chain.options?.[0], Date.now(), report);
-  } catch {
-    return null;
-  }
-}
-
 // ---- Single-ticker quotes (hover cards) and Yahoo Finance links ----
 
 const TICKER_RE = /^[A-Z0-9][A-Z0-9.\-]{0,9}$/;
@@ -119,7 +82,7 @@ async function tickerQuote(ticker, ctx) {
   const hit = await cache.match(key);
   if (hit) return hit.json();
   const ysym = yahooSymbol(ticker);
-  const [res, ext, move] = await Promise.all([yahoo(ysym), yahooExtended([ysym]), optionsMove(ysym, ticker)]);
+  const [res, ext] = await Promise.all([yahoo(ysym), yahooExtended([ysym])]);
   const q = summarize(res);
   const m = res.meta;
   const data = {
@@ -132,7 +95,6 @@ async function tickerQuote(ticker, ctx) {
     chgPct: q.chgPct,
     time: q.time,
     ext: ext[ysym] || null,
-    move,
     url: yahooQuoteUrl(ysym),
     src: "Yahoo Finance",
   };
@@ -311,102 +273,9 @@ async function eastmoneyDaily(secid) {
     .filter((b) => /^\d{4}-\d{2}-\d{2}$/.test(b.date) && isFinite(b.close));
 }
 
-// ---- CNBC Treasury yields (US2Y, and US10Y for the 2s10s curve) ----
-const pnum = (v) => {
-  const n = parseFloat(String(v ?? "").replace(/[%,+]/g, ""));
-  return isFinite(n) ? n : null;
-};
-
-async function cnbcYields(symbols) {
-  const r = await fetch(
-    `https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=${symbols.join("%7C")}&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json`,
-    { headers: { "User-Agent": UA, Accept: "application/json" } }
-  );
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  const list = (await r.json())?.FormattedQuoteResult?.FormattedQuote || [];
-  const out = {};
-  for (const q of list) {
-    const price = pnum(q.last);
-    if (price === null) continue;
-    const prev = pnum(q.previous_day_closing);
-    const chg = pnum(q.change);
-    const t = Date.parse(q.last_time || q.last_timedate || "");
-    out[q.symbol] = { price, prev: prev ?? (chg !== null ? price - chg : null), time: isNaN(t) ? Date.now() : t };
-  }
-  return out;
-}
-
-// Daily closes from CNBC for week changes: [{ date, close }]. Optional; [] if unavailable.
-async function cnbcDaily(symbol) {
-  try {
-    const now = new Date();
-    const from = new Date(now.getTime() - 21 * 864e5);
-    const f = (d) => d.toISOString().slice(0, 10).replace(/-/g, "") + "000000";
-    const r = await fetch(`https://ts-api.cnbc.com/harmony/app/bars/${symbol}/1D/${f(from)}/${f(now)}/adjusted/EST5EDT.json`, {
-      headers: { "User-Agent": UA, Accept: "application/json" },
-      cf: { cacheTtl: 600 },
-    });
-    if (!r.ok) return [];
-    const bars = (await r.json())?.barData?.priceBars || [];
-    return bars
-      .map((b) => ({ date: String(b.tradeTime || "").replace(/^(\d{4})(\d{2})(\d{2}).*/, "$1-$2-$3"), close: pnum(b.close) }))
-      .filter((b) => /^\d{4}-\d{2}-\d{2}$/.test(b.date) && b.close !== null);
-  } catch {
-    return [];
-  }
-}
-
-// Close of the last trading day before this week's Monday (US Eastern date of `time`).
-function weekRef(bars, time) {
-  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date(time));
-  const monday = mondayOf(today);
-  const before = bars.filter((b) => b.date < monday);
-  return before.length ? before[before.length - 1] : null;
-}
-
-async function buildYields() {
-  const [q, d2, d10] = await Promise.all([cnbcYields(["US2Y", "US10Y"]), cnbcDaily("US2Y"), cnbcDaily("US10Y")]);
-  const out = {};
-  const y2 = q.US2Y;
-  const y10 = q.US10Y;
-  const src = "CNBC";
-  if (y2) {
-    const wk = weekRef(d2, y2.time);
-    out.us2y = {
-      price: y2.price,
-      prevClose: y2.prev,
-      time: y2.time,
-      unit: "yield",
-      chgBp: y2.prev !== null ? (y2.price - y2.prev) * 100 : null,
-      wkBp: wk ? (y2.price - wk.close) * 100 : null,
-      wkRefDate: wk ? wk.date : null,
-      src,
-    };
-  } else out.us2y = { error: "no data" };
-  if (y2 && y10) {
-    const spread = (y10.price - y2.price) * 100;
-    const prev = y2.prev !== null && y10.prev !== null ? (y10.prev - y2.prev) * 100 : null;
-    const w2 = weekRef(d2, y2.time);
-    const w10 = weekRef(d10, y10.time);
-    const wkSpread = w2 && w10 && w2.date === w10.date ? (w10.close - w2.close) * 100 : null;
-    out.s2s10 = {
-      price: spread,
-      prevClose: prev,
-      time: Math.max(y2.time, y10.time),
-      unit: "spread",
-      chgBp: prev !== null ? spread - prev : null,
-      wkBp: wkSpread !== null ? spread - wkSpread : null,
-      wkRefDate: wkSpread !== null ? w2.date : null,
-      src: "CNBC (10Y − 2Y)",
-    };
-  } else out.s2s10 = { error: "no data" };
-  return out;
-}
-
 async function buildLive() {
-  const yahooItems = INSTRUMENTS.filter((i) => i.sym);
-  const extP = yahooExtended(yahooItems.map((i) => i.sym));
-  const yieldsP = buildYields().catch((e) => ({ us2y: { error: String(e?.message || e) }, s2s10: { error: String(e?.message || e) } }));
+  const yahooItems = INSTRUMENTS;
+  const extP = yahooExtended(yahooItems.filter((i) => !i.hidden).map((i) => i.sym));
   const entries = await Promise.all(
     yahooItems.map(async ({ key, sym, unit, em }) => {
       try {
@@ -418,7 +287,7 @@ async function buildLive() {
             extra = await eastmoneyDaily(em);
           } catch {}
         }
-        return [key, summarize(res, unit === "pts" ? null : unit, extra)];
+        return [key, summarize(res, unit, extra)];
       } catch (e) {
         if (key === "btc") {
           try {
@@ -441,10 +310,7 @@ async function buildLive() {
     const it = INSTRUMENTS.find((i) => i.key === key);
     if (q && !q.error && ext[it.sym]) q.ext = ext[it.sym];
   }
-  const quotes = { ...Object.fromEntries(entries), ...(await yieldsP) };
-  // Keep the tile order.
-  const ordered = Object.fromEntries(INSTRUMENTS.map((i) => [i.key, quotes[i.key] || { error: "no data" }]));
-  return { generated: Date.now(), quotes: ordered, fearGreed: fg };
+  return { generated: Date.now(), quotes: Object.fromEntries(entries), fearGreed: fg };
 }
 
 // ---- Market Mood extras (/api/mood): sector heatmap, Fed odds, put/call ----
@@ -494,6 +360,11 @@ async function kalshiFed() {
     src: "Kalshi",
   };
 }
+
+const pnum = (v) => {
+  const n = parseFloat(String(v ?? "").replace(/[%,+]/g, ""));
+  return isFinite(n) ? n : null;
+};
 
 // Cboe daily options statistics: total / equity / index put-call ratios for the latest day published.
 async function cboePutCall() {

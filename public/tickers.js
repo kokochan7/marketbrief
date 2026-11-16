@@ -110,8 +110,7 @@
     const sign = !has ? "" : c > 0 ? "+" : c < 0 ? "−" : "";
     const main = `${head}
       <div class="tt-price">${money(q.price, q.currency)} <span class="${cls}">${has ? sign + Math.abs(c).toFixed(2) + "%" : ""}</span></div>
-      ${extLine(q.ext)}
-      ${moveLine(q.move)}`;
+      ${extLine(q.ext)}`;
     const foot = [`${q.ext ? "At close" : "Regular session · as of"} ${etTime(q.time)}`];
     if (extOk(q.ext)) foot.push(extFoot(q.ext));
     return { main, foot };
@@ -127,13 +126,6 @@
     if (!extOk(x)) return "";
     const label = SESSION_LABEL[x.session] || "Extended hours";
     return `<div class="tt-ext" title="${label}">${x.session === "pre" ? SUN : MOON}<span class="tt-ext-p">${money(x.price)}</span> ${pct(x.chgPct)}</div>`;
-  }
-  // Options-implied earnings move (at-the-money straddle through the first expiry after the report).
-  function moveLine(m) {
-    if (!m || typeof m.pct !== "number" || !isFinite(m.pct)) return "";
-    const d = new Date(m.expiry);
-    const exp = `${d.toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" })} ${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
-    return `<div class="tt-move" title="At-the-money straddle (call + put) for the ${exp} expiry, as a share of the price">Options imply <b>±${m.pct.toFixed(1)}%</b> by ${exp}</div>`;
   }
   const extFoot = (x) => `${SESSION_LABEL[x.session] || "Extended hours"} · ${etTime(x.time)}`;
 
@@ -158,7 +150,7 @@
     if (!window.__live) return head + footer(["Loading…"]);
     if (!q || q.error || typeof q.price !== "number") return head + footer(["Live quote unavailable right now"]);
     const value = el.querySelector(".tick-value")?.textContent || "";
-    const isY = q.unit === "yield" || q.unit === "spread";
+    const isY = q.unit === "yield";
     const day = isY ? bp(q.chgBp, "day") : pct(q.chgPct, q.chgLabel || "day");
     const wk = isY ? bp(q.wkBp, "wk") : pct(q.wkPct, "wk");
     const foot = [`${esc(q.src || "")} · as of ${etTime(q.time)}`];

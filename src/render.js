@@ -293,7 +293,7 @@ function renderMood(m, wctx) {
 
 
 function renderLive() {
-  const cells = INSTRUMENTS.map(
+  const cells = INSTRUMENTS.filter((it) => !it.hidden).map(
     (it) => `
       <a class="tick" data-key="${it.key}" data-name="${esc(it.name)}" href="${esc(instrumentUrl(it))}" target="_blank" rel="noopener">
         <div class="tick-label">${esc(it.label)}</div>

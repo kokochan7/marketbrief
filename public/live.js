@@ -13,11 +13,8 @@
 
   function fmtPrice(key, q) {
     if (q.unit === "yield") return fmtNum(q.price, 3) + "%";
-    if (q.unit === "spread") return (q.price > 0 ? "+" : q.price < 0 ? "−" : "") + fmtNum(Math.abs(q.price), 1) + "bp";
     if (key === "btc") return "$" + fmtNum(q.price, 0);
     if (q.unit === "usd") return "$" + fmtNum(q.price, 2);
-    // Index futures: whole points once they're in five figures (Nasdaq, Dow).
-    if (key === "nq" || key === "ym") return fmtNum(q.price, 0);
     return fmtNum(q.price, 2);
   }
 
@@ -63,7 +60,7 @@
       newest = Math.max(newest, q.time || 0);
       el.classList.remove("is-missing");
       $(".tick-value", el).textContent = fmtPrice(key, q);
-      const isBp = q.unit === "yield" || q.unit === "spread";
+      const isBp = q.unit === "yield";
       const d = chg(isBp ? q.chgBp : q.chgPct, isBp, q.chgLabel || "");
       const w = chg(isBp ? q.wkBp : q.wkPct, isBp, "wk");
       const dEl = $(".tick-chg .d", el);

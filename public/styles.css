@@ -80,10 +80,10 @@ section { margin-top: var(--gap); }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.5);} 70% { box-shadow: 0 0 0 7px rgba(52,211,153,0);} 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0);} }
 /* Tiles are separated by 1px gaps over the line colour, so any count and column number works. */
 .tape {
-  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px;
+  display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 1px;
   background: var(--line-soft); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
 }
-.tick { display: block; color: inherit; text-decoration: none; padding: 7px 10px; background: var(--panel); min-width: 0; transition: background .15s; }
+.tick { display: block; color: inherit; text-decoration: none; padding: 8px 10px; background: var(--panel); min-width: 0; transition: background .15s; }
 .tick:hover, .tick:focus-visible { background: var(--panel-2); outline: none; }
 .tick:hover .tick-label, .tick:focus-visible .tick-label { color: var(--teal); }
 .tick-label { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -213,8 +213,6 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .tt-ext { margin-top: 2px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 5px; }
 .tt-ext-i { width: 11px; height: 11px; color: #8fb3ff; flex: none; }
 .tt-ext-p { color: var(--text); }
-.tt-move { margin-top: 4px; font-size: 11.5px; color: var(--text-2); }
-.tt-move b { color: var(--orange); font-variant-numeric: tabular-nums; }
 .tt-foot { margin-top: 7px; padding-top: 5px; border-top: 1px solid var(--line); }
 .tt-foot .tt-sub { margin-top: 0; }
 .sheet-body .tt-ext { font-size: 15px; }
@@ -321,11 +319,11 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
   .masthead-right { text-align: left; }
   .range { font-size: 15px; }
 
-  /* 14 tiles: three stacked columns keep the strip short on a phone. */
+  /* Three stacked columns keep the strip short on a phone. */
   .tape { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .tick:last-child:nth-child(5n+4) { grid-column: auto; }
   .tick:last-child:nth-child(3n+2) { grid-column: span 2; }
-  .tick { padding: 6px 8px; }
+  .tick { padding: 7px 9px; }
   .tick-label { font-size: 9.5px; letter-spacing: .04em; }
   .tick-value { font-size: 14px; }
   .tick-chg { font-size: 10.5px; gap: 0 5px; }

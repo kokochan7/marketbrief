@@ -36,25 +36,3 @@ console.log(JSON.stringify(on));
 if (!ok4) { console.error("FAIL extended"); process.exit(1); }
 console.log("extended hours OK");
 
-// Options-implied move: HD reports Tue 11/17 6:30am ET (before the open), so the Fri 11/20
-// expiry counts; nearest strike 347.5, straddle (9.725 + 8.325) / 348.69 ≈ 5.18%.
-import { impliedMove } from "../src/quotes.js";
-const hdQuote = { regularMarketPrice: 348.69, earningsTimestamp: 1794922200 };
-const nowHD = Date.parse("2026-11-16T04:00:00Z");
-const chainHD = {
-  expirationDate: 1795132800,
-  calls: [{ strike: 347.5, bid: 9.6, ask: 9.85 }, { strike: 350, bid: 8.3, ask: 8.65 }],
-  puts: [{ strike: 347.5, bid: 8.15, ask: 8.5 }, { strike: 350, bid: 9.4, ask: 9.55 }],
-};
-const mv = impliedMove(hdQuote, chainHD, nowHD);
-// After-close report on Fri 11/20 (4:20pm ET): the same-day expiry doesn't include it.
-const amc = impliedMove.pickExpiry({ earningsTimestamp: Date.parse("2026-11-20T21:20:00Z") / 1000 }, [1795132800, 1795737600], nowHD);
-const far = impliedMove.pickExpiry({ earningsTimestamp: Date.parse("2027-02-20T21:20:00Z") / 1000 }, [1795132800], nowHD);
-// The brief's table overrides Yahoo's date: a ticker the table lists Tue 11/17 after the
-// close needs the Wed 11/18 expiry (1794960000), even if Yahoo's timestamp says Tue morning.
-const nv = impliedMove.pickExpiry({ earningsTimestamp: 1794922200 }, [1794873600, 1794960000, 1795132800], nowHD, { date: "2026-11-17", amc: true });
-const nvY = impliedMove.pickExpiry({ earningsTimestamp: 1794922200 }, [1794873600, 1794960000, 1795132800], nowHD);
-const ok5 = nv === 1794960000 && nvY === 1794873600 && mv && mv.strike === 347.5 && Math.abs(mv.pct - (18.05 / 348.69) * 100) < 1e-9 && amc === 1795737600 && far === null;
-console.log(JSON.stringify(mv));
-if (!ok5) { console.error("FAIL implied move", amc, far); process.exit(1); }
-console.log("implied move OK");

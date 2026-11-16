@@ -60,19 +60,18 @@ after-close earnings, a fresh `mainEvent`, six `stories`, last week's closing `m
 and `earningsOdds` for the week's tickers (see "Earnings prediction markets").
 
 US stock index futures reopen at 6pm ET Sunday. Give Monday's entry a `premarket` line
-with the early futures read (the site's own feed has them: web-fetch
-`https://marketbrief.kennykao.workers.dev/api/live?nocache=<random>` and read `es`, `nq`, `ym`
-`chgPct` and `time`; cross-check with a news source) (S&P 500 and Nasdaq 100 futures %, plus oil or anything
+with the early futures read (the site's feed carries them although the page doesn't show
+them: web-fetch `https://marketbrief.kennykao.workers.dev/api/live?nocache=<random>` and read
+`es`, `nq`, `ym` `chgPct` and `time`; cross-check with a news source) (S&P 500 and Nasdaq 100 futures %, plus oil or anything
 moving overnight), e.g. "Sun 6:30p: S&P futures +0.2%, Nasdaq futures +0.4%, WTI −1%".
 Label it as Sunday evening so it isn't mistaken for Monday morning.
 
 ## Live data (no edits needed)
 
-The page fetches these by itself: the live strip (S&P / Nasdaq / Dow futures, SPY, QQQ,
-bitcoin, WTI, US 2Y, US 10Y, the 2s10s curve, gold, DXY, KOSPI, CSI 300, plus SPY/QQQ
-pre-market, after-hours and overnight prices), Fear & Greed, Kalshi odds for the next Fed
-meeting, Cboe's put/call ratio, the sector heatmap (week % of the 11 sector SPDR ETFs) and
-the options-implied earnings move in ticker hover cards.
+The page fetches these by itself: the live strip (SPY, QQQ, US 10Y, WTI, gold, bitcoin,
+DXY, KOSPI, CSI 300, plus SPY/QQQ pre-market, after-hours and overnight prices), Fear &
+Greed, Kalshi odds for the next Fed meeting, Cboe's put/call ratio and the sector heatmap
+(week % of the 11 sector SPDR ETFs).
 
 ## Prediction-market meters
 
