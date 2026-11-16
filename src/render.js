@@ -227,8 +227,8 @@ function renderLive() {
       <a class="tick" data-key="${it.key}" data-name="${esc(it.name)}" href="${esc(instrumentUrl(it))}" target="_blank" rel="noopener">
         <div class="tick-label">${esc(it.label)}</div>
         <div class="tick-value">—</div>
-        <div class="tick-chg"><span class="d">&nbsp;</span><span class="w"></span></div>
         <div class="tick-ext" hidden></div>
+        <div class="tick-chg"><span class="d">&nbsp;</span><span class="w"></span></div>
       </a>`
   ).join("");
   return `

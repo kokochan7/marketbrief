@@ -91,34 +91,43 @@
     return `<div class="tt-odds"><div class="tt-odds-h">Prediction markets</div>${rows}</div>`;
   }
 
+  // Card layout: name, price, extended-hours line, (prediction markets), then the grey
+  // "at close / as of" times at the bottom.
   function content(sym, q) {
-    return quoteContent(sym, q) + oddsBlock(sym);
+    const { main, foot } = quoteParts(sym, q);
+    return main + oddsBlock(sym) + footer(foot);
   }
 
-  function quoteContent(sym, q) {
-    if (!q) return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Loading…</div>`;
-    if (q.error || typeof q.price !== "number") {
-      return `<div class="tt-head"><b>${esc(sym)}</b></div><div class="tt-sub">Quote unavailable${CAN_HOVER ? ". Click to open Yahoo Finance." : " right now."}</div>`;
-    }
+  const footer = (lines) => (lines.length ? `<div class="tt-foot">${lines.map((l) => `<div class="tt-sub">${l}</div>`).join("")}</div>` : "");
+
+  function quoteParts(sym, q) {
+    const head = `<div class="tt-head"><b>${esc(sym)}</b>${q && q.name ? `<span>${esc(q.name)}</span>` : ""}</div>`;
+    if (!q) return { main: head, foot: ["Loading…"] };
+    if (q.error || typeof q.price !== "number") return { main: head, foot: ["Quote unavailable right now"] };
     const c = q.chgPct;
     const has = typeof c === "number" && isFinite(c);
     const cls = !has ? "chg-flat" : c > 0 ? "chg-up" : c < 0 ? "chg-down" : "chg-flat";
     const sign = !has ? "" : c > 0 ? "+" : c < 0 ? "−" : "";
-    return `
-      <div class="tt-head"><b>${esc(sym)}</b>${q.name ? `<span>${esc(q.name)}</span>` : ""}</div>
+    const main = `${head}
       <div class="tt-price">${money(q.price, q.currency)} <span class="${cls}">${has ? sign + Math.abs(c).toFixed(2) + "%" : ""}</span></div>
-      <div class="tt-sub">${q.ext ? "At close" : "Regular session · as of"} ${etTime(q.time)}</div>
-      ${extLine(q.ext)}
-      ${CAN_HOVER ? '<div class="tt-sub tt-go">Click for Yahoo Finance ↗</div>' : ""}`;
+      ${extLine(q.ext)}`;
+    const foot = [`${q.ext ? "At close" : "Regular session · as of"} ${etTime(q.time)}`];
+    if (extOk(q.ext)) foot.push(extFoot(q.ext));
+    return { main, foot };
   }
 
-  // Pre-market / after-hours / overnight trade, shown under the main price.
+  // Pre-market / after-hours / overnight trade: price and % right under the main price
+  // (sun = pre-market, moon = after hours / overnight, as on Yahoo); its time goes in the footer.
   const SESSION_LABEL = { pre: "Pre-market", post: "After hours", overnight: "Overnight" };
+  const MOON = '<svg class="tt-ext-i" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 10.2A6 6 0 0 1 5.8 2.5a6 6 0 1 0 7.7 7.7z" fill="currentColor"/></svg>';
+  const SUN = '<svg class="tt-ext-i" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+  const extOk = (x) => x && typeof x.price === "number";
   function extLine(x) {
-    if (!x || typeof x.price !== "number") return "";
+    if (!extOk(x)) return "";
     const label = SESSION_LABEL[x.session] || "Extended hours";
-    return `<div class="tt-ext"><span class="tt-ext-p">${money(x.price)}</span> ${pct(x.chgPct)}<div class="tt-sub">${label} · ${etTime(x.time)}</div></div>`;
+    return `<div class="tt-ext" title="${label}">${x.session === "pre" ? SUN : MOON}<span class="tt-ext-p">${money(x.price)}</span> ${pct(x.chgPct)}</div>`;
   }
+  const extFoot = (x) => `${SESSION_LABEL[x.session] || "Extended hours"} · ${etTime(x.time)}`;
 
   const pct = (v, suffix) => {
     if (typeof v !== "number" || !isFinite(v)) return "";
@@ -138,18 +147,19 @@
     const label = el.querySelector(".tick-label")?.textContent || key;
     const q = window.__live && window.__live.quotes && window.__live.quotes[key];
     const head = `<div class="tt-head"><b>${esc(label)}</b><span>${esc(el.dataset.name || "")}</span></div>`;
-    if (!window.__live) return head + `<div class="tt-sub">Loading…</div>`;
-    if (!q || q.error || typeof q.price !== "number") return head + `<div class="tt-sub">Live quote unavailable. Click to open Yahoo Finance.</div>`;
+    if (!window.__live) return head + footer(["Loading…"]);
+    if (!q || q.error || typeof q.price !== "number") return head + footer(["Live quote unavailable right now"]);
     const value = el.querySelector(".tick-value")?.textContent || "";
     const isY = q.unit === "yield";
     const day = isY ? bp(q.chgBp, "day") : pct(q.chgPct, q.chgLabel || "day");
     const wk = isY ? bp(q.wkBp, "wk") : pct(q.wkPct, "wk");
+    const foot = [`${esc(q.src || "")} · as of ${etTime(q.time)}`];
+    if (extOk(q.ext)) foot.push(extFoot(q.ext));
     return `${head}
       <div class="tt-price">${esc(value)}</div>
-      <div class="tt-chgs">${day}${wk ? " · " + wk : ""}</div>
-      <div class="tt-sub">${esc(q.src || "")} · as of ${etTime(q.time)}</div>
       ${extLine(q.ext)}
-      <div class="tt-sub tt-go">Click for Yahoo Finance ↗</div>`;
+      <div class="tt-chgs">${day}${wk ? " · " + wk : ""}</div>
+      ${footer(foot)}`;
   }
 
   function place(el) {
