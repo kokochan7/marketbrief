@@ -4,20 +4,20 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-16T13:51:00Z",
-    "dataAsOf": "Mon 11/16 pre-market"
+    "updated": "2026-11-16T22:46:00Z",
+    "dataAsOf": "Mon 11/16 close"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Tue 11/17 · Nvidia reports, its first quarter without Huang",
-    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell 13% last week after Jensen Huang resigned, and the FT reported Monday that Huang is weighing a comeback. It is a packed week: October retail sales Tuesday 8:30a, Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
+    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell another **4.1%** Monday to $156.14, about 10% below where it was before Jensen Huang resigned Thursday, and CNBC reports the board is not considering bringing him back despite the FT's report of a comeback campaign. It is a packed week: October retail sales Tuesday 8:30a, Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
   },
   "days": [
     {
       "date": "2026-11-16",
       "label": "Mon 11/16",
-      "tag": "Warsh speaks",
-      "tone": "grey",
+      "tag": "AI selloff",
+      "tone": "red",
       "macro": [
         {
           "time": "8:30a",
@@ -27,12 +27,12 @@
         {
           "time": "9:05a",
           "level": "low",
-          "text": "Fed's Williams speaks"
+          "text": "Fed's Williams speaks · no policy comment"
         },
         {
           "time": "12:00p",
           "level": "high",
-          "text": "Fed Chair Warsh speaks"
+          "text": "Fed Chair Warsh speaks · on AI scenarios, no policy comment"
         },
         {
           "time": "6:10p",
@@ -55,7 +55,7 @@
         "PAGS"
       ],
       "note": "Trip.com (TCOM) expected, time TBA",
-      "premarket": "8:41a: S&P futures −0.75%, Nasdaq 100 futures −1.45%, Dow futures −0.3% · 10Y 5.14% · WTI $87.89, −0.8% · Asia chip rout: Taiex −6.0% (TSMC −5.7%), Kospi −3.6% · FT says Jensen Huang is weighing a return as Nvidia CEO; NVDA about −2% pre-market · Empire State mfg drops to 7.8"
+      "result": "S&P 500 **−1.9%** (7,416.59), Nasdaq **−2.5%** (24,509.76, now more than 10% below its Oct 6 record), Dow −1.4%, Russell 2000 −1.7% · Nvidia −4.1% to $156.14; Intel and Dell about −7%, Micron −6%+ after a new AI-chip re-export license rule · Tyson +8.7% on a beat (adj. EPS $0.61 vs $0.58) · VIX 22.91, +18.7% · 10Y 5.12% · WTI settled $85.72, −3.2% · Empire State 7.8 vs est 17–18"
     },
     {
       "date": "2026-11-17",
@@ -231,25 +231,25 @@
     }
   ],
   "mood": {
-    "asOf": "Fri 11/13 close (last week)",
+    "asOf": "Mon 11/16 close",
     "fearGreed": {
-      "score": 38.6,
+      "score": 31.0,
       "label": "Fear",
-      "asOf": "Fri 11/13 close",
-      "weekAgo": 24.35,
-      "monthAgo": 45.6,
-      "yearAgo": 24.54
+      "asOf": "Mon 11/16 5:24p",
+      "weekAgo": 31.51,
+      "monthAgo": 18.21,
+      "yearAgo": 22.06
     },
     "regime": {
-      "label": "Defensive",
-      "tone": "orange",
-      "text": "Last week: first weekly gain since early October (S&P +2.5%, Nasdaq +2.3%, Dow +2.1%, Russell +1.3%), but Nvidia's leadership crisis, a hot CPI and a 10-year above 5.1% kept the tape cautious. Markets price a December hike as the base case."
+      "label": "Risk-off",
+      "tone": "red",
+      "text": "Mon 11/16: Nasdaq −2.5% into a correction as Nvidia's leadership crisis and a new AI-chip export rule hit chips; tech −3% was the worst sector and only staples and utilities rose. NYSE decliners beat advancers about 3 to 1 (Reuters). A December hike is priced as near certain."
     },
     "vix": {
-      "value": "19.30",
+      "value": "22.91",
       "label": "Elevated",
-      "tone": "orange",
-      "text": "Fri 11/13 close, +3.2% on the day · −24.7% on the week, from 25.64"
+      "tone": "red",
+      "text": "Mon 11/16 Cboe close, +3.61 (+18.7%) from 19.30 · intraday high 24.52"
     },
     "breadth": {
       "value": "Chips split",
@@ -257,14 +257,17 @@
     },
     "havens": {
       "value": "Few",
-      "text": "Fri 11/13: 10Y ≈ 5.15%, +28bp on the week · gold ≈ $3,886, about −5% on the week · bitcoin ≈ $65K over the weekend, −9% last week"
+      "text": "Mon 11/16: 10Y ≈ 5.12%, −2bp · gold ≈ $3,855, about −0.8% · bitcoin ≈ $65K, flat on the day · only staples (+0.3%) and utilities rose"
     },
-    "fedwatch": null
+    "fedwatch": {
+      "text": "25bp hike 93.7% (CME FedWatch via Reuters, 3:04p)",
+      "asOf": "Mon 11/16"
+    }
   },
   "stories": [
     {
       "title": "Nvidia reports Tuesday under a cloud.",
-      "body": "Nvidia reports fiscal Q3 after Tuesday's close with interim CEO Colette Kress on the call. The FT reported Monday that Jensen Huang, who resigned Thursday, is considering a return as CEO, with allies forming a \"war room\" of Silicon Valley executives to lobby the board and the White House; Nvidia did not immediately comment. The turmoil hit Asian chips overnight: Taiwan's Taiex fell 6.0% (TSMC −5.7%) and Korea's Kospi 3.6%, and NVDA was about 2% lower pre-market from Friday's $162.85, with AMD, Broadcom and Micron down about 4–6% (Reuters, TradingKey). Consensus is about $2.47–2.49 non-GAAP EPS on roughly $109B of revenue (guidance $108B ±2%). Treasury Secretary Bessent wants answers within 10 days on whether Nvidia used shell companies to sell top chips to China. Polymarket's odds of a new permanent CEO named by Dec 31 fell to about 21% from about 52% Sunday evening.",
+      "body": "Nvidia reports fiscal Q3 after Tuesday's close with interim CEO Colette Kress on the call. The stock fell 4.1% Monday to $156.14 and is down about 10% since Jensen Huang resigned Thursday (Kiplinger). The FT reported that Huang and allies are discussing a campaign to reinstate him, and Trump said he would not mind a return, but CNBC reports the board is not considering it and is focused on its investigation; Treasury Secretary Bessent has urged an outside CEO. Consensus is about $2.47–2.49 non-GAAP EPS on roughly $109B of revenue (guidance $108B ±2%). Polymarket gives about a 10% chance Huang rejoins Nvidia by Dec 31 and about 20% that a new permanent CEO is named by then; Arm's Rene Haas is now the favourite in the next-CEO market at about 28%.",
       "odds": [
         {
           "source": "polymarket",
@@ -275,41 +278,45 @@
         },
         {
           "source": "polymarket",
-          "label": "Kress is the next Nvidia CEO",
-          "prob": 16.1,
-          "slug": "will-colette-kress-be-the-next-ceo-of-nvidia",
-          "url": "https://polymarket.com/event/next-ceo-of-nvidia"
+          "label": "Huang rejoins Nvidia by Dec 31",
+          "prob": 10,
+          "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
+          "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
         },
         {
           "source": "polymarket",
           "label": "Rene Haas is the next Nvidia CEO",
-          "prob": 10,
+          "prob": 27.7,
           "slug": "will-rene-haas-be-the-next-ceo-of-nvidia",
           "url": "https://polymarket.com/event/next-ceo-of-nvidia"
         }
       ]
     },
     {
+      "title": "Tech rout tips the Nasdaq into a correction.",
+      "body": "The Nasdaq fell 2.49% to 24,509.76 Monday, more than 10% below its Oct 6 record close, as the S&P 500 lost 1.9%, the Dow 1.4% and the Russell 2000 1.7%. New interim US rules require licenses to re-export advanced AI chips to Brazil, Singapore, Indonesia, Malaysia and Thailand ahead of a Trump–Xi meeting, which hit chips and AI infrastructure: Micron fell more than 6%, Dell about 7%, AMD 5.6%, and CoreWeave and Nebius about 6–7.5%. Intel lost 7% after a proposed shareholder class action alleging it concealed weak PC demand. Alphabet fell about 4% and Amazon 3.3%. The VIX jumped 18.7% to 22.91. Bank-app outages at JPMorgan, Bank of America and Wells Fargo added to the gloom, with no sign of a common cause."
+    },
+    {
       "title": "Anthropic's record IPO is set to debut Thursday.",
-      "body": "Anthropic is expected to price Wednesday night and start trading on Nasdaq Thursday under the ticker ANT. It is selling 825 million shares at $70–78, up to about $64.4B, plus a $26B concurrent private placement (Nvidia and Google about $10B each), at a valuation of up to about $1.4 trillion; the book is reported about six times oversubscribed. It would be the largest listing ever. Polymarket prices a listing by Nov 19 at about 93%.",
+      "body": "Anthropic is expected to price Wednesday night and start trading on Nasdaq Thursday under the ticker ANT. It is selling 825 million shares at $70–78, up to about $64.4B, plus a $26B concurrent private placement (Nvidia and Google about $10B each), for about $90B in all (Bloomberg) at a valuation of up to about $1.4 trillion; the book is reported about six times oversubscribed. It would be the largest listing ever, and Bank of America's CEO says it is pushing some smaller listings into 2027. Polymarket prices a listing by Nov 19 at about 97%.",
       "odds": [
         {
           "source": "polymarket",
           "label": "Anthropic trading by Nov 19",
-          "prob": 93,
+          "prob": 96.7,
           "slug": "will-anthropic-ipo-by-november-19-2026",
           "url": "https://polymarket.com/event/anthropic-ipo-by"
         }
       ]
     },
     {
-      "title": "Warsh, retail sales and Fed minutes test the hike case.",
-      "body": "Fed Chair Warsh speaks Monday at noon after a weak Empire State survey (7.8 vs about 17–18 expected, prices paid down 14 points), October retail sales land Tuesday at 8:30a (about +0.2% expected after +0.8%), and Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. More than a dozen Fed speeches fill the week. After last week's hot CPI and a 10-year that ended near 5.15%, prediction markets price a 25bp hike on Dec 9 at about 87–88% and a bigger move at about 10%.",
+      "title": "Retail sales and Fed minutes test the hike case.",
+      "body": "Fed Chair Warsh used Monday's noon speech to walk through three illustrative AI scenarios for the economy and said nothing on rates, inflation or the market; Williams also skipped policy. Others were hawkish: Vice Chair Jefferson called inflation the most important consideration for further hikes, and Cleveland's Hammack said she prefers smaller steps, a sign she would not back 50bp. October retail sales land Tuesday at 8:30a (about +0.2% expected after +0.8%), and Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch put a 25bp December hike at 93.7% Monday afternoon (Reuters); Kalshi and Polymarket are at about 88%.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 87,
+          "prob": 88,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
@@ -323,23 +330,19 @@
         {
           "source": "kalshi",
           "label": "Fed hikes more than 25bp",
-          "prob": 10,
+          "prob": 9,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         }
       ]
     },
     {
-      "title": "Weekend Gulf flare-up; oil opens flat.",
-      "body": "Bahrain said Sunday its air defenses intercepted several Iranian aerial attacks, its first since September; the IRGC claimed six drones at a US radar site, with no damage confirmed. Iran's navy says tankers hit mines in the Strait of Hormuz on Saturday, which Reuters could not verify and the US military disputes. Oil barely reacted: WTI was about $88.50 (−0.1%) at 6:28p Sunday after settling at $88.56 Friday; Brent settled at $95.84, a second weekly loss, as the IEA sees a supply surplus this quarter."
-    },
-    {
       "title": "Retailers report into the holiday season.",
       "body": "Home Depot (est. about $3.84–3.87 EPS) and Disney report Tuesday morning; Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B, guided $0.62–0.64), with Ross, Gap and Intuit after Thursday's close and BJ's Friday. Polymarket gives Disney about 82% to beat $1.69 and Home Depot about 47% to beat $3.95. Tuesday's retail sales set the tone."
     },
     {
-      "title": "Airlines dig out after the nationwide ground stop.",
-      "body": "Friday's FAA ground stop on all departing US flights lasted about five hours; FlightAware counted 9,159 cancellations Friday and more than 3,800 Saturday. A preliminary FAA review blamed overloaded old routers on the air traffic control network, and Homeland Security said there was no sign of a cyberattack. Airspace was operating normally by Saturday morning, though Transportation Secretary Duffy warned of more disruption as crews reposition and asked Congress for emergency modernization funds. Airline stocks slipped into Friday's close."
+      "title": "Oil drops 3% as Iran strike fears ease.",
+      "body": "WTI settled $2.84 lower at $85.72 and Brent $3.40 lower at $92.44 Monday (Newsquawk), after reports that the US is not considering imminent strikes on Iran and as recovering Middle East exports bolster the supply-surplus outlook (Reuters). That outweighed weekend Gulf tension, including Iranian attacks on Bahrain, and fresh Hormuz incidents: the IRGC says two tankers hit mines and UKMTO reported a tanker hit by a projectile."
     }
   ],
   "earningsOdds": {
@@ -395,6 +398,16 @@
         "prob": 82,
         "slug": "dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69",
         "url": "https://polymarket.com/event/dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69"
+      }
+    ],
+    "PANW": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $0.99",
+        "prob": 94.5,
+        "slug": "panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99",
+        "url": "https://polymarket.com/event/panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99"
       }
     ]
   },
@@ -610,7 +623,59 @@
     {
       "label": "XPeng · Q3 2026 results (GlobeNewswire)",
       "url": "https://www.globenewswire.com/news-release/2026/11/16/3403237/0/en/xpeng-reports-third-quarter-2026-unaudited-financial-results.html"
+    },
+    {
+      "label": "Yahoo Finance · stock market today, Mon 11/16 (closes)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-16-dow-sp-500-nasdaq-nvidia-oil-091631084.html"
+    },
+    {
+      "label": "Vista Partners · Nov 16 closing market performance",
+      "url": "https://vistapglobal.com/stock-market-today-november-16-2026-nasdaq-slides-2-49-as-ai-uncertainty-technology-outages-and-slower-manufacturing-cloud-outlook-amzn-eprx-jpm-lly-modd-nvda-ser-spcx-tsla/"
+    },
+    {
+      "label": "Motley Fool · stock market today, Nov 16",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-tech-selloff-deepens-as-ai-leadership-crisis-rattles-nasdaq/"
+    },
+    {
+      "label": "Kiplinger · Nasdaq falls 626 points (Nov 16)",
+      "url": "https://www.kiplinger.com/investing/stocks/nasdaq-falls-626-points-to-start-nvidia-anthropic-week-stock-market-today"
+    },
+    {
+      "label": "Reuters via Korea Times · Wall Street slumps on AI jitters (Nov 16)",
+      "url": "https://www.koreatimes.co.kr/world/20261117/wall-street-slumps-on-ai-jitters-ahead-of-nvidia-results-anthropic-ipo"
+    },
+    {
+      "label": "Newsquawk · US market wrap Nov 16 (closes, oil and bond settlements)",
+      "url": "https://newsquawk.com/headlines/us-market-wrap---16th-november-2026-risk-off-trade-as-tech-rout-resumes-supporting-havens-"
+    },
+    {
+      "label": "Cboe · VIX delayed quote, Nov 16 close",
+      "url": "https://cdn-api.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
+    },
+    {
+      "label": "HNGN · stocks slide as 10-year stays above 5% (Warsh remarks)",
+      "url": "https://www.hngn.com/articles/273846/20261116/stocks-slide-10-year-yield-stays-above-5-before-nvidia.htm"
+    },
+    {
+      "label": "Reuters via RTE · oil falls as Middle East exports recover (Nov 16)",
+      "url": "https://www.rte.ie/news/business/2026/1116/1599343-oil-prices/"
+    },
+    {
+      "label": "Reuters via SRN · Tyson shares climb on beef outlook (Nov 16)",
+      "url": "https://srnnews.com/tyson-foods-forecasts-steeper-than-expected-annual-revenue-decline/"
+    },
+    {
+      "label": "Market Brief live data · Fear & Greed, 10Y, sectors Mon 5:24p",
+      "url": "https://marketbrief.kennykao.workers.dev/api/mood"
+    },
+    {
+      "label": "Polymarket · Jensen Huang rejoins Nvidia by…",
+      "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
+    },
+    {
+      "label": "Polymarket · PANW earnings beat",
+      "url": "https://polymarket.com/event/panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99"
     }
   ],
-  "oddsAsOf": "Mon 11/16 pre-market"
+  "oddsAsOf": "Mon 11/16 close"
 }
