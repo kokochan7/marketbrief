@@ -85,13 +85,23 @@ async function yahooOptions(sym, date) {
   return res;
 }
 
-async function optionsMove(sym) {
+// The ticker's report day and timing from this week's table, if it's in it.
+function briefReport(ticker) {
+  for (const d of brief.days || []) {
+    if ((d.bmo || []).includes(ticker)) return { date: d.date, amc: false };
+    if ((d.amc || []).includes(ticker)) return { date: d.date, amc: true };
+  }
+  return null;
+}
+
+async function optionsMove(sym, ticker) {
   try {
+    const report = briefReport(ticker);
     const first = await yahooOptions(sym);
-    const pick = impliedMove.pickExpiry(first.quote, first.expirationDates || [], Date.now());
+    const pick = impliedMove.pickExpiry(first.quote, first.expirationDates || [], Date.now(), report);
     if (!pick) return null;
     const chain = pick === (first.options?.[0]?.expirationDate ?? null) ? first : await yahooOptions(sym, pick);
-    return impliedMove(chain.quote, chain.options?.[0], Date.now());
+    return impliedMove(chain.quote, chain.options?.[0], Date.now(), report);
   } catch {
     return null;
   }
@@ -109,7 +119,7 @@ async function tickerQuote(ticker, ctx) {
   const hit = await cache.match(key);
   if (hit) return hit.json();
   const ysym = yahooSymbol(ticker);
-  const [res, ext, move] = await Promise.all([yahoo(ysym), yahooExtended([ysym]), optionsMove(ysym)]);
+  const [res, ext, move] = await Promise.all([yahoo(ysym), yahooExtended([ysym]), optionsMove(ysym, ticker)]);
   const q = summarize(res);
   const m = res.meta;
   const data = {

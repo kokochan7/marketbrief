@@ -50,7 +50,11 @@ const mv = impliedMove(hdQuote, chainHD, nowHD);
 // After-close report on Fri 11/20 (4:20pm ET): the same-day expiry doesn't include it.
 const amc = impliedMove.pickExpiry({ earningsTimestamp: Date.parse("2026-11-20T21:20:00Z") / 1000 }, [1795132800, 1795737600], nowHD);
 const far = impliedMove.pickExpiry({ earningsTimestamp: Date.parse("2027-02-20T21:20:00Z") / 1000 }, [1795132800], nowHD);
-const ok5 = mv && mv.strike === 347.5 && Math.abs(mv.pct - (18.05 / 348.69) * 100) < 1e-9 && amc === 1795737600 && far === null;
+// The brief's table overrides Yahoo's date: a ticker the table lists Tue 11/17 after the
+// close needs the Wed 11/18 expiry (1794960000), even if Yahoo's timestamp says Tue morning.
+const nv = impliedMove.pickExpiry({ earningsTimestamp: 1794922200 }, [1794873600, 1794960000, 1795132800], nowHD, { date: "2026-11-17", amc: true });
+const nvY = impliedMove.pickExpiry({ earningsTimestamp: 1794922200 }, [1794873600, 1794960000, 1795132800], nowHD);
+const ok5 = nv === 1794960000 && nvY === 1794873600 && mv && mv.strike === 347.5 && Math.abs(mv.pct - (18.05 / 348.69) * 100) < 1e-9 && amc === 1795737600 && far === null;
 console.log(JSON.stringify(mv));
 if (!ok5) { console.error("FAIL implied move", amc, far); process.exit(1); }
 console.log("implied move OK");

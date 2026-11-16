@@ -103,9 +103,9 @@ const etParts = (ms) => {
   return { date: `${p.year}-${p.month}-${p.day}`, hour: +p.hour % 24 };
 };
 
-export function impliedMove(quote, chain, nowMs = Date.now()) {
+export function impliedMove(quote, chain, nowMs = Date.now(), report) {
   if (!quote || !chain) return null;
-  const pick = impliedMove.pickExpiry(quote, [chain.expirationDate], nowMs);
+  const pick = impliedMove.pickExpiry(quote, [chain.expirationDate], nowMs, report);
   if (!pick) return null;
   const price = quote.regularMarketPrice;
   if (typeof price !== "number" || price <= 0) return null;
@@ -122,18 +122,28 @@ export function impliedMove(quote, chain, nowMs = Date.now()) {
   if (c === null || p === null) return null;
   // Strike too far from the price (thin chain): not a straddle worth showing.
   if (Math.abs(k - price) / price > 0.05) return null;
-  return { pct: ((c + p) / price) * 100, expiry: chain.expirationDate * 1000, earnings: quote.earningsTimestamp * 1000, strike: k };
+  return { pct: ((c + p) / price) * 100, expiry: chain.expirationDate * 1000, report: report ? `${report.date} ${report.amc ? "after close" : "before open"}` : null, strike: k };
 }
 
 // First expiry that includes the next earnings report (expiries are midnight UTC of the
 // expiration day; options stop trading at 4pm ET, so an after-close report needs a later day).
-impliedMove.pickExpiry = (quote, expirations, nowMs = Date.now()) => {
-  const et = quote && (quote.earningsTimestamp || quote.earningsTimestampStart);
-  if (!et) return null;
-  const eMs = et * 1000;
-  if (eMs < nowMs - 6 * 3600e3 || eMs - nowMs > 14 * 864e5) return null;
-  const e = etParts(eMs);
-  const afterClose = e.hour >= 12;
+// `report` ({ date: "YYYY-MM-DD", amc: true|false }, from the brief's week table) wins over
+// Yahoo's earnings timestamp, which is sometimes a day off.
+impliedMove.pickExpiry = (quote, expirations, nowMs = Date.now(), report) => {
+  let e, afterClose;
+  if (report && /^\d{4}-\d{2}-\d{2}$/.test(report.date)) {
+    const eMs = Date.parse(`${report.date}T${report.amc ? "21:00" : "12:00"}:00Z`);
+    if (eMs < nowMs - 12 * 3600e3 || eMs - nowMs > 14 * 864e5) return null;
+    e = { date: report.date };
+    afterClose = !!report.amc;
+  } else {
+    const et = quote && (quote.earningsTimestamp || quote.earningsTimestampStart);
+    if (!et) return null;
+    const eMs = et * 1000;
+    if (eMs < nowMs - 6 * 3600e3 || eMs - nowMs > 14 * 864e5) return null;
+    e = etParts(eMs);
+    afterClose = e.hour >= 12;
+  }
   for (const x of [...expirations].sort((a, b) => a - b)) {
     const d = new Date(x * 1000).toISOString().slice(0, 10);
     if (afterClose ? d > e.date : d >= e.date) return x;
