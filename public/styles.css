@@ -78,12 +78,12 @@ section { margin-top: var(--gap); }
 .refresh-btn.is-spinning svg { animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.5);} 70% { box-shadow: 0 0 0 7px rgba(52,211,153,0);} 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0);} }
+/* Tiles are separated by 1px gaps over the line colour, so any count and column number works. */
 .tape {
-  display: grid; grid-template-columns: repeat(9, minmax(0, 1fr));
-  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px;
+  background: var(--line-soft); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
 }
-.tick { display: block; color: inherit; text-decoration: none; padding: 8px 10px; border-right: 1px solid var(--line-soft); min-width: 0; transition: background .15s; }
-.tick:last-child { border-right: 0; }
+.tick { display: block; color: inherit; text-decoration: none; padding: 7px 10px; background: var(--panel); min-width: 0; transition: background .15s; }
 .tick:hover, .tick:focus-visible { background: var(--panel-2); outline: none; }
 .tick:hover .tick-label, .tick:focus-visible .tick-label { color: var(--teal); }
 .tick-label { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -213,6 +213,8 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .tt-ext { margin-top: 2px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 5px; }
 .tt-ext-i { width: 11px; height: 11px; color: #8fb3ff; flex: none; }
 .tt-ext-p { color: var(--text); }
+.tt-move { margin-top: 4px; font-size: 11.5px; color: var(--text-2); }
+.tt-move b { color: var(--orange); font-variant-numeric: tabular-nums; }
 .tt-foot { margin-top: 7px; padding-top: 5px; border-top: 1px solid var(--line); }
 .tt-foot .tt-sub { margin-top: 0; }
 .sheet-body .tt-ext { font-size: 15px; }
@@ -251,16 +253,34 @@ a.tt-odd:hover .tt-odd-l, a.tt-odd:focus-visible .tt-odd-l { color: var(--text);
 .odds-label { font-size: 11.5px; color: var(--text-2); }
 
 /* Mood (side column) */
-.mood-grid { display: grid; grid-template-columns: 1fr 1fr; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.mood-card { padding: 10px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-width: 0; }
-.mood-card:first-child { grid-column: 1 / -1; border-right: 0; }
+.mood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.mood-card { padding: 9px 12px; background: var(--panel); min-width: 0; }
+.mood-card.wide { grid-column: 1 / -1; }
 a.mood-card { display: block; color: inherit; text-decoration: none; transition: background .15s; }
 a.mood-card:hover, a.mood-card:focus-visible { background: var(--panel-2); outline: none; }
 a.mood-card:hover .card-kicker, a.mood-card:focus-visible .card-kicker { color: var(--teal); }
 a.mood-card .card-kicker::after { content: " ↗"; opacity: 0; transition: opacity .15s; }
 a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::after { opacity: .8; }
-.mood-card:nth-child(3), .mood-card:nth-child(5) { border-right: 0; }
-.mood-card:nth-child(n+4) { border-bottom: 0; }
+/* Fed odds (Kalshi, next meeting) */
+.fed-meet { color: var(--muted); }
+.fed-rows { display: grid; gap: 3px; margin-top: 5px; }
+.fed-row { display: grid; grid-template-columns: minmax(0, 1fr) 70px 34px; gap: 8px; align-items: center; font-size: 12px; }
+.fed-l { color: var(--text); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fed-bar { height: 6px; border-radius: 3px; background: #1f3a4d; overflow: hidden; }
+.fed-bar span { display: block; height: 100%; background: var(--teal); border-radius: 3px; }
+.fed-p { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text); }
+.fed-links { margin-top: 5px; }
+.fed-links a, .fed-fw a { color: var(--teal); text-decoration: none; font-weight: 600; }
+.fed-links a:hover, .fed-fw a:hover { text-decoration: underline; }
+.fed-fw { margin-top: 2px; font-size: 11.5px; color: var(--text-2); }
+.fed-links { display: inline-block; margin-right: 8px; }
+.fed-fw { display: inline-block; }
+/* Sector heatmap */
+.sec-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; margin-top: 6px; }
+.sec { display: flex; flex-direction: column; padding: 4px 6px; border-radius: 5px; background: #16303f; color: var(--text); text-decoration: none; min-width: 0; transition: outline-color .15s; outline: 1px solid transparent; }
+.sec:hover, .sec:focus-visible { outline-color: var(--teal); }
+.sec-l { font-size: 10px; font-weight: 700; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sec-v { font-size: 12.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .card-kicker { color: var(--text-2); font-size: 10px; }
 .card-sub { color: var(--muted); font-size: 11.5px; margin-top: 4px; line-height: 1.4; }
 .card-asof { color: var(--muted); font-size: 10.5px; margin-top: 3px; opacity: .85; }
@@ -286,10 +306,8 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1200px) {
-  .tape { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .tick { border-bottom: 1px solid var(--line-soft); }
-  .tick:nth-child(3n) { border-right: 0; }
-  .tick:nth-last-child(-n+3) { border-bottom: 0; }
+  .tape { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .tick:last-child:nth-child(5n+4) { grid-column: span 2; }
   .layout { grid-template-columns: minmax(0, 1fr) 300px; }
   .stories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -303,17 +321,15 @@ a.mood-card:hover .card-kicker::after, a.mood-card:focus-visible .card-kicker::a
   .masthead-right { text-align: left; }
   .range { font-size: 15px; }
 
-  .tape { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tick { padding: 7px 10px; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "label value" "ext ext" "chg chg"; align-items: baseline; column-gap: 6px; }
-  .tick-ext { grid-area: ext; justify-content: flex-end; font-size: 11px; }
-  .tick:nth-child(3n) { border-right: 1px solid var(--line-soft); }
-  .tick:nth-child(2n) { border-right: 0; }
-  .tick:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-soft); }
-  .tick:last-child { border-bottom: 0; }
-  .tick:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
-  .tick-label { grid-area: label; font-size: 10px; letter-spacing: .04em; }
-  .tick-value { grid-area: value; font-size: 14.5px; text-align: right; }
-  .tick-chg { grid-area: chg; font-size: 11.5px; justify-content: flex-end; min-height: 0; }
+  /* 14 tiles: three stacked columns keep the strip short on a phone. */
+  .tape { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tick:last-child:nth-child(5n+4) { grid-column: auto; }
+  .tick:last-child:nth-child(3n+2) { grid-column: span 2; }
+  .tick { padding: 6px 8px; }
+  .tick-label { font-size: 9.5px; letter-spacing: .04em; }
+  .tick-value { font-size: 14px; }
+  .tick-chg { font-size: 10.5px; gap: 0 5px; }
+  .tick-ext { font-size: 10.5px; }
 
   /* Flatten the two columns so sections can be ordered for reading */
   .layout { display: flex; flex-direction: column; gap: 0; }

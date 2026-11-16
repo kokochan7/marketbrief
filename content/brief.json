@@ -258,7 +258,14 @@
     "havens": {
       "value": "Few",
       "text": "Fri 11/13: 10Y ≈ 5.15%, +28bp on the week · gold ≈ $3,886, about −5% on the week · bitcoin ≈ $65K over the weekend, −9% last week"
-    }
+    },
+    "credit": {
+      "value": 3.2,
+      "weekAgo": 3.42,
+      "asOf": "Thu 11/12"
+    },
+    "above200": null,
+    "fedwatch": null
   },
   "stories": [
     {
@@ -565,6 +572,10 @@
     {
       "label": "Polymarket · NVDA, HD, DIS earnings beat markets",
       "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
+    },
+    {
+      "label": "ICE BofA US High Yield OAS, 3.20% on Nov 12 vs 3.42% on Nov 6 (FRED BAMLH0A0HYM2)",
+      "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     }
   ],
   "oddsAsOf": "Sun 11/15 evening"

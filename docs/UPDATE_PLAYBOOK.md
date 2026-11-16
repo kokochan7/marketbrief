@@ -28,9 +28,22 @@ If today is a US market holiday, make no edits.
 1. For today's entry in `days`, add a `result` line: S&P 500, Nasdaq and Russell 2000 %
    change, plus actual vs expected for any high/medium macro release. Fix any earnings
    names that moved or didn't report. Delete today's `premarket` line (the result replaces it).
-2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, breadth,
-   safe havens). Keep any tile `url` fields; Fear & Greed, VIX and breadth already link to
-   their source pages, and a tile can take an optional https `url` when one page backs it. Prices themselves come from the live strip, so there is no price table to edit.
+2. Update `mood` (Fear & Greed snapshot and its `asOf`, VIX close, regime, safe havens,
+   and the three hand-filled tiles below). Keep any tile `url` fields; a tile can take an
+   optional https `url` when one page backs it. `breadth` is no longer shown (the live sector
+   heatmap replaced it), so it can be left as is.
+   - `credit`: ICE BofA US High Yield OAS from FRED `BAMLH0A0HYM2` (web-fetch
+     `https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2`, last rows; FRED lags a
+     day). `{"value": 3.20, "weekAgo": 3.42, "asOf": "Thu 11/12"}`, values in percent,
+     `weekAgo` = the observation five trading days earlier.
+   - `above200`: % of S&P 500 stocks above their 200-day average (Barchart `$S5TH`, or
+     StockCharts `$SPXA200R`). `{"value": 58.4, "weekAgo": 55.1, "asOf": "Fri 11/13"}`.
+     These pages often block automated fetches; use web search, and set it to `null` if no
+     dated figure can be confirmed (the tile then says it's waiting for the evening update).
+   - `fedwatch`: CME FedWatch odds for the next FOMC meeting, one short line, e.g.
+     `{"text": "25bp hike 75% · hold 10% · 50bp hike 15%", "asOf": "Fri 11/13"}`. Only from a
+     dated source (CME's page or a news report quoting it); otherwise `null`. Kalshi odds
+     for the same meeting fill in live by themselves. Prices themselves come from the live strip, so there is no price table to edit.
 3. Refresh `stories`: it is a rolling list of six, most important first, not a fixed
    weekly set. Update stories that moved (new numbers, results), replace ones that have
    played out or gone stale with the day's new stories, and keep their odds current.
@@ -47,9 +60,19 @@ after-close earnings, a fresh `mainEvent`, six `stories`, last week's closing `m
 and `earningsOdds` for the week's tickers (see "Earnings prediction markets").
 
 US stock index futures reopen at 6pm ET Sunday. Give Monday's entry a `premarket` line
-with the early futures read (S&P 500 and Nasdaq 100 futures %, plus oil or anything
+with the early futures read (the site's own feed has them: web-fetch
+`https://marketbrief.kennykao.workers.dev/api/live?nocache=<random>` and read `es`, `nq`, `ym`
+`chgPct` and `time`; cross-check with a news source) (S&P 500 and Nasdaq 100 futures %, plus oil or anything
 moving overnight), e.g. "Sun 6:30p: S&P futures +0.2%, Nasdaq futures +0.4%, WTI −1%".
 Label it as Sunday evening so it isn't mistaken for Monday morning.
+
+## Live data (no edits needed)
+
+The page fetches these by itself: the live strip (S&P / Nasdaq / Dow futures, SPY, QQQ,
+bitcoin, WTI, US 2Y, US 10Y, the 2s10s curve, gold, DXY, KOSPI, CSI 300, plus SPY/QQQ
+pre-market, after-hours and overnight prices), Fear & Greed, Kalshi odds for the next Fed
+meeting, Cboe's put/call ratio, the sector heatmap (week % of the 11 sector SPDR ETFs) and
+the options-implied earnings move in ticker hover cards.
 
 ## Prediction-market meters
 

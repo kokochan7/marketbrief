@@ -92,3 +92,51 @@ export function extendedFrom(q, nowMs = Date.now()) {
   if (nowMs / 1000 - best.time > 4 * 86400) return null;
   return { ...best, time: best.time * 1000 };
 }
+
+// ---- Options-implied earnings move ----
+// Given Yahoo's options quote (with earningsTimestamp) and one expiry's chain, the
+// at-the-money straddle (call + put mid) as a % of the price: the move options price in
+// through that expiry, which includes the report. { pct, expiry, earnings } or null.
+const etParts = (ms) => {
+  const p = {};
+  for (const x of new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", hourCycle: "h23" }).formatToParts(new Date(ms))) p[x.type] = x.value;
+  return { date: `${p.year}-${p.month}-${p.day}`, hour: +p.hour % 24 };
+};
+
+export function impliedMove(quote, chain, nowMs = Date.now()) {
+  if (!quote || !chain) return null;
+  const pick = impliedMove.pickExpiry(quote, [chain.expirationDate], nowMs);
+  if (!pick) return null;
+  const price = quote.regularMarketPrice;
+  if (typeof price !== "number" || price <= 0) return null;
+  const mid = (o) => {
+    if (!o) return null;
+    if (o.bid > 0 && o.ask > 0 && o.ask >= o.bid) return (o.bid + o.ask) / 2;
+    return o.lastPrice > 0 ? o.lastPrice : null;
+  };
+  const strikes = (chain.calls || []).map((c) => c.strike).filter((k) => (chain.puts || []).some((p) => p.strike === k));
+  if (!strikes.length) return null;
+  const k = strikes.reduce((a, b) => (Math.abs(b - price) < Math.abs(a - price) ? b : a));
+  const c = mid(chain.calls.find((o) => o.strike === k));
+  const p = mid(chain.puts.find((o) => o.strike === k));
+  if (c === null || p === null) return null;
+  // Strike too far from the price (thin chain): not a straddle worth showing.
+  if (Math.abs(k - price) / price > 0.05) return null;
+  return { pct: ((c + p) / price) * 100, expiry: chain.expirationDate * 1000, earnings: quote.earningsTimestamp * 1000, strike: k };
+}
+
+// First expiry that includes the next earnings report (expiries are midnight UTC of the
+// expiration day; options stop trading at 4pm ET, so an after-close report needs a later day).
+impliedMove.pickExpiry = (quote, expirations, nowMs = Date.now()) => {
+  const et = quote && (quote.earningsTimestamp || quote.earningsTimestampStart);
+  if (!et) return null;
+  const eMs = et * 1000;
+  if (eMs < nowMs - 6 * 3600e3 || eMs - nowMs > 14 * 864e5) return null;
+  const e = etParts(eMs);
+  const afterClose = e.hour >= 12;
+  for (const x of [...expirations].sort((a, b) => a - b)) {
+    const d = new Date(x * 1000).toISOString().slice(0, 10);
+    if (afterClose ? d > e.date : d >= e.date) return x;
+  }
+  return null;
+};

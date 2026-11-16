@@ -8,13 +8,21 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 - **The brief** (main event, day-by-day calendar, market mood and stories) lives in [`content/brief.json`](content/brief.json). The Worker renders the
   page from it on each request, so editing that file and pushing to `main` is all it
   takes to publish a new edition.
-- **Live markets** (top strip: SPY, QQQ, US 10Y, WTI crude, gold, Bitcoin, DXY, KOSPI,
-  CSI 300, defined in `src/instruments.js`; each tile opens Yahoo Finance, and stocks/ETFs
-  show their pre-market, after-hours or overnight price under the main price) and the
-  **Fear & Greed** card are fetched by the Worker at
-  `/api/live` from Yahoo Finance (CoinGecko fallback for Bitcoin) and CNN, cached for 60
-  seconds, and refreshed in the browser every minute. If a source is down, the tile shows
-  `n/a` and the rest of the page is unaffected.
+- **Live markets** (top strip, defined in `src/instruments.js`: S&P / Nasdaq / Dow futures,
+  SPY, QQQ, bitcoin, WTI, US 2Y, US 10Y, 2s10s curve, gold, DXY, KOSPI, CSI 300; each tile
+  opens Yahoo Finance or the series' source, and SPY/QQQ show their pre-market, after-hours
+  or overnight price) and the **Fear & Greed** card come from the Worker at `/api/live`
+  (Yahoo Finance, CNBC for the 2-year yield and the curve, CoinGecko fallback for bitcoin,
+  CNN), cached for 60 seconds.
+- **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (11
+  sector SPDR ETFs, Yahoo), Kalshi odds for the next Fed meeting and Cboe's put/call ratio.
+  The high-yield spread, % of S&P 500 stocks above their 200-day average and the CME FedWatch
+  line are filled into `brief.json` by the evening update (their sources block automated
+  fetches from the Worker).
+- **Ticker hover cards** come from `/api/quote`: price, extended-hours trade and the
+  options-implied earnings move (at-the-money straddle through the first expiry after the
+  report, from Yahoo's options chain).
+- If a source is down, its tile shows `n/a` or a dash and the rest of the page is unaffected.
 - Every figure in `brief.json` should come from a source listed in its `sources` array,
   with an as-of label (e.g. "Tue close · week to date").
 
@@ -25,7 +33,7 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
 | `edition` | Week range, `updated` timestamp (UTC ISO), `dataAsOf` label |
 | `mainEvent` | Kicker, title, one-paragraph summary |
 | `days` | One entry per weekday. `date` (YYYY-MM-DD) drives the Done/Today badges. Optional `premarket` line shows until `result` is added. `tone`: `red`, `orange`, `green`, `teal`, `grey`. Macro `level`: `high` (red dot), `medium` (orange), `low` (grey). Add `result` once the day is done. |
-| `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, breadth, safe havens. Tiles link to CNN Fear & Greed, Yahoo ^VIX and Yahoo sectors; any tile can take an optional `url` (https) to link it or override the default |
+| `mood` | Fear & Greed snapshot (replaced live when CNN responds), risk regime, VIX, safe havens, and the evening-filled `credit`, `above200` and `fedwatch` (see docs/UPDATE_PLAYBOOK.md). Any tile can take an optional `url` (https) to link it or override the default |
 | `stories` | Numbered stories; `title` is bolded. Optional `odds` adds Kalshi/Polymarket meters (see docs/UPDATE_PLAYBOOK.md) |
 | `earningsOdds` | Optional Kalshi/Polymarket earnings markets by ticker: "beat" chips in the week table, all markets in hover cards (see docs/UPDATE_PLAYBOOK.md) |
 | `sources` | Where each figure came from (kept in the file for checking; not shown on the page) |
