@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-16T22:46:00Z",
-    "dataAsOf": "Mon 11/16 close"
+    "updated": "2026-11-17T14:05:00Z",
+    "dataAsOf": "Tue 11/17 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Tue 11/17 · Nvidia reports, its first quarter without Huang",
-    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell another **4.1%** Monday to $156.14, about 10% below where it was before Jensen Huang resigned Thursday, and CNBC reports the board is not considering bringing him back despite the FT's report of a comeback campaign. It is a packed week: October retail sales Tuesday 8:30a, Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
+    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell another **4.1%** Monday to $156.14, about 10% below where it was before Jensen Huang resigned Thursday, and CNBC reports the board is not considering bringing him back despite the FT's report of a comeback campaign. October retail sales rose 0.2% Tuesday morning, as expected. Still ahead: Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
   },
   "days": [
     {
@@ -66,7 +66,7 @@
         {
           "time": "8:30a",
           "level": "high",
-          "text": "Retail sales (Oct), est +0.2%, prior +0.8% · ex-autos est +0.4%"
+          "text": "Retail sales (Oct) **+0.2%** vs est +0.2%, prior +0.8% · ex-autos +0.6% vs est +0.4% · ex-autos & gas +0.5%"
         },
         {
           "time": "8:30a",
@@ -103,7 +103,8 @@
         "NVDA",
         "ZTO",
         "DLB"
-      ]
+      ],
+      "premarket": "8:39a: S&P futures **−0.2%**, Nasdaq 100 futures **+0.2%**, Dow futures −0.8% · 10Y 5.14% · WTI $86.93, +1.4% · Stoxx 600 −0.9%, Nikkei −1.1%, KOSPI −2.6% · retail sales +0.2% as expected, ex-autos +0.6% · Home Depot and Disney beat EPS estimates"
     },
     {
       "date": "2026-11-18",
@@ -310,8 +311,8 @@
       ]
     },
     {
-      "title": "Retail sales and Fed minutes test the hike case.",
-      "body": "Fed Chair Warsh used Monday's noon speech to walk through three illustrative AI scenarios for the economy and said nothing on rates, inflation or the market; Williams also skipped policy. Others were hawkish: Vice Chair Jefferson called inflation the most important consideration for further hikes, and Cleveland's Hammack said she prefers smaller steps, a sign she would not back 50bp. October retail sales land Tuesday at 8:30a (about +0.2% expected after +0.8%), and Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch put a 25bp December hike at 93.7% Monday afternoon (Reuters); Kalshi and Polymarket are at about 88%.",
+      "title": "Retail sales hold up; Fed minutes test the hike case.",
+      "body": "Fed Chair Warsh used Monday's noon speech to walk through three illustrative AI scenarios for the economy and said nothing on rates, inflation or the market; Williams also skipped policy. Others were hawkish: Vice Chair Jefferson called inflation the most important consideration for further hikes, and Cleveland's Hammack said she prefers smaller steps, a sign she would not back 50bp. October retail sales rose **0.2%** Tuesday, matching estimates after +0.8% in September, with sales ex-autos up 0.6% vs 0.4% expected (Census via ActionForex, AP). Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch put a 25bp December hike at 97.4% Tuesday morning, up from 93.7% Monday afternoon (Reuters); Kalshi and Polymarket are at about 88%. Waller, Hammack and Williams speak Tuesday.",
       "odds": [
         {
           "source": "kalshi",
@@ -337,12 +338,12 @@
       ]
     },
     {
-      "title": "Retailers report into the holiday season.",
-      "body": "Home Depot (est. about $3.84–3.87 EPS) and Disney report Tuesday morning; Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B, guided $0.62–0.64), with Ross, Gap and Intuit after Thursday's close and BJ's Friday. Polymarket gives Disney about 82% to beat $1.69 and Home Depot about 47% to beat $3.95. Tuesday's retail sales set the tone."
+      "title": "Home Depot and Disney beat; more retailers to come.",
+      "body": "Home Depot earned **$3.86** a share (adjusted) vs about $3.84 expected on sales of $43.4B, up 4.9% and above the roughly $42.7B estimate; comparable sales rose 2.2%, and it now sees fiscal 2026 comps up about 1.4% and adjusted EPS up about 2% (company release, StockStory). Disney earned **$1.77** adjusted vs about $1.67–1.68 expected on revenue of $25.95B, up 15.5%; it guided to double-digit adjusted EPS growth in fiscal 2027, targets about $3B of yearly cost savings by fiscal 2029 and raised its annual dividend to $2.00 from $1.50 (247 Wall St, MarketScreener, Variety). Those results clear Polymarket's $1.69 Disney line but fall short of its $3.95 Home Depot line. Still to come: Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07; Polymarket 76% to beat $2.08) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), with Ross, Gap and Intuit (Polymarket 93% to beat $2.46) after Thursday's close and BJ's Friday."
     },
     {
-      "title": "Oil drops 3% as Iran strike fears ease.",
-      "body": "WTI settled $2.84 lower at $85.72 and Brent $3.40 lower at $92.44 Monday (Newsquawk), after reports that the US is not considering imminent strikes on Iran and as recovering Middle East exports bolster the supply-surplus outlook (Reuters). That outweighed weekend Gulf tension, including Iranian attacks on Bahrain, and fresh Hormuz incidents: the IRGC says two tankers hit mines and UKMTO reported a tanker hit by a projectile."
+      "title": "Oil bounces after Monday's 3% drop as Hormuz attacks continue.",
+      "body": "WTI settled $2.84 lower at $85.72 and Brent $3.40 lower at $92.44 Monday (Newsquawk), after reports that the US is not considering imminent strikes on Iran and as recovering Middle East exports bolster the supply-surplus outlook (Reuters). Overnight the IRGC said it struck a US radar system at Bahrain's Sheikh Isa base and that a supertanker carrying more than 2 million barrels and an LNG carrier hit mines in the Strait of Hormuz, which it says stays closed unless the US accepts Tehran's terms; Qatar says mediation is ongoing, and Iraq resumed pumping through the Iraq–Turkey pipeline (Newsquawk). WTI was up about 1.4% at $86.93 at 8:39a."
     }
   ],
   "earningsOdds": {
@@ -351,7 +352,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $2.53",
-        "prob": 87.5,
+        "prob": 86.9,
         "slug": "nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53",
         "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
       },
@@ -359,7 +360,7 @@
         "source": "kalshi",
         "kind": "mention",
         "label": "Says “Resign” or “Step down” on the call",
-        "prob": 61,
+        "prob": 51,
         "ticker": "KXEARNINGSMENTIONNVDA-26NOV18-RESI",
         "url": "https://kalshi.com/markets/kxearningsmentionnvda"
       },
@@ -380,34 +381,34 @@
         "url": "https://polymarket.com/event/what-will-nvidia-say-during-their-next-earnings-call-november-17"
       }
     ],
-    "HD": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $3.95",
-        "prob": 47.5,
-        "slug": "hd-quarterly-earnings-nongaap-eps-11-17-2026-3pt95",
-        "url": "https://polymarket.com/event/hd-quarterly-earnings-nongaap-eps-11-17-2026-3pt95"
-      }
-    ],
-    "DIS": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $1.69",
-        "prob": 82,
-        "slug": "dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69",
-        "url": "https://polymarket.com/event/dis-quarterly-earnings-nongaap-eps-11-17-2026-1pt69"
-      }
-    ],
     "PANW": [
       {
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $0.99",
-        "prob": 94.5,
+        "prob": 85,
         "slug": "panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99",
         "url": "https://polymarket.com/event/panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99"
+      }
+    ],
+    "TGT": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $2.08",
+        "prob": 76,
+        "slug": "tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08",
+        "url": "https://polymarket.com/event/tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08"
+      }
+    ],
+    "INTU": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $2.46",
+        "prob": 92.5,
+        "slug": "intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46",
+        "url": "https://polymarket.com/event/intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46"
       }
     ]
   },
@@ -675,7 +676,63 @@
     {
       "label": "Polymarket · PANW earnings beat",
       "url": "https://polymarket.com/event/panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99"
+    },
+    {
+      "label": "Census via ActionForex · October retail sales +0.2%, ex-autos +0.6%",
+      "url": "https://www.actionforex.com/live-comments/661220-us-retail-sales-slow-to-0-2-but-ex-auto-spending-shows-resilience/"
+    },
+    {
+      "label": "Bloomingbit · October retail sales beat forecasts",
+      "url": "https://en.bloomingbit.io/feed/news/124635"
+    },
+    {
+      "label": "AP via WTOP · retail sales rose 0.2% in October",
+      "url": "https://wtop.com/national/2026/11/retail-sales-rose-0-2-in-october-a-slowdown-from-september-with-many-consumers-uncertain-about-the-economy"
+    },
+    {
+      "label": "Home Depot · Q3 fiscal 2026 results",
+      "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331"
+    },
+    {
+      "label": "StockStory · Home Depot Q3 vs estimates",
+      "url": "https://stockstory.org/us/stocks/nyse/hd/news/earnings/home-depots-q3-2026-sales-beat-estimates"
+    },
+    {
+      "label": "247 Wall St · Disney Q4 2026 earnings",
+      "url": "https://247wallst.com/cards/disney-q4-2026-earnings-dis-01m7mmpfsncp9mx2rz2b14krtq"
+    },
+    {
+      "label": "MarketScreener · Disney Q4 and full-year results",
+      "url": "https://www.marketscreener.com/news/the-walt-disney-company-reports-earnings-results-for-the-full-year-ended-october-03-2026-ce785edcd88ef725"
+    },
+    {
+      "label": "Variety · Disney targets $3B cost savings by 2029",
+      "url": "https://variety.com/2026/tv/news/disney-q4-2026-earnings-3-billion-cost-savings-by-2029-layoffs-1236949553/"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · futures slip ahead of Nvidia results (Nov 17)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-slip-ahead-105311659.html"
+    },
+    {
+      "label": "TradingKey · US pre-market Nov 17, AI chip remote-access rule",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262308986-nvidia-earnings-ai-chip-remote-access-restrictions-tradingkey"
+    },
+    {
+      "label": "Newsquawk · US opening news Nov 17",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-us-opening-news---17th-november-2026"
+    },
+    {
+      "label": "Newsquawk · European opening news Nov 17",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---17th-november-2026"
+    },
+    {
+      "label": "Market Brief live data · futures, 10Y, WTI, KOSPI Tue 8:39a",
+      "url": "https://marketbrief.kennykao.workers.dev/api/live"
+    },
+    {
+      "label": "Polymarket · Target and Intuit earnings beat markets",
+      "url": "https://polymarket.com/event/tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08"
     }
   ],
-  "oddsAsOf": "Mon 11/16 close"
+  "oddsAsOf": "Tue 11/17 pre-market"
 }
