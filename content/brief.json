@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-17T14:05:00Z",
-    "dataAsOf": "Tue 11/17 pre-market"
+    "updated": "2026-11-17T23:20:00Z",
+    "dataAsOf": "Tue 11/17 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Tue 11/17 · Nvidia reports, its first quarter without Huang",
-    "body": "Nvidia reports after Tuesday's close (results about 4:20p, call 5:00p) with interim CEO Colette Kress on the call. The Street expects non-GAAP EPS of about **$2.47–2.49** on revenue near **$109B** (guidance $108B ±2%) and wants a January-quarter outlook around $125B; options imply an 8–9% move. The stock fell another **4.1%** Monday to $156.14, about 10% below where it was before Jensen Huang resigned Thursday, and CNBC reports the board is not considering bringing him back despite the FT's report of a comeback campaign. October retail sales rose 0.2% Tuesday morning, as expected. Still ahead: Fed minutes Wednesday 2:00p, Walmart Thursday before the open, and Anthropic's record IPO is expected to start trading Thursday."
+    "title": "Wed 11/18 · Fed minutes and Anthropic's pricing, after Nvidia's beat",
+    "body": "Nvidia beat after Tuesday's close: revenue **$115.8B** (+103%) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter outlook of **$130B ±3%** (including an extra week) vs about $125B (company release, CoinDesk). Shares rose as much as about 3% after hours and were up about 1–2% by 5:15p; Chairman Harvey Jones said on the call the board does not intend to reinstate Jensen Huang. Wednesday brings the **FOMC minutes at 2:00p** (Oct 27–28 meeting, two members favored a hike), Lowe's, TJX and Target before the open, Palo Alto after the close, and Anthropic's record IPO pricing after the close ahead of Thursday's Nasdaq debut. Walmart reports Thursday at 7:00a."
   },
   "days": [
     {
@@ -60,7 +60,7 @@
     {
       "date": "2026-11-17",
       "label": "Tue 11/17",
-      "tag": "Nvidia + retail sales",
+      "tag": "Dow −849, Nvidia beats",
       "tone": "red",
       "macro": [
         {
@@ -71,22 +71,22 @@
         {
           "time": "8:30a",
           "level": "low",
-          "text": "Import prices (Oct), est +0.7%, prior +1.1%"
+          "text": "Import prices (Oct) **+1.1%** vs est +0.7%, prior +1.1%"
         },
         {
           "time": "9:15a",
           "level": "medium",
-          "text": "Industrial production (Oct), est +0.1%, prior +0.7%"
+          "text": "Industrial production (Oct) **−0.4%** vs est +0.1%, prior +0.7% · utilities −4.3%, manufacturing +0.3% · capacity use 76.4%"
         },
         {
           "time": "9:20a",
           "level": "medium",
-          "text": "Fed's Waller speaks · Musalem 7:30a, Hammack 9:30a, Williams 2:25p"
+          "text": "Fed's Waller speaks · Musalem 7:30a, Hammack 9:30a, Williams 2:25p (no need for a \"dramatic\" move)"
         },
         {
           "time": "10:00a",
           "level": "low",
-          "text": "NAHB housing index (Nov), est 29, prior 29"
+          "text": "NAHB housing index (Nov) **25** vs est 29, prior 29 · lowest since April 2012"
         }
       ],
       "bmo": [
@@ -104,7 +104,7 @@
         "ZTO",
         "DLB"
       ],
-      "premarket": "8:39a: S&P futures **−0.2%**, Nasdaq 100 futures **+0.2%**, Dow futures −0.8% · 10Y 5.14% · WTI $86.93, +1.4% · Stoxx 600 −0.9%, Nikkei −1.1%, KOSPI −2.6% · retail sales +0.2% as expected, ex-autos +0.6% · Home Depot and Disney beat EPS estimates"
+      "result": "S&P 500 **−1.0%** (7,340.53), Nasdaq **−0.7%** (24,328.38), Dow −848.75 (−1.6%, 50,759.42), Russell 2000 −1.5% · all 11 sectors fell, financials worst (−1.9%) · Salesforce −9.6%, Intuit −7.1%, ServiceNow −6.8%; Home Depot −2.4% and Disney −1.5% despite beats · Nvidia −0.4% to $155.46, then up about 1–2% after hours on a beat (rev $115.8B, EPS $2.68, Q4 guide $130B) · VIX 25.46, +11.1% · 10Y 5.10% · WTI settled $86.01, +0.3% · industrial production −0.4% vs est +0.1%, NAHB 25 vs est 29"
     },
     {
       "date": "2026-11-18",
@@ -232,25 +232,25 @@
     }
   ],
   "mood": {
-    "asOf": "Mon 11/16 close",
+    "asOf": "Tue 11/17 close",
     "fearGreed": {
-      "score": 31.0,
+      "score": 25.2,
       "label": "Fear",
-      "asOf": "Mon 11/16 5:24p",
-      "weekAgo": 31.51,
+      "asOf": "Tue 11/17 5:23p",
+      "weekAgo": 37.37,
       "monthAgo": 18.21,
-      "yearAgo": 22.06
+      "yearAgo": 11.64
     },
     "regime": {
       "label": "Risk-off",
       "tone": "red",
-      "text": "Mon 11/16: Nasdaq −2.5% into a correction as Nvidia's leadership crisis and a new AI-chip export rule hit chips; tech −3% was the worst sector and only staples and utilities rose. NYSE decliners beat advancers about 3 to 1 (Reuters). A December hike is priced as near certain."
+      "text": "Tue 11/17: second straight broad selloff before Nvidia's report; the Dow lost 849 points and all 11 sector ETFs fell, with financials, utilities and real estate worst. Software slid (Salesforce −9.6%) and MarketWatch says the three major indexes hit their lowest in at least four months. Nvidia's beat lifted futures after the close."
     },
     "vix": {
-      "value": "22.91",
+      "value": "25.46",
       "label": "Elevated",
       "tone": "red",
-      "text": "Mon 11/16 Cboe close, +3.61 (+18.7%) from 19.30 · intraday high 24.52"
+      "text": "Tue 11/17 Cboe close, +2.55 (+11.1%) from 22.91 · intraday high 27.73"
     },
     "breadth": {
       "value": "Chips split",
@@ -258,7 +258,7 @@
     },
     "havens": {
       "value": "Few",
-      "text": "Mon 11/16: 10Y ≈ 5.12%, −2bp · gold ≈ $3,855, about −0.8% · bitcoin ≈ $65K, flat on the day · only staples (+0.3%) and utilities rose"
+      "text": "Tue 11/17: 10Y ≈ 5.10%, −2bp · gold ≈ $3,852, flat · bitcoin ≈ $64.7K, −0.2% · staples (−1.2%) and utilities (−1.6%) fell with the market"
     },
     "fedwatch": {
       "text": "25bp hike 93.7% (CME FedWatch via Reuters, 3:04p)",
@@ -267,8 +267,8 @@
   },
   "stories": [
     {
-      "title": "Nvidia reports Tuesday under a cloud.",
-      "body": "Nvidia reports fiscal Q3 after Tuesday's close with interim CEO Colette Kress on the call. The stock fell 4.1% Monday to $156.14 and is down about 10% since Jensen Huang resigned Thursday (Kiplinger). The FT reported that Huang and allies are discussing a campaign to reinstate him, and Trump said he would not mind a return, but CNBC reports the board is not considering it and is focused on its investigation; Treasury Secretary Bessent has urged an outside CEO. Consensus is about $2.47–2.49 non-GAAP EPS on roughly $109B of revenue (guidance $108B ±2%). Polymarket gives about a 10% chance Huang rejoins Nvidia by Dec 31 and about 20% that a new permanent CEO is named by then; Arm's Rene Haas is now the favourite in the next-CEO market at about 28%.",
+      "title": "Nvidia beats and guides to $130B; board shuts the door on Huang.",
+      "body": "Nvidia's fiscal Q3 revenue rose 103% to **$115.8B** (data center $107.6B, +110%) vs about $109B expected, with non-GAAP EPS of **$2.68** vs about $2.47 and a non-GAAP gross margin of 74.9%. It guided the January quarter to **$130B ±3%**, a 14-week quarter, vs about $125B, with gross margins of 71–72% and no China data-center sales assumed (company release, CoinDesk, TheStreet). The stock closed −0.4% at $155.46 and rose as much as about 3% after hours before settling up about 1–2% by 5:15p. Earlier Tuesday Jensen Huang said he would be \"honored\" to return as CEO if asked, but Chairman Harvey Jones said on the call the board unanimously accepted his resignation and does not intend to reinstate him (CoinDesk); the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet). Polymarket (last trades Monday) gives about 13% that Huang rejoins by Dec 31 and 20% that a permanent CEO is named by then, with Arm's Rene Haas the favourite at about 28%.",
       "odds": [
         {
           "source": "polymarket",
@@ -280,7 +280,7 @@
         {
           "source": "polymarket",
           "label": "Huang rejoins Nvidia by Dec 31",
-          "prob": 10,
+          "prob": 13.5,
           "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
           "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
         },
@@ -294,8 +294,8 @@
       ]
     },
     {
-      "title": "Tech rout tips the Nasdaq into a correction.",
-      "body": "The Nasdaq fell 2.49% to 24,509.76 Monday, more than 10% below its Oct 6 record close, as the S&P 500 lost 1.9%, the Dow 1.4% and the Russell 2000 1.7%. New interim US rules require licenses to re-export advanced AI chips to Brazil, Singapore, Indonesia, Malaysia and Thailand ahead of a Trump–Xi meeting, which hit chips and AI infrastructure: Micron fell more than 6%, Dell about 7%, AMD 5.6%, and CoreWeave and Nebius about 6–7.5%. Intel lost 7% after a proposed shareholder class action alleging it concealed weak PC demand. Alphabet fell about 4% and Amazon 3.3%. The VIX jumped 18.7% to 22.91. Bank-app outages at JPMorgan, Bank of America and Wells Fargo added to the gloom, with no sign of a common cause."
+      "title": "Selloff deepens: Dow sheds 849 points as software slides.",
+      "body": "The S&P 500 fell 1.03% to 7,340.53 Tuesday, the Nasdaq 0.74% to 24,328.38 and the Dow 848.75 points (1.64%) to 50,759.42, after Monday's tech rout; the Russell 2000 lost about 1.5%. The Nasdaq was down as much as about 2.1% intraday, and MarketWatch says the three major indexes touched their lowest levels in at least four months. Software led the losses: Salesforce −9.6% to $194.20, Intuit −7.1% (it reports Thursday), ServiceNow −6.8% and C3.ai −6.9% (24/7 Wall St). All 11 sector ETFs fell, and the VIX rose 11.1% to 25.46. Bright spots: Arm +4.0%, Broadcom +2.5%, SELLAS more than doubled on Phase 3 data, and AECOM +11%."
     },
     {
       "title": "Anthropic's record IPO is set to debut Thursday.",
@@ -311,76 +311,42 @@
       ]
     },
     {
-      "title": "Retail sales hold up; Fed minutes test the hike case.",
-      "body": "Fed Chair Warsh used Monday's noon speech to walk through three illustrative AI scenarios for the economy and said nothing on rates, inflation or the market; Williams also skipped policy. Others were hawkish: Vice Chair Jefferson called inflation the most important consideration for further hikes, and Cleveland's Hammack said she prefers smaller steps, a sign she would not back 50bp. October retail sales rose **0.2%** Tuesday, matching estimates after +0.8% in September, with sales ex-autos up 0.6% vs 0.4% expected (Census via ActionForex, AP). Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch put a 25bp December hike at 97.4% Tuesday morning, up from 93.7% Monday afternoon (Reuters); Kalshi and Polymarket are at about 88%. Waller, Hammack and Williams speak Tuesday.",
+      "title": "Williams rules out a jumbo hike; Fed minutes on Wednesday.",
+      "body": "New York Fed President Williams said Tuesday that policy will probably need one more increase but that the situation does not call for \"dramatic\" action, pushing back on a 50bp December move (Bloomberg, Yahoo Finance, The Private Banker); Waller had said Nov 10 that 50bp should be considered if core inflation runs hot. Data were soft: industrial production fell **0.4%** in October vs +0.1% expected as utility output dropped 4.3% (Federal Reserve), and the NAHB builder index fell to **25**, its lowest since April 2012, vs 29 expected. Import prices rose 1.1%, and retail sales rose 0.2% as expected. Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch was at 93.7% for a 25bp December hike Monday afternoon (Reuters); Kalshi and Polymarket are at about 91–92%.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 88,
+          "prob": 91,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
           "source": "polymarket",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 87.5,
+          "prob": 91.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
         },
         {
           "source": "kalshi",
           "label": "Fed hikes more than 25bp",
-          "prob": 9,
+          "prob": 5,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         }
       ]
     },
     {
-      "title": "Home Depot and Disney beat; more retailers to come.",
-      "body": "Home Depot earned **$3.86** a share (adjusted) vs about $3.84 expected on sales of $43.4B, up 4.9% and above the roughly $42.7B estimate; comparable sales rose 2.2%, and it now sees fiscal 2026 comps up about 1.4% and adjusted EPS up about 2% (company release, StockStory). Disney earned **$1.77** adjusted vs about $1.67–1.68 expected on revenue of $25.95B, up 15.5%; it guided to double-digit adjusted EPS growth in fiscal 2027, targets about $3B of yearly cost savings by fiscal 2029 and raised its annual dividend to $2.00 from $1.50 (247 Wall St, MarketScreener, Variety). Those results clear Polymarket's $1.69 Disney line but fall short of its $3.95 Home Depot line. Still to come: Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07; Polymarket 76% to beat $2.08) Wednesday; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), with Ross, Gap and Intuit (Polymarket 93% to beat $2.46) after Thursday's close and BJ's Friday."
+      "title": "Home Depot and Disney beat but fall; more retailers to come.",
+      "body": "Home Depot earned **$3.86** a share (adjusted) vs about $3.84 expected on sales of $43.4B, up 4.9%, and named CFO Richard McPhail CEO effective Nov 23; the stock fell 2.4% (company release, StockTitan). Disney earned **$1.77** adjusted vs about $1.67 on revenue of $25.95B, up 16%, raised its annual dividend to $2.00 from $1.50 and targets about $3B of yearly cost savings by fiscal 2029, but gave up early gains to close −1.5% (247 Wall St, Variety). JD.com fell 7.7% and Klarna rose 4.8% on its results. Still to come: Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07; Polymarket 80% to beat $2.08) Wednesday before the open, Palo Alto after; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), with Ross, Gap and Intuit (Polymarket 95% to beat $2.46) after Thursday's close and BJ's Friday."
     },
     {
-      "title": "Oil bounces after Monday's 3% drop as Hormuz attacks continue.",
-      "body": "WTI settled $2.84 lower at $85.72 and Brent $3.40 lower at $92.44 Monday (Newsquawk), after reports that the US is not considering imminent strikes on Iran and as recovering Middle East exports bolster the supply-surplus outlook (Reuters). Overnight the IRGC said it struck a US radar system at Bahrain's Sheikh Isa base and that a supertanker carrying more than 2 million barrels and an LNG carrier hit mines in the Strait of Hormuz, which it says stays closed unless the US accepts Tehran's terms; Qatar says mediation is ongoing, and Iraq resumed pumping through the Iraq–Turkey pipeline (Newsquawk). WTI was up about 1.4% at $86.93 at 8:39a."
+      "title": "Oil edges up as Gulf attacks continue.",
+      "body": "WTI rose 0.3% to settle at **$86.01** and Brent 0.8% to **$93.14** Tuesday, recovering a little of Monday's 3% drop as attacks on shipping in and around the Strait of Hormuz continued: Tehran targeted Bahrain for the third time in under a week, and a US official said US warplanes struck an Iranian missile site on Qeshm Island (Bloomberg via Rigzone). Supply is the offset: the IEA sees a surplus of about 2 million barrels a day this quarter and Goldman Sachs has flagged the risk of a glut next year. OPEC+ meets Nov 29 on 2027 policy."
     }
   ],
   "earningsOdds": {
-    "NVDA": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $2.53",
-        "prob": 86.9,
-        "slug": "nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53",
-        "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Resign” or “Step down” on the call",
-        "prob": 51,
-        "ticker": "KXEARNINGSMENTIONNVDA-26NOV18-RESI",
-        "url": "https://kalshi.com/markets/kxearningsmentionnvda"
-      },
-      {
-        "source": "polymarket",
-        "kind": "mention",
-        "label": "Says “Successor” or “Succession” on the call",
-        "prob": 63,
-        "slug": "will-nvidia-say-successor-succession-during-earnings-call-november-17",
-        "url": "https://polymarket.com/event/what-will-nvidia-say-during-their-next-earnings-call-november-17"
-      },
-      {
-        "source": "polymarket",
-        "kind": "mention",
-        "label": "Says “Investigation” on the call",
-        "prob": 55.5,
-        "slug": "will-nvidia-say-investigation-during-earnings-call-november-17",
-        "url": "https://polymarket.com/event/what-will-nvidia-say-during-their-next-earnings-call-november-17"
-      }
-    ],
     "PANW": [
       {
         "source": "polymarket",
@@ -396,7 +362,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $2.08",
-        "prob": 76,
+        "prob": 79.5,
         "slug": "tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08",
         "url": "https://polymarket.com/event/tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08"
       }
@@ -406,7 +372,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $2.46",
-        "prob": 92.5,
+        "prob": 95,
         "slug": "intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46",
         "url": "https://polymarket.com/event/intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46"
       }
@@ -732,7 +698,63 @@
     {
       "label": "Polymarket · Target and Intuit earnings beat markets",
       "url": "https://polymarket.com/event/tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08"
+    },
+    {
+      "label": "NVIDIA · Q3 fiscal 2027 results (Nov 17)",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+    },
+    {
+      "label": "CoinDesk · Nvidia tops estimates, strong guidance (Nov 17)",
+      "url": "https://www.coindesk.com/markets/2026/11/17/nvidia-tops-estimates-issues-strong-guidance-adds-usd150-billion-to-buyback-authorization"
+    },
+    {
+      "label": "CoinDesk · live updates, Huang and Nvidia board (Nov 17)",
+      "url": "https://www.coindesk.com/business/2026/11/17/live-updates-bitcoin-holds-near-usd64-000-as-tech-slides-ahead-of-nvidia-earnings"
+    },
+    {
+      "label": "TheStreet Pro · stock market today, Nov 17",
+      "url": "https://pro.thestreet.com/stock-market-today/2026-11-17"
+    },
+    {
+      "label": "Motley Fool · stock market today, Nov 17",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nvidia-slides-ahead-of-earnings-but-soars-in-after-hours-trading/"
+    },
+    {
+      "label": "Vista Partners · Nov 17 closing table (Dow −848.75)",
+      "url": "https://vistapglobal.com/stock-market-today-november-17-2026-dow-falls-848-points-as-inflation-and-ai-uncertainty-weigh-aapl-ant-dis-eprx-gld-googl-modd-nvda-ser-sls-spcx-vix/"
+    },
+    {
+      "label": "ad-hoc-news · Dow falls 1.6% ahead of Nvidia (Nov 17)",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/dow-jones-falls-1-6-prozent-ahead-of-nvidia-earnings/70528787"
+    },
+    {
+      "label": "StockTitan · stock market today live, Nov 17",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-17-2026"
+    },
+    {
+      "label": "24/7 Wall St · Nov 17 closing bell and movers",
+      "url": "https://247wallst.com/cards/the-dow-s-955-point-drop-led-the-selling-a-sharper-hit-than-gspc-market-bell-01m7nn5ym7r5nqbd4d83yt9zt1"
+    },
+    {
+      "label": "Yahoo Finance · stock market today live, Nov 17 (NAHB, Huang)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-17-dow-sp-500-nasdaq-nvidia-earnings-retail-sales-143848454.html"
+    },
+    {
+      "label": "Federal Reserve · G.17 industrial production, October",
+      "url": "https://www.federalreserve.gov/releases/g17/current/default.htm"
+    },
+    {
+      "label": "Yahoo Finance · Williams rules out jumbo December hike",
+      "url": "https://finance.yahoo.com/economy/policy/article/new-york-feds-williams-rules-out-jumbo-rate-hike-for-december-205144565.html"
+    },
+    {
+      "label": "The Private Banker · Williams rejects dramatic action (Nov 17)",
+      "url": "https://leprivatebanker.com/2026/11/17/feds-williams-says-another-rate-hike-is-likely-but-rejects-dramatic-action-as-inflation-spreads-beyond-supply-shocks/"
+    },
+    {
+      "label": "Bloomberg via Rigzone · oil settles, Gulf attacks (Nov 17)",
+      "url": "https://www.rigzone.com/news/wire/oil_prices_swing_as_gulf_attacks_continue-17-nov-2026-185107-article/"
     }
   ],
-  "oddsAsOf": "Tue 11/17 pre-market"
+  "oddsAsOf": "Tue 11/17 close"
 }
