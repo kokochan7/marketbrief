@@ -371,8 +371,8 @@ function weekRef(bars, time) {
   return before.length ? before[before.length - 1] : null;
 }
 
-// 10Y minus 2Y in basis points, with day and week changes.
-async function buildCurve() {
+// 10Y minus 2Y in basis points, with day and week changes, live from CNBC.
+async function cnbcCurve() {
   const [q, d2, d10] = await Promise.all([cnbcYields(["US2Y", "US10Y"]), cnbcDaily("US2Y"), cnbcDaily("US10Y")]);
   const y2 = q.US2Y;
   const y10 = q.US10Y;
@@ -392,6 +392,66 @@ async function buildCurve() {
     time: Math.max(y2.time, y10.time),
     src: "CNBC",
   };
+}
+
+// Backup: the Treasury's daily par yield curve (end of day), newest row first.
+async function treasuryCurve() {
+  const year = new Date().getUTCFullYear();
+  const r = await fetch(
+    `https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/${year}/all?type=daily_treasury_yield_curve&field_tdr_date_value=${year}&page&_format=csv`,
+    { headers: { "User-Agent": UA, Accept: "text/csv" }, cf: { cacheTtl: 1800 } }
+  );
+  if (!r.ok) throw new Error(`Treasury HTTP ${r.status}`);
+  const lines = (await r.text()).trim().split(/\r?\n/);
+  const head = lines.shift().split(",").map((h) => h.replace(/"/g, "").trim());
+  const i2 = head.indexOf("2 Yr");
+  const i10 = head.indexOf("10 Yr");
+  if (i2 < 0 || i10 < 0) throw new Error("Treasury columns missing");
+  const rows = lines
+    .map((l) => {
+      const c = l.split(",");
+      const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(c[0] || "");
+      return m ? { date: `${m[3]}-${m[1]}-${m[2]}`, y2: pnum(c[i2]), y10: pnum(c[i10]) } : null;
+    })
+    .filter((x) => x && x.y2 !== null && x.y10 !== null)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+  if (!rows.length) throw new Error("Treasury no rows");
+  const [last, prev] = rows;
+  const bp = (x) => (x.y10 - x.y2) * 100;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+  const monday = mondayOf(today);
+  const ref = last.date >= monday ? rows.find((x) => x.date < monday) : null;
+  return {
+    bp: bp(last),
+    chgBp: prev ? bp(last) - bp(prev) : null,
+    wkBp: ref ? bp(last) - bp(ref) : null,
+    wkRefDate: ref ? ref.date : null,
+    y2: last.y2,
+    y10: last.y10,
+    date: last.date,
+    daily: true,
+    src: "US Treasury",
+  };
+}
+
+// CNBC first, then the Treasury's daily file, then the last good reading (kept two days).
+const CURVE_LAST = "https://curve.cache/last";
+async function buildCurve() {
+  const cache = caches.default;
+  let curve = null;
+  for (const get of [cnbcCurve, treasuryCurve]) {
+    try {
+      curve = await get();
+      break;
+    } catch {}
+  }
+  if (curve) {
+    await cache.put(CURVE_LAST, new Response(JSON.stringify(curve), { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=172800" } }));
+    return curve;
+  }
+  const hit = await cache.match(CURVE_LAST);
+  if (hit) return { ...(await hit.json()), stale: true };
+  throw new Error("no yields from CNBC or Treasury");
 }
 
 // ---- Market Mood extras (/api/mood): sector heatmap, Fed odds and the 2s10s curve ----
@@ -452,7 +512,8 @@ async function moodHandler(request, ctx) {
   const [sectors, fed, curve] = await Promise.all([settle(buildSectors()), settle(kalshiFed()), settle(buildCurve())]);
   const data = { generated: Date.now(), sectors, fed, curve };
   const ok = !sectors.error || !fed.error || !curve.error;
-  const resp = json(data, 200, ok ? 300 : 15);
+  // A missing piece is retried after 30 seconds instead of being cached for 5 minutes.
+  const resp = json(data, 200, !ok ? 15 : sectors.error || fed.error || curve.error ? 30 : 300);
   ctx.waitUntil(cache.put(key, resp.clone()));
   return resp;
 }

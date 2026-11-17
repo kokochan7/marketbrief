@@ -82,8 +82,17 @@
     // Day/week change on one line, the two yields on the next (kept together).
     const yields = `<span style="white-space:nowrap">10Y ${c.y10.toFixed(2)}% · 2Y ${c.y2.toFixed(2)}%</span>`;
     $("#curve-sub").innerHTML = (parts.length ? `<span style="white-space:nowrap">${parts.join("&nbsp; ")}</span><br>` : "") + yields;
-    const stamp = window.MBTime && c.time ? window.MBTime.stamp(c.time) : "";
-    $("#curve-asof").textContent = `CNBC${stamp ? " · " + stamp : ""}`;
+    // Live CNBC reading: "CNBC · Mon 10:20 PM EST". Treasury backup: "US Treasury · Fri 11/13 close".
+    let asof;
+    if (c.daily && c.date) {
+      const [y, m, d] = c.date.split("-").map(Number);
+      const wd = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" });
+      asof = `${c.src || "US Treasury"} · ${wd} ${m}/${d} close`;
+    } else {
+      const stamp = window.MBTime && c.time ? window.MBTime.stamp(c.time) : "";
+      asof = `${c.src || "CNBC"}${stamp ? " · " + stamp : ""}`;
+    }
+    $("#curve-asof").textContent = asof + (c.stale ? " (last reading)" : "");
   }
 
   let loading = false;
