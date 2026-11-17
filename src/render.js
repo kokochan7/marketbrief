@@ -237,10 +237,17 @@ function renderMood(m, wctx) {
       <div class="big">${esc(m.vix.value)}</div>
       <div class="card-flag tone-text-${esc(m.vix.tone)}">${esc(m.vix.label)}</div>
       <div class="card-sub">${md(m.vix.text, wctx)}</div>`)}
+    <div class="mood-card" id="curve-card">
+      <div class="card-kicker">2s10s curve</div>
+      <div class="big" id="curve-v">—</div>
+      <div class="card-flag" id="curve-flag"></div>
+      <div class="card-sub" id="curve-sub">10Y minus 2Y Treasury yield</div>
+      <div class="card-asof" id="curve-asof"></div>
+    </div>
     ${moodCard(link("havens"), `
       <div class="card-kicker">Safe havens</div>
       <div class="big">${esc(m.havens.value)}</div>
-      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens") })}
+      <div class="card-sub">${md(m.havens.text, wctx)}</div>`, { title: t("havens"), cls: "wide" })}
     <div class="mood-card wide" id="fed-card">
       <div class="card-kicker">Fed odds <span class="fed-meet" id="fed-meet"></span></div>
       <div class="fed-rows" id="fed-rows"><div class="card-sub">Loading Kalshi odds…</div></div>

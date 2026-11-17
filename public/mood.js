@@ -1,5 +1,6 @@
 // Fills the live parts of Market Mood from /api/mood: the sector heatmap (week % change of
-// the 11 sector SPDR ETFs), and Kalshi odds for the next Fed meeting.
+// SPY and the 11 sector SPDR ETFs), Kalshi odds for the next Fed meeting, and the 2s10s curve
+// (10Y minus 2Y Treasury yield, from CNBC).
 // Loads once per page view and again on each refresh (live.js "mb:refresh").
 (function () {
   const $ = (s) => document.querySelector(s);
@@ -59,6 +60,32 @@
     if (k && f.url) k.href = f.url;
   }
 
+  // 2s10s curve: spread in basis points, positive = normal slope, negative = inverted.
+  const fmtBp = (v) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(1)}bp`;
+  const toneCls = (v) => (v > 0 ? "chg-up" : v < 0 ? "chg-down" : "chg-flat");
+  function curve(c) {
+    const v = $("#curve-v");
+    if (!v) return;
+    if (!c || c.error || typeof c.bp !== "number") {
+      v.textContent = "—";
+      $("#curve-sub").textContent = "CNBC yields unavailable right now";
+      return;
+    }
+    v.textContent = fmtBp(c.bp);
+    const flag = $("#curve-flag");
+    flag.textContent = c.bp < 0 ? "Inverted" : "Positive";
+    flag.className = "card-flag " + (c.bp < 0 ? "tone-text-red" : "tone-text-teal");
+    const parts = [];
+    // Same style as the live strip: day change, then week change marked "wk".
+    if (typeof c.chgBp === "number") parts.push(`<span class="${toneCls(c.chgBp)}">${fmtBp(c.chgBp)}</span>`);
+    if (typeof c.wkBp === "number") parts.push(`<span class="${toneCls(c.wkBp)}">${fmtBp(c.wkBp)} wk</span>`);
+    // Day/week change on one line, the two yields on the next (kept together).
+    const yields = `<span style="white-space:nowrap">10Y ${c.y10.toFixed(2)}% · 2Y ${c.y2.toFixed(2)}%</span>`;
+    $("#curve-sub").innerHTML = (parts.length ? `<span style="white-space:nowrap">${parts.join("&nbsp; ")}</span><br>` : "") + yields;
+    const stamp = window.MBTime && c.time ? window.MBTime.stamp(c.time) : "";
+    $("#curve-asof").textContent = `CNBC${stamp ? " · " + stamp : ""}`;
+  }
+
   let loading = false;
   async function load() {
     if (loading) return;
@@ -69,6 +96,7 @@
       const data = await r.json();
       sectors(data.sectors);
       fed(data.fed);
+      curve(data.curve);
     } catch (e) {
       const rows = $("#fed-rows");
       if (rows && /Loading/.test(rows.textContent)) rows.innerHTML = '<div class="card-sub">Kalshi odds unavailable right now</div>';

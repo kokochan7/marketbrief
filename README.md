@@ -15,7 +15,8 @@ A weekly market brief website, served by the Cloudflare Worker `marketbrief`
   seconds. `/api/live` also carries S&P / Nasdaq / Dow futures (`es`, `nq`, `ym`) for the
   Sunday edition's futures read; they aren't shown on the page.
 - **Market Mood extras** come from `/api/mood` (cached 5 minutes): the sector heatmap (S&P 500 benchmark plus 11
-  sector SPDR ETFs, Yahoo) and Kalshi odds for the next Fed meeting.
+  sector SPDR ETFs, Yahoo), Kalshi odds for the next Fed meeting and the 2s10s curve (CNBC
+  US10Y minus US2Y, with day and week change).
 - **Earnings ticker colours** come from `/api/moves` (cached 1 minute): one Yahoo quote request
   for every ticker in `days`, coloured green / red by the latest day move.
   The high-yield spread, % of S&P 500 stocks above their 200-day average and the CME FedWatch

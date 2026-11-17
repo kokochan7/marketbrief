@@ -1,6 +1,6 @@
 import brief from "../content/brief.json";
 import { renderPage } from "./render.js";
-import { summarize, extendedFrom } from "./quotes.js";
+import { summarize, extendedFrom, mondayOf } from "./quotes.js";
 import { INSTRUMENTS, SECTORS, yahooQuoteUrl } from "./instruments.js";
 
 
@@ -318,7 +318,83 @@ async function buildLive() {
   return { generated: Date.now(), quotes: Object.fromEntries(entries), fearGreed: fg };
 }
 
-// ---- Market Mood extras (/api/mood): sector heatmap and Fed odds ----
+// ---- 2s10s curve for Market Mood: CNBC US2Y and US10Y (Yahoo has no 2-year yield index) ----
+const pnum = (v) => {
+  const n = parseFloat(String(v ?? "").replace(/[%,+]/g, ""));
+  return isFinite(n) ? n : null;
+};
+
+async function cnbcYields(symbols) {
+  const r = await fetch(
+    `https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=${symbols.join("%7C")}&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json`,
+    { headers: { "User-Agent": UA, Accept: "application/json" } }
+  );
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const list = (await r.json())?.FormattedQuoteResult?.FormattedQuote || [];
+  const out = {};
+  for (const q of list) {
+    const price = pnum(q.last);
+    if (price === null) continue;
+    const prev = pnum(q.previous_day_closing);
+    const chg = pnum(q.change);
+    const t = Date.parse(q.last_time || q.last_timedate || "");
+    out[q.symbol] = { price, prev: prev ?? (chg !== null ? price - chg : null), time: isNaN(t) ? Date.now() : t };
+  }
+  return out;
+}
+
+// Daily closes from CNBC for the week change: [{ date, close }]. Optional; [] if unavailable.
+async function cnbcDaily(symbol) {
+  try {
+    const now = new Date();
+    const from = new Date(now.getTime() - 21 * 864e5);
+    const f = (d) => d.toISOString().slice(0, 10).replace(/-/g, "") + "000000";
+    const r = await fetch(`https://ts-api.cnbc.com/harmony/app/bars/${symbol}/1D/${f(from)}/${f(now)}/adjusted/EST5EDT.json`, {
+      headers: { "User-Agent": UA, Accept: "application/json" },
+      cf: { cacheTtl: 600 },
+    });
+    if (!r.ok) return [];
+    const bars = (await r.json())?.barData?.priceBars || [];
+    return bars
+      .map((b) => ({ date: String(b.tradeTime || "").replace(/^(\d{4})(\d{2})(\d{2}).*/, "$1-$2-$3"), close: pnum(b.close) }))
+      .filter((b) => /^\d{4}-\d{2}-\d{2}$/.test(b.date) && b.close !== null);
+  } catch {
+    return [];
+  }
+}
+
+// Close of the last trading day before this week's Monday (US Eastern date of `time`).
+function weekRef(bars, time) {
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date(time));
+  const monday = mondayOf(today);
+  const before = bars.filter((b) => b.date < monday);
+  return before.length ? before[before.length - 1] : null;
+}
+
+// 10Y minus 2Y in basis points, with day and week changes.
+async function buildCurve() {
+  const [q, d2, d10] = await Promise.all([cnbcYields(["US2Y", "US10Y"]), cnbcDaily("US2Y"), cnbcDaily("US10Y")]);
+  const y2 = q.US2Y;
+  const y10 = q.US10Y;
+  if (!y2 || !y10) throw new Error("no CNBC yields");
+  const spread = (y10.price - y2.price) * 100;
+  const prev = y2.prev !== null && y10.prev !== null ? (y10.prev - y2.prev) * 100 : null;
+  const w2 = weekRef(d2, y2.time);
+  const w10 = weekRef(d10, y10.time);
+  const wk = w2 && w10 && w2.date === w10.date ? (w10.close - w2.close) * 100 : null;
+  return {
+    bp: spread,
+    chgBp: prev !== null ? spread - prev : null,
+    wkBp: wk !== null ? spread - wk : null,
+    wkRefDate: wk !== null ? w2.date : null,
+    y2: y2.price,
+    y10: y10.price,
+    time: Math.max(y2.time, y10.time),
+    src: "CNBC",
+  };
+}
+
+// ---- Market Mood extras (/api/mood): sector heatmap, Fed odds and the 2s10s curve ----
 
 async function buildSectors() {
   const rows = await Promise.all(
@@ -373,9 +449,9 @@ async function moodHandler(request, ctx) {
   const key = new Request(new URL("/api/mood", request.url).toString(), { method: "GET" });
   const hit = await cache.match(key);
   if (hit) return hit;
-  const [sectors, fed] = await Promise.all([settle(buildSectors()), settle(kalshiFed())]);
-  const data = { generated: Date.now(), sectors, fed };
-  const ok = !sectors.error || !fed.error;
+  const [sectors, fed, curve] = await Promise.all([settle(buildSectors()), settle(kalshiFed()), settle(buildCurve())]);
+  const data = { generated: Date.now(), sectors, fed, curve };
+  const ok = !sectors.error || !fed.error || !curve.error;
   const resp = json(data, 200, ok ? 300 : 15);
   ctx.waitUntil(cache.put(key, resp.clone()));
   return resp;
