@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-17T23:20:00Z",
-    "dataAsOf": "Tue 11/17 close"
+    "updated": "2026-11-18T14:10:00Z",
+    "dataAsOf": "Wed 11/18 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Wed 11/18 · Fed minutes and Anthropic's pricing, after Nvidia's beat",
-    "body": "Nvidia beat after Tuesday's close: revenue **$115.8B** (+103%) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter outlook of **$130B ±3%** (including an extra week) vs about $125B (company release, CoinDesk). Shares rose as much as about 3% after hours and were up about 1–2% by 5:15p; Chairman Harvey Jones said on the call the board does not intend to reinstate Jensen Huang. Wednesday brings the **FOMC minutes at 2:00p** (Oct 27–28 meeting, two members favored a hike), Lowe's, TJX and Target before the open, Palo Alto after the close, and Anthropic's record IPO pricing after the close ahead of Thursday's Nasdaq debut. Walmart reports Thursday at 7:00a."
+    "body": "Nvidia beat after Tuesday's close: revenue **$115.8B** (+103%) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter outlook of **$130B ±3%** (including an extra week) vs about $125B (company release, CoinDesk). Shares were up about 3% before Wednesday's open, lifting Nasdaq futures; Chairman Harvey Jones said on the call the board does not intend to reinstate Jensen Huang. Wednesday brings the **FOMC minutes at 2:00p** (Oct 27–28 meeting, two members favored a hike), Fed Governor Waller floating a 50bp December hike this morning, Target and Lowe's beating but slipping and TJX up about 6% before the open, Palo Alto after the close, and Anthropic's record IPO pricing after the close ahead of Thursday's Nasdaq debut. Walmart reports Thursday at 7:00a."
   },
   "days": [
     {
@@ -115,7 +115,7 @@
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Housing starts (Oct), est 1.23–1.24M, prior 1.221M · permits est 1.38M"
+          "text": "Housing starts (Oct) **1.309M** vs est ~1.24M, prior 1.191M (rev.) · permits **1.295M** vs est 1.38M, −7.4%"
         },
         {
           "time": "10:00a",
@@ -152,7 +152,8 @@
         "UGI",
         "KLIC"
       ],
-      "note": "Anthropic IPO expected to price after the close"
+      "note": "Anthropic IPO expected to price after the close",
+      "premarket": "8:38a: S&P futures **+0.3%**, Nasdaq 100 futures **+0.8%**, Dow futures flat (gains faded from +0.6% / +1.2% at 4:53a) · Nvidia about +3% · 10Y 5.11% · WTI $83.90, −2.5% · gold −2.2% · KOSPI +2.0%, Nikkei +0.5%, Hang Seng −1.0% · Waller floats a 50bp December hike · housing starts beat, permits miss · Target and Lowe's beat but slip, TJX up about 6%"
     },
     {
       "date": "2026-11-19",
@@ -268,7 +269,7 @@
   "stories": [
     {
       "title": "Nvidia beats and guides to $130B; board shuts the door on Huang.",
-      "body": "Nvidia's fiscal Q3 revenue rose 103% to **$115.8B** (data center $107.6B, +110%) vs about $109B expected, with non-GAAP EPS of **$2.68** vs about $2.47 and a non-GAAP gross margin of 74.9%. It guided the January quarter to **$130B ±3%**, a 14-week quarter, vs about $125B, with gross margins of 71–72% and no China data-center sales assumed (company release, CoinDesk, TheStreet). The stock closed −0.4% at $155.46 and rose as much as about 3% after hours before settling up about 1–2% by 5:15p. Earlier Tuesday Jensen Huang said he would be \"honored\" to return as CEO if asked, but Chairman Harvey Jones said on the call the board unanimously accepted his resignation and does not intend to reinstate him (CoinDesk); the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet). Polymarket (last trades Monday) gives about 13% that Huang rejoins by Dec 31 and 20% that a permanent CEO is named by then, with Arm's Rene Haas the favourite at about 28%.",
+      "body": "Nvidia's fiscal Q3 revenue rose 103% to **$115.8B** (data center $107.6B, +110%) vs about $109B expected, with non-GAAP EPS of **$2.68** vs about $2.47 and a non-GAAP gross margin of 74.9%. It guided the January quarter to **$130B ±3%**, a 14-week quarter, vs about $125B, with gross margins of 71–72% and no China data-center sales assumed (company release, CoinDesk, TheStreet). The stock closed −0.4% at $155.46 and rose as much as about 3% after hours before settling up about 1–2% by 5:15p, and was up about 3% before Wednesday's open (Reuters, CoinDesk); the board also added $150B to the buyback (Newsquawk). Earlier Tuesday Jensen Huang said he would be \"honored\" to return as CEO if asked, but Chairman Harvey Jones said on the call the board unanimously accepted his resignation and does not intend to reinstate him (CoinDesk); the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet). Polymarket (last trades Monday) gives about 13% that Huang rejoins by Dec 31 and 20% that a permanent CEO is named by then, with Arm's Rene Haas the favourite at about 28%.",
       "odds": [
         {
           "source": "polymarket",
@@ -299,7 +300,7 @@
     },
     {
       "title": "Anthropic's record IPO is set to debut Thursday.",
-      "body": "Anthropic is expected to price Wednesday night and start trading on Nasdaq Thursday under the ticker ANT. It is selling 825 million shares at $70–78, up to about $64.4B, plus a $26B concurrent private placement (Nvidia and Google about $10B each), for about $90B in all (Bloomberg) at a valuation of up to about $1.4 trillion; the book is reported about six times oversubscribed. It would be the largest listing ever, and Bank of America's CEO says it is pushing some smaller listings into 2027. Polymarket prices a listing by Nov 19 at about 97%.",
+      "body": "Anthropic is expected to price Wednesday night and start trading on Nasdaq Thursday under the ticker ANT. It is selling 825 million shares at $70–78, up to about $64.4B, plus a $26B concurrent private placement (Nvidia and Google about $10B each), for about $90B in all (Bloomberg) at a valuation of up to about $1.4 trillion; the book is reported about six times oversubscribed, and Bloomberg reports Anthropic told investors it expects to price at the top of the range or higher, with multiple orders of $10B or more (via TradingKey). It would be the largest listing ever, and Bank of America's CEO says it is pushing some smaller listings into 2027. Polymarket prices a listing by Nov 19 at about 97%.",
       "odds": [
         {
           "source": "polymarket",
@@ -311,8 +312,8 @@
       ]
     },
     {
-      "title": "Williams rules out a jumbo hike; Fed minutes on Wednesday.",
-      "body": "New York Fed President Williams said Tuesday that policy will probably need one more increase but that the situation does not call for \"dramatic\" action, pushing back on a 50bp December move (Bloomberg, Yahoo Finance, The Private Banker); Waller had said Nov 10 that 50bp should be considered if core inflation runs hot. Data were soft: industrial production fell **0.4%** in October vs +0.1% expected as utility output dropped 4.3% (Federal Reserve), and the NAHB builder index fell to **25**, its lowest since April 2012, vs 29 expected. Import prices rose 1.1%, and retail sales rose 0.2% as expected. Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch was at 93.7% for a 25bp December hike Monday afternoon (Reuters); Kalshi and Polymarket are at about 91–92%.",
+      "title": "Waller floats a 50bp hike ahead of Wednesday's Fed minutes.",
+      "body": "Fed Governor Waller said Wednesday morning that inflation is moving in the wrong direction and broadening, and that the Fed could respond by raising rates **50bp** in December or by signalling more tightening (TokenPost, Bloomingbit). That cuts against New York Fed President Williams, who said Tuesday policy will probably need one more increase but nothing \"dramatic\" (Bloomberg, Yahoo Finance). Data are mixed: October housing starts jumped 9.9% to **1.309M** vs about 1.24M expected, but permits fell 7.4% to 1.295M vs 1.38M (CoinDesk, Reuters via Rallies), after Tuesday's 0.4% drop in industrial production and an NAHB index of 25, the lowest since April 2012. Wednesday's 2:00p minutes cover the Oct 27–28 meeting, where the Fed held at 3.75–4.00% with two members favoring a hike. CME FedWatch was at 93.7% for a 25bp December hike Monday afternoon (Reuters); Kalshi and Polymarket are at about 91–92%.",
       "odds": [
         {
           "source": "kalshi",
@@ -338,8 +339,8 @@
       ]
     },
     {
-      "title": "Home Depot and Disney beat but fall; more retailers to come.",
-      "body": "Home Depot earned **$3.86** a share (adjusted) vs about $3.84 expected on sales of $43.4B, up 4.9%, and named CFO Richard McPhail CEO effective Nov 23; the stock fell 2.4% (company release, StockTitan). Disney earned **$1.77** adjusted vs about $1.67 on revenue of $25.95B, up 16%, raised its annual dividend to $2.00 from $1.50 and targets about $3B of yearly cost savings by fiscal 2029, but gave up early gains to close −1.5% (247 Wall St, Variety). JD.com fell 7.7% and Klarna rose 4.8% on its results. Still to come: Lowe's (about $2.86–2.89), TJX ($1.33) and Target (about $2.03–2.07; Polymarket 80% to beat $2.08) Wednesday before the open, Palo Alto after; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), with Ross, Gap and Intuit (Polymarket 95% to beat $2.46) after Thursday's close and BJ's Friday."
+      "title": "Target and Lowe's beat on tariff refunds but slip; TJX jumps.",
+      "body": "Target earned **$2.65** a share vs about $2.07 expected, including a $0.50 tariff refund, on sales of $27.07B (+7.1%, est $26.5B) with comparable sales up 5.6%, its fastest growth in five years, and raised its full-year EPS outlook to $10.65–11.40; the stock was down about 3.5% before the open (company release, RTTNews, Investing.com). Lowe's earned **$3.10** adjusted vs about $2.89, helped by $0.34 of tariff refunds, on sales of $22.76B (+9.3%) and comps of +1.8%; it lifted its sales outlook to about $92.5B but trimmed its margin outlook, and shares fell about 2.5% pre-market (company release, Securities.io, Startup Fortune). TJX matched at **$1.34** with sales of $15.95B vs $15.82B and comps +4%, now expects full-year comps of +4%, and rose about 6% (Reuters, Investing.com). Home Depot and Disney beat Tuesday but fell. Still to come: Palo Alto after Wednesday's close; Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), with Ross, Gap and Intuit (Polymarket 95% to beat $2.46) after Thursday's close and BJ's Friday."
     },
     {
       "title": "Oil edges up as Gulf attacks continue.",
@@ -754,6 +755,70 @@
     {
       "label": "Bloomberg via Rigzone · oil settles, Gulf attacks (Nov 17)",
       "url": "https://www.rigzone.com/news/wire/oil_prices_swing_as_gulf_attacks_continue-17-nov-2026-185107-article/"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · Nasdaq futures jump on Nvidia forecast (Nov 18)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-jump-nvidia-forecast-103531610.html"
+    },
+    {
+      "label": "Newsquawk · Daily European Opening News, Nov 18",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---18th-november-2026"
+    },
+    {
+      "label": "CoinDesk · live updates Nov 18 (housing starts, Waller, Nvidia pre-market)",
+      "url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up"
+    },
+    {
+      "label": "Seeking Alpha · October housing starts jump more than expected",
+      "url": "https://seekingalpha.com/news/4674133-housing-starts-jump-more-than-expected-in-october-while-permits-increase-less-than-expected"
+    },
+    {
+      "label": "Reuters via Rallies · October housing starts rise 9.9%, permits fall 7.4%",
+      "url": "https://rallies.ai/news/us-october-housing-starts-rise-99-5fe0b712380d172c"
+    },
+    {
+      "label": "TokenPost · Waller floats 50bp, dollar index (Nov 18)",
+      "url": "https://www.tokenpost.com/news/investing/60420"
+    },
+    {
+      "label": "Bloomingbit · Waller says broad inflation calls for 50bp December hike",
+      "url": "https://en.bloomingbit.io/feed/news/124719"
+    },
+    {
+      "label": "Target · Q3 2026 results",
+      "url": "https://www.prnewswire.com/news-releases/target-corporation-reports-third-quarter-earnings-302942872.html"
+    },
+    {
+      "label": "RTTNews · Target Q3, lifts FY26 outlook, stock drops",
+      "url": "https://www.rttnews.com/3715917/target-q3-profit-climbs-on-higher-comps-lifts-fy26-outlook-but-stock-drops.aspx"
+    },
+    {
+      "label": "Investing.com via Yahoo · Target beats Q3 estimates",
+      "url": "https://sg.finance.yahoo.com/news/target-beats-q3-estimates-shares-121335451.html"
+    },
+    {
+      "label": "Lowe's · Q3 2026 results",
+      "url": "https://www.prnewswire.com/news-releases/lowes-reports-third-quarter-2026-sales-and-earnings-results-302943071.html"
+    },
+    {
+      "label": "Securities.io · Lowe's sales +9.3% as tariff refunds lift EPS",
+      "url": "https://www.securities.io/lowes-quarterly-sales-rise-9-3-as-tariff-refunds-lift-eps/"
+    },
+    {
+      "label": "Startup Fortune · Lowe's beats, shares fall pre-market",
+      "url": "https://startupfortune.com/lowes-beats-third-quarter-estimates-but-shares-fall-as-tariff-refund-flatters-the-profit/"
+    },
+    {
+      "label": "Reuters via SRN · TJX beats quarterly sales estimates",
+      "url": "https://srnnews.com/off-price-retailer-tjx-beats-quarterly-sales-estimates/"
+    },
+    {
+      "label": "Investing.com · TJX stock surges on revenue beat",
+      "url": "https://ca.investing.com/news/stock-market-news/tjx-stock-surges-on-revenue-beat-strong-guidance-93CH-4966806"
+    },
+    {
+      "label": "TradingKey · US pre-market Nov 18 (Anthropic pricing, Target)",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262311015-us-pre-market-nvda-anthropic-tradingkey"
     }
   ],
   "oddsAsOf": "Tue 11/17 close"
