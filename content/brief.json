@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-18T22:45:00Z",
-    "dataAsOf": "Wed 11/18 close"
+    "updated": "2026-11-19T14:05:00Z",
+    "dataAsOf": "Thu 11/19 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Thu 11/19 · Anthropic's Nasdaq debut and Walmart, after hawkish Fed minutes",
-    "body": "Anthropic priced its IPO at **$83** a share Wednesday evening, above the $70–78 range, and increased the offering size, Bloomberg reported citing a person familiar (via Reuters, Yahoo Finance); the company had not announced the price itself as of this evening. Shares are expected to start trading Thursday on Nasdaq as **ANT**. The October Fed minutes showed **almost all** officials see further hikes as likely appropriate and a couple open to more than 25bp in December, after Governor Waller called for a half-point hike. Thursday also brings **Walmart at 7:00a**, jobless claims and the Philly Fed at 8:30a, Fed's Goolsbee at 12:30p, and Intuit, Ross, Keysight and Gap after the close."
+    "title": "Thu 11/19 · Anthropic's Nasdaq debut lifts tech futures; Walmart beats",
+    "body": "Anthropic priced its IPO at **$83** a share, above the $70–78 range, and upsized it to **980 million shares**, raising about **$81B**, the largest listing ever, at a valuation of about $1.5 trillion (Reuters, TipRanks, Forbes). Shares are expected to start trading on Nasdaq as **ANT** sometime after the 9:30a open (Yahoo Finance). Nasdaq 100 futures were up **1.7%** and S&P futures **1.0%** at 8:36a, with Alphabet and Amazon, both Anthropic investors, higher before the bell. Walmart beat (adj. EPS $0.65 vs $0.64, revenue $188.8B) and raised its outlook a third time; the 8:30 data were soft, with the Philly Fed at **6.3** vs about 20 expected and jobless claims at 203K. Still ahead: Fed's Goolsbee at 12:30p, and Intuit, Ross, Keysight and Gap after the close."
   },
   "days": [
     {
@@ -164,12 +164,12 @@
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Jobless claims, est 197–200K, prior 200K"
+          "text": "Jobless claims **203K** vs est 197K, prior 202K (rev.) · continuing 1.763M, prior 1.693M (rev.)"
         },
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Philly Fed mfg (Nov), est 19.2–23, prior 20.9"
+          "text": "Philly Fed mfg (Nov) **6.3** vs est 19.2–23, prior 20.9"
         },
         {
           "time": "10:00a",
@@ -205,7 +205,8 @@
         "ESTC",
         "POST"
       ],
-      "note": "Anthropic (ANT) expected to start trading on Nasdaq · Copart (CPRT) time TBA"
+      "note": "Anthropic (ANT) expected to start trading on Nasdaq · Copart (CPRT) time TBA",
+      "premarket": "8:36a: S&P futures **+1.0%**, Nasdaq 100 futures **+1.7%** (from +1.2% / +2.1% at 7:18a) on Anthropic's debut day · 10Y 5.09% · WTI $83.62, +0.4% · Nikkei +0.7%, Hang Seng −2.0% · Palo Alto about +10%, Nvidia up about 1–2%, Walmart about +1% after a beat"
     },
     {
       "date": "2026-11-20",
@@ -269,7 +270,7 @@
   "stories": [
     {
       "title": "Fed minutes: almost all officials see more hikes; Waller wants 50bp.",
-      "body": "Minutes of the Oct 27–28 meeting, where the Fed held at 3.75–4.00% in a 10–2 vote (Cook and Hammack wanted a 25bp hike), showed **almost all** participants judged further increases likely appropriate, up from \"most\" in September, and **a couple** said a move of more than 25bp could warrant consideration in December if inflation data were unfavorable. No one discussed a cut; many called the AI buildout a material source of inflation risk, and most flagged fast-growing, opaque AI-related debt (TheStreet, investingLive, The Private Banker). Earlier Governor Waller told CNBC a half-point hike is probably needed in December (\"You might need to, like, shock people\"), or the Fed must clearly signal another 25bp in January. CME FedWatch put about 10% on a 50bp December move Wednesday morning (TheStreet), and 69% on 50bp of hikes by the end of January (Yahoo Finance). The 10Y still slipped 4bp to 5.07%. Data are softening: pending home sales fell 4.7% in October vs about −2% expected, to a record low (Trading Economics, Yahoo Finance), and permits fell 7.4% even as starts jumped. The next decision is Dec 9; Kalshi has a 25bp hike at 91% and more than 25bp at 7%.",
+      "body": "Minutes of the Oct 27–28 meeting, where the Fed held at 3.75–4.00% in a 10–2 vote (Cook and Hammack wanted a 25bp hike), showed **almost all** participants judged further increases likely appropriate, up from \"most\" in September, and **a couple** said a move of more than 25bp could warrant consideration in December if inflation data were unfavorable. No one discussed a cut; many called the AI buildout a material source of inflation risk, and most flagged fast-growing, opaque AI-related debt (TheStreet, investingLive, The Private Banker). Earlier Governor Waller told CNBC a half-point hike is probably needed in December (\"You might need to, like, shock people\"), or the Fed must clearly signal another 25bp in January. CME FedWatch put about 10% on a 50bp December move Wednesday morning (TheStreet), and 69% on 50bp of hikes by the end of January (Yahoo Finance). The 10Y still slipped 4bp to 5.07%. Data are softening: Thursday's Philly Fed index fell to 6.3 from 20.9 vs about 20 expected (Trading Economics, FX.co) and jobless claims rose to 203K vs 197K expected (Labor Department); pending home sales fell 4.7% in October vs about −2% expected, to a record low (Trading Economics, Yahoo Finance), and permits fell 7.4% even as starts jumped. The next decision is Dec 9; Kalshi has a 25bp hike at 91% and more than 25bp at 7%.",
       "odds": [
         {
           "source": "kalshi",
@@ -295,8 +296,8 @@
       ]
     },
     {
-      "title": "Anthropic prices above range at $83; trading starts Thursday.",
-      "body": "Anthropic priced its IPO at **$83** a share, $5 above the top of its $70–78 range, and increased the offering size, Bloomberg reported Wednesday afternoon citing a person familiar (via Reuters at 4:17p, Yahoo Finance, Grafa); as of this evening the company had not announced the price or filed a final prospectus (Finwire). At the 825 million shares originally marketed that is about **$68.5B**, plus a $26B private placement at the IPO price (Nvidia and Google about $10B each), the largest listing ever; the WSJ put the valuation at about $1.5–1.6 trillion (via Finwire). Orders were reported at nearly seven times the shares on offer (Yahoo Finance). Shares are expected to start trading Thursday on the Nasdaq Global Select Market as **ANT**, with Goldman Sachs and Morgan Stanley leading. Polymarket prices a listing by Nov 19 at 99%.",
+      "title": "Anthropic raises about $81B at $83; ANT starts trading after the open.",
+      "body": "Anthropic priced its IPO at **$83** a share, $5 above the top of its $70–78 range, and upsized the deal from 825 million to **980 million shares** (about 956 million sold by the company), raising about **$81B**, the largest listing ever (Reuters, TipRanks, Yahoo Finance). That is on top of a $26B private placement at the IPO price (Nvidia and Google about $10B each), and values the company at about $1.5 trillion (Reuters, Forbes). Orders were reported at nearly seven times the shares on offer. Shares are expected to start trading on the Nasdaq Global Select Market as **ANT** after the 9:30a open, probably not right at the bell (Yahoo Finance), with Goldman Sachs and Morgan Stanley leading; early indications pointed to a first-day pop of around 20% (Yahoo Finance, Forbes). The listing lifted AI names before the bell: Alphabet +4.3%, Amazon +2.2%, and CoreWeave and Nebius up more than 5% (Reuters). The amended S-1 shows revenue above $33B for the nine months to Sept 30 (Yahoo Finance). Polymarket prices a listing by Nov 19 at 99%.",
       "odds": [
         {
           "source": "polymarket",
@@ -339,8 +340,8 @@
       ]
     },
     {
-      "title": "TJX and Target rally on beats; Palo Alto raises its outlook.",
-      "body": "TJX closed up about **8%** after matching at $1.34 a share on sales of $15.95B vs $15.82B and lifting its full-year comp outlook to +4%, and Target reversed a pre-market drop to close up about **4%** after earning $2.65 vs about $2.07 expected (including a $0.50 tariff refund) on comps of +5.6%, its fastest in five years (StockTitan, Motley Fool, company releases). Lowe's beat at $3.10 adjusted, helped by $0.34 of tariff refunds, but trimmed its margin outlook. After the close, Palo Alto Networks reported fiscal Q1 revenue of **$3.44B** (+39%), next-gen security ARR of $9.73B (+66%) and non-GAAP EPS of **$1.05** vs about $0.99 expected, raised its fiscal 2027 outlook to revenue of $14.52–14.57B and EPS of $4.26–4.30, and said it plans to acquire AI model platform Applied Compute (SEC filing); StockTitan reports the deal at $4.5B in stock. The shares, up 9.9% in the session with the cyber rally, gained about 6.5% in early after-hours trading (StockTitan). Next: Walmart Thursday at 7:00a (about $0.63–0.64 on roughly $187B), then Intuit (Polymarket 95% to beat $2.46), Ross, Keysight and Gap after Thursday's close, and BJ's Friday."
+      "title": "Walmart beats and lifts its outlook; Palo Alto jumps 10% before the bell.",
+      "body": "Walmart earned **$0.65** a share adjusted vs $0.64 expected on revenue of **$188.8B** (+5.2%) vs about $187.3B, with comparable sales +2.9% and US e-commerce +23% (company release, AP, StockStory). It raised its full-year outlook for a third time, to sales growth of 4.9–5.2% and adjusted EPS of $2.84–2.89, though analysts had expected about $2.89 (AP via ABC News); the shares were up about 1% before the open (Reuters, AP). Palo Alto Networks rose about **10%** pre-market after Wednesday's beat (rev $3.44B, EPS $1.05) and raised fiscal 2027 outlook, with CrowdStrike, Cloudflare, Okta and Zscaler up 5–6% (Reuters). Other morning reports: Williams-Sonoma matched at $2.19 on revenue of $1.99B, slightly short, and reiterated its outlook (Newsquawk, company release); Bath & Body Works beat its own guidance, raised its sales outlook and added a $500M buyback; Alibaba's revenue rose 10% with AI cloud +53%; PDD's revenue was flat at RMB108.3B (company releases via StockTitan). Wednesday TJX gained about 8% and Target about 4% on beats. Next: Intuit (Polymarket 95% to beat $2.46), Ross, Keysight and Gap after the close, and BJ's Friday."
     },
     {
       "title": "Oil drops 3% as stockpiles build despite Gulf attacks.",
@@ -863,6 +864,74 @@
     {
       "label": "Trading Economics · US pending home sales (Oct)",
       "url": "https://tradingeconomics.com/united-states/pending-home-sales-mom/news/602380"
+    },
+    {
+      "label": "U.S. Department of Labor · Unemployment insurance weekly claims (Nov 19)",
+      "url": "https://www.dol.gov/ui/data.pdf"
+    },
+    {
+      "label": "Trading Economics · US initial jobless claims",
+      "url": "https://tradingeconomics.com/united-states/jobless-claims"
+    },
+    {
+      "label": "Trading Economics · Philadelphia Fed manufacturing index (Nov)",
+      "url": "https://tradingeconomics.com/united-states/philadelphia-fed-manufacturing-index"
+    },
+    {
+      "label": "FX.co · Philadelphia Fed manufacturing gauge slumps in November",
+      "url": "https://www.fx.co/en/forex-news/3299988"
+    },
+    {
+      "label": "Walmart · Q3 FY27 results (Business Wire)",
+      "url": "https://www.businesswire.com/news/home/20261118447417/en/Walmart-reports-revenue-growth-of-5.2-up-4.5-in-constant-currency-cc"
+    },
+    {
+      "label": "AP via ABC News · Walmart raises its outlook for a third time",
+      "url": "https://abcnews.com/Business/wireStory/walmart-raises-outlook-year-3rd-time-after-solid-138283336"
+    },
+    {
+      "label": "StockStory · Walmart Q3 CY2026 sales",
+      "url": "https://stockstory.org/us/stocks/nasdaq/wmt/news/earnings/walmart-surprises-with-q3-cy2026-sales"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · Nasdaq futures jump on Anthropic's record IPO pricing (Nov 19)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-jump-anthropics-record-090243474.html"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Thu Nov 19 (live)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-090910916.html"
+    },
+    {
+      "label": "TipRanks · Stock market today, Nov 19: Anthropic's $81B IPO",
+      "url": "https://www.tipranks.com/news/stock-market-today-nov-19-anthropics-81-billion-ipo-takes-center-stage"
+    },
+    {
+      "label": "Forbes · Anthropic IPO live: Nasdaq futures jump ahead of debut",
+      "url": "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-nasdaq-futures-jump-2-ahead-of-record-stock-debut/"
+    },
+    {
+      "label": "Reuters via MarketScreener · Nasdaq futures jump on hopes for strong Anthropic debut",
+      "url": "https://www.marketscreener.com/news/nasdaq-futures-jump-on-hopes-for-strong-anthropic-market-debut-ce785ed2d98bf522"
+    },
+    {
+      "label": "Williams-Sonoma · Q3 2026 results (StockTitan)",
+      "url": "https://www.stocktitan.net/news/WSM/williams-sonoma-inc-announces-strong-third-quarter-2026-c6c2zki2ldto.html"
+    },
+    {
+      "label": "Newsquawk · Williams-Sonoma Q3 EPS 2.19 vs exp 2.19",
+      "url": "https://www.newsquawk.com/headlines/williams-sonoma-wsm-q3-2026-usd-eps-219-exp-219-revenue-199bln-exp-2bln"
+    },
+    {
+      "label": "Bath & Body Works · Q3 2026 results (GlobeNewswire)",
+      "url": "https://www.globenewswire.com/news-release/2026/11/19/3406414/0/en/bath-body-works-reports-third-quarter-results-exceeding-guidance-and-raises-full-year-sales-outlook.html"
+    },
+    {
+      "label": "Alibaba · September quarter 2026 results (StockTitan)",
+      "url": "https://www.stocktitan.net/news/BABA/alibaba-group-announces-september-quarter-2026-results-and-interim-ibtegtt4vxko.html"
+    },
+    {
+      "label": "PDD Holdings · Q3 2026 results (StockTitan)",
+      "url": "https://www.stocktitan.net/news/PDD/pdd-holdings-announces-third-quarter-2026-unaudited-financial-zyjmlok1y30l.html"
     }
   ],
   "oddsAsOf": "Wed 11/18 close"
