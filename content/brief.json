@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-19T14:05:00Z",
-    "dataAsOf": "Thu 11/19 pre-market"
+    "updated": "2026-11-19T23:10:00Z",
+    "dataAsOf": "Thu 11/19 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Thu 11/19 · Anthropic's Nasdaq debut lifts tech futures; Walmart beats",
-    "body": "Anthropic priced its IPO at **$83** a share, above the $70–78 range, and upsized it to **980 million shares**, raising about **$81B**, the largest listing ever, at a valuation of about $1.5 trillion (Reuters, TipRanks, Forbes). Shares are expected to start trading on Nasdaq as **ANT** sometime after the 9:30a open (Yahoo Finance). Nasdaq 100 futures were up **1.7%** and S&P futures **1.0%** at 8:36a, with Alphabet and Amazon, both Anthropic investors, higher before the bell. Walmart beat (adj. EPS $0.65 vs $0.64, revenue $188.8B) and raised its outlook a third time; the 8:30 data were soft, with the Philly Fed at **6.3** vs about 20 expected and jobless claims at 203K. Still ahead: Fed's Goolsbee at 12:30p, and Intuit, Ross, Keysight and Gap after the close."
+    "title": "Thu 11/19 · Anthropic jumps 17% in its debut, but the Dow sinks 1,101",
+    "body": "Anthropic (**ANT**) first traded at **$111.50** at 11:48a, 34% above its $83 IPO price, touched about $115, then faded to a $92.72 low and closed at **$97.17**, up **17%**, on about 830–840 million shares (StockTitan, FinanceFeeds, Yahoo Finance). The debut did not lift the AI trade: the S&P 500 fell **2.0%** for a sixth straight loss, the Nasdaq **2.3%**, and the Dow **1,101 points** to 49,097, closing below 50,000, as AMD, Amazon, Alphabet and Nvidia slid and all 11 sectors fell (Yahoo Finance, Reuters). The VIX jumped 15.8% to **28.44** (Cboe). After the bell Intuit fell about 11% on a light Q2 outlook and Ross about 9%. Friday: Fed's Waller at 8:25a, final UMich sentiment at 10:00a, monthly options expiration, and December WTI expires."
   },
   "days": [
     {
@@ -158,8 +158,8 @@
     {
       "date": "2026-11-19",
       "label": "Thu 11/19",
-      "tag": "Walmart + Anthropic debut",
-      "tone": "orange",
+      "tag": "Dow −1,101, ANT +17%",
+      "tone": "red",
       "macro": [
         {
           "time": "8:30a",
@@ -174,12 +174,12 @@
         {
           "time": "10:00a",
           "level": "low",
-          "text": "Leading index (Oct), est 0.0%"
+          "text": "Leading index (Oct) **−0.3%** vs est 0.0%, prior 0.0% · fewer building permits"
         },
         {
           "time": "12:30p",
           "level": "low",
-          "text": "Fed's Goolsbee speaks · Hammack 8:50a, Barr 2:15p, Barkin 4:00p, Paulson 6:30p"
+          "text": "Fed's Goolsbee speaks · AI spending and new wealth could overheat the economy · Hammack 8:50a, Barr 2:15p, Barkin 4:00p, Paulson 6:30p"
         },
         {
           "time": "1:00p",
@@ -205,8 +205,8 @@
         "ESTC",
         "POST"
       ],
-      "note": "Anthropic (ANT) expected to start trading on Nasdaq · Copart (CPRT) time TBA",
-      "premarket": "8:36a: S&P futures **+1.0%**, Nasdaq 100 futures **+1.7%** (from +1.2% / +2.1% at 7:18a) on Anthropic's debut day · 10Y 5.09% · WTI $83.62, +0.4% · Nikkei +0.7%, Hang Seng −2.0% · Palo Alto about +10%, Nvidia up about 1–2%, Walmart about +1% after a beat"
+      "note": "Anthropic (ANT) first trade $111.50 at 11:48a, close $97.17 (+17% vs $83)",
+      "result": "S&P 500 **−2.0%** (7,175.83, sixth straight loss), Nasdaq **−2.3%** (23,879.20), Dow −1,101.11 (−2.2%, 49,097.06), Russell 2000 about −1.8% · all 11 sectors fell, consumer discretionary worst (XLY −2.8%) · Anthropic closed $97.17, +17% vs $83 · AMD −7.7%, Amazon −3.9%, Alphabet −3.5%, Nvidia −3.3%; Palo Alto +6.4%, Williams-Sonoma −15% · after hours Intuit about −11% (light Q2 guide, Mailchimp sale), Ross about −9% · VIX 28.44, +15.8% · 10Y 5.05%, −1bp · WTI settled $83.21, −0.1% · leading index −0.3% vs est 0.0%"
     },
     {
       "date": "2026-11-20",
@@ -234,33 +234,33 @@
     }
   ],
   "mood": {
-    "asOf": "Wed 11/18 close",
+    "asOf": "Thu 11/19 close",
     "fearGreed": {
-      "score": 24.6,
+      "score": 18.7,
       "label": "Extreme fear",
-      "asOf": "Wed 11/18 5:25p",
-      "weekAgo": 35.94,
-      "monthAgo": 18.21,
-      "yearAgo": 8.9
+      "asOf": "Thu 11/19 5:24p",
+      "weekAgo": 40.34,
+      "monthAgo": 19.51,
+      "yearAgo": 7.86
     },
     "regime": {
       "label": "Risk-off",
       "tone": "red",
-      "text": "Wed 11/18: the S&P 500 fell for a fifth straight day, its longest losing streak since June (CNBC), and the Dow lost 561 points as health insurers sank on a Medicare Advantage audit proposal. The Nasdaq edged up and the VIX eased, but gold, oil and bitcoin all fell 3% or more and hawkish Fed minutes kept rate-hike worries in focus."
+      "text": "Thu 11/19: Anthropic's 17% debut gain failed to lift the AI trade, and stocks fell from the moment it opened. The S&P 500 lost 2% for a sixth straight day, the Dow closed below 50,000, all 11 sectors fell and the VIX jumped to its highest since March. Gold dropped again and only the dollar, up an eighth day, held firm."
     },
     "vix": {
-      "value": "24.56",
+      "value": "28.44",
       "label": "Elevated",
       "tone": "red",
-      "text": "Wed 11/18 Cboe close, −0.90 (−3.5%) from 25.46 · range 23.45–26.26"
+      "text": "Thu 11/19 Cboe close, +3.88 (+15.8%) from 24.56 · range 22.12–29.13, highest since March (CNBC)"
     },
     "breadth": {
       "value": "Chips split",
       "text": "Last week: SOX +8.1% with AMD +18.9% and Broadcom +18.2%, while Nvidia fell 13% · equal-weight S&P +2.3% · all 11 sectors up"
     },
     "havens": {
-      "value": "Bonds only",
-      "text": "Wed 11/18: 10Y ≈ 5.07%, −4bp · gold ≈ $3,728, −3.5% · bitcoin ≈ $62.4K, about −3% · dollar index ≈ 103.8, +0.3% · utilities +0.3%, staples −0.3%"
+      "value": "Dollar only",
+      "text": "Thu 11/19: 10Y ≈ 5.05%, −1bp · gold ≈ $3,628, −2.5% · bitcoin ≈ $62K, about −1% · dollar index ≈ 103.96, +0.1% (8th straight gain) · utilities −1.2%, staples −1.4%"
     },
     "fedwatch": {
       "text": "50bp hike in Dec ≈10% (CME FedWatch via TheStreet, 10:35a) · 50bp of hikes by end of January 69% (via Yahoo Finance)",
@@ -269,8 +269,16 @@
   },
   "stories": [
     {
-      "title": "Fed minutes: almost all officials see more hikes; Waller wants 50bp.",
-      "body": "Minutes of the Oct 27–28 meeting, where the Fed held at 3.75–4.00% in a 10–2 vote (Cook and Hammack wanted a 25bp hike), showed **almost all** participants judged further increases likely appropriate, up from \"most\" in September, and **a couple** said a move of more than 25bp could warrant consideration in December if inflation data were unfavorable. No one discussed a cut; many called the AI buildout a material source of inflation risk, and most flagged fast-growing, opaque AI-related debt (TheStreet, investingLive, The Private Banker). Earlier Governor Waller told CNBC a half-point hike is probably needed in December (\"You might need to, like, shock people\"), or the Fed must clearly signal another 25bp in January. CME FedWatch put about 10% on a 50bp December move Wednesday morning (TheStreet), and 69% on 50bp of hikes by the end of January (Yahoo Finance). The 10Y still slipped 4bp to 5.07%. Data are softening: Thursday's Philly Fed index fell to 6.3 from 20.9 vs about 20 expected (Trading Economics, FX.co) and jobless claims rose to 203K vs 197K expected (Labor Department); pending home sales fell 4.7% in October vs about −2% expected, to a record low (Trading Economics, Yahoo Finance), and permits fell 7.4% even as starts jumped. The next decision is Dec 9; Kalshi has a 25bp hike at 91% and more than 25bp at 7%.",
+      "title": "Dow sinks 1,101 points below 50,000; S&P 500 falls a sixth day.",
+      "body": "The S&P 500 fell **2.02%** to 7,175.83 Thursday, its sixth straight loss, the Nasdaq **2.25%** to 23,879.20 and the Dow **1,101.11 points** (2.19%) to 49,097.06, closing below 50,000; the Russell 2000 lost about 1.8% (Yahoo Finance, Reuters via MarketScreener). Futures had been up about 1% before the open, but selling picked up once Anthropic began trading, as investors took profits in AI names (CNBC via StockTitan). AMD fell **7.7%** after Hunterbrook disclosed a short position citing its China exposure (Reuters, Yahoo Finance); Amazon lost 3.9%, Alphabet 3.5%, Nvidia 3.3% and Microsoft 2.0%, while CoreWeave fell 6.1% and Nebius 9.4% (StockTitan). All 11 sector ETFs fell, with consumer discretionary (XLY −2.8%) and communication services (XLC −2.7%) worst and energy (XLE −0.7%) the most resilient. Williams-Sonoma dropped 15% after its results; Palo Alto (+6.4%), CrowdStrike (+2.7%) and PDD (+11%) rose. The VIX jumped 15.8% to **28.44** (Cboe), and CNN's Fear & Greed index fell to 18.7, extreme fear, from 40 a week ago."
+    },
+    {
+      "title": "Anthropic closes up 17% at $97.17 after opening at $111.50.",
+      "body": "Anthropic's shares first traded at **$111.50** at 11:48a, 34% above the $83 IPO price, and touched about $115 within a minute before sliding to a $92.72 low at 1:18p; they closed at **$97.17**, up **17.1%**, on about 830–840 million shares, close to the 980 million sold in the IPO (StockTitan, FinanceFeeds, Yahoo Finance). The stock slipped to about $95.70 after hours (Yahoo Finance). The company raised about **$81.3B**, the largest IPO ever, plus a $26B private placement at $83 with Nvidia, Google and others (StockTitan, Reuters). Market value at the close is about $1.3 trillion on shares outstanding (Nasdaq via FinanceFeeds), or about $1.8 trillion fully diluted (Reuters, CNN); the fade from the opening print erased nearly $200B (Yahoo Finance). Dan Ives called the deal an \"A-plus success\" (via FinanceFeeds), but the listing did not lift its big backers: Amazon and Alphabet both fell more than 3%."
+    },
+    {
+      "title": "Fed: hikes still priced as Goolsbee warns AI could overheat the economy.",
+      "body": "Chicago Fed President Goolsbee said Thursday that AI data-center building and consumers spending out of new stock wealth \"can easily overheat the economy\" and that \"the Fed's job is to prevent this thing from overheating the economy\" (Reuters via Kitco). Minutes of the Oct 27–28 meeting showed **almost all** officials saw more hikes as likely appropriate and **a couple** were open to more than 25bp in December (TheStreet, investingLive), and Governor Waller said this week a half-point move is probably needed. The data keep softening: the Philly Fed index fell to 6.3 from 20.9 vs about 20 expected (Trading Economics, FX.co), jobless claims rose to 203K vs 197K (Labor Department), and the Conference Board's leading index fell **0.3%** in October vs no change expected, mostly on fewer building permits (RTTNews, Bloomingbit). The 10Y ended about 1bp lower at 5.05%. CME FedWatch put about 10% on a 50bp December move Wednesday (TheStreet). Waller speaks again Friday at 8:25a. The next decision is Dec 9; Kalshi has a 25bp hike at 91% and more than 25bp at 6%.",
       "odds": [
         {
           "source": "kalshi",
@@ -282,39 +290,26 @@
         {
           "source": "polymarket",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 93.5,
+          "prob": 91.5,
           "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
           "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
         },
         {
           "source": "kalshi",
           "label": "Fed hikes more than 25bp",
-          "prob": 7,
+          "prob": 6,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         }
       ]
     },
     {
-      "title": "Anthropic raises about $81B at $83; ANT starts trading after the open.",
-      "body": "Anthropic priced its IPO at **$83** a share, $5 above the top of its $70–78 range, and upsized the deal from 825 million to **980 million shares** (about 956 million sold by the company), raising about **$81B**, the largest listing ever (Reuters, TipRanks, Yahoo Finance). That is on top of a $26B private placement at the IPO price (Nvidia and Google about $10B each), and values the company at about $1.5 trillion (Reuters, Forbes). Orders were reported at nearly seven times the shares on offer. Shares are expected to start trading on the Nasdaq Global Select Market as **ANT** after the 9:30a open, probably not right at the bell (Yahoo Finance), with Goldman Sachs and Morgan Stanley leading; early indications pointed to a first-day pop of around 20% (Yahoo Finance, Forbes). The listing lifted AI names before the bell: Alphabet +4.3%, Amazon +2.2%, and CoreWeave and Nebius up more than 5% (Reuters). The amended S-1 shows revenue above $33B for the nine months to Sept 30 (Yahoo Finance). Polymarket prices a listing by Nov 19 at 99%.",
-      "odds": [
-        {
-          "source": "polymarket",
-          "label": "Anthropic trading by Nov 19",
-          "prob": 99,
-          "slug": "will-anthropic-ipo-by-november-19-2026",
-          "url": "https://polymarket.com/event/anthropic-ipo-by"
-        }
-      ]
+      "title": "Intuit falls 11% after hours on a light outlook; Ross, Gap disappoint.",
+      "body": "Intuit's fiscal Q1 revenue rose 12% to **$4.35B** vs about $4.31B expected, with non-GAAP EPS of **$2.91** (it no longer excludes stock pay), but it guided Q2 revenue to $4.93–4.95B vs about $5.11B expected, trimmed its full-year revenue range to $23.08–23.37B and agreed to sell **Mailchimp to Bending Spoons for about $3.68B** (company release, Seeking Alpha). The shares fell about 11–12% after hours (Yahoo Finance, Seeking Alpha). Ross Stores earned $1.91 vs $1.87 expected on revenue of $6.26B with comparable sales +8%, and raised its full-year EPS outlook, but fell about 9–10% after hours on a softer next-quarter guide (StockStory, StockTitan). Gap's comparable sales were flat (Old Navy flat, Gap +9%, Athleta −15%) and it cut its adjusted EPS outlook to $2.29–2.34 from $2.35–2.45 (company release via StockTitan, Bloomberg). Keysight's revenue jumped 41% to $1.99B with non-GAAP EPS of $3.61, and it guided Q1 to $2.04–2.06B (SEC filing). Earlier Walmart slipped despite beating and raising its outlook (EconCurrents). BJ's reports Friday morning."
     },
     {
-      "title": "S&P 500 falls a fifth day as health insurers sink; Nasdaq edges up.",
-      "body": "The S&P 500 slipped 0.23% to 7,323.63 Wednesday, its fifth straight loss and longest losing streak since June (CNBC via StockTitan), and the Dow fell 561.25 points (1.11%) to 50,198.17, while the Nasdaq rose 0.42% to 24,429.88 and the Russell 2000 gained about 0.5% (Vista Partners, Yahoo Finance). Health insurers led the losses after CMS proposed a Medicare Advantage anti-fraud rule that would apply audit findings from sample charts to whole contracts and claw back overpayments back to 2018 (TIKR, Yahoo Finance): UnitedHealth −10.2%, Humana −13%, Elevance −7.6% and Centene −7.1% (StockTitan). The proposal is open for comment until Jan 19, 2027, and Oppenheimer expects legal challenges (via TIKR). Health care (XLV −2.2%) and energy (XLE −3.3%) were the weakest sector ETFs and consumer discretionary (XLY +1.8%) the best. Cybersecurity rallied, with CrowdStrike +8.3% and SentinelOne +10.8% (24/7 Wall St). The VIX eased 3.5% to 24.56 (Cboe), but CNN's Fear & Greed index slipped to 24.6, extreme fear."
-    },
-    {
-      "title": "Nvidia slides 2.9% despite its beat; board shuts the door on Huang.",
-      "body": "Nvidia closed **−2.9% at $150.96** Wednesday, a fifth straight loss, after being up about 3% before the open on its fiscal Q3 beat: revenue **$115.8B** (+103%, data center $107.6B) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter guide of **$130B ±3%** (14 weeks, no China data-center sales) vs about $125B (company release, CoinDesk, Yahoo Finance). The board added $150B to the buyback (Newsquawk), and BofA reiterated Buy with a $280 target (Yahoo Finance). Chairman Harvey Jones said on the call the board does not intend to reinstate Jensen Huang, with CFO Colette Kress serving as interim CEO; the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet), and Nvidia says it will file its 10-Q in the coming weeks. Polymarket gives about 8% that Huang rejoins by Dec 31 (last trade Tuesday night) and about 20% that a permanent CEO is named by then (last trade Monday), with Arm's Rene Haas the favourite at about 28%.",
+      "title": "Nvidia falls a sixth day; board shuts the door on Huang.",
+      "body": "Nvidia fell another **3.3%** Thursday (StockTitan), after sliding 2.9% Wednesday to $150.96 despite its fiscal Q3 beat: revenue **$115.8B** (+103%, data center $107.6B) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter guide of **$130B ±3%** vs about $125B (company release, CoinDesk). Reuters cited Nvidia's leadership change and shrinking data-center capex bets among the day's weights on tech. The board added $150B to the buyback (Newsquawk). Chairman Harvey Jones said the board does not intend to reinstate Jensen Huang, with CFO Colette Kress as interim CEO; the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet). Polymarket now gives about 5% that Huang rejoins by Dec 31 and about 20% that a permanent CEO is named by then (last trade Monday), with Arm's Rene Haas the favourite at about 28%.",
       "odds": [
         {
           "source": "polymarket",
@@ -326,7 +321,7 @@
         {
           "source": "polymarket",
           "label": "Huang rejoins Nvidia by Dec 31",
-          "prob": 8.4,
+          "prob": 4.9,
           "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
           "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
         },
@@ -340,26 +335,11 @@
       ]
     },
     {
-      "title": "Walmart beats and lifts its outlook; Palo Alto jumps 10% before the bell.",
-      "body": "Walmart earned **$0.65** a share adjusted vs $0.64 expected on revenue of **$188.8B** (+5.2%) vs about $187.3B, with comparable sales +2.9% and US e-commerce +23% (company release, AP, StockStory). It raised its full-year outlook for a third time, to sales growth of 4.9–5.2% and adjusted EPS of $2.84–2.89, though analysts had expected about $2.89 (AP via ABC News); the shares were up about 1% before the open (Reuters, AP). Palo Alto Networks rose about **10%** pre-market after Wednesday's beat (rev $3.44B, EPS $1.05) and raised fiscal 2027 outlook, with CrowdStrike, Cloudflare, Okta and Zscaler up 5–6% (Reuters). Other morning reports: Williams-Sonoma matched at $2.19 on revenue of $1.99B, slightly short, and reiterated its outlook (Newsquawk, company release); Bath & Body Works beat its own guidance, raised its sales outlook and added a $500M buyback; Alibaba's revenue rose 10% with AI cloud +53%; PDD's revenue was flat at RMB108.3B (company releases via StockTitan). Wednesday TJX gained about 8% and Target about 4% on beats. Next: Intuit (Polymarket 95% to beat $2.46), Ross, Keysight and Gap after the close, and BJ's Friday."
-    },
-    {
-      "title": "Oil drops 3% as stockpiles build despite Gulf attacks.",
-      "body": "WTI fell 3.2% to settle at **$83.26** and Brent 1.3% to **$91.95** Wednesday, and WTI traded near $82 after the settle (Bloomberg via Rigzone, Yahoo Finance). The EIA said US crude stocks rose 3.4 million barrels last week and gasoline about 5 million barrels, as pump prices fell to their lowest since mid-March. Traders shrugged off fresh attacks in the Gulf, with Kuwait and Bahrain intercepting attacks and more strikes on vessels near the Strait of Hormuz, as a stronger dollar, Fed hike talk and computer-driven selling weighed; the December WTI contract expires Friday. Brent is down about a fifth in November from a six-month high in late October, and the IEA sees a surplus of about 2 million barrels a day this quarter. OPEC+ meets Nov 29 on 2027 policy."
+      "title": "Oil ends flat as Hormuz attacks offset a supply glut.",
+      "body": "December WTI slipped 0.06% to settle at **$83.21** and Brent rose 0.03% to **$91.98** Thursday after swinging in a $2 range; the more active January WTI settled at $82.44 (Bloomberg via Rigzone). Traders weighed renewed Iran tensions, with Western officials saying the chances of new US strikes had grown and President Trump telling Axios he was not \"rushing into a decision\", plus Iran's navy saying two tankers hit mines in the Strait of Hormuz (not independently verified), against a 3.4 million-barrel US crude build and forecasts of a surplus (Reuters, Bloomberg via Rigzone). Flows through Hormuz are at a record, according to the US energy chief, and China's imports are rebounding faster than expected. Crude is down about a fifth in November; the December WTI contract expires Friday and OPEC+ meets Nov 29."
     }
   ],
-  "earningsOdds": {
-    "INTU": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $2.46",
-        "prob": 95,
-        "slug": "intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46",
-        "url": "https://polymarket.com/event/intu-quarterly-earnings-nongaap-eps-11-19-2026-2pt46"
-      }
-    ]
-  },
+  "earningsOdds": {},
   "sources": [
     {
       "label": "BLS · November release schedule",
@@ -932,7 +912,83 @@
     {
       "label": "PDD Holdings · Q3 2026 results (StockTitan)",
       "url": "https://www.stocktitan.net/news/PDD/pdd-holdings-announces-third-quarter-2026-unaudited-financial-zyjmlok1y30l.html"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Thu Nov 19 (Dow −1,100, closes)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html"
+    },
+    {
+      "label": "Reuters via MarketScreener · Stocks fall as Anthropic debut fails to ease AI concerns",
+      "url": "https://www.marketscreener.com/news/stocks-fall-as-anthropic-debut-fails-to-ease-ai-concerns-dollar-rises-ce785ed2df8ff726"
+    },
+    {
+      "label": "StockTitan · Stock market today live, Nov 19",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+    },
+    {
+      "label": "StockTitan · Anthropic IPO live, ANT's first trading day",
+      "url": "https://www.stocktitan.net/articles/anthropic-ipo-live-ant-first-trading-day-2026"
+    },
+    {
+      "label": "FinanceFeeds · Anthropic (ANT) closes debut at $97.17",
+      "url": "https://financefeeds.com/anthropic-ant-stock-closes-debut-97-17-price-prediction/"
+    },
+    {
+      "label": "CNN · Anthropic valued at $1.76 trillion after first day (headline)",
+      "url": "https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo"
+    },
+    {
+      "label": "RTTNews · Leading economic index unexpectedly falls in October",
+      "url": "https://www.rttnews.com/story.aspx?Id=3716463"
+    },
+    {
+      "label": "Bloomingbit · October leading index falls 0.3%",
+      "url": "https://en.bloomingbit.io/feed/news/124809"
+    },
+    {
+      "label": "Reuters via Kitco · Goolsbee: Fed's job is to keep AI surge from overheating economy",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-11-19/goolsbee-says-feds-job-right-now-keep-ai-surge-overheating-economy"
+    },
+    {
+      "label": "Intuit · Q1 FY27 results and Mailchimp sale",
+      "url": "https://investors.intuit.com/news-events/press-releases/detail/1331/intuit-reports-first-quarter-results-and-enters-agreement-to-sell-mailchimp-to-bending-spoons"
+    },
+    {
+      "label": "Seeking Alpha via TradingView · Intuit FQ1 vs estimates, guidance",
+      "url": "https://www.tradingview.com/news/seekingalpha:91a0413ae094b:0-intuit-meets-fq1-earnings-estimates-credit-karma-hits-guidance-mailchimp-sale-disclosed/"
+    },
+    {
+      "label": "Investing.com via Yahoo · Intuit beats, sells Mailchimp for $3.68B",
+      "url": "https://sg.finance.yahoo.com/news/intuit-beats-first-quarter-estimates-215539626.html"
+    },
+    {
+      "label": "StockStory · Ross Stores Q3 2026 vs estimates",
+      "url": "https://stockstory.org/us/stocks/nasdaq/rost/news/earnings/ross-stores-posts-q3-2026-sales-in-line-with-estimates-but-stock-drops"
+    },
+    {
+      "label": "Gap Inc. · Q3 fiscal 2026 results (StockTitan)",
+      "url": "https://www.stocktitan.net/news/GAP/gap-inc-reports-third-quarter-fiscal-2026-nmdcbhs8j7c8.html"
+    },
+    {
+      "label": "Bloomberg · Gap cuts outlook (headline)",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-19/gap-cuts-outlook-on-weakness-at-banana-republic-and-old-navy"
+    },
+    {
+      "label": "Keysight · Q4 fiscal 2026 results (SEC 8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001601046/000160104626000040/exhibit991-q426pressrelease.htm"
+    },
+    {
+      "label": "Bloomberg via Rigzone · Oil prices swing on Middle East uncertainty (Nov 19)",
+      "url": "https://www.rigzone.com/news/oil_prices_swing_on_middle_east_uncertainty-19-nov-2026-185129-article"
+    },
+    {
+      "label": "Reuters via Rallies · Oil settles flat as Hormuz disruptions offset surplus fears",
+      "url": "https://rallies.ai/news/oil-settles-flat-as-hormuz-disruptions-offset-global-surplus-fears-b09bf985c4d9759c"
+    },
+    {
+      "label": "EconCurrents · Nov 19 market close and headlines",
+      "url": "https://econcurrents.substack.com/p/19-november-2026-market-close-and"
     }
   ],
-  "oddsAsOf": "Wed 11/18 close"
+  "oddsAsOf": "Thu 11/19 close"
 }
