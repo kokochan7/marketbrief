@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-20T14:00:00Z",
-    "dataAsOf": "Fri 11/20 pre-market"
+    "updated": "2026-11-20T22:48:01Z",
+    "dataAsOf": "Fri 11/20 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Thu 11/19 · Anthropic jumps 17% in its debut, but the Dow sinks 1,101",
-    "body": "Anthropic (**ANT**) first traded at **$111.50** at 11:48a, 34% above its $83 IPO price, touched about $115, then faded to a $92.72 low and closed at **$97.17**, up **17%**, on about 830–840 million shares (StockTitan, FinanceFeeds, Yahoo Finance). The debut did not lift the AI trade: the S&P 500 fell **2.0%** for a sixth straight loss, the Nasdaq **2.3%**, and the Dow **1,101 points** to 49,097, closing below 50,000, as AMD, Amazon, Alphabet and Nvidia slid and all 11 sectors fell (Yahoo Finance, Reuters). The VIX jumped 15.8% to **28.44** (Cboe). After the bell Intuit fell about 11% on a light Q2 outlook and Ross about 9%. Friday: Fed's Waller at 8:25a, final UMich sentiment at 10:00a, monthly options expiration, and December WTI expires."
+    "title": "Fri 11/20 · S&P 500 and Dow fall into a correction as the Nasdaq sinks 5.3%",
+    "body": "The S&P 500 fell **3.70%** to 6,910.39 for a seventh straight loss, the longest streak since February 2020, and closed more than 10% below its Oct 6 record, a correction; the Dow lost 949.73 points (**1.93%**) to 48,147.33 and also closed in a correction, and the Nasdaq dropped **5.28%** to 22,617.73, erasing its 2026 gain (AP, Yahoo Finance, Reuters). For the week the S&P lost **8.6%**, the Dow 8.0% and the Nasdaq 10.0%, the worst week since April 2025. Nvidia plunged **14%** after Reuters reported the SEC is examining its accounting, the chip index fell 10.7%, and Anthropic lost 9% on its second day. Bonds rallied, with the 10Y down about 13bp to 4.92%, and the VIX touched 40 intraday. Next week: flash PMIs Monday, PCE inflation, and the Thanksgiving holiday Thursday."
   },
   "days": [
     {
@@ -211,18 +211,18 @@
     {
       "date": "2026-11-20",
       "label": "Fri 11/20",
-      "tag": "Sentiment",
-      "tone": "grey",
+      "tag": "S&P −3.7%, correction",
+      "tone": "red",
       "macro": [
         {
           "time": "8:25a",
           "level": "low",
-          "text": "Fed's Waller speaks · Cook 12:15p"
+          "text": "Fed's Waller speaks · Cook 12:15p: \"waiting longer to implement rate increases risks getting behind the curve\""
         },
         {
           "time": "10:00a",
           "level": "medium",
-          "text": "UMich sentiment (Nov final), prelim 48.0 · 1-yr inflation exp. prelim 4.7%"
+          "text": "UMich sentiment (Nov final) **51.5** vs est 51.5–51.6, prelim 51.0, Oct 48.0 · 1-yr inflation exp. 3.7% vs prelim 4.3% · 5-yr 3.3%"
         }
       ],
       "bmo": [
@@ -231,86 +231,51 @@
         "BSP"
       ],
       "amc": [],
-      "premarket": "8:37a: S&P futures **−1.3%**, Nasdaq 100 futures **−2.2%** (from −0.8% / −1.6% at 4:57a) as the AI selloff spreads · 10Y 4.98%, −8bp · WTI $82.44, −0.9% · gold $3,558, −3.4% · Kospi −5.2%, Nikkei about −5%, Taiwan −6.7% · Anthropic down more than 10% premarket, Intuit down more than 10% · BJ's raised its full-year outlook"
+      "result": "S&P 500 **−3.7%** (6,910.39, seventh straight loss, correction), Nasdaq **−5.3%** (22,617.73, negative for 2026), Dow −949.73 (−1.9%, 48,147.33, correction), Russell 2000 about −2.5% to −2.8% (sources differ) · week: S&P −8.6%, Nasdaq −10.0%, Dow −8.0% · Nvidia −14.0% to $125.53 on a reported SEC accounting review; Micron −13.9%, AMD −13.3%, Broadcom −12%, chip index −10.7%; Anthropic −9.1% to $88.30 · tech (XLK) −7.3%, only staples rose · after hours Zscaler +17%, CrowdStrike −8% on deal-talk report · VIX touched 40, closed about 36–38 · 10Y about 4.92%, −13bp · Jan WTI settled $83.41, +1.2% · UMich 51.5 vs est 51.5"
     }
   ],
   "mood": {
-    "asOf": "Thu 11/19 close",
+    "asOf": "Fri 11/20 close",
     "fearGreed": {
-      "score": 18.7,
+      "score": 9.67,
       "label": "Extreme fear",
-      "asOf": "Thu 11/19 5:24p",
-      "weekAgo": 40.34,
-      "monthAgo": 19.51,
-      "yearAgo": 7.86
+      "asOf": "Fri 11/20 5:25p",
+      "weekAgo": 37.37,
+      "monthAgo": 28.74,
+      "yearAgo": 5.17
     },
     "regime": {
       "label": "Risk-off",
       "tone": "red",
-      "text": "Thu 11/19: Anthropic's 17% debut gain failed to lift the AI trade, and stocks fell from the moment it opened. The S&P 500 lost 2% for a sixth straight day, the Dow closed below 50,000, all 11 sectors fell and the VIX jumped to its highest since March. Gold dropped again and only the dollar, up an eighth day, held firm."
+      "text": "Fri 11/20: the AI selloff turned into a rout. The S&P 500 fell 3.7% for a seventh straight day and joined the Dow in a correction, the Nasdaq lost 5.3% and gave up its 2026 gain, and tech (XLK) fell 7.3% while only consumer staples rose. Treasuries rallied hard, but gold, bitcoin and copper all fell, and the week was the worst since April 2025."
     },
     "vix": {
-      "value": "28.44",
-      "label": "Elevated",
+      "value": "≈36–38",
+      "label": "High",
       "tone": "red",
-      "text": "Thu 11/19 Cboe close, +3.88 (+15.8%) from 24.56 · range 22.12–29.13, highest since March (CNBC)"
+      "text": "Fri 11/20: touched 40 intraday, the highest since April 2025 (Bloomberg via ad-hoc-news, Yahoo Finance). Close figures differ: 35.89, +26.2% (ad-hoc-news, citing Cboe) vs 38.40, +34.9% (Yahoo Finance); Cboe's own close not confirmed. Thu close 28.44."
     },
     "breadth": {
       "value": "Chips split",
       "text": "Last week: SOX +8.1% with AMD +18.9% and Broadcom +18.2%, while Nvidia fell 13% · equal-weight S&P +2.3% · all 11 sectors up"
     },
     "havens": {
-      "value": "Dollar only",
-      "text": "Thu 11/19: 10Y ≈ 5.05%, −1bp · gold ≈ $3,628, −2.5% · bitcoin ≈ $62K, about −1% · dollar index ≈ 103.96, +0.1% (8th straight gain) · utilities −1.2%, staples −1.4%"
+      "value": "Treasuries",
+      "text": "Fri 11/20: 10Y ≈ 4.92%, −13bp, lowest in over 10 days (Yahoo Finance; AP 4.93%) · 2Y ≈ 4.65%, −13bp · gold ≈ $3,520, down 3–4% · bitcoin ≈ $59K, about −5% · dollar index ≈ 103.9, flat · staples +0.7%, health care −0.1%"
     },
     "fedwatch": {
-      "text": "50bp hike in Dec ≈10% (CME FedWatch via TheStreet, 10:35a) · 50bp of hikes by end of January 69% (via Yahoo Finance)",
-      "asOf": "Wed 11/18"
+      "text": "25bp hike in Dec ≈97% · hold ≈3% (CME FedWatch via Yahoo Finance and BigGo)",
+      "asOf": "Fri 11/20"
     }
   },
   "stories": [
     {
-      "title": "Dow sinks 1,101 points below 50,000; S&P 500 falls a sixth day.",
-      "body": "The S&P 500 fell **2.02%** to 7,175.83 Thursday, its sixth straight loss, the Nasdaq **2.25%** to 23,879.20 and the Dow **1,101.11 points** (2.19%) to 49,097.06, closing below 50,000; the Russell 2000 lost about 1.8% (Yahoo Finance, Reuters via MarketScreener). Futures had been up about 1% before the open, but selling picked up once Anthropic began trading, as investors took profits in AI names (CNBC via StockTitan). AMD fell **7.7%** after Hunterbrook disclosed a short position citing its China exposure (Reuters, Yahoo Finance); Amazon lost 3.9%, Alphabet 3.5%, Nvidia 3.3% and Microsoft 2.0%, while CoreWeave fell 6.1% and Nebius 9.4% (StockTitan). All 11 sector ETFs fell, with consumer discretionary (XLY −2.8%) and communication services (XLC −2.7%) worst and energy (XLE −0.7%) the most resilient. Williams-Sonoma dropped 15% after its results; Palo Alto (+6.4%), CrowdStrike (+2.7%) and PDD (+11%) rose. The VIX jumped 15.8% to **28.44** (Cboe), and CNN's Fear & Greed index fell to 18.7, extreme fear, from 40 a week ago."
+      "title": "S&P 500 and Dow fall into a correction; Nasdaq drops 5.3% and turns negative for 2026.",
+      "body": "The S&P 500 fell **3.70%** (265.44 points) to 6,910.39 Friday, its seventh straight loss and the longest losing streak since February 2020, leaving it more than 10% below its Oct 6 record of 7,818.93; the Dow lost **949.73 points** (1.93%) to 48,147.33, also in a correction, and the Nasdaq **5.28%** to 22,617.73, wiping out its gain for the year (AP via NPR, Yahoo Finance, Motley Fool). The Nasdaq 100 fell about 5.6% and the Russell 2000 about 2.5–2.8% (investingLive, Yahoo Finance). For the week the S&P lost **8.6%**, the Dow 8.0%, the Nasdaq 10.0% and the Russell 2000 7.5%, the worst week for the major indexes since April 2025 (Reuters via MarketScreener, investingLive). Tech (XLK) fell 7.3% and industrials 3.1%, while consumer staples (+0.7%) were the only sector up (sector ETFs); General Mills, HCA and UnitedHealth rose. Reasons cited: the reported SEC look at Nvidia's accounting, Anthropic's fade from its debut peak, worries about AI spending after midterm wins for candidates who want to slow data-center building, and a near-certain Fed hike in December (AP, Reuters, investingLive). The VIX touched 40 intraday (Bloomberg via ad-hoc-news), and CNN's Fear & Greed index fell to **9.7**, extreme fear, from 37 a week ago."
     },
     {
-      "title": "Anthropic closes up 17% at $97.17 after opening at $111.50.",
-      "body": "Anthropic's shares first traded at **$111.50** at 11:48a, 34% above the $83 IPO price, and touched about $115 within a minute before sliding to a $92.72 low at 1:18p; they closed at **$97.17**, up **17.1%**, on about 830–840 million shares, close to the 980 million sold in the IPO (StockTitan, FinanceFeeds, Yahoo Finance). The stock slipped to about $95.70 after hours (Yahoo Finance) and was down **more than 10%** premarket Friday as the AI selloff spread to Asia (Bloomberg via TNW, TradingKey). Underwriters exercised their option on up to 147 million extra shares, lifting the total raised with the private placement to **$119.5B** (TNW); ARK Invest bought about $91M of shares after the debut (CNBC via TNW). The company raised about **$81.3B**, the largest IPO ever, plus a $26B private placement at $83 with Nvidia, Google and others (StockTitan, Reuters). Market value at the close is about $1.3 trillion on shares outstanding (Nasdaq via FinanceFeeds), or about $1.8 trillion fully diluted (Reuters, CNN); the fade from the opening print erased nearly $200B (Yahoo Finance). Dan Ives called the deal an \"A-plus success\" (via FinanceFeeds), but the listing did not lift its big backers: Amazon and Alphabet both fell more than 3%."
-    },
-    {
-      "title": "Fed: hikes still priced as Goolsbee warns AI could overheat the economy.",
-      "body": "Chicago Fed President Goolsbee said Thursday that AI data-center building and consumers spending out of new stock wealth \"can easily overheat the economy\" and that \"the Fed's job is to prevent this thing from overheating the economy\" (Reuters via Kitco). Minutes of the Oct 27–28 meeting showed **almost all** officials saw more hikes as likely appropriate and **a couple** were open to more than 25bp in December (TheStreet, investingLive), and Governor Waller said this week a half-point move is probably needed. The data keep softening: the Philly Fed index fell to 6.3 from 20.9 vs about 20 expected (Trading Economics, FX.co), jobless claims rose to 203K vs 197K (Labor Department), and the Conference Board's leading index fell **0.3%** in October vs no change expected, mostly on fewer building permits (RTTNews, Bloomingbit). The 10Y ended about 1bp lower at 5.05%. CME FedWatch put about 10% on a 50bp December move Wednesday (TheStreet). Waller speaks again Friday at 8:25a. The next decision is Dec 9; Kalshi has a 25bp hike at 91% and more than 25bp at 6%.",
-      "odds": [
-        {
-          "source": "kalshi",
-          "label": "Fed hikes 25bp on Dec 9",
-          "prob": 91,
-          "ticker": "KXFEDDECISION-26DEC-H25",
-          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
-        },
-        {
-          "source": "polymarket",
-          "label": "Fed hikes 25bp on Dec 9",
-          "prob": 91.5,
-          "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
-          "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
-        },
-        {
-          "source": "kalshi",
-          "label": "Fed hikes more than 25bp",
-          "prob": 6,
-          "ticker": "KXFEDDECISION-26DEC-H26",
-          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
-        }
-      ]
-    },
-    {
-      "title": "Intuit falls 11% after hours on a light outlook; Ross, Gap disappoint.",
-      "body": "Intuit's fiscal Q1 revenue rose 12% to **$4.35B** vs about $4.31B expected, with non-GAAP EPS of **$2.91** (it no longer excludes stock pay), but it guided Q2 revenue to $4.93–4.95B vs about $5.11B expected, trimmed its full-year revenue range to $23.08–23.37B and agreed to sell **Mailchimp to Bending Spoons for about $3.68B** (company release, Seeking Alpha). The shares fell about 11–12% after hours (Yahoo Finance, Seeking Alpha). Ross Stores earned $1.91 vs $1.87 expected on revenue of $6.26B with comparable sales +8%, and raised its full-year EPS outlook, but fell about 9–10% after hours on a softer next-quarter guide (StockStory, StockTitan). Gap's comparable sales were flat (Old Navy flat, Gap +9%, Athleta −15%) and it cut its adjusted EPS outlook to $2.29–2.34 from $2.35–2.45 (company release via StockTitan, Bloomberg). Keysight's revenue jumped 41% to $1.99B with non-GAAP EPS of $3.61, and it guided Q1 to $2.04–2.06B (SEC filing). Earlier Walmart slipped despite beating and raising its outlook (EconCurrents). Friday morning BJ's Wholesale earned **$1.73** a share vs $1.16 a year ago, helped by a roughly $240M card-fee settlement, on revenue up 17.5% to $6.28B with comparable club sales +13.5% (+4.1% ex-gas), and raised its full-year adjusted EPS guide to $5.10–5.30 (company release). Intuit was down more than 10% premarket (TradingKey)."
-    },
-    {
-      "title": "Nvidia falls a sixth day; board shuts the door on Huang.",
-      "body": "Nvidia fell another **3.3%** Thursday (StockTitan), after sliding 2.9% Wednesday to $150.96 despite its fiscal Q3 beat: revenue **$115.8B** (+103%, data center $107.6B) vs about $109B expected, non-GAAP EPS **$2.68** vs about $2.47, and a January-quarter guide of **$130B ±3%** vs about $125B (company release, CoinDesk). Reuters cited Nvidia's leadership change and shrinking data-center capex bets among the day's weights on tech. The board added $150B to the buyback (Newsquawk). Chairman Harvey Jones said the board does not intend to reinstate Jensen Huang, with CFO Colette Kress as interim CEO; the WSJ reported the SEC is looking at whether Nvidia's disclosures misled investors (via TheStreet). Polymarket now gives about 5% that Huang rejoins by Dec 31 and about 20% that a permanent CEO is named by then (last trade Monday), with Arm's Rene Haas the favourite at about 28%.",
+      "title": "Nvidia plunges 14% on a reported SEC accounting review; chips fall 10.7%.",
+      "body": "Nvidia fell **14.0%** to **$125.53** Friday, its ninth loss in 10 sessions and more than 25% below where it traded before Jensen Huang's exit earlier this month (Yahoo Finance, Motley Fool, AP), after Reuters reported that the SEC is examining its accounting practices; the SEC declined to comment and no wrongdoing has been found (Reuters via FinChannel, investingLive). The PHLX semiconductor index dropped **10.7%**: Micron fell 13.9%, AMD 13.3% and Broadcom about 12%, the latter also hit by an unconfirmed report that Google will cut next year's chip orders (AP, Motley Fool). CoreWeave lost 12.1%, Corning 10.9% and Bloom Energy 15.3%, and crypto miners such as IREN and Applied Digital fell 17–19% (investingLive, AP, 24/7 Wall St). Nvidia rose about 1% after hours (Yahoo Finance). Its fiscal Q3 beat on Nov 17 (revenue $115.8B, January-quarter guide $130B) did not stop the slide. The board has said it will not reinstate Huang, with CFO Colette Kress as interim CEO; Polymarket gives about 5% that Huang rejoins by Dec 31 and about 20% that a permanent CEO is named by then (last trades this week).",
       "odds": [
         {
           "source": "polymarket",
@@ -336,8 +301,43 @@
       ]
     },
     {
-      "title": "Oil ends flat as Hormuz attacks offset a supply glut.",
-      "body": "December WTI slipped 0.06% to settle at **$83.21** and Brent rose 0.03% to **$91.98** Thursday after swinging in a $2 range; the more active January WTI settled at $82.44 (Bloomberg via Rigzone). Traders weighed renewed Iran tensions, with Western officials saying the chances of new US strikes had grown and President Trump telling Axios he was not \"rushing into a decision\", plus Iran's navy saying two tankers hit mines in the Strait of Hormuz (not independently verified), against a 3.4 million-barrel US crude build and forecasts of a surplus (Reuters, Bloomberg via Rigzone). Flows through Hormuz are at a record, according to the US energy chief, and China's imports are rebounding faster than expected. Crude is down about a fifth in November; the December WTI contract expires Friday and OPEC+ meets Nov 29."
+      "title": "Anthropic falls 9% on day two but stays above its $83 IPO price.",
+      "body": "Anthropic (**ANT**) fell **9.1%** to **$88.30** Friday, its second day of trading, still above the $83 IPO price but about 23% below Thursday's $115.10 peak (AP, investingLive). On its debut Thursday it opened at **$111.50** at 11:48a and closed at $97.17, up 17% (StockTitan, FinanceFeeds). The listing has not lifted the AI trade: AP and Reuters cite its fade from the opening print as one trigger of the two-day selloff, and its big backers fell again Friday, with Amazon down 4.1% and Alphabet 2.6% (Motley Fool). Underwriters exercised their option on up to 147 million extra shares, lifting the total raised with the $26B private placement at $83 (Nvidia, Google, Microsoft, AMD, Broadcom and others) to about **$119.5B**, the largest IPO ever (TNW, FinChannel). ARK Invest bought about $91M of shares after the debut (CNBC via TNW)."
+    },
+    {
+      "title": "Fed: Cook warns of falling behind as a December hike is all but priced in.",
+      "body": "Governor Lisa Cook said Friday in Santiago that \"waiting longer to implement rate increases risks getting behind the curve\" and that policy is not restrictive enough after September's hike (Yahoo Finance, investingLive). CME FedWatch puts about **97%** on a 25bp hike on Dec 9 (Yahoo Finance; BigGo, as of Nov 20), up from about 88.5% a week ago. Philadelphia Fed President Paulson said Thursday the Fed will need to hike again because inflation is too high (Reuters), and Governor Waller argued this week for a half-point move in December unless the Fed signals another hike in January (Yahoo Finance, Nov 18). Bonds rallied on the stock rout: the 10Y fell about **13bp** to 4.92% and the 2Y 13bp to 4.65% (Yahoo Finance, investingLive). The final November University of Michigan sentiment index came in at **51.5**, in line with forecasts and up from 48.0 in October, and one-year inflation expectations fell to **3.7%** from 4.3% in the preliminary survey and 4.7% in October (investingLive, Yahoo Finance). PCE inflation is due next week. Kalshi has a 25bp hike at 89% and a hold at 9%.",
+      "odds": [
+        {
+          "source": "kalshi",
+          "label": "Fed hikes 25bp on Dec 9",
+          "prob": 89,
+          "ticker": "KXFEDDECISION-26DEC-H25",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
+        },
+        {
+          "source": "polymarket",
+          "label": "Fed hikes 25bp on Dec 9",
+          "prob": 92.5,
+          "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
+          "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
+        },
+        {
+          "source": "kalshi",
+          "label": "Fed hikes more than 25bp",
+          "prob": 2,
+          "ticker": "KXFEDDECISION-26DEC-H26",
+          "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
+        }
+      ]
+    },
+    {
+      "title": "CrowdStrike in talks to buy Zscaler; Zscaler jumps 17% after hours.",
+      "body": "CrowdStrike is in talks to acquire rival Zscaler, which has a market value of about **$33.5B**, according to two people familiar with the matter; no deal is guaranteed and terms were not reported (Reuters via Investing.com, 4:46p). Zscaler rose **17%** after hours and CrowdStrike fell **8%** (Reuters), after both lost more than 5% in the regular session (Reuters via MarketScreener, Investing.com). Elsewhere in earnings: Intuit, which fell more than 10% premarket Friday, guided Q2 revenue to $4.93–4.95B vs about $5.11B expected and agreed to sell Mailchimp to Bending Spoons for about $3.68B (company release, TradingKey); Ross raised its full-year EPS outlook but guided the next quarter softer (StockStory); and Gap rose about 2.5% premarket on Old Navy sales after cutting its outlook (Reuters). BJ's Wholesale earned $1.73 a share, helped by a roughly $240M card-fee settlement, with comparable club sales +13.5% (+4.1% ex-gas), and raised its full-year adjusted EPS guide to $5.10–5.30 (company release). Walmart rose 1.5% Friday after raising its outlook Thursday (Motley Fool)."
+    },
+    {
+      "title": "Oil rises Friday but posts a third weekly loss on a supply glut.",
+      "body": "The more active January WTI contract rose **1.2%** to settle at **$83.41** Friday, the expiring December contract 0.9% to $83.98, and Brent **0.6%** to **$92.57**, as traders weighed the risk of renewed US strikes on Iran (Bloomberg via Rigzone, AP). Brent still lost **3.4%** for the week, a third straight weekly drop, and is down about a fifth in November: the IEA sees a surplus of about 2 million barrels a day this quarter, Goldman flagged a glut next year, and Energy Secretary Chris Wright said flows through the Strait of Hormuz are at a record (Bloomberg via Rigzone). President Trump has said he is not rushing into a decision on Iran, and the FT reported he is weighing new strikes (via investingLive). Gold fell 3–4% to about $3,520 and copper 3% as the broader selloff hit commodities (Motley Fool, investingLive). OPEC+ meets Nov 29."
     }
   ],
   "earningsOdds": {},
@@ -1013,7 +1013,55 @@
     {
       "label": "BJ's Wholesale Club · Q3 fiscal 2026 results (SEC 8-K)",
       "url": "https://www.sec.gov/Archives/edgar/data/0001531152/000153115226000083/bj-2026103126x8kex991.htm"
+    },
+    {
+      "label": "AP via NPR · S&P 500 sinks 3.7% and the Nasdaq composite goes negative for the year (Nov 20)",
+      "url": "https://www.kanw.org/npr-news/2026-11-20/s-p-500-sinks-3-7-and-the-nasdaq-composite-goes-negative-for-the-year"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Fri Nov 20 (Dow and S&P 500 enter correction, closes)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-141644188.html"
+    },
+    {
+      "label": "Motley Fool · Stock market today, Nov 20: stocks plunge as AI trade unwinds",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
+    },
+    {
+      "label": "investingLive · Americas FX news wrap Nov 20: Nasdaq plunges 5.28%",
+      "url": "https://investinglive.com/news/investinglive-americas-fx-news-wrap-20-nov-stocks-get-hammered-as-nasdaq-plunges-5-28/"
+    },
+    {
+      "label": "Reuters via MarketScreener · Wall St ends sharply lower on AI selloff, S&P 500, Dow in correction",
+      "url": "https://www.marketscreener.com/news/wall-st-ends-sharply-lower-on-ai-selloff-s-p-500-dow-in-correction-ce785ed3dd80f527"
+    },
+    {
+      "label": "FinChannel · Nasdaq falls 5.3% as S&P 500 and Dow enter corrections (AP, Reuters)",
+      "url": "https://finchannel.com/nasdaq-falls-5-3-as-sp-500-and-dow-enter-corrections/142573/american-business-trends/stock-prices/2026/11/"
+    },
+    {
+      "label": "24/7 Wall St · Closing bell and biggest movers, Nov 20",
+      "url": "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+    },
+    {
+      "label": "ad-hoc-news · VIX jumps 26.2% to 35.89, touch of 40 late in session (Nov 20)",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/vix-jumps-26-20-prozent-to-35-89-as-tech-selloff-intensifies-bloomberg-reports-late-session-touch/70541190"
+    },
+    {
+      "label": "Bloomberg via Rigzone · Oil posts third weekly loss amid surplus (Nov 20)",
+      "url": "https://www.rigzone.com/news/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article"
+    },
+    {
+      "label": "Reuters via Investing.com · CrowdStrike in talks to acquire Zscaler, sources say",
+      "url": "https://www.investing.com/news/stock-market-news/crowdstrike-in-talks-to-acquire-zscaler-sources-say-5042720"
+    },
+    {
+      "label": "BigGo Finance · Fed December hike odds (CME FedWatch as of Nov 20)",
+      "url": "https://finance.biggo.com/news/78ad00f8-6255-4ebc-9b35-179f5a35e276"
+    },
+    {
+      "label": "Yahoo Finance · Waller doubles down on a jumbo December hike (Nov 18)",
+      "url": "https://finance.yahoo.com/economy/policy/article/feds-waller-doubles-down-on-a-jumbo-rate-hike-in-december-sees-more-hikes-to-come-174616572.html"
     }
   ],
-  "oddsAsOf": "Thu 11/19 close"
+  "oddsAsOf": "Fri 11/20 close"
 }
