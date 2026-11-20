@@ -4,8 +4,8 @@
     "weekEnd": "2026-11-20",
     "range": "November 16 – 20, 2026",
     "kicker": "This week",
-    "updated": "2026-11-19T22:47:00Z",
-    "dataAsOf": "Thu 11/19 close"
+    "updated": "2026-11-20T14:00:00Z",
+    "dataAsOf": "Fri 11/20 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
@@ -230,7 +230,8 @@
         "BKE",
         "BSP"
       ],
-      "amc": []
+      "amc": [],
+      "premarket": "8:37a: S&P futures **−1.3%**, Nasdaq 100 futures **−2.2%** (from −0.8% / −1.6% at 4:57a) as the AI selloff spreads · 10Y 4.98%, −8bp · WTI $82.44, −0.9% · gold $3,558, −3.4% · Kospi −5.2%, Nikkei about −5%, Taiwan −6.7% · Anthropic down more than 10% premarket, Intuit down more than 10% · BJ's raised its full-year outlook"
     }
   ],
   "mood": {
@@ -274,7 +275,7 @@
     },
     {
       "title": "Anthropic closes up 17% at $97.17 after opening at $111.50.",
-      "body": "Anthropic's shares first traded at **$111.50** at 11:48a, 34% above the $83 IPO price, and touched about $115 within a minute before sliding to a $92.72 low at 1:18p; they closed at **$97.17**, up **17.1%**, on about 830–840 million shares, close to the 980 million sold in the IPO (StockTitan, FinanceFeeds, Yahoo Finance). The stock slipped to about $95.70 after hours (Yahoo Finance). The company raised about **$81.3B**, the largest IPO ever, plus a $26B private placement at $83 with Nvidia, Google and others (StockTitan, Reuters). Market value at the close is about $1.3 trillion on shares outstanding (Nasdaq via FinanceFeeds), or about $1.8 trillion fully diluted (Reuters, CNN); the fade from the opening print erased nearly $200B (Yahoo Finance). Dan Ives called the deal an \"A-plus success\" (via FinanceFeeds), but the listing did not lift its big backers: Amazon and Alphabet both fell more than 3%."
+      "body": "Anthropic's shares first traded at **$111.50** at 11:48a, 34% above the $83 IPO price, and touched about $115 within a minute before sliding to a $92.72 low at 1:18p; they closed at **$97.17**, up **17.1%**, on about 830–840 million shares, close to the 980 million sold in the IPO (StockTitan, FinanceFeeds, Yahoo Finance). The stock slipped to about $95.70 after hours (Yahoo Finance) and was down **more than 10%** premarket Friday as the AI selloff spread to Asia (Bloomberg via TNW, TradingKey). Underwriters exercised their option on up to 147 million extra shares, lifting the total raised with the private placement to **$119.5B** (TNW); ARK Invest bought about $91M of shares after the debut (CNBC via TNW). The company raised about **$81.3B**, the largest IPO ever, plus a $26B private placement at $83 with Nvidia, Google and others (StockTitan, Reuters). Market value at the close is about $1.3 trillion on shares outstanding (Nasdaq via FinanceFeeds), or about $1.8 trillion fully diluted (Reuters, CNN); the fade from the opening print erased nearly $200B (Yahoo Finance). Dan Ives called the deal an \"A-plus success\" (via FinanceFeeds), but the listing did not lift its big backers: Amazon and Alphabet both fell more than 3%."
     },
     {
       "title": "Fed: hikes still priced as Goolsbee warns AI could overheat the economy.",
@@ -305,7 +306,7 @@
     },
     {
       "title": "Intuit falls 11% after hours on a light outlook; Ross, Gap disappoint.",
-      "body": "Intuit's fiscal Q1 revenue rose 12% to **$4.35B** vs about $4.31B expected, with non-GAAP EPS of **$2.91** (it no longer excludes stock pay), but it guided Q2 revenue to $4.93–4.95B vs about $5.11B expected, trimmed its full-year revenue range to $23.08–23.37B and agreed to sell **Mailchimp to Bending Spoons for about $3.68B** (company release, Seeking Alpha). The shares fell about 11–12% after hours (Yahoo Finance, Seeking Alpha). Ross Stores earned $1.91 vs $1.87 expected on revenue of $6.26B with comparable sales +8%, and raised its full-year EPS outlook, but fell about 9–10% after hours on a softer next-quarter guide (StockStory, StockTitan). Gap's comparable sales were flat (Old Navy flat, Gap +9%, Athleta −15%) and it cut its adjusted EPS outlook to $2.29–2.34 from $2.35–2.45 (company release via StockTitan, Bloomberg). Keysight's revenue jumped 41% to $1.99B with non-GAAP EPS of $3.61, and it guided Q1 to $2.04–2.06B (SEC filing). Earlier Walmart slipped despite beating and raising its outlook (EconCurrents). BJ's reports Friday morning."
+      "body": "Intuit's fiscal Q1 revenue rose 12% to **$4.35B** vs about $4.31B expected, with non-GAAP EPS of **$2.91** (it no longer excludes stock pay), but it guided Q2 revenue to $4.93–4.95B vs about $5.11B expected, trimmed its full-year revenue range to $23.08–23.37B and agreed to sell **Mailchimp to Bending Spoons for about $3.68B** (company release, Seeking Alpha). The shares fell about 11–12% after hours (Yahoo Finance, Seeking Alpha). Ross Stores earned $1.91 vs $1.87 expected on revenue of $6.26B with comparable sales +8%, and raised its full-year EPS outlook, but fell about 9–10% after hours on a softer next-quarter guide (StockStory, StockTitan). Gap's comparable sales were flat (Old Navy flat, Gap +9%, Athleta −15%) and it cut its adjusted EPS outlook to $2.29–2.34 from $2.35–2.45 (company release via StockTitan, Bloomberg). Keysight's revenue jumped 41% to $1.99B with non-GAAP EPS of $3.61, and it guided Q1 to $2.04–2.06B (SEC filing). Earlier Walmart slipped despite beating and raising its outlook (EconCurrents). Friday morning BJ's Wholesale earned **$1.73** a share vs $1.16 a year ago, helped by a roughly $240M card-fee settlement, on revenue up 17.5% to $6.28B with comparable club sales +13.5% (+4.1% ex-gas), and raised its full-year adjusted EPS guide to $5.10–5.30 (company release). Intuit was down more than 10% premarket (TradingKey)."
     },
     {
       "title": "Nvidia falls a sixth day; board shuts the door on Huang.",
@@ -988,6 +989,30 @@
     {
       "label": "EconCurrents · Nov 19 market close and headlines",
       "url": "https://econcurrents.substack.com/p/19-november-2026-market-close-and"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · Wall St futures slip as Anthropic debut fails to reassure (Nov 20, 4:57a)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
+    },
+    {
+      "label": "TradingKey · US pre-market Nov 20: Anthropic, Intuit fall, gold below $3,600",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262315308-us-pre-market-anthropic-tradingkey"
+    },
+    {
+      "label": "TNW · Anthropic falls more than 10% on day two, greenshoe lifts raise to $119.5B",
+      "url": "https://thenextweb.com/news/anthropic-shares-fall-day-two-greenshoe-119-5bn-ark-invest"
+    },
+    {
+      "label": "Saxo · Market Quick Take, Asian stocks tumble (Nov 20)",
+      "url": "https://www.home.saxo/en-sg/content/articles/macro/market-quick-take---asian-stocks-tumble-after-wall-streets-sixth-straight-decline---20-november-2026-20112026"
+    },
+    {
+      "label": "The Private Banker · Global stocks slide a seventh session, Kospi and Nikkei drop over 5%",
+      "url": "https://leprivatebanker.com/2026/11/20/global-stocks-extend-slide-to-a-seventh-straight-session-the-longest-losing-run-since-2023-as-kospi-and-nikkei-drop-over-5/"
+    },
+    {
+      "label": "BJ's Wholesale Club · Q3 fiscal 2026 results (SEC 8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001531152/000153115226000083/bj-2026103126x8kex991.htm"
     }
   ],
   "oddsAsOf": "Thu 11/19 close"
