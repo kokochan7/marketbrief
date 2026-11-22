@@ -1,245 +1,183 @@
 {
   "edition": {
-    "weekStart": "2026-11-16",
-    "weekEnd": "2026-11-20",
-    "range": "November 16 – 20, 2026",
+    "weekStart": "2026-11-23",
+    "weekEnd": "2026-11-27",
+    "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-20T22:48:01Z",
-    "dataAsOf": "Fri 11/20 close"
+    "updated": "2026-11-22T23:41:36Z",
+    "dataAsOf": "Fri 11/20 close · Sun 11/22 evening futures"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Fri 11/20 · S&P 500 and Dow fall into a correction as the Nasdaq sinks 5.3%",
-    "body": "The S&P 500 fell **3.70%** to 6,910.39 for a seventh straight loss, the longest streak since February 2020, and closed more than 10% below its Oct 6 record, a correction; the Dow lost 949.73 points (**1.93%**) to 48,147.33 and also closed in a correction, and the Nasdaq dropped **5.28%** to 22,617.73, erasing its 2026 gain (AP, Yahoo Finance, Reuters). For the week the S&P lost **8.6%**, the Dow 8.0% and the Nasdaq 10.0%, the worst week since April 2025. Nvidia plunged **14%** after Reuters reported the SEC is examining its accounting, the chip index fell 10.7%, and Anthropic lost 9% on its second day. Bonds rallied, with the 10Y down about 13bp to 4.92%, and the VIX touched 40 intraday. Next week: flash PMIs Monday, PCE inflation, and the Thanksgiving holiday Thursday."
+    "title": "Wed 11/25 · PCE inflation, Q3 GDP, durable goods and jobless claims all land at 8:30a",
+    "body": "Thanksgiving squeezes the week's data into Wednesday morning. October core PCE, the Fed's preferred inflation gauge, is expected to rise **0.3%** on the month and **3.2%** on the year, up from 3.1%, with headline PCE seen at 3.8% from 3.6% (AskTraders, FXEmpire, Newsquawk); Polymarket puts 3.2% at about 62% and 3.3% at 35%. The second estimate of Q3 GDP (advance **3.4%**), October durable goods and jobless claims, moved up a day, come out at the same time, then new home sales at 10:00a and the Fed's Beige Book at 2:00p. A December 9 hike is almost fully priced after last week's hawkish minutes, so a hot print could revive talk of a half-point move, while a soft one would back Treasury Secretary Bessent's Sunday warning against over-tightening. Before that: Dell, HP and Workday report Tuesday after the close. Markets are shut Thursday and close at 1:00p Friday."
   },
   "days": [
     {
-      "date": "2026-11-16",
-      "label": "Mon 11/16",
-      "tag": "AI selloff",
-      "tone": "red",
+      "date": "2026-11-23",
+      "label": "Mon 11/23",
+      "tag": "Flash PMIs, Zoom, HPE",
+      "tone": "grey",
       "macro": [
         {
-          "time": "8:30a",
+          "time": "9:45a",
           "level": "medium",
-          "text": "Empire State mfg (Nov) **7.8** vs est 17–18, prior 25.5 · new orders 3.0, prices paid 45.9"
-        },
-        {
-          "time": "9:05a",
-          "level": "low",
-          "text": "Fed's Williams speaks · no policy comment"
-        },
-        {
-          "time": "12:00p",
-          "level": "high",
-          "text": "Fed Chair Warsh speaks · on AI scenarios, no policy comment"
-        },
-        {
-          "time": "6:10p",
-          "level": "low",
-          "text": "Fed's Barkin speaks"
-        }
-      ],
-      "bmo": [
-        "BIDU",
-        "TSN",
-        "BEKE",
-        "XPEV",
-        "ARMK",
-        "HTHT"
-      ],
-      "amc": [
-        "ACM",
-        "XP",
-        "POWL",
-        "PAGS"
-      ],
-      "note": "Trip.com (TCOM) expected, time TBA",
-      "result": "S&P 500 **−1.9%** (7,416.59), Nasdaq **−2.5%** (24,509.76, now more than 10% below its Oct 6 record), Dow −1.4%, Russell 2000 −1.7% · Nvidia −4.1% to $156.14; Intel and Dell about −7%, Micron −6%+ after a new AI-chip re-export license rule · Tyson +8.7% on a beat (adj. EPS $0.61 vs $0.58) · VIX 22.91, +18.7% · 10Y 5.12% · WTI settled $85.72, −3.2% · Empire State 7.8 vs est 17–18"
-    },
-    {
-      "date": "2026-11-17",
-      "label": "Tue 11/17",
-      "tag": "Dow −849, Nvidia beats",
-      "tone": "red",
-      "macro": [
-        {
-          "time": "8:30a",
-          "level": "high",
-          "text": "Retail sales (Oct) **+0.2%** vs est +0.2%, prior +0.8% · ex-autos +0.6% vs est +0.4% · ex-autos & gas +0.5%"
-        },
-        {
-          "time": "8:30a",
-          "level": "low",
-          "text": "Import prices (Oct) **+1.1%** vs est +0.7%, prior +1.1%"
-        },
-        {
-          "time": "9:15a",
-          "level": "medium",
-          "text": "Industrial production (Oct) **−0.4%** vs est +0.1%, prior +0.7% · utilities −4.3%, manufacturing +0.3% · capacity use 76.4%"
-        },
-        {
-          "time": "9:20a",
-          "level": "medium",
-          "text": "Fed's Waller speaks · Musalem 7:30a, Hammack 9:30a, Williams 2:25p (no need for a \"dramatic\" move)"
-        },
-        {
-          "time": "10:00a",
-          "level": "low",
-          "text": "NAHB housing index (Nov) **25** vs est 29, prior 29 · lowest since April 2012"
-        }
-      ],
-      "bmo": [
-        "HD",
-        "DIS",
-        "JD",
-        "VIK",
-        "KLAR",
-        "ESLT",
-        "AS",
-        "TME"
-      ],
-      "amc": [
-        "NVDA",
-        "ZTO",
-        "DLB"
-      ],
-      "result": "S&P 500 **−1.0%** (7,340.53), Nasdaq **−0.7%** (24,328.38), Dow −848.75 (−1.6%, 50,759.42), Russell 2000 −1.5% · all 11 sectors fell, financials worst (−1.9%) · Salesforce −9.6%, Intuit −7.1%, ServiceNow −6.8%; Home Depot −2.4% and Disney −1.5% despite beats · Nvidia −0.4% to $155.46, then up about 1–2% after hours on a beat (rev $115.8B, EPS $2.68, Q4 guide $130B) · VIX 25.46, +11.1% · 10Y 5.10% · WTI settled $86.01, +0.3% · industrial production −0.4% vs est +0.1%, NAHB 25 vs est 29"
-    },
-    {
-      "date": "2026-11-18",
-      "label": "Wed 11/18",
-      "tag": "Dow −561, hawkish minutes",
-      "tone": "red",
-      "macro": [
-        {
-          "time": "8:30a",
-          "level": "medium",
-          "text": "Housing starts (Oct) **1.309M** vs est ~1.24M, prior 1.191M (rev.) · permits **1.295M** vs est 1.38M, −7.4%"
-        },
-        {
-          "time": "10:00a",
-          "level": "low",
-          "text": "Pending home sales (Oct) **−4.7%** vs est about −2%, prior −7.3% · record low"
+          "text": "S&P Global flash PMIs (Nov) · mfg est 54.5, prior 54.9 · services est 55.6, prior 56.1"
         },
         {
           "time": "1:00p",
           "level": "low",
-          "text": "20-yr bond auction ($13B)"
+          "text": "2-yr note auction ($69B)"
+        },
+        {
+          "time": "4:00p",
+          "level": "medium",
+          "text": "NY Fed's Williams speaks"
+        }
+      ],
+      "bmo": [],
+      "amc": [
+        "HPE",
+        "ZM",
+        "A",
+        "J",
+        "SYM",
+        "SMTC"
+      ],
+      "note": "Japan closed (Labour Thanksgiving Day)",
+      "premarket": "Sun 6:23p: S&P 500 futures **+1.5%** (7,036.50), Nasdaq 100 futures **+2.4%**, Dow futures +0.9% after last week's rout · WTI $82.71, −1.5% · gold +1.9% · bitcoin ≈ $61.1K, +1.7% · Bessent on Sunday warned the Fed against over-tightening"
+    },
+    {
+      "date": "2026-11-24",
+      "label": "Tue 11/24",
+      "tag": "Dell, HP, Workday",
+      "tone": "orange",
+      "macro": [
+        {
+          "time": "9:00a",
+          "level": "low",
+          "text": "Case-Shiller 20-city home prices (Sep) est +2.7% y/y, prior +2.7% · FHFA est +0.2% m/m"
+        },
+        {
+          "time": "10:00a",
+          "level": "medium",
+          "text": "Consumer confidence (Nov) est 92.1–92.5, prior 91.7 · Richmond Fed mfg est −3, prior −2"
+        },
+        {
+          "time": "1:00p",
+          "level": "low",
+          "text": "5-yr note auction ($70B)"
+        }
+      ],
+      "bmo": [
+        "ADI",
+        "MDT",
+        "BBY",
+        "DKS",
+        "DLTR",
+        "BURL",
+        "SJM",
+        "ANF",
+        "KSS"
+      ],
+      "amc": [
+        "DELL",
+        "HPQ",
+        "WDAY",
+        "ADSK",
+        "NTNX",
+        "URBN",
+        "AMBA"
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "label": "Wed 11/25",
+      "tag": "PCE, GDP, Beige Book",
+      "tone": "red",
+      "macro": [
+        {
+          "time": "8:30a",
+          "level": "high",
+          "text": "PCE prices (Oct) · core est **+0.3%** m/m, **3.2%** y/y (prior 3.1%) · headline est +0.3%, 3.8% y/y (prior 3.6%) · income est +0.4%, spending est +0.4%"
+        },
+        {
+          "time": "8:30a",
+          "level": "high",
+          "text": "GDP (Q3, 2nd est.) est 3.4–3.5%, advance 3.4%"
+        },
+        {
+          "time": "8:30a",
+          "level": "medium",
+          "text": "Durable goods (Oct) est +0.4–0.5%, prior +1.8% · jobless claims est 201K, prior 203K (moved up for Thanksgiving)"
+        },
+        {
+          "time": "10:00a",
+          "level": "low",
+          "text": "New home sales (Oct) est 649–650K, prior 676K"
+        },
+        {
+          "time": "1:00p",
+          "level": "low",
+          "text": "7-yr note auction ($44B)"
         },
         {
           "time": "2:00p",
-          "level": "high",
-          "text": "FOMC minutes (Oct 27–28) · **almost all** see more hikes as likely appropriate; a couple open to more than 25bp in December"
-        },
-        {
-          "time": "2:30p",
-          "level": "low",
-          "text": "Fed's Williams speaks · Barr 1:35p"
+          "level": "medium",
+          "text": "Fed Beige Book"
         }
       ],
       "bmo": [
-        "TJX",
-        "LOW",
-        "TGT",
-        "GLBE",
-        "ZIM",
-        "GLNG"
+        "DE",
+        "LI",
+        "BZ",
+        "GDS"
       ],
-      "amc": [
-        "PANW",
-        "WWD",
-        "UGI",
-        "KLIC"
-      ],
-      "note": "Anthropic priced at $83, above range (Bloomberg, citing a person familiar)",
-      "result": "S&P 500 **−0.2%** (7,323.63, fifth straight loss), Nasdaq **+0.4%** (24,429.88), Dow −561.25 (−1.1%, 50,198.17), Russell 2000 +0.5% · TJX +8% and Target +4% on beats; UnitedHealth −10%, Humana −13% on a CMS Medicare Advantage anti-fraud proposal · Nvidia −2.9% to $150.96 · Palo Alto +9.9%, then up about 6% after hours on a beat (rev $3.44B, EPS $1.05) · VIX 24.56, −3.5% · 10Y 5.07%, −4bp · WTI settled $83.26, −3.2%; gold −3.5% · pending home sales −4.7% vs est −2%"
+      "amc": []
     },
     {
-      "date": "2026-11-19",
-      "label": "Thu 11/19",
-      "tag": "Dow −1,101, ANT +17%",
-      "tone": "red",
+      "date": "2026-11-26",
+      "label": "Thu 11/26",
+      "tag": "Thanksgiving, closed",
+      "tone": "grey",
+      "macro": [
+        {
+          "time": "Closed",
+          "level": "low",
+          "text": "US stock and bond markets closed for Thanksgiving · Fed's weekly releases move to Friday"
+        }
+      ],
+      "bmo": [],
+      "amc": [],
+      "note": "Abroad: ECB minutes, Bank of Korea decision (25bp hike to 3.25% expected), Tokyo CPI"
+    },
+    {
+      "date": "2026-11-27",
+      "label": "Fri 11/27",
+      "tag": "Black Friday, 1:00p close",
+      "tone": "grey",
       "macro": [
         {
           "time": "8:30a",
-          "level": "medium",
-          "text": "Jobless claims **203K** vs est 197K, prior 202K (rev.) · continuing 1.763M, prior 1.693M (rev.)"
-        },
-        {
-          "time": "8:30a",
-          "level": "medium",
-          "text": "Philly Fed mfg (Nov) **6.3** vs est 19.2–23, prior 20.9"
-        },
-        {
-          "time": "10:00a",
           "level": "low",
-          "text": "Leading index (Oct) **−0.3%** vs est 0.0%, prior 0.0% · fewer building permits"
-        },
-        {
-          "time": "12:30p",
-          "level": "low",
-          "text": "Fed's Goolsbee speaks · AI spending and new wealth could overheat the economy · Hammack 8:50a, Barr 2:15p, Barkin 4:00p, Paulson 6:30p"
+          "text": "Advance goods trade balance and inventories (Oct)"
         },
         {
           "time": "1:00p",
-          "level": "low",
-          "text": "10-yr TIPS auction"
-        }
-      ],
-      "bmo": [
-        "WMT",
-        "BABA",
-        "PDD",
-        "NTES",
-        "WSM",
-        "WMG",
-        "FUTU",
-        "BBWI"
-      ],
-      "amc": [
-        "INTU",
-        "ROST",
-        "KEYS",
-        "GAP",
-        "ESTC",
-        "POST"
-      ],
-      "note": "Anthropic (ANT) first trade $111.50 at 11:48a, close $97.17 (+17% vs $83)",
-      "result": "S&P 500 **−2.0%** (7,175.83, sixth straight loss), Nasdaq **−2.3%** (23,879.20), Dow −1,101.11 (−2.2%, 49,097.06), Russell 2000 about −1.8% · all 11 sectors fell, consumer discretionary worst (XLY −2.8%) · Anthropic closed $97.17, +17% vs $83 · AMD −7.7%, Amazon −3.9%, Alphabet −3.5%, Nvidia −3.3%; Palo Alto +6.4%, Williams-Sonoma −15% · after hours Intuit about −11% (light Q2 guide, Mailchimp sale), Ross about −9% · VIX 28.44, +15.8% · 10Y 5.05%, −1bp · WTI settled $83.21, −0.1% · leading index −0.3% vs est 0.0%"
-    },
-    {
-      "date": "2026-11-20",
-      "label": "Fri 11/20",
-      "tag": "S&P −3.7%, correction",
-      "tone": "red",
-      "macro": [
-        {
-          "time": "8:25a",
-          "level": "low",
-          "text": "Fed's Waller speaks · Cook 12:15p: \"waiting longer to implement rate increases risks getting behind the curve\""
-        },
-        {
-          "time": "10:00a",
           "level": "medium",
-          "text": "UMich sentiment (Nov final) **51.5** vs est 51.5–51.6, prelim 51.0, Oct 48.0 · 1-yr inflation exp. 3.7% vs prelim 4.3% · 5-yr 3.3%"
+          "text": "US stocks close early"
         }
       ],
-      "bmo": [
-        "BJ",
-        "BKE",
-        "BSP"
-      ],
-      "amc": [],
-      "result": "S&P 500 **−3.7%** (6,910.39, seventh straight loss, correction), Nasdaq **−5.3%** (22,617.73, negative for 2026), Dow −949.73 (−1.9%, 48,147.33, correction), Russell 2000 about −2.5% to −2.8% (sources differ) · week: S&P −8.6%, Nasdaq −10.0%, Dow −8.0% · Nvidia −14.0% to $125.53 on a reported SEC accounting review; Micron −13.9%, AMD −13.3%, Broadcom −12%, chip index −10.7%; Anthropic −9.1% to $88.30 · tech (XLK) −7.3%, only staples rose · after hours Zscaler +17%, CrowdStrike −8% on deal-talk report · VIX touched 40, closed about 36–38 · 10Y about 4.92%, −13bp · Jan WTI settled $83.41, +1.2% · UMich 51.5 vs est 51.5"
+      "bmo": [],
+      "amc": []
     }
   ],
   "mood": {
-    "asOf": "Fri 11/20 close",
+    "asOf": "Fri 11/20 close (last week)",
     "fearGreed": {
       "score": 9.67,
       "label": "Extreme fear",
-      "asOf": "Fri 11/20 5:25p",
+      "asOf": "Fri 11/20 close",
       "weekAgo": 37.37,
       "monthAgo": 28.74,
       "yearAgo": 5.17
@@ -247,21 +185,21 @@
     "regime": {
       "label": "Risk-off",
       "tone": "red",
-      "text": "Fri 11/20: the AI selloff turned into a rout. The S&P 500 fell 3.7% for a seventh straight day and joined the Dow in a correction, the Nasdaq lost 5.3% and gave up its 2026 gain, and tech (XLK) fell 7.3% while only consumer staples rose. Treasuries rallied hard, but gold, bitcoin and copper all fell, and the week was the worst since April 2025."
+      "text": "Last week was the worst since April 2025: S&P 500 −8.6%, Nasdaq −10.0%, Dow −8.0%, Russell 2000 −7.5%. The S&P fell seven days straight and joined the Dow in a correction, the Nasdaq turned negative for 2026, and the chip index lost about 17%. Treasuries were the only haven that worked. Futures bounced Sunday evening."
     },
     "vix": {
-      "value": "≈36–38",
+      "value": "35.89",
       "label": "High",
       "tone": "red",
-      "text": "Fri 11/20: touched 40 intraday, the highest since April 2025 (Bloomberg via ad-hoc-news, Yahoo Finance). Close figures differ: 35.89, +26.2% (ad-hoc-news, citing Cboe) vs 38.40, +34.9% (Yahoo Finance); Cboe's own close not confirmed. Thu close 28.44."
+      "text": "Fri 11/20 close, +26.2% on the day and about +86% on the week from 19.30 (Regards of Wall Street, Journalarta, Palma Futures; Yahoo showed 38.40) · touched 40 intraday, the highest since April 2025"
     },
     "breadth": {
-      "value": "Chips split",
-      "text": "Last week: SOX +8.1% with AMD +18.9% and Broadcom +18.2%, while Nvidia fell 13% · equal-weight S&P +2.3% · all 11 sectors up"
+      "value": "All red",
+      "text": "Last week: all 11 sectors fell · tech (XLK) −12.5% · chip index (SOX) −17.1%, its worst week since Sept 2001 (Palma Futures) · only staples rose Friday"
     },
     "havens": {
       "value": "Treasuries",
-      "text": "Fri 11/20: 10Y ≈ 4.92%, −13bp, lowest in over 10 days (Yahoo Finance; AP 4.93%) · 2Y ≈ 4.65%, −13bp · gold ≈ $3,520, down 3–4% · bitcoin ≈ $59K, about −5% · dollar index ≈ 103.9, flat · staples +0.7%, health care −0.1%"
+      "text": "Fri 11/20: 10Y 4.92%, −23bp on the week · 2Y 4.63%, −25bp (Treasury par yields) · gold ≈ $3,515–3,540, about −9% on the week · bitcoin ≈ $59K, about −10% · dollar index ≈ 103.8, a fourth weekly gain (Palma Futures, Journalarta) · Sun 6:23p: gold +1.9%, bitcoin +1.7%"
     },
     "fedwatch": {
       "text": "25bp hike in Dec ≈97% · hold ≈3% (CME FedWatch via Yahoo Finance and BigGo)",
@@ -270,43 +208,12 @@
   },
   "stories": [
     {
-      "title": "S&P 500 and Dow fall into a correction; Nasdaq drops 5.3% and turns negative for 2026.",
-      "body": "The S&P 500 fell **3.70%** (265.44 points) to 6,910.39 Friday, its seventh straight loss and the longest losing streak since February 2020, leaving it more than 10% below its Oct 6 record of 7,818.93; the Dow lost **949.73 points** (1.93%) to 48,147.33, also in a correction, and the Nasdaq **5.28%** to 22,617.73, wiping out its gain for the year (AP via NPR, Yahoo Finance, Motley Fool). The Nasdaq 100 fell about 5.6% and the Russell 2000 about 2.5–2.8% (investingLive, Yahoo Finance). For the week the S&P lost **8.6%**, the Dow 8.0%, the Nasdaq 10.0% and the Russell 2000 7.5%, the worst week for the major indexes since April 2025 (Reuters via MarketScreener, investingLive). Tech (XLK) fell 7.3% and industrials 3.1%, while consumer staples (+0.7%) were the only sector up (sector ETFs); General Mills, HCA and UnitedHealth rose. Reasons cited: the reported SEC look at Nvidia's accounting, Anthropic's fade from its debut peak, worries about AI spending after midterm wins for candidates who want to slow data-center building, and a near-certain Fed hike in December (AP, Reuters, investingLive). The VIX touched 40 intraday (Bloomberg via ad-hoc-news), and CNN's Fear & Greed index fell to **9.7**, extreme fear, from 37 a week ago."
+      "title": "Futures bounce Sunday evening after the worst week since April 2025.",
+      "body": "S&P 500 futures were up **1.5%** at 7,036.50, Nasdaq 100 futures **2.4%** and Dow futures 0.9% at 6:23p Sunday, about 20 minutes after the reopen (Yahoo Finance futures data); FX Leaders and CNBC also reported futures opening higher. Last week the S&P 500 lost **8.6%** to 6,910.39, the Nasdaq **10.0%** to 22,617.73, the Dow 8.0% to 48,147.33 and the Russell 2000 7.5%, the worst week since April 2025 (FXEmpire, Palma Futures, Journalarta). The S&P fell seven sessions in a row, the longest streak since February 2020, and closed in a correction along with the Dow; the Nasdaq gave up its 2026 gain. The VIX closed at **35.89** Friday after touching 40, and CNN's Fear & Greed index sits at **9.7**, extreme fear, from 37 a week earlier. On CBS's Face the Nation, Treasury Secretary Bessent blamed \"a combination of things\": a selloff that \"began as the Democrats moved ahead in the polls and then accelerated after Election Day\", the Democratic position on the AI build-out, and \"very hawkish remarks from the Federal Reserve\" (CBS transcript). It is a short week: closed Thursday, 1:00p close Friday."
     },
     {
-      "title": "Nvidia plunges 14% on a reported SEC accounting review; chips fall 10.7%.",
-      "body": "Nvidia fell **14.0%** to **$125.53** Friday, its ninth loss in 10 sessions and more than 25% below where it traded before Jensen Huang's exit earlier this month (Yahoo Finance, Motley Fool, AP), after Reuters reported that the SEC is examining its accounting practices; the SEC declined to comment and no wrongdoing has been found (Reuters via FinChannel, investingLive). The PHLX semiconductor index dropped **10.7%**: Micron fell 13.9%, AMD 13.3% and Broadcom about 12%, the latter also hit by an unconfirmed report that Google will cut next year's chip orders (AP, Motley Fool). CoreWeave lost 12.1%, Corning 10.9% and Bloom Energy 15.3%, and crypto miners such as IREN and Applied Digital fell 17–19% (investingLive, AP, 24/7 Wall St). Nvidia rose about 1% after hours (Yahoo Finance). Its fiscal Q3 beat on Nov 17 (revenue $115.8B, January-quarter guide $130B) did not stop the slide. The board has said it will not reinstate Huang, with CFO Colette Kress as interim CEO; Polymarket gives about 5% that Huang rejoins by Dec 31 and about 20% that a permanent CEO is named by then (last trades this week).",
-      "odds": [
-        {
-          "source": "polymarket",
-          "label": "New Nvidia CEO named by Dec 31",
-          "prob": 20.5,
-          "slug": "new-nvidia-ceo-named-by-december-31-2026",
-          "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
-        },
-        {
-          "source": "polymarket",
-          "label": "Huang rejoins Nvidia by Dec 31",
-          "prob": 4.9,
-          "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
-          "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
-        },
-        {
-          "source": "polymarket",
-          "label": "Rene Haas is the next Nvidia CEO",
-          "prob": 27.7,
-          "slug": "will-rene-haas-be-the-next-ceo-of-nvidia",
-          "url": "https://polymarket.com/event/next-ceo-of-nvidia"
-        }
-      ]
-    },
-    {
-      "title": "Anthropic falls 9% on day two but stays above its $83 IPO price.",
-      "body": "Anthropic (**ANT**) fell **9.1%** to **$88.30** Friday, its second day of trading, still above the $83 IPO price but about 23% below Thursday's $115.10 peak (AP, investingLive). On its debut Thursday it opened at **$111.50** at 11:48a and closed at $97.17, up 17% (StockTitan, FinanceFeeds). The listing has not lifted the AI trade: AP and Reuters cite its fade from the opening print as one trigger of the two-day selloff, and its big backers fell again Friday, with Amazon down 4.1% and Alphabet 2.6% (Motley Fool). Underwriters exercised their option on up to 147 million extra shares, lifting the total raised with the $26B private placement at $83 (Nvidia, Google, Microsoft, AMD, Broadcom and others) to about **$119.5B**, the largest IPO ever (TNW, FinChannel). ARK Invest bought about $91M of shares after the debut (CNBC via TNW)."
-    },
-    {
-      "title": "Fed: Cook warns of falling behind as a December hike is all but priced in.",
-      "body": "Governor Lisa Cook said Friday in Santiago that \"waiting longer to implement rate increases risks getting behind the curve\" and that policy is not restrictive enough after September's hike (Yahoo Finance, investingLive). CME FedWatch puts about **97%** on a 25bp hike on Dec 9 (Yahoo Finance; BigGo, as of Nov 20), up from about 88.5% a week ago. Philadelphia Fed President Paulson said Thursday the Fed will need to hike again because inflation is too high (Reuters), and Governor Waller argued this week for a half-point move in December unless the Fed signals another hike in January (Yahoo Finance, Nov 18). Bonds rallied on the stock rout: the 10Y fell about **13bp** to 4.92% and the 2Y 13bp to 4.65% (Yahoo Finance, investingLive). The final November University of Michigan sentiment index came in at **51.5**, in line with forecasts and up from 48.0 in October, and one-year inflation expectations fell to **3.7%** from 4.3% in the preliminary survey and 4.7% in October (investingLive, Yahoo Finance). PCE inflation is due next week. Kalshi has a 25bp hike at 89% and a hold at 9%.",
+      "title": "Bessent warns the Fed against over-tightening before Wednesday's PCE.",
+      "body": "\"Many people believe that they may be making a policy mistake if they over-tighten,\" Treasury Secretary Bessent said Sunday, pointing to \"a substantial tightening in financial conditions over the past few months\" (CBS Face the Nation transcript, investingLive). Markets still see a December 9 hike as close to certain: CME FedWatch had about **97%** on 25bp as of Friday (Yahoo Finance, BigGo), and Kalshi has a 25bp hike at **89%**, a hold at 8% and a bigger hike at 3%. The October minutes showed almost all officials saw more hikes as likely, Governor Cook warned Friday of getting \"behind the curve\" and Waller has argued for a half-point move. This week: NY Fed President Williams speaks Monday at 4:00p, core PCE is due Wednesday at 8:30a (est 3.2% y/y; Polymarket puts 0.3% m/m at about 92%), and the Beige Book follows at 2:00p. The pre-meeting blackout starts Saturday. Treasuries rallied hard last week: the 10Y fell **23bp** to 4.92% and the 2Y 25bp to 4.63% (Treasury).",
       "odds": [
         {
           "source": "kalshi",
@@ -316,743 +223,309 @@
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
         {
-          "source": "polymarket",
-          "label": "Fed hikes 25bp on Dec 9",
-          "prob": 92.5,
-          "slug": "will-the-fed-increase-interest-rates-by-25-bps-after-the-december-2026-meeting-20260729232808636",
-          "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
-        },
-        {
           "source": "kalshi",
           "label": "Fed hikes more than 25bp",
-          "prob": 2,
+          "prob": 3,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
+        },
+        {
+          "source": "polymarket",
+          "label": "Oct core PCE 3.2% y/y",
+          "prob": 62.5,
+          "slug": "will-core-pce-yoy-be-3pt2pct-in-october-2026",
+          "url": "https://polymarket.com/event/core-pce-yoy-october-2026"
         }
       ]
     },
     {
-      "title": "CrowdStrike in talks to buy Zscaler; Zscaler jumps 17% after hours.",
-      "body": "CrowdStrike is in talks to acquire rival Zscaler, which has a market value of about **$33.5B**, according to two people familiar with the matter; no deal is guaranteed and terms were not reported (Reuters via Investing.com, 4:46p). Zscaler rose **17%** after hours and CrowdStrike fell **8%** (Reuters), after both lost more than 5% in the regular session (Reuters via MarketScreener, Investing.com). Elsewhere in earnings: Intuit, which fell more than 10% premarket Friday, guided Q2 revenue to $4.93–4.95B vs about $5.11B expected and agreed to sell Mailchimp to Bending Spoons for about $3.68B (company release, TradingKey); Ross raised its full-year EPS outlook but guided the next quarter softer (StockStory); and Gap rose about 2.5% premarket on Old Navy sales after cutting its outlook (Reuters). BJ's Wholesale earned $1.73 a share, helped by a roughly $240M card-fee settlement, with comparable club sales +13.5% (+4.1% ex-gas), and raised its full-year adjusted EPS guide to $5.10–5.30 (company release). Walmart rose 1.5% Friday after raising its outlook Thursday (Motley Fool)."
+      "title": "Nvidia: SEC inquiry, a delayed 10-Q and Bessent's call for answers.",
+      "body": "Nvidia fell **14%** to **$125.53** Friday, and about 23% on the week, after Reuters reported that SEC enforcement staff are examining potential accounting issues; the SEC declined to comment and no wrongdoing has been found (Reuters via TipRanks, Journalarta). The WSJ first reported an SEC probe on Nov 17, and Nvidia has not yet filed its quarterly 10-Q; UBS said management linked the delay to the investigation and possible new risk disclosures (Reuters via Khaleej Times, TechCrunch via FourWeekMBA). FourWeekMBA puts the filing deadline at Dec 4. On Sunday Bessent said \"we do need answers\" from Nvidia's board, that the administration will \"see if Megaspeed was indeed a pass-through company\" for chips, and that Jensen Huang \"is on the outside now\" (CBS transcript); last week he gave the board 10 days, which ends about Nov 25 (Fox News via FourWeekMBA, Motley Fool). CFO Colette Kress is interim CEO. Polymarket gives about 15% that a permanent CEO is named by Dec 31 and 56% that the next CEO comes from outside.",
+      "odds": [
+        {
+          "source": "polymarket",
+          "label": "New Nvidia CEO named by Dec 31",
+          "prob": 14.5,
+          "slug": "new-nvidia-ceo-named-by-december-31-2026",
+          "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
+        },
+        {
+          "source": "polymarket",
+          "label": "Next Nvidia CEO is an outsider",
+          "prob": 56,
+          "slug": "will-nvidias-next-ceo-be-an-external-candidate",
+          "url": "https://polymarket.com/event/next-nvidia-ceo-internal-or-external"
+        },
+        {
+          "source": "polymarket",
+          "label": "Huang rejoins Nvidia by Dec 31",
+          "prob": 6.65,
+          "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
+          "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
+        }
+      ]
     },
     {
-      "title": "Oil rises Friday but posts a third weekly loss on a supply glut.",
-      "body": "The more active January WTI contract rose **1.2%** to settle at **$83.41** Friday, the expiring December contract 0.9% to $83.98, and Brent **0.6%** to **$92.57**, as traders weighed the risk of renewed US strikes on Iran (Bloomberg via Rigzone, AP). Brent still lost **3.4%** for the week, a third straight weekly drop, and is down about a fifth in November: the IEA sees a surplus of about 2 million barrels a day this quarter, Goldman flagged a glut next year, and Energy Secretary Chris Wright said flows through the Strait of Hormuz are at a record (Bloomberg via Rigzone). President Trump has said he is not rushing into a decision on Iran, and the FT reported he is weighing new strikes (via investingLive). Gold fell 3–4% to about $3,520 and copper 3% as the broader selloff hit commodities (Motley Fool, investingLive). OPEC+ meets Nov 29."
+      "title": "Earnings: Dell and HP test AI hardware demand; retailers report before Black Friday.",
+      "body": "Dell reports after Tuesday's close (call 4:30p). It guided fiscal Q3 to adjusted EPS of about **$6.50** on **$49.0B** of revenue, and the Street is at $6.48–6.62 (company guidance and Nasdaq via StockTitan, FXEmpire, TipRanks); Polymarket gives about 88% that it tops $6.71. HP Inc. (est about $0.74), Workday, Autodesk and Nutanix also report Tuesday evening, after Hewlett Packard Enterprise (est $1.17–1.29), Zoom and Agilent on Monday. Before Tuesday's open come Analog Devices (est about $3.89, revenue $4.32B), Medtronic, and a run of retailers into Black Friday: Best Buy (est about $1.48), Dick's ($1.38–1.42), Dollar Tree, Burlington, Abercrombie and Kohl's. Deere reports Wednesday before the open (est about $4.06). Trip.com moved its report to Dec 1 (StockTitan)."
+    },
+    {
+      "title": "Anthropic starts its first full week of trading barely above its $83 IPO price.",
+      "body": "Anthropic (**ANT**) closed at **$88.91** Friday, down 8.5% from its $97.17 debut close, after trading as low as $83.05, five cents above the $83 IPO price; volume fell to about 400 million shares from 857 million on day one (FinanceFeeds citing Nasdaq.com and Yahoo Finance; TipRanks). It opened at $111.50 on its first trade Thursday, so it is now about 20% below that print. Seaport Research started coverage at Neutral with no price target, citing slowing revenue growth (FinanceFeeds). The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
+    },
+    {
+      "title": "Oil slips Sunday evening after a third weekly loss on a supply glut.",
+      "body": "WTI was at **$82.71**, down 1.5%, at 6:23p Sunday (Yahoo Finance futures data). January WTI settled at **$83.41** Friday, up $0.97, and Brent at **$92.57**, up $0.59 (Newsquawk, Bloomberg via Rigzone), but Brent lost 3.4% on the week, its third straight weekly drop, and WTI about 6% (Palma Futures). The IEA sees a supply surplus of about 2 million barrels a day this quarter, and Energy Secretary Chris Wright said flows through the Strait of Hormuz are at a record (Bloomberg via Rigzone), even as tankers keep getting hit near Oman: UKMTO reported a tanker struck in its engine room about 6 miles north of Khasab on Nov 18, crew safe and no one blamed (Gulf News, Newsquawk). Gold fell about 9% last week to roughly $3,515–3,540 but was up 1.9% Sunday evening. OPEC+ meets Nov 29."
     }
   ],
-  "earningsOdds": {},
+  "earningsOdds": {
+    "DELL": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $6.71",
+        "prob": 87.5,
+        "slug": "dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71",
+        "url": "https://polymarket.com/event/dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “DRAM” or “NAND” 3+ times on the call",
+        "prob": 88.5,
+        "slug": "will-dell-say-dram-or-nand-3-times-during-earnings-call-20261124",
+        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “Vera Rubin” on the call",
+        "prob": 78,
+        "slug": "will-dell-say-vera-rubin-during-earnings-call-20261124",
+        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
+      }
+    ],
+    "DKS": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $1.42",
+        "prob": 71,
+        "slug": "will-dicks-sporting-goods-dks-beat-quarterly-earnings",
+        "url": "https://polymarket.com/event/will-dicks-sporting-goods-dks-beat-quarterly-earnings"
+      }
+    ],
+    "ZM": [
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Contact Center” on the call",
+        "prob": 98,
+        "ticker": "KXEARNINGSMENTIONZM-26NOV23-CONT",
+        "url": "https://kalshi.com/markets/kxearningsmentionzm"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “AI Companion” on the call",
+        "prob": 9,
+        "ticker": "KXEARNINGSMENTIONZM-26NOV23-AICO",
+        "url": "https://kalshi.com/markets/kxearningsmentionzm"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Enterprise” on the call",
+        "prob": 98,
+        "ticker": "KXEARNINGSMENTIONZM-26NOV23-ENTE",
+        "url": "https://kalshi.com/markets/kxearningsmentionzm"
+      }
+    ],
+    "HPE": [
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Automation” on the call",
+        "prob": 55,
+        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-AUTO",
+        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Government” on the call",
+        "prob": 45,
+        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-GOVE",
+        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Quantum” on the call",
+        "prob": 15,
+        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-QUAN",
+        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
+      }
+    ],
+    "DE": [
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Dividend” on the call",
+        "prob": 78,
+        "ticker": "KXEARNINGSMENTIONDE-26NOV25-DIVI",
+        "url": "https://kalshi.com/markets/kxearningsmentionde"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Warranty” on the call",
+        "prob": 46,
+        "ticker": "KXEARNINGSMENTIONDE-26NOV25-WARR",
+        "url": "https://kalshi.com/markets/kxearningsmentionde"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “Manufacturing” on the call",
+        "prob": 53,
+        "ticker": "KXEARNINGSMENTIONDE-26NOV25-MANU",
+        "url": "https://kalshi.com/markets/kxearningsmentionde"
+      }
+    ]
+  },
   "sources": [
     {
-      "label": "BLS · November release schedule",
-      "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
+      "label": "Federal Reserve · November 2026 calendar (Beige Book Nov 25, Thanksgiving)",
+      "url": "https://www.federalreserve.gov/newsevents/2026-November.htm"
     },
     {
-      "label": "Federal Reserve · FOMC calendar",
+      "label": "Federal Reserve · FOMC calendar (Dec 8–9)",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
     },
     {
-      "label": "Finviz · economic calendar, week of Nov 16",
-      "url": "https://finviz.com/calendar/economic?dateFrom=2026-11-16"
+      "label": "Newsquawk · weekly economic calendar Nov 23–27",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-weekly-economic-calendar---23rd-27th-november-2026"
     },
     {
-      "label": "Economic Weekly · consensus for week of Nov 16",
-      "url": "https://economicweekly.substack.com/p/economic-weekly-november-13-2026"
+      "label": "Newsquawk · week in focus Nov 23–27 (PCE, flash PMIs, BoK)",
+      "url": "https://www.newsquawk.com/headlines/week-in-focus--november-23rd-27th-highlights-include-us-pce-flash-pmis-aussie-cpi-and-ecb-minutes"
     },
     {
-      "label": "Investrade · weekly event calendar Nov 16–20",
-      "url": "https://investrade.com/weekly-event-calendar-11-16-2026-11-20-2026/"
+      "label": "AskTraders · week ahead, consensus (GDP, PCE, confidence)",
+      "url": "https://www.asktraders.com/analysis/week-ahead-us-gdp-and-pce-inflation-land-before-thanksgiving/"
     },
     {
-      "label": "TradingKey · week ahead: Nvidia, retail sales, FOMC minutes",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262305825-week-ahead-nvidia-q3-earnings-us-october-retail-sales-fomc-minutes-walmart-tradingkey"
+      "label": "FXEmpire · week ahead, consensus, earnings and last week's recap",
+      "url": "https://fxempire.com/forecasts/article/the-week-ahead-pce-in-focus-after-ai-sell-off-in-holiday-shortened-week-1646337"
     },
     {
-      "label": "Bloomingbit · this week's key events",
-      "url": "https://en.bloomingbit.io/feed/news/124482"
+      "label": "StockTitan · earnings calendar, week of Nov 23",
+      "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
     },
     {
-      "label": "FXEmpire · week ahead: Nvidia earnings, Anthropic IPO",
-      "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-nvidia-earnings-anthropic-ipo-test-ai-trade-1644719"
+      "label": "TradingKey · week ahead (GDP/PCE, Dell, HPE, Anthropic)",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316778-week-ahead-us-gdp-pce-dell-hpe-report-anthropic-tradingkey"
     },
     {
-      "label": "StockTitan · earnings calendar week of Nov 16",
-      "url": "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-16-2026"
+      "label": "Journalarta · stocks to watch this week, Friday closes",
+      "url": "https://journalarta.com/en/2026/11/22/stocks-to-watch-this-week-nvidia-workday-deere-and-thanksgiving-pce-data/"
     },
     {
-      "label": "TipRanks · this week's major earnings Nov 16–20",
-      "url": "https://www.tipranks.com/news/this-weeks-major-earnings-releases-november-16-20-2026"
+      "label": "TipRanks · the week that was, the week ahead (Nov 22)",
+      "url": "https://www.tipranks.com/news/the-week-that-was-the-week-ahead-macro-and-markets-november-22"
     },
     {
-      "label": "Earnings Whispers · week of Nov 16",
-      "url": "https://www.earningswhispers.com/calweek/20261116"
+      "label": "Palma Futures · Sunday recap and week ahead (weekly moves, SOX, VIX)",
+      "url": "https://palmafutures.substack.com/p/sunday-post-recap-and-week-ahead-6d7"
     },
     {
-      "label": "Opening Bell Daily · retail earnings week ahead",
-      "url": "https://www.openingbelldailynews.com/p/stock-market-week-ahead-retail-earnings-nov-14-2026"
-    },
-    {
-      "label": "CoinCentral · week ahead: Nvidia, Anthropic IPO, Fed minutes",
-      "url": "https://coincentral.com/the-week-ahead-nvidia-earnings-anthropic-ipo-and-fed-minutes-set-to-shake-wall-street"
-    },
-    {
-      "label": "Reuters via Rallies · Wall St week ahead",
-      "url": "https://rallies.ai/news/wall-st-week-ahead-nvidia-results-anthropic-ipo-pose-tests-for-tumultuous-ai-trade-b3c447ddcf2ddf3d"
-    },
-    {
-      "label": "Cardano Capital · Nasdaq snaps four-week slide (Nov 14)",
-      "url": "https://cardanocapital.substack.com/p/nasdaq-snaps-a-four-week-slide-up"
-    },
-    {
-      "label": "Atranica Capital · Week #46 market update",
-      "url": "https://atranicapital.substack.com/p/week-46-market-update-for-november-8a7"
-    },
-    {
-      "label": "AFP via Yahoo Finance · Bessent wants answers from Nvidia (Nov 15)",
-      "url": "https://finance.yahoo.com/technology/ai/articles/us-treasury-chief-wants-answers-183327447.html"
-    },
-    {
-      "label": "The Bottom Line · Anthropic listing, Nvidia earnings loom",
-      "url": "https://www.thebottomline.co.nz/anthropic-listing-nvidia-earnings-loom-large-in-ai-trade/"
-    },
-    {
-      "label": "CNBC · Anthropic sets IPO range",
-      "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
-    },
-    {
-      "label": "CNBC · futures tick higher, live updates Nov 15 (headline)",
-      "url": "https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html"
-    },
-    {
-      "label": "Traders Union · Wall Street futures edge higher (headline)",
-      "url": "https://tradersunion.com/news/stocks/show/4259282-wall-street-futures-nvidia-anthropic/"
-    },
-    {
-      "label": "Market Brief live data · WTI, gold, bitcoin Sun 6:28–6:38p",
-      "url": "https://marketbrief.kennykao.workers.dev/api/live"
-    },
-    {
-      "label": "Palma Futures · Sunday recap Nov 15",
-      "url": "https://palmafutures.substack.com/p/sunday-post-recap-and-week-ahead-e67"
-    },
-    {
-      "label": "Regards of Wall Street · futures last print and week schedule",
+      "label": "Regards of Wall Street · futures page and Friday closes (VIX 35.89)",
       "url": "https://www.regardsofwallstreet.com/premarket"
     },
     {
-      "label": "AP via KRMG · how major US indexes fared Nov 13",
-      "url": "https://krmg.com/2026/11/13/how-major-us-stock-indexes-fared-friday-11-13-2026/"
+      "label": "Newsquawk · Treasury 2-, 5- and 7-yr note sizes and dates",
+      "url": "https://www.newsquawk.com/headlines/us-to-sell-usd-69bln-of-2-yr-notes-on-november-23rd-usd-70bln-of-5-yr-notes-on-november-24th-and-usd-44bln-of-7-yr-notes-on-november-25th-all-to-settle-on-november-30th"
     },
     {
-      "label": "ad-hoc-news · VIX close Nov 13",
-      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/vix-rises-3-21-prozent-to-19-30-as-tech-concerns-unsettle-markets/70506908"
-    },
-    {
-      "label": "US Treasury · daily par yield curve",
+      "label": "US Treasury · daily par yield curve (2Y, 10Y Nov 13 and Nov 20)",
       "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"
     },
     {
-      "label": "CNN · Fear & Greed Index",
-      "url": "https://www.cnn.com/markets/fear-and-greed"
+      "label": "BEA · Q3 2026 GDP advance estimate (3.4%)",
+      "url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026"
     },
     {
-      "label": "FinanceFeeds · Brent before the Sunday open",
-      "url": "https://financefeeds.com/brent-crude-oil-price-95-84-sunday-futures-open-week-ahead-iran-mine-claims-bull-98-bear-91/"
+      "label": "investingLive · Q3 GDP advance 3.4% vs 3.2% est",
+      "url": "https://investinglive.com/news/us-gdp-advance-for-the-3rd-quarter-3-4-vs-3-2-estimate/"
     },
     {
-      "label": "Admirals · Hormuz mine claims and oil",
-      "url": "https://admiralmarkets.com/analytics/traders-blog/strait-of-hormuz-tanker-mines-oil-price"
-    },
-    {
-      "label": "Geopolitics Unplugged · Iran drone attacks near US base",
-      "url": "https://geopoliticsunplugged.substack.com/p/iran-launches-new-drone-attacks-near"
-    },
-    {
-      "label": "Geopolitics Unplugged · Sunday wrap Nov 15",
-      "url": "https://geopoliticsunplugged.substack.com/p/the-war-is-over-the-bill-is-3-billion"
-    },
-    {
-      "label": "Bloomberg via Rigzone · oil settles Nov 13",
-      "url": "https://www.rigzone.com/news/crude_fluctuates_as_iran_tensions_persist-13-nov-2026-185085-article"
-    },
-    {
-      "label": "CBS News · FAA lifts nationwide ground stop",
-      "url": "https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/"
-    },
-    {
-      "label": "Kalshi · December Fed decision",
-      "url": "https://kalshi.com/markets/kxfeddecision"
-    },
-    {
-      "label": "Polymarket · Fed decision in December",
-      "url": "https://polymarket.com/event/fed-decision-in-december-20260729232808632"
-    },
-    {
-      "label": "Polymarket · new Nvidia CEO named by Dec 31",
-      "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
-    },
-    {
-      "label": "Polymarket · next CEO of Nvidia",
-      "url": "https://polymarket.com/event/next-ceo-of-nvidia"
-    },
-    {
-      "label": "Polymarket · Anthropic IPO by…",
-      "url": "https://polymarket.com/event/anthropic-ipo-by"
-    },
-    {
-      "label": "Polymarket · Nvidia earnings-call mentions",
-      "url": "https://polymarket.com/event/what-will-nvidia-say-during-their-next-earnings-call-november-17"
-    },
-    {
-      "label": "Kalshi · Nvidia earnings-call mentions",
-      "url": "https://kalshi.com/markets/kxearningsmentionnvda"
-    },
-    {
-      "label": "Polymarket · NVDA, HD, DIS earnings beat markets",
-      "url": "https://polymarket.com/event/nvda-quarterly-earnings-nongaap-eps-11-17-2026-2pt53"
-    },
-    {
-      "label": "NY Fed · Empire State Manufacturing Survey, November 2026",
-      "url": "https://www.newyorkfed.org/medialibrary/media/survey/empire/empire2026/2026_11_empire-state-manufacturing-survey.pdf"
-    },
-    {
-      "label": "Seeking Alpha · Empire State index slumps (Nov 16)",
-      "url": "https://seekingalpha.com/news/4672973-empire-state-manufacturing-index-slumps-beyond-estimates-in-november"
-    },
-    {
-      "label": "Reuters via AOL · S&P 500, Nasdaq futures fall ahead of Nvidia earnings (Nov 16)",
-      "url": "https://www.aol.com/articles/p-500-nasdaq-futures-slide-104314000.html"
-    },
-    {
-      "label": "TradingKey · US pre-market Nov 16",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262307008-us-nvda-nasdaq-futures-nvidia-jensen-huang-anthropic-ipo-tradingkey"
-    },
-    {
-      "label": "Reuters via RTE · Huang discussing Nvidia return with allies (FT)",
-      "url": "https://www.rte.ie/news/business/2026/1116/1599339-jensen-huang-nvidia/"
-    },
-    {
-      "label": "Forbes · Nvidia slips pre-market as Huang weighs comeback",
-      "url": "https://www.forbes.com/sites/zacharyfolk/2026/11/16/nvidia-shares-slip-in-premarket-as-jensen-huang-reportedly-weighs-ceo-comeback/"
-    },
-    {
-      "label": "Focus Taiwan · Taiex posts 2nd-largest point drop (Nov 16)",
-      "url": "https://focustaiwan.tw/business/202611160014"
-    },
-    {
-      "label": "ad-hoc-news · Taiwan Weighted closes down 6.03%",
-      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/taiwan-weighted-closes-down-6-03-prozent-as-ai-concerns-weigh-on-technology-stocks/70520713"
-    },
-    {
-      "label": "Market Brief live data · futures, 10Y, WTI Mon 8:41a",
+      "label": "Market Brief live feed · ES/NQ/YM, WTI, gold, bitcoin futures (Yahoo Finance), Sun 11/22 6:23p; CNN Fear & Greed; Kalshi Fed odds",
       "url": "https://marketbrief.kennykao.workers.dev/api/live"
     },
     {
-      "label": "Baidu · Q3 2026 results (StockTitan)",
-      "url": "https://www.stocktitan.net/news/BIDU/baidu-announces-third-quarter-2026-4scc1ia18zdt.html"
+      "label": "FX Leaders · Nasdaq and Dow futures open higher after Bessent comments (headline)",
+      "url": "https://www.fxleaders.com/news/2026/11/22/nasdaq-and-dow-jones-futures-open-higher-after-bessent-comments-pre-gdp-and-pce-data/"
     },
     {
-      "label": "XPeng · Q3 2026 results (GlobeNewswire)",
-      "url": "https://www.globenewswire.com/news-release/2026/11/16/3403237/0/en/xpeng-reports-third-quarter-2026-unaudited-financial-results.html"
+      "label": "CNBC · stock futures rebound to start shortened week (headline)",
+      "url": "https://www.cnbc.com/2026/11/22/stock-market-today-live-updates.html"
     },
     {
-      "label": "Yahoo Finance · stock market today, Mon 11/16 (closes)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-16-dow-sp-500-nasdaq-nvidia-oil-091631084.html"
+      "label": "CBS News · Bessent on Face the Nation, Nov 22 transcript",
+      "url": "https://www.cbsnews.com/news/transcript-treasury-secretary-scott-bessent-face-the-nation-with-margaret-brennan-nov-22-2026/"
     },
     {
-      "label": "Vista Partners · Nov 16 closing market performance",
-      "url": "https://vistapglobal.com/stock-market-today-november-16-2026-nasdaq-slides-2-49-as-ai-uncertainty-technology-outages-and-slower-manufacturing-cloud-outlook-amzn-eprx-jpm-lly-modd-nvda-ser-spcx-tsla/"
+      "label": "investingLive · Bessent cautions Fed against overtightening",
+      "url": "https://investinglive.com/central-banks/us-equity-rout-bessent-cautions-fed-against-overtightening-before-its-december-decision/"
     },
     {
-      "label": "Motley Fool · stock market today, Nov 16",
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-tech-selloff-deepens-as-ai-leadership-crisis-rattles-nasdaq/"
+      "label": "Motley Fool · Bessent on Huang, Nov 25 answers deadline",
+      "url": "https://www.fool.com/investing/2026/11/22/u-s-treasury-secretary-scott-bessent-just-delivered-great-news-to-former-nvidia-ceo-jensen-huang-should-you-buy-nvidia-stock-before-nov-25/"
     },
     {
-      "label": "Kiplinger · Nasdaq falls 626 points (Nov 16)",
-      "url": "https://www.kiplinger.com/investing/stocks/nasdaq-falls-626-points-to-start-nvidia-anthropic-week-stock-market-today"
+      "label": "Khaleej Times (Reuters) · WSJ reports SEC probing Nvidia, Nov 18",
+      "url": "https://www.khaleejtimes.com/business/nvidia-wont-rehire-jensen-huang-sec-probing-chipmaker"
     },
     {
-      "label": "Reuters via Korea Times · Wall Street slumps on AI jitters (Nov 16)",
-      "url": "https://www.koreatimes.co.kr/world/20261117/wall-street-slumps-on-ai-jitters-ahead-of-nvidia-results-anthropic-ipo"
+      "label": "FourWeekMBA · Nvidia holds its 10-Q, due Dec 4",
+      "url": "https://fourweekmba.com/ai-nvidia-holds-its-10-q-after-9-same-day-filings-due-dec-4/"
     },
     {
-      "label": "Newsquawk · US market wrap Nov 16 (closes, oil and bond settlements)",
-      "url": "https://newsquawk.com/headlines/us-market-wrap---16th-november-2026-risk-off-trade-as-tech-rout-resumes-supporting-havens-"
+      "label": "FourWeekMBA · Bessent wants Nvidia board answers in 10 days (Nov 15)",
+      "url": "https://fourweekmba.com/ai-bessent-nvidia-needs-outside-ceo-board-answers-in-10-days/"
     },
     {
-      "label": "Cboe · VIX delayed quote, Nov 16 close",
-      "url": "https://cdn-api.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
+      "label": "FinanceFeeds · Anthropic (ANT) $88.91 Friday close, Seaport initiation",
+      "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/"
     },
     {
-      "label": "HNGN · stocks slide as 10-year stays above 5% (Warsh remarks)",
-      "url": "https://www.hngn.com/articles/273846/20261116/stocks-slide-10-year-yield-stays-above-5-before-nvidia.htm"
+      "label": "Gulf News · tanker hit near Khasab, Nov 18",
+      "url": "https://gulfnews.com/world/gulf/oman/tanker-hit-by-unknown-projectile-near-oman-in-latest-hormuz-attack-1.500752860"
     },
     {
-      "label": "Reuters via RTE · oil falls as Middle East exports recover (Nov 16)",
-      "url": "https://www.rte.ie/news/business/2026/1116/1599343-oil-prices/"
-    },
-    {
-      "label": "Reuters via SRN · Tyson shares climb on beef outlook (Nov 16)",
-      "url": "https://srnnews.com/tyson-foods-forecasts-steeper-than-expected-annual-revenue-decline/"
-    },
-    {
-      "label": "Market Brief live data · Fear & Greed, 10Y, sectors Mon 5:24p",
-      "url": "https://marketbrief.kennykao.workers.dev/api/mood"
-    },
-    {
-      "label": "Polymarket · Jensen Huang rejoins Nvidia by…",
-      "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
-    },
-    {
-      "label": "Polymarket · PANW earnings beat",
-      "url": "https://polymarket.com/event/panw-quarterly-earnings-nongaap-eps-11-12-2026-0pt99"
-    },
-    {
-      "label": "Census via ActionForex · October retail sales +0.2%, ex-autos +0.6%",
-      "url": "https://www.actionforex.com/live-comments/661220-us-retail-sales-slow-to-0-2-but-ex-auto-spending-shows-resilience/"
-    },
-    {
-      "label": "Bloomingbit · October retail sales beat forecasts",
-      "url": "https://en.bloomingbit.io/feed/news/124635"
-    },
-    {
-      "label": "AP via WTOP · retail sales rose 0.2% in October",
-      "url": "https://wtop.com/national/2026/11/retail-sales-rose-0-2-in-october-a-slowdown-from-september-with-many-consumers-uncertain-about-the-economy"
-    },
-    {
-      "label": "Home Depot · Q3 fiscal 2026 results",
-      "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331"
-    },
-    {
-      "label": "StockStory · Home Depot Q3 vs estimates",
-      "url": "https://stockstory.org/us/stocks/nyse/hd/news/earnings/home-depots-q3-2026-sales-beat-estimates"
-    },
-    {
-      "label": "247 Wall St · Disney Q4 2026 earnings",
-      "url": "https://247wallst.com/cards/disney-q4-2026-earnings-dis-01m7mmpfsncp9mx2rz2b14krtq"
-    },
-    {
-      "label": "MarketScreener · Disney Q4 and full-year results",
-      "url": "https://www.marketscreener.com/news/the-walt-disney-company-reports-earnings-results-for-the-full-year-ended-october-03-2026-ce785edcd88ef725"
-    },
-    {
-      "label": "Variety · Disney targets $3B cost savings by 2029",
-      "url": "https://variety.com/2026/tv/news/disney-q4-2026-earnings-3-billion-cost-savings-by-2029-layoffs-1236949553/"
-    },
-    {
-      "label": "Reuters via Yahoo Finance · futures slip ahead of Nvidia results (Nov 17)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-slip-ahead-105311659.html"
-    },
-    {
-      "label": "TradingKey · US pre-market Nov 17, AI chip remote-access rule",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262308986-nvidia-earnings-ai-chip-remote-access-restrictions-tradingkey"
-    },
-    {
-      "label": "Newsquawk · US opening news Nov 17",
-      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-us-opening-news---17th-november-2026"
-    },
-    {
-      "label": "Newsquawk · European opening news Nov 17",
-      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---17th-november-2026"
-    },
-    {
-      "label": "Market Brief live data · futures, 10Y, WTI, KOSPI Tue 8:39a",
-      "url": "https://marketbrief.kennykao.workers.dev/api/live"
-    },
-    {
-      "label": "Polymarket · Target and Intuit earnings beat markets",
-      "url": "https://polymarket.com/event/tgt-quarterly-earnings-nongaap-eps-11-18-2026-2pt08"
-    },
-    {
-      "label": "NVIDIA · Q3 fiscal 2027 results (Nov 17)",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
-    },
-    {
-      "label": "CoinDesk · Nvidia tops estimates, strong guidance (Nov 17)",
-      "url": "https://www.coindesk.com/markets/2026/11/17/nvidia-tops-estimates-issues-strong-guidance-adds-usd150-billion-to-buyback-authorization"
-    },
-    {
-      "label": "CoinDesk · live updates, Huang and Nvidia board (Nov 17)",
-      "url": "https://www.coindesk.com/business/2026/11/17/live-updates-bitcoin-holds-near-usd64-000-as-tech-slides-ahead-of-nvidia-earnings"
-    },
-    {
-      "label": "TheStreet Pro · stock market today, Nov 17",
-      "url": "https://pro.thestreet.com/stock-market-today/2026-11-17"
-    },
-    {
-      "label": "Motley Fool · stock market today, Nov 17",
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-nvidia-slides-ahead-of-earnings-but-soars-in-after-hours-trading/"
-    },
-    {
-      "label": "Vista Partners · Nov 17 closing table (Dow −848.75)",
-      "url": "https://vistapglobal.com/stock-market-today-november-17-2026-dow-falls-848-points-as-inflation-and-ai-uncertainty-weigh-aapl-ant-dis-eprx-gld-googl-modd-nvda-ser-sls-spcx-vix/"
-    },
-    {
-      "label": "ad-hoc-news · Dow falls 1.6% ahead of Nvidia (Nov 17)",
-      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/dow-jones-falls-1-6-prozent-ahead-of-nvidia-earnings/70528787"
-    },
-    {
-      "label": "StockTitan · stock market today live, Nov 17",
-      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-17-2026"
-    },
-    {
-      "label": "24/7 Wall St · Nov 17 closing bell and movers",
-      "url": "https://247wallst.com/cards/the-dow-s-955-point-drop-led-the-selling-a-sharper-hit-than-gspc-market-bell-01m7nn5ym7r5nqbd4d83yt9zt1"
-    },
-    {
-      "label": "Yahoo Finance · stock market today live, Nov 17 (NAHB, Huang)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-17-dow-sp-500-nasdaq-nvidia-earnings-retail-sales-143848454.html"
-    },
-    {
-      "label": "Federal Reserve · G.17 industrial production, October",
-      "url": "https://www.federalreserve.gov/releases/g17/current/default.htm"
-    },
-    {
-      "label": "Yahoo Finance · Williams rules out jumbo December hike",
-      "url": "https://finance.yahoo.com/economy/policy/article/new-york-feds-williams-rules-out-jumbo-rate-hike-for-december-205144565.html"
-    },
-    {
-      "label": "The Private Banker · Williams rejects dramatic action (Nov 17)",
-      "url": "https://leprivatebanker.com/2026/11/17/feds-williams-says-another-rate-hike-is-likely-but-rejects-dramatic-action-as-inflation-spreads-beyond-supply-shocks/"
-    },
-    {
-      "label": "Bloomberg via Rigzone · oil settles, Gulf attacks (Nov 17)",
-      "url": "https://www.rigzone.com/news/wire/oil_prices_swing_as_gulf_attacks_continue-17-nov-2026-185107-article/"
-    },
-    {
-      "label": "Reuters via Yahoo Finance · Nasdaq futures jump on Nvidia forecast (Nov 18)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-jump-nvidia-forecast-103531610.html"
-    },
-    {
-      "label": "Newsquawk · Daily European Opening News, Nov 18",
-      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-european-opening-news---18th-november-2026"
-    },
-    {
-      "label": "CoinDesk · live updates Nov 18 (housing starts, Waller, Nvidia pre-market)",
-      "url": "https://www.coindesk.com/business/2026/11/18/live-updates-bitcoin-stuck-near-usd65-000-as-popular-basis-trade-returns-dry-up"
-    },
-    {
-      "label": "Seeking Alpha · October housing starts jump more than expected",
-      "url": "https://seekingalpha.com/news/4674133-housing-starts-jump-more-than-expected-in-october-while-permits-increase-less-than-expected"
-    },
-    {
-      "label": "Reuters via Rallies · October housing starts rise 9.9%, permits fall 7.4%",
-      "url": "https://rallies.ai/news/us-october-housing-starts-rise-99-5fe0b712380d172c"
-    },
-    {
-      "label": "TokenPost · Waller floats 50bp, dollar index (Nov 18)",
-      "url": "https://www.tokenpost.com/news/investing/60420"
-    },
-    {
-      "label": "Bloomingbit · Waller says broad inflation calls for 50bp December hike",
-      "url": "https://en.bloomingbit.io/feed/news/124719"
-    },
-    {
-      "label": "Target · Q3 2026 results",
-      "url": "https://www.prnewswire.com/news-releases/target-corporation-reports-third-quarter-earnings-302942872.html"
-    },
-    {
-      "label": "RTTNews · Target Q3, lifts FY26 outlook, stock drops",
-      "url": "https://www.rttnews.com/3715917/target-q3-profit-climbs-on-higher-comps-lifts-fy26-outlook-but-stock-drops.aspx"
-    },
-    {
-      "label": "Investing.com via Yahoo · Target beats Q3 estimates",
-      "url": "https://sg.finance.yahoo.com/news/target-beats-q3-estimates-shares-121335451.html"
-    },
-    {
-      "label": "Lowe's · Q3 2026 results",
-      "url": "https://www.prnewswire.com/news-releases/lowes-reports-third-quarter-2026-sales-and-earnings-results-302943071.html"
-    },
-    {
-      "label": "Securities.io · Lowe's sales +9.3% as tariff refunds lift EPS",
-      "url": "https://www.securities.io/lowes-quarterly-sales-rise-9-3-as-tariff-refunds-lift-eps/"
-    },
-    {
-      "label": "Startup Fortune · Lowe's beats, shares fall pre-market",
-      "url": "https://startupfortune.com/lowes-beats-third-quarter-estimates-but-shares-fall-as-tariff-refund-flatters-the-profit/"
-    },
-    {
-      "label": "Reuters via SRN · TJX beats quarterly sales estimates",
-      "url": "https://srnnews.com/off-price-retailer-tjx-beats-quarterly-sales-estimates/"
-    },
-    {
-      "label": "Investing.com · TJX stock surges on revenue beat",
-      "url": "https://ca.investing.com/news/stock-market-news/tjx-stock-surges-on-revenue-beat-strong-guidance-93CH-4966806"
-    },
-    {
-      "label": "TradingKey · US pre-market Nov 18 (Anthropic pricing, Target)",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262311015-us-pre-market-nvda-anthropic-tradingkey"
-    },
-    {
-      "label": "Vista Partners · US stock market today, Nov 18 (index close table)",
-      "url": "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/"
-    },
-    {
-      "label": "Yahoo Finance · Stock market today, Wed Nov 18 (live)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-18-dow-sp-500-nasdaq-nvidia-earnings-anthropic-ipo-143530588.html"
-    },
-    {
-      "label": "StockTitan · Stock market today live, Nov 18",
-      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-18-2026"
-    },
-    {
-      "label": "24/7 Wall St · Closing bell, Nov 18",
-      "url": "https://247wallst.com/cards/index-level-calm-hid-a-1-4-point-gap-between-the-dow-down-m-gspc-market-bell-01m7r7j2mmcaxksfnvzjsdd34p"
-    },
-    {
-      "label": "Motley Fool · Stock market midday, Nov 18",
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-midday-nov-18-nvidia-doubles-revenue-but-wall-street-s-sell-off-continues/"
-    },
-    {
-      "label": "TheStreet Pro · Stock market today, Nov 18 (Waller, FOMC minutes)",
-      "url": "https://pro.thestreet.com/stock-market-today/2026-11-18"
-    },
-    {
-      "label": "investingLive · FOMC minutes: a couple open to more than 25bp in December",
-      "url": "https://investinglive.com/central-banks/fomc-minutes-a-couple-of-participants-noted-a-hike-of-more-than-25-bps-could-warrant-consideration-in-december/"
-    },
-    {
-      "label": "The Private Banker · Fed minutes show almost all officials expect more hikes",
-      "url": "https://leprivatebanker.com/2026/11/18/fed-minutes-show-almost-all-officials-expect-more-rate-hikes-as-ai-debt-and-inflation-worries-mount/"
-    },
-    {
-      "label": "Reuters via MarketScreener · Anthropic to price IPO at $83 (Bloomberg)",
-      "url": "https://www.marketscreener.com/news/anthropic-to-price-ipo-at-83-per-share-bloomberg-news-reports-ce785edddc81f726"
-    },
-    {
-      "label": "Yahoo Finance · Anthropic IPO live: said to price at $83",
-      "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-company-said-to-price-stock-at-83-begin-trading-thursday-212656452.html"
-    },
-    {
-      "label": "Finwire · Anthropic IPO prices at $83 as ANT debuts Thursday",
-      "url": "https://finwire.io/news/stock-markets-news/anthropic-ipo-prices-at-83-a-share-as-ant-debuts-thursday"
-    },
-    {
-      "label": "Grafa · Anthropic prices IPO above range at $83",
-      "url": "https://grafa.com/en/news/united-states/anthropic-prices-ipo-above-range-at-83-sources-say"
-    },
-    {
-      "label": "Palo Alto Networks · Fiscal Q1 2027 results (SEC 8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001327567/000132756726000030/ex991q127earningsrelease.htm"
-    },
-    {
-      "label": "Bloomberg via Rigzone · Oil falls 3% despite Middle East attacks (Nov 18)",
-      "url": "https://www.rigzone.com/news/oil_falls_3_despite_middle_east_attacks-18-nov-2026-185118-article"
-    },
-    {
-      "label": "TIKR · UnitedHealth sinks on CMS fraud rule",
-      "url": "https://www.tikr.com/blog/unitedhealth-sinks-12-on-cms-fraud-rule-as-warren-says-giants-take-a-cut-at-every-step"
-    },
-    {
-      "label": "Trading Economics · US pending home sales (Oct)",
-      "url": "https://tradingeconomics.com/united-states/pending-home-sales-mom/news/602380"
-    },
-    {
-      "label": "U.S. Department of Labor · Unemployment insurance weekly claims (Nov 19)",
-      "url": "https://www.dol.gov/ui/data.pdf"
-    },
-    {
-      "label": "Trading Economics · US initial jobless claims",
-      "url": "https://tradingeconomics.com/united-states/jobless-claims"
-    },
-    {
-      "label": "Trading Economics · Philadelphia Fed manufacturing index (Nov)",
-      "url": "https://tradingeconomics.com/united-states/philadelphia-fed-manufacturing-index"
-    },
-    {
-      "label": "FX.co · Philadelphia Fed manufacturing gauge slumps in November",
-      "url": "https://www.fx.co/en/forex-news/3299988"
-    },
-    {
-      "label": "Walmart · Q3 FY27 results (Business Wire)",
-      "url": "https://www.businesswire.com/news/home/20261118447417/en/Walmart-reports-revenue-growth-of-5.2-up-4.5-in-constant-currency-cc"
-    },
-    {
-      "label": "AP via ABC News · Walmart raises its outlook for a third time",
-      "url": "https://abcnews.com/Business/wireStory/walmart-raises-outlook-year-3rd-time-after-solid-138283336"
-    },
-    {
-      "label": "StockStory · Walmart Q3 CY2026 sales",
-      "url": "https://stockstory.org/us/stocks/nasdaq/wmt/news/earnings/walmart-surprises-with-q3-cy2026-sales"
-    },
-    {
-      "label": "Reuters via Yahoo Finance · Nasdaq futures jump on Anthropic's record IPO pricing (Nov 19)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-jump-anthropics-record-090243474.html"
-    },
-    {
-      "label": "Yahoo Finance · Stock market today, Thu Nov 19 (live)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-090910916.html"
-    },
-    {
-      "label": "TipRanks · Stock market today, Nov 19: Anthropic's $81B IPO",
-      "url": "https://www.tipranks.com/news/stock-market-today-nov-19-anthropics-81-billion-ipo-takes-center-stage"
-    },
-    {
-      "label": "Forbes · Anthropic IPO live: Nasdaq futures jump ahead of debut",
-      "url": "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-nasdaq-futures-jump-2-ahead-of-record-stock-debut/"
-    },
-    {
-      "label": "Reuters via MarketScreener · Nasdaq futures jump on hopes for strong Anthropic debut",
-      "url": "https://www.marketscreener.com/news/nasdaq-futures-jump-on-hopes-for-strong-anthropic-market-debut-ce785ed2d98bf522"
-    },
-    {
-      "label": "Williams-Sonoma · Q3 2026 results (StockTitan)",
-      "url": "https://www.stocktitan.net/news/WSM/williams-sonoma-inc-announces-strong-third-quarter-2026-c6c2zki2ldto.html"
-    },
-    {
-      "label": "Newsquawk · Williams-Sonoma Q3 EPS 2.19 vs exp 2.19",
-      "url": "https://www.newsquawk.com/headlines/williams-sonoma-wsm-q3-2026-usd-eps-219-exp-219-revenue-199bln-exp-2bln"
-    },
-    {
-      "label": "Bath & Body Works · Q3 2026 results (GlobeNewswire)",
-      "url": "https://www.globenewswire.com/news-release/2026/11/19/3406414/0/en/bath-body-works-reports-third-quarter-results-exceeding-guidance-and-raises-full-year-sales-outlook.html"
-    },
-    {
-      "label": "Alibaba · September quarter 2026 results (StockTitan)",
-      "url": "https://www.stocktitan.net/news/BABA/alibaba-group-announces-september-quarter-2026-results-and-interim-ibtegtt4vxko.html"
-    },
-    {
-      "label": "PDD Holdings · Q3 2026 results (StockTitan)",
-      "url": "https://www.stocktitan.net/news/PDD/pdd-holdings-announces-third-quarter-2026-unaudited-financial-zyjmlok1y30l.html"
-    },
-    {
-      "label": "Yahoo Finance · Stock market today, Thu Nov 19 (Dow −1,100, closes)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html"
-    },
-    {
-      "label": "Reuters via MarketScreener · Stocks fall as Anthropic debut fails to ease AI concerns",
-      "url": "https://www.marketscreener.com/news/stocks-fall-as-anthropic-debut-fails-to-ease-ai-concerns-dollar-rises-ce785ed2df8ff726"
-    },
-    {
-      "label": "StockTitan · Stock market today live, Nov 19",
-      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
-    },
-    {
-      "label": "StockTitan · Anthropic IPO live, ANT's first trading day",
-      "url": "https://www.stocktitan.net/articles/anthropic-ipo-live-ant-first-trading-day-2026"
-    },
-    {
-      "label": "FinanceFeeds · Anthropic (ANT) closes debut at $97.17",
-      "url": "https://financefeeds.com/anthropic-ant-stock-closes-debut-97-17-price-prediction/"
-    },
-    {
-      "label": "CNN · Anthropic valued at $1.76 trillion after first day (headline)",
-      "url": "https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo"
-    },
-    {
-      "label": "RTTNews · Leading economic index unexpectedly falls in October",
-      "url": "https://www.rttnews.com/story.aspx?Id=3716463"
-    },
-    {
-      "label": "Bloomingbit · October leading index falls 0.3%",
-      "url": "https://en.bloomingbit.io/feed/news/124809"
-    },
-    {
-      "label": "Reuters via Kitco · Goolsbee: Fed's job is to keep AI surge from overheating economy",
-      "url": "https://www.kitco.com/news/off-the-wire/2026-11-19/goolsbee-says-feds-job-right-now-keep-ai-surge-overheating-economy"
-    },
-    {
-      "label": "Intuit · Q1 FY27 results and Mailchimp sale",
-      "url": "https://investors.intuit.com/news-events/press-releases/detail/1331/intuit-reports-first-quarter-results-and-enters-agreement-to-sell-mailchimp-to-bending-spoons"
-    },
-    {
-      "label": "Seeking Alpha via TradingView · Intuit FQ1 vs estimates, guidance",
-      "url": "https://www.tradingview.com/news/seekingalpha:91a0413ae094b:0-intuit-meets-fq1-earnings-estimates-credit-karma-hits-guidance-mailchimp-sale-disclosed/"
-    },
-    {
-      "label": "Investing.com via Yahoo · Intuit beats, sells Mailchimp for $3.68B",
-      "url": "https://sg.finance.yahoo.com/news/intuit-beats-first-quarter-estimates-215539626.html"
-    },
-    {
-      "label": "StockStory · Ross Stores Q3 2026 vs estimates",
-      "url": "https://stockstory.org/us/stocks/nasdaq/rost/news/earnings/ross-stores-posts-q3-2026-sales-in-line-with-estimates-but-stock-drops"
-    },
-    {
-      "label": "Gap Inc. · Q3 fiscal 2026 results (StockTitan)",
-      "url": "https://www.stocktitan.net/news/GAP/gap-inc-reports-third-quarter-fiscal-2026-nmdcbhs8j7c8.html"
-    },
-    {
-      "label": "Bloomberg · Gap cuts outlook (headline)",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-19/gap-cuts-outlook-on-weakness-at-banana-republic-and-old-navy"
-    },
-    {
-      "label": "Keysight · Q4 fiscal 2026 results (SEC 8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001601046/000160104626000040/exhibit991-q426pressrelease.htm"
-    },
-    {
-      "label": "Bloomberg via Rigzone · Oil prices swing on Middle East uncertainty (Nov 19)",
-      "url": "https://www.rigzone.com/news/oil_prices_swing_on_middle_east_uncertainty-19-nov-2026-185129-article"
-    },
-    {
-      "label": "Reuters via Rallies · Oil settles flat as Hormuz disruptions offset surplus fears",
-      "url": "https://rallies.ai/news/oil-settles-flat-as-hormuz-disruptions-offset-global-surplus-fears-b09bf985c4d9759c"
-    },
-    {
-      "label": "EconCurrents · Nov 19 market close and headlines",
-      "url": "https://econcurrents.substack.com/p/19-november-2026-market-close-and"
-    },
-    {
-      "label": "Reuters via Yahoo Finance · Wall St futures slip as Anthropic debut fails to reassure (Nov 20, 4:57a)",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
-    },
-    {
-      "label": "TradingKey · US pre-market Nov 20: Anthropic, Intuit fall, gold below $3,600",
-      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262315308-us-pre-market-anthropic-tradingkey"
-    },
-    {
-      "label": "TNW · Anthropic falls more than 10% on day two, greenshoe lifts raise to $119.5B",
-      "url": "https://thenextweb.com/news/anthropic-shares-fall-day-two-greenshoe-119-5bn-ark-invest"
-    },
-    {
-      "label": "Saxo · Market Quick Take, Asian stocks tumble (Nov 20)",
-      "url": "https://www.home.saxo/en-sg/content/articles/macro/market-quick-take---asian-stocks-tumble-after-wall-streets-sixth-straight-decline---20-november-2026-20112026"
-    },
-    {
-      "label": "The Private Banker · Global stocks slide a seventh session, Kospi and Nikkei drop over 5%",
-      "url": "https://leprivatebanker.com/2026/11/20/global-stocks-extend-slide-to-a-seventh-straight-session-the-longest-losing-run-since-2023-as-kospi-and-nikkei-drop-over-5/"
-    },
-    {
-      "label": "BJ's Wholesale Club · Q3 fiscal 2026 results (SEC 8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001531152/000153115226000083/bj-2026103126x8kex991.htm"
-    },
-    {
-      "label": "AP via NPR · S&P 500 sinks 3.7% and the Nasdaq composite goes negative for the year (Nov 20)",
-      "url": "https://www.kanw.org/npr-news/2026-11-20/s-p-500-sinks-3-7-and-the-nasdaq-composite-goes-negative-for-the-year"
-    },
-    {
-      "label": "Yahoo Finance · Stock market today, Fri Nov 20 (Dow and S&P 500 enter correction, closes)",
-      "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-141644188.html"
-    },
-    {
-      "label": "Motley Fool · Stock market today, Nov 20: stocks plunge as AI trade unwinds",
-      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/20/stock-market-today-nov-20-stocks-plunge-as-ai-trade-unwinds/"
-    },
-    {
-      "label": "investingLive · Americas FX news wrap Nov 20: Nasdaq plunges 5.28%",
-      "url": "https://investinglive.com/news/investinglive-americas-fx-news-wrap-20-nov-stocks-get-hammered-as-nasdaq-plunges-5-28/"
-    },
-    {
-      "label": "Reuters via MarketScreener · Wall St ends sharply lower on AI selloff, S&P 500, Dow in correction",
-      "url": "https://www.marketscreener.com/news/wall-st-ends-sharply-lower-on-ai-selloff-s-p-500-dow-in-correction-ce785ed3dd80f527"
-    },
-    {
-      "label": "FinChannel · Nasdaq falls 5.3% as S&P 500 and Dow enter corrections (AP, Reuters)",
-      "url": "https://finchannel.com/nasdaq-falls-5-3-as-sp-500-and-dow-enter-corrections/142573/american-business-trends/stock-prices/2026/11/"
-    },
-    {
-      "label": "24/7 Wall St · Closing bell and biggest movers, Nov 20",
-      "url": "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
-    },
-    {
-      "label": "ad-hoc-news · VIX jumps 26.2% to 35.89, touch of 40 late in session (Nov 20)",
-      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/vix-jumps-26-20-prozent-to-35-89-as-tech-selloff-intensifies-bloomberg-reports-late-session-touch/70541190"
+      "label": "Newsquawk · UKMTO tanker report near Khasab",
+      "url": "https://www.newsquawk.com/headlines/ukmto-says-it-receiverd-a-delayed-report-of-tanker-hit-by-unidentified-projectile-near-omans-khasab-while-crew-are-safe"
     },
     {
       "label": "Bloomberg via Rigzone · Oil posts third weekly loss amid surplus (Nov 20)",
       "url": "https://www.rigzone.com/news/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article"
     },
     {
-      "label": "Reuters via Investing.com · CrowdStrike in talks to acquire Zscaler, sources say",
-      "url": "https://www.investing.com/news/stock-market-news/crowdstrike-in-talks-to-acquire-zscaler-sources-say-5042720"
+      "label": "AP via NPR · S&P 500 sinks 3.7% and the Nasdaq composite goes negative for the year (Nov 20)",
+      "url": "https://www.kanw.org/npr-news/2026-11-20/s-p-500-sinks-3-7-and-the-nasdaq-composite-goes-negative-for-the-year"
+    },
+    {
+      "label": "Reuters via MarketScreener · Wall St ends sharply lower on AI selloff, S&P 500, Dow in correction",
+      "url": "https://www.marketscreener.com/news/wall-st-ends-sharply-lower-on-ai-selloff-s-p-500-dow-in-correction-ce785ed3dd80f527"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Fri Nov 20 (closes, Nvidia, VIX)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-141644188.html"
+    },
+    {
+      "label": "investingLive · Americas FX news wrap Nov 20 (Cook, closes)",
+      "url": "https://investinglive.com/news/investinglive-americas-fx-news-wrap-20-nov-stocks-get-hammered-as-nasdaq-plunges-5-28/"
     },
     {
       "label": "BigGo Finance · Fed December hike odds (CME FedWatch as of Nov 20)",
@@ -1061,7 +534,43 @@
     {
       "label": "Yahoo Finance · Waller doubles down on a jumbo December hike (Nov 18)",
       "url": "https://finance.yahoo.com/economy/policy/article/feds-waller-doubles-down-on-a-jumbo-rate-hike-in-december-sees-more-hikes-to-come-174616572.html"
+    },
+    {
+      "label": "The Private Banker · Fed minutes show almost all officials expect more hikes",
+      "url": "https://leprivatebanker.com/2026/11/18/fed-minutes-show-almost-all-officials-expect-more-rate-hikes-as-ai-debt-and-inflation-worries-mount/"
+    },
+    {
+      "label": "Reuters via MarketScreener · Stocks fall as Anthropic debut fails to ease AI concerns",
+      "url": "https://www.marketscreener.com/news/stocks-fall-as-anthropic-debut-fails-to-ease-ai-concerns-dollar-rises-ce785ed2df8ff726"
+    },
+    {
+      "label": "Polymarket · core PCE Oct y/y and m/m",
+      "url": "https://polymarket.com/event/core-pce-yoy-october-2026"
+    },
+    {
+      "label": "Polymarket · Nvidia CEO markets",
+      "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
+    },
+    {
+      "label": "Polymarket · Dell beat and earnings-call mentions",
+      "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
+    },
+    {
+      "label": "Polymarket · Dick's beat",
+      "url": "https://polymarket.com/event/will-dicks-sporting-goods-dks-beat-quarterly-earnings"
+    },
+    {
+      "label": "Kalshi · Fed decision Dec 2026",
+      "url": "https://kalshi.com/markets/kxfeddecision"
+    },
+    {
+      "label": "Kalshi · earnings-call mentions (Zoom, HPE, Deere)",
+      "url": "https://kalshi.com/markets/kxearningsmentionzm"
+    },
+    {
+      "label": "CNN · Fear & Greed index",
+      "url": "https://www.cnn.com/markets/fear-and-greed"
     }
   ],
-  "oddsAsOf": "Fri 11/20 close"
+  "oddsAsOf": "Sun 11/22 evening"
 }
