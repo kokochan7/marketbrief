@@ -4,8 +4,8 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-22T23:41:36Z",
-    "dataAsOf": "Fri 11/20 close · Sun 11/22 evening futures"
+    "updated": "2026-11-23T13:52:01Z",
+    "dataAsOf": "Mon 11/23 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
@@ -16,7 +16,7 @@
     {
       "date": "2026-11-23",
       "label": "Mon 11/23",
-      "tag": "Flash PMIs, Zoom, HPE",
+      "tag": "CrowdStrike–Zscaler, Zoom, HPE",
       "tone": "grey",
       "macro": [
         {
@@ -35,7 +35,10 @@
           "text": "NY Fed's Williams speaks"
         }
       ],
-      "bmo": [],
+      "bmo": [
+        "CRWD",
+        "ZS"
+      ],
       "amc": [
         "HPE",
         "ZM",
@@ -45,7 +48,7 @@
         "SMTC"
       ],
       "note": "Japan closed (Labour Thanksgiving Day)",
-      "premarket": "Sun 6:23p: S&P 500 futures **+1.5%** (7,036.50), Nasdaq 100 futures **+2.4%**, Dow futures +0.9% after last week's rout · WTI $82.71, −1.5% · gold +1.9% · bitcoin ≈ $61.1K, +1.7% · Bessent on Sunday warned the Fed against over-tightening"
+      "premarket": "8:40a: S&P 500 futures **+2.4%** (7,102.75), Nasdaq 100 futures **+3.3%**, Dow futures +1.7% · Nvidia up about 7–9% after Trump urged its board to rehire Huang · CrowdStrike buys Zscaler for $43.9B (ZS ≈ +13–16%, CRWD ≈ −8%) · 10Y 4.92% · WTI $81.62, ≈ −2% · gold +2.9% · Kospi −3.3%, Taiex +2.2% as Asia props up markets"
     },
     {
       "date": "2026-11-24",
@@ -208,8 +211,8 @@
   },
   "stories": [
     {
-      "title": "Futures bounce Sunday evening after the worst week since April 2025.",
-      "body": "S&P 500 futures were up **1.5%** at 7,036.50, Nasdaq 100 futures **2.4%** and Dow futures 0.9% at 6:23p Sunday, about 20 minutes after the reopen (Yahoo Finance futures data); FX Leaders and CNBC also reported futures opening higher. Last week the S&P 500 lost **8.6%** to 6,910.39, the Nasdaq **10.0%** to 22,617.73, the Dow 8.0% to 48,147.33 and the Russell 2000 7.5%, the worst week since April 2025 (FXEmpire, Palma Futures, Journalarta). The S&P fell seven sessions in a row, the longest streak since February 2020, and closed in a correction along with the Dow; the Nasdaq gave up its 2026 gain. The VIX closed at **35.89** Friday after touching 40, and CNN's Fear & Greed index sits at **9.7**, extreme fear, from 37 a week earlier. On CBS's Face the Nation, Treasury Secretary Bessent blamed \"a combination of things\": a selloff that \"began as the Democrats moved ahead in the polls and then accelerated after Election Day\", the Democratic position on the AI build-out, and \"very hawkish remarks from the Federal Reserve\" (CBS transcript). It is a short week: closed Thursday, 1:00p close Friday."
+      "title": "Futures jump as the AI selloff pauses and Asia moves to prop up stocks.",
+      "body": "At 8:40a S&P 500 futures were up **2.4%** at 7,102.75, Nasdaq 100 futures **3.3%** and Dow futures 1.7% (Yahoo Finance futures data); Seeking Alpha had Nasdaq futures up 3.5% at 8:03a and Fox Business S&P futures up 2.5% at 8:36a. Chips lead premarket: Nvidia up about 7–9%, AMD 5.8%, Broadcom 5.7%, Micron about 6%, CoreWeave 10% (Fox Business, Yahoo Finance), while Anthropic (ANT) is flat. Asia split as governments stepped in: Taiwan banned short sales below the prior close from Monday and its NT$500B stabilization fund is buying (FSC, Bloomberg via StockAnalysis), China's exchanges cut the minimum margin ratio to 80% from Nov 30, and South Korea readied stabilization funds and eased buyback limits. The Taiex closed **+2.2%**, but the Kospi fell **3.3%** to 4,708.54 after a 5.8% intraday drop; Hong Kong and Shanghai were flat and Japan was shut (AP, NERO). Europe opened about 0.5% higher. Last week the S&P 500 lost **8.6%** to 6,910.39 and the Nasdaq **10.0%**, the worst week since April 2025; the VIX closed at 35.89 Friday and CNN's Fear & Greed index was at 11 this morning. It is a short week: closed Thursday, 1:00p close Friday."
     },
     {
       "title": "Bessent warns the Fed against over-tightening before Wednesday's PCE.",
@@ -239,8 +242,8 @@
       ]
     },
     {
-      "title": "Nvidia: SEC inquiry, a delayed 10-Q and Bessent's call for answers.",
-      "body": "Nvidia fell **14%** to **$125.53** Friday, and about 23% on the week, after Reuters reported that SEC enforcement staff are examining potential accounting issues; the SEC declined to comment and no wrongdoing has been found (Reuters via TipRanks, Journalarta). The WSJ first reported an SEC probe on Nov 17, and Nvidia has not yet filed its quarterly 10-Q; UBS said management linked the delay to the investigation and possible new risk disclosures (Reuters via Khaleej Times, TechCrunch via FourWeekMBA). FourWeekMBA puts the filing deadline at Dec 4. On Sunday Bessent said \"we do need answers\" from Nvidia's board, that the administration will \"see if Megaspeed was indeed a pass-through company\" for chips, and that Jensen Huang \"is on the outside now\" (CBS transcript); last week he gave the board 10 days, which ends about Nov 25 (Fox News via FourWeekMBA, Motley Fool). CFO Colette Kress is interim CEO. Polymarket gives about 15% that a permanent CEO is named by Dec 31 and 56% that the next CEO comes from outside.",
+      "title": "Nvidia: Trump urges the board to rehire Huang as the SEC inquiry hangs over it.",
+      "body": "\"I hope the Board of Nvidia rehires Jensen Huang. It would be the best thing for the company, and also, for the U.S.A.,\" Trump posted on Truth Social Sunday (Euronews via Yahoo Finance, Benzinga), and the stock was up about **7–9%** premarket Monday (Yahoo Finance, Fox Business). Board chair Harvey Jones said last week the board \"does not intend to reinstate Jensen as CEO\". On Sunday Treasury Secretary Bessent also said \"we do need answers\" from the board and that the administration will \"see if Megaspeed was indeed a pass-through company\" for chips (CBS transcript); his 10-day deadline ends about Nov 25 (Fox News via FourWeekMBA, Motley Fool). Nvidia fell **14%** to **$125.53** Friday, about 23% on the week, after Reuters reported SEC enforcement staff are examining potential accounting issues; the SEC declined to comment and no wrongdoing has been found (Reuters via TipRanks, Journalarta). Nvidia has not yet filed its 10-Q, due Dec 4 (FourWeekMBA). CFO Colette Kress is interim CEO.",
       "odds": [
         {
           "source": "polymarket",
@@ -266,8 +269,8 @@
       ]
     },
     {
-      "title": "Earnings: Dell and HP test AI hardware demand; retailers report before Black Friday.",
-      "body": "Dell reports after Tuesday's close (call 4:30p). It guided fiscal Q3 to adjusted EPS of about **$6.50** on **$49.0B** of revenue, and the Street is at $6.48–6.62 (company guidance and Nasdaq via StockTitan, FXEmpire, TipRanks); Polymarket gives about 88% that it tops $6.71. HP Inc. (est about $0.74), Workday, Autodesk and Nutanix also report Tuesday evening, after Hewlett Packard Enterprise (est $1.17–1.29), Zoom and Agilent on Monday. Before Tuesday's open come Analog Devices (est about $3.89, revenue $4.32B), Medtronic, and a run of retailers into Black Friday: Best Buy (est about $1.48), Dick's ($1.38–1.42), Dollar Tree, Burlington, Abercrombie and Kohl's. Deere reports Wednesday before the open (est about $4.06). Trip.com moved its report to Dec 1 (StockTitan)."
+      "title": "Earnings: CrowdStrike buys Zscaler for $43.9B; Dell and HP test AI hardware Tuesday.",
+      "body": "CrowdStrike agreed to buy Zscaler in an all-stock deal worth about **$43.9B**: 1.135 CrowdStrike shares per Zscaler share, about **$260.41** a share, a 34% premium to Friday's close, with about $1B of revenue and $500M of cost synergies targeted and closing in the second half of CrowdStrike's fiscal 2028 (joint release, SEC 8-K). Both reported this morning: CrowdStrike's Q3 revenue rose 28% to $1.58B with ARR at $6.26B (8-K), and it guided Q4 sales to $1.638–1.644B vs $1.62B expected; Zscaler's Q1 revenue rose 20% to $949.3M vs $938M est, adjusted EPS $1.23 vs $1.16 (Reuters via BNN Bloomberg). Before 8:05a Zscaler was up 13–16% and CrowdStrike down about 8% (Reuters, Seeking Alpha). Tonight: Hewlett Packard Enterprise (est $1.17–1.29), Zoom and Agilent. Dell reports Tuesday after the close, guided to adjusted EPS of about **$6.50** on **$49.0B** (Street $6.48–6.62), with HP Inc., Workday, Autodesk and Nutanix; Analog Devices, Medtronic, Best Buy, Dick's, Dollar Tree, Burlington, Abercrombie and Kohl's report before Tuesday's open, and Deere on Wednesday (StockTitan, FXEmpire, TipRanks)."
     },
     {
       "title": "Anthropic starts its first full week of trading barely above its $83 IPO price.",
@@ -279,48 +282,12 @@
     }
   ],
   "earningsOdds": {
-    "DELL": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $6.71",
-        "prob": 87.5,
-        "slug": "dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71",
-        "url": "https://polymarket.com/event/dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71"
-      },
-      {
-        "source": "polymarket",
-        "kind": "mention",
-        "label": "Says “DRAM” or “NAND” 3+ times on the call",
-        "prob": 88.5,
-        "slug": "will-dell-say-dram-or-nand-3-times-during-earnings-call-20261124",
-        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
-      },
-      {
-        "source": "polymarket",
-        "kind": "mention",
-        "label": "Says “Vera Rubin” on the call",
-        "prob": 78,
-        "slug": "will-dell-say-vera-rubin-during-earnings-call-20261124",
-        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
-      }
-    ],
-    "DKS": [
-      {
-        "source": "polymarket",
-        "kind": "beat",
-        "label": "Beats non-GAAP EPS est. $1.42",
-        "prob": 71,
-        "slug": "will-dicks-sporting-goods-dks-beat-quarterly-earnings",
-        "url": "https://polymarket.com/event/will-dicks-sporting-goods-dks-beat-quarterly-earnings"
-      }
-    ],
     "ZM": [
       {
         "source": "kalshi",
         "kind": "mention",
         "label": "Says “Contact Center” on the call",
-        "prob": 98,
+        "prob": 97,
         "ticker": "KXEARNINGSMENTIONZM-26NOV23-CONT",
         "url": "https://kalshi.com/markets/kxearningsmentionzm"
       },
@@ -336,7 +303,7 @@
         "source": "kalshi",
         "kind": "mention",
         "label": "Says “Enterprise” on the call",
-        "prob": 98,
+        "prob": 96,
         "ticker": "KXEARNINGSMENTIONZM-26NOV23-ENTE",
         "url": "https://kalshi.com/markets/kxearningsmentionzm"
       }
@@ -367,6 +334,60 @@
         "url": "https://kalshi.com/markets/kxearningsmentionhpe"
       }
     ],
+    "ADI": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $3.92",
+        "prob": 87.5,
+        "slug": "adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92",
+        "url": "https://polymarket.com/event/adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92"
+      }
+    ],
+    "DKS": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $1.42",
+        "prob": 71,
+        "slug": "will-dicks-sporting-goods-dks-beat-quarterly-earnings",
+        "url": "https://polymarket.com/event/will-dicks-sporting-goods-dks-beat-quarterly-earnings"
+      }
+    ],
+    "DELL": [
+      {
+        "source": "polymarket",
+        "kind": "beat",
+        "label": "Beats non-GAAP EPS est. $6.71",
+        "prob": 86.5,
+        "slug": "dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71",
+        "url": "https://polymarket.com/event/dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “DRAM” or “NAND” 3+ times on the call",
+        "prob": 88.5,
+        "slug": "will-dell-say-dram-or-nand-3-times-during-earnings-call-20261124",
+        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
+      },
+      {
+        "source": "polymarket",
+        "kind": "mention",
+        "label": "Says “Vera Rubin” on the call",
+        "prob": 78,
+        "slug": "will-dell-say-vera-rubin-during-earnings-call-20261124",
+        "url": "https://polymarket.com/event/what-will-dell-say-during-their-next-earnings-call-20261124"
+      },
+      {
+        "source": "kalshi",
+        "kind": "mention",
+        "label": "Says “PowerEdge” on the call",
+        "prob": 59,
+        "ticker": "KXEARNINGSMENTIONDELL-26NOV24-POWE",
+        "url": "https://kalshi.com/markets/kxearningsmentiondell"
+      }
+    ],
     "DE": [
       {
         "source": "kalshi",
@@ -395,6 +416,58 @@
     ]
   },
   "sources": [
+    {
+      "label": "Polymarket · Analog Devices beat (Nov 24)",
+      "url": "https://polymarket.com/event/adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92"
+    },
+    {
+      "label": "NERO · Asia closes Mon 11/23 (Kospi, Taiex, Hang Seng)",
+      "url": "https://nerosignal.substack.com/p/seoul-fell-331-taipei-rose-216-tokyo"
+    },
+    {
+      "label": "StockAnalysis · Taiwan short-sale ban, Korea and China support steps",
+      "url": "https://stockanalysis.com/news/taiwan-short-sale-ban-asia-stock-support/"
+    },
+    {
+      "label": "AP via KSAT · US futures climb, Asian shares mostly decline (Nov 23)",
+      "url": "https://www.ksat.com/business/2026/11/23/us-futures-climb-and-asian-shares-mostly-decline-as-some-tech-stocks-fall/"
+    },
+    {
+      "label": "Benzinga · Trump wants Jensen Huang back at Nvidia (headline)",
+      "url": "https://www.benzinga.com/news/politics/26/11/63518407/trump-wants-jensen-huang-back-at-nvidia-says-it-would-be-the-best-thing-for-the-company-and-the-usa"
+    },
+    {
+      "label": "Euronews via Yahoo Finance · Trump urges Nvidia to rehire Jensen Huang",
+      "url": "https://finance.yahoo.com/technology/ai/articles/donald-trump-urges-nvidia-rehire-114725289.html"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · US futures bounce, Asian authorities support stocks",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/us-futures-bounce-while-asia-234419517.html"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Mon Nov 23",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-23-dow-sp-500-nasdaq-091118583.html"
+    },
+    {
+      "label": "Fox Business · futures rebound as AI and chip stocks rally (Nov 23, 8:36a)",
+      "url": "https://www.foxbusiness.com/markets/stocks-november-23-2026"
+    },
+    {
+      "label": "Seeking Alpha · Wall Street Breakfast, Nov 23 8:03a (futures, CRWD/ZS premarket)",
+      "url": "https://seekingalpha.com/article/4971056-wall-street-breakfast-podcast-buy-the-dippers-try-to-take-control"
+    },
+    {
+      "label": "Reuters via BNN Bloomberg · CrowdStrike bets on network security with $43.9B Zscaler deal",
+      "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/23/crowdstrike-bets-on-network-security-with-us439b-zscaler-deal/"
+    },
+    {
+      "label": "SEC 8-K · CrowdStrike Q3 FY2027 results",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001535527/000153552726000035/crwd-20261123xex991.htm"
+    },
+    {
+      "label": "SEC 8-K · CrowdStrike to acquire Zscaler, joint release Nov 23",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001535527/000110465926130785/tm2630454d1_ex99-1.htm"
+    },
     {
       "label": "Federal Reserve · November 2026 calendar (Beige Book Nov 25, Thanksgiving)",
       "url": "https://www.federalreserve.gov/newsevents/2026-November.htm"
@@ -460,7 +533,7 @@
       "url": "https://investinglive.com/news/us-gdp-advance-for-the-3rd-quarter-3-4-vs-3-2-estimate/"
     },
     {
-      "label": "Market Brief live feed · ES/NQ/YM, WTI, gold, bitcoin futures (Yahoo Finance), Sun 11/22 6:23p; CNN Fear & Greed; Kalshi Fed odds",
+      "label": "Market Brief live feed · ES/NQ/YM, 10Y, WTI, gold, bitcoin (Yahoo Finance), Mon 11/23 8:40a and Sun 11/22 6:23p; CNN Fear & Greed; Kalshi Fed odds",
       "url": "https://marketbrief.kennykao.workers.dev/api/live"
     },
     {
@@ -564,7 +637,7 @@
       "url": "https://kalshi.com/markets/kxfeddecision"
     },
     {
-      "label": "Kalshi · earnings-call mentions (Zoom, HPE, Deere)",
+      "label": "Kalshi · earnings-call mentions (Zoom, HPE, Dell, Deere)",
       "url": "https://kalshi.com/markets/kxearningsmentionzm"
     },
     {
@@ -572,5 +645,5 @@
       "url": "https://www.cnn.com/markets/fear-and-greed"
     }
   ],
-  "oddsAsOf": "Sun 11/22 evening"
+  "oddsAsOf": "Mon 11/23 pre-market"
 }
