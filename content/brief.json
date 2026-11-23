@@ -4,35 +4,35 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-23T13:52:01Z",
-    "dataAsOf": "Mon 11/23 pre-market"
+    "updated": "2026-11-23T22:48:24Z",
+    "dataAsOf": "Mon 11/23 close"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Wed 11/25 · PCE inflation, Q3 GDP, durable goods and jobless claims all land at 8:30a",
-    "body": "Thanksgiving squeezes the week's data into Wednesday morning. October core PCE, the Fed's preferred inflation gauge, is expected to rise **0.3%** on the month and **3.2%** on the year, up from 3.1%, with headline PCE seen at 3.8% from 3.6% (AskTraders, FXEmpire, Newsquawk); Polymarket puts 3.2% at about 62% and 3.3% at 35%. The second estimate of Q3 GDP (advance **3.4%**), October durable goods and jobless claims, moved up a day, come out at the same time, then new home sales at 10:00a and the Fed's Beige Book at 2:00p. A December 9 hike is almost fully priced after last week's hawkish minutes, so a hot print could revive talk of a half-point move, while a soft one would back Treasury Secretary Bessent's Sunday warning against over-tightening. Before that: Dell, HP and Workday report Tuesday after the close. Markets are shut Thursday and close at 1:00p Friday."
+    "body": "Thanksgiving squeezes the week's data into Wednesday morning. October core PCE, the Fed's preferred inflation gauge, is expected to rise **0.3%** on the month and **3.2%** on the year, up from 3.1%, with headline PCE seen at 3.8% from 3.6% (AskTraders, FXEmpire, Newsquawk); Polymarket puts 3.2% at about 58% (Mon 11/23 close). The second estimate of Q3 GDP (advance **3.4%**), October durable goods and jobless claims, moved up a day, come out at the same time, then new home sales at 10:00a and the Fed's Beige Book at 2:00p. A December 9 hike is almost fully priced after last week's hawkish minutes, so a hot print could revive talk of a half-point move, while a soft one would back Treasury Secretary Bessent's Sunday warning against over-tightening. Before that: Dell, HP and Workday report Tuesday after the close. Markets are shut Thursday and close at 1:00p Friday."
   },
   "days": [
     {
       "date": "2026-11-23",
       "label": "Mon 11/23",
-      "tag": "CrowdStrike–Zscaler, Zoom, HPE",
-      "tone": "grey",
+      "tag": "Huang returns, best day since April 2025",
+      "tone": "green",
       "macro": [
         {
           "time": "9:45a",
           "level": "medium",
-          "text": "S&P Global flash PMIs (Nov) · mfg est 54.5, prior 54.9 · services est 55.6, prior 56.1"
+          "text": "S&P Global flash PMIs (Nov) · mfg **54.5** vs est 54.5, prior 54.9 · services **54.7** vs est 55.6, prior 56.1 · composite 54.6, a four-month low"
         },
         {
           "time": "1:00p",
           "level": "low",
-          "text": "2-yr note auction ($69B)"
+          "text": "2-yr note auction ($69B) · strong direct bidding, soft indirect demand (Reuters)"
         },
         {
           "time": "4:00p",
           "level": "medium",
-          "text": "NY Fed's Williams speaks"
+          "text": "NY Fed's Williams: \"still work to do\" on inflation, sees it at 3.5% at end-2026 and back at 2% in 2028"
         }
       ],
       "bmo": [
@@ -48,7 +48,7 @@
         "SMTC"
       ],
       "note": "Japan closed (Labour Thanksgiving Day)",
-      "premarket": "8:40a: S&P 500 futures **+2.4%** (7,102.75), Nasdaq 100 futures **+3.3%**, Dow futures +1.7% · Nvidia up about 7–9% after Trump urged its board to rehire Huang · CrowdStrike buys Zscaler for $43.9B (ZS ≈ +13–16%, CRWD ≈ −8%) · 10Y 4.92% · WTI $81.62, ≈ −2% · gold +2.9% · Kospi −3.3%, Taiex +2.2% as Asia props up markets"
+      "result": "S&P 500 **+4.73%** (7,237.17, ends a seven-day losing streak), Nasdaq **+6.51%** (24,089.56), Dow +1,447.98 (+3.01%, 49,595.31), Russell 2000 +3.40% (2,669.66) · best day for the three big indexes since April 2025 · Nvidia **+31.5%** to $165.05 after its board reinstated Huang; Dell +20.5%, Micron +19%, Intel +16%, CoreWeave +22%; Zscaler +17.7%, CrowdStrike −8.9% on their deal; Anthropic −1.4% · tech (XLK) +9.0%, only energy and staples fell · after hours HPE about −6% despite a beat and big guide raise, Zoom −1% · VIX about 26.6, −26% · 10Y about 4.93%, little changed; 2Y up about 7bp · Jan WTI settled $80.17, −3.9%, a three-month low; gold +3% · flash PMI services 54.7 vs est 55.6"
     },
     {
       "date": "2026-11-24",
@@ -176,33 +176,33 @@
     }
   ],
   "mood": {
-    "asOf": "Fri 11/20 close (last week)",
+    "asOf": "Mon 11/23 close",
     "fearGreed": {
-      "score": 9.67,
+      "score": 16.97,
       "label": "Extreme fear",
-      "asOf": "Fri 11/20 close",
-      "weekAgo": 37.37,
-      "monthAgo": 28.74,
-      "yearAgo": 5.17
+      "asOf": "Mon 11/23 5:25p",
+      "weekAgo": 31.07,
+      "monthAgo": 16.69,
+      "yearAgo": 5.66
     },
     "regime": {
-      "label": "Risk-off",
-      "tone": "red",
-      "text": "Last week was the worst since April 2025: S&P 500 −8.6%, Nasdaq −10.0%, Dow −8.0%, Russell 2000 −7.5%. The S&P fell seven days straight and joined the Dow in a correction, the Nasdaq turned negative for 2026, and the chip index lost about 17%. Treasuries were the only haven that worked. Futures bounced Sunday evening."
+      "label": "Relief rally",
+      "tone": "orange",
+      "text": "Monday was the best day since April 2025: S&P 500 +4.7%, Nasdaq +6.5%, Dow +3.0%, Russell 2000 +3.4%, after Nvidia reinstated Huang. It ended the S&P's seven-day slide, but the index is still about 4% below where it started last week and CNN's Fear & Greed stays in extreme fear. Nomura's McElligott called it mechanical buying that \"guarantees us nothing\" (Yahoo Finance)."
     },
     "vix": {
-      "value": "35.89",
-      "label": "High",
-      "tone": "red",
-      "text": "Fri 11/20 close, +26.2% on the day and about +86% on the week from 19.30 (Regards of Wall Street, Journalarta, Palma Futures; Yahoo showed 38.40) · touched 40 intraday, the highest since April 2025"
+      "value": "26.62",
+      "label": "Elevated",
+      "tone": "orange",
+      "text": "Mon 11/23 close, −25.8% from 35.89 (FinanceFeeds; a preliminary snapshot showed 27.39, and Cboe's own feed couldn't be reached) · still well above its Nov 13 close of 19.30"
     },
     "breadth": {
       "value": "All red",
       "text": "Last week: all 11 sectors fell · tech (XLK) −12.5% · chip index (SOX) −17.1%, its worst week since Sept 2001 (Palma Futures) · only staples rose Friday"
     },
     "havens": {
-      "value": "Treasuries",
-      "text": "Fri 11/20: 10Y 4.92%, −23bp on the week · 2Y 4.63%, −25bp (Treasury par yields) · gold ≈ $3,515–3,540, about −9% on the week · bitcoin ≈ $59K, about −10% · dollar index ≈ 103.8, a fourth weekly gain (Palma Futures, Journalarta) · Sun 6:23p: gold +1.9%, bitcoin +1.7%"
+      "value": "Gold, dollar",
+      "text": "Mon 11/23: gold +3% to about $3,635–3,640 and the dollar +0.5% to its strongest since March 2025 even as stocks soared (Reuters, Yahoo Finance) · 10Y about 4.92–4.94%, little changed; 2Y about 4.69%, up roughly 7bp, flattening the curve (Reuters, CNBC) · bitcoin ≈ $61K, flat"
     },
     "fedwatch": {
       "text": "25bp hike in Dec ≈97% · hold ≈3% (CME FedWatch via Yahoo Finance and BigGo)",
@@ -211,17 +211,26 @@
   },
   "stories": [
     {
-      "title": "Futures jump as the AI selloff pauses and Asia moves to prop up stocks.",
-      "body": "At 8:40a S&P 500 futures were up **2.4%** at 7,102.75, Nasdaq 100 futures **3.3%** and Dow futures 1.7% (Yahoo Finance futures data); Seeking Alpha had Nasdaq futures up 3.5% at 8:03a and Fox Business S&P futures up 2.5% at 8:36a. Chips lead premarket: Nvidia up about 7–9%, AMD 5.8%, Broadcom 5.7%, Micron about 6%, CoreWeave 10% (Fox Business, Yahoo Finance), while Anthropic (ANT) is flat. Asia split as governments stepped in: Taiwan banned short sales below the prior close from Monday and its NT$500B stabilization fund is buying (FSC, Bloomberg via StockAnalysis), China's exchanges cut the minimum margin ratio to 80% from Nov 30, and South Korea readied stabilization funds and eased buyback limits. The Taiex closed **+2.2%**, but the Kospi fell **3.3%** to 4,708.54 after a 5.8% intraday drop; Hong Kong and Shanghai were flat and Japan was shut (AP, NERO). Europe opened about 0.5% higher. Last week the S&P 500 lost **8.6%** to 6,910.39 and the Nasdaq **10.0%**, the worst week since April 2025; the VIX closed at 35.89 Friday and CNN's Fear & Greed index was at 11 this morning. It is a short week: closed Thursday, 1:00p close Friday."
+      "title": "Nvidia reinstates Huang, and stocks have their best day since April 2025.",
+      "body": "Nvidia's board unanimously reinstated Jensen Huang as president, CEO and director, effective immediately, 11 days after he resigned. Harvey Jones stays as chair and Colette Kress goes back to being CFO only. The board said it \"received input from senior levels of the United States government\" and is confident the move \"poses no national security risk\", while its independent committee looking into reports that Huang was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). \"Congratulations to NVIDIA on having made, what I consider to be, an absolutely GREAT decision!\" Trump posted (Yahoo Finance). Nvidia rose **31.5%** to **$165.05**, a market value of about $3.98T (FinanceFeeds, Motley Fool). The S&P 500 gained **4.73%** to 7,237.17, the Nasdaq **6.51%** to 24,089.56, the Dow 1,447.98 points (3.01%) to 49,595.31 and the Russell 2000 3.40% to 2,669.66, the best day for the big three since April 2025, ending the S&P's seven-session slide (Motley Fool, FinanceFeeds, Pomegra, ad-hoc-news; Reuters). Dell rose 20.5%, Micron 19%, Intel 16%, TSMC 14%, CoreWeave 22% and Nebius 20%, while Anthropic slipped 1.4%; tech (XLK) gained 9.0% and only energy and staples fell. Nomura's Charlie McElligott called it \"a massive surge of MECHANICAL buying\" that \"guarantees us nothing\" (Yahoo Finance). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA).",
+      "odds": [
+        {
+          "source": "polymarket",
+          "label": "Nvidia above $4T at end of 2026 (Huang CEO)",
+          "prob": 50.2,
+          "slug": "jensen-huang-named-nvidia-ceo-and-nvidia-4t-end-of-2026-named-over",
+          "url": "https://polymarket.com/event/jensen-huang-named-nvidia-ceo-and-nvidia-market-cap-above-4t-end-of-2026"
+        }
+      ]
     },
     {
-      "title": "Bessent warns the Fed against over-tightening before Wednesday's PCE.",
-      "body": "\"Many people believe that they may be making a policy mistake if they over-tighten,\" Treasury Secretary Bessent said Sunday, pointing to \"a substantial tightening in financial conditions over the past few months\" (CBS Face the Nation transcript, investingLive). Markets still see a December 9 hike as close to certain: CME FedWatch had about **97%** on 25bp as of Friday (Yahoo Finance, BigGo), and Kalshi has a 25bp hike at **89%**, a hold at 8% and a bigger hike at 3%. The October minutes showed almost all officials saw more hikes as likely, Governor Cook warned Friday of getting \"behind the curve\" and Waller has argued for a half-point move. This week: NY Fed President Williams speaks Monday at 4:00p, core PCE is due Wednesday at 8:30a (est 3.2% y/y; Polymarket puts 0.3% m/m at about 92%), and the Beige Book follows at 2:00p. The pre-meeting blackout starts Saturday. Treasuries rallied hard last week: the 10Y fell **23bp** to 4.92% and the 2Y 25bp to 4.63% (Treasury).",
+      "title": "Williams says the Fed still has \"work to do\" as markets lock in a December hike.",
+      "body": "\"We must take actions over time that will ensure that we get inflation back to our 2% goal in a timely manner and on a sustained basis,\" NY Fed President Williams said Monday. \"There is still work to do to get that done.\" He sees inflation ending 2026 at 3.5%, falling to just above 2% next year and reaching 2% in 2028, with risks \"skewed to the upside\" (Reuters). Kalshi has a 25bp hike on December 9 at **94%**, a hold at 4% and a bigger hike at 3%; CME FedWatch had about 97% on 25bp as of Friday (Yahoo Finance, BigGo). Short-term yields rose about 7bp, with the 2Y near 4.69%, while the 10Y barely moved at about 4.93% (Reuters, CNBC). The 2-yr auction drew strong direct bidding but soft indirect demand (Reuters). November's flash PMIs cooled: composite 54.6, a four-month low, services 54.7 vs 55.6 expected, manufacturing 54.5 as expected, with cost pressures easing but still elevated (S&P Global via Newsquawk, QNC). On Sunday Treasury Secretary Bessent warned the Fed against over-tightening (CBS). Next: core PCE Wednesday at 8:30a (est 3.2% y/y) and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 89,
+          "prob": 94,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
@@ -235,111 +244,36 @@
         {
           "source": "polymarket",
           "label": "Oct core PCE 3.2% y/y",
-          "prob": 62.5,
+          "prob": 57.5,
           "slug": "will-core-pce-yoy-be-3pt2pct-in-october-2026",
           "url": "https://polymarket.com/event/core-pce-yoy-october-2026"
         }
       ]
     },
     {
-      "title": "Nvidia: Trump urges the board to rehire Huang as the SEC inquiry hangs over it.",
-      "body": "\"I hope the Board of Nvidia rehires Jensen Huang. It would be the best thing for the company, and also, for the U.S.A.,\" Trump posted on Truth Social Sunday (Euronews via Yahoo Finance, Benzinga), and the stock was up about **7–9%** premarket Monday (Yahoo Finance, Fox Business). Board chair Harvey Jones said last week the board \"does not intend to reinstate Jensen as CEO\". On Sunday Treasury Secretary Bessent also said \"we do need answers\" from the board and that the administration will \"see if Megaspeed was indeed a pass-through company\" for chips (CBS transcript); his 10-day deadline ends about Nov 25 (Fox News via FourWeekMBA, Motley Fool). Nvidia fell **14%** to **$125.53** Friday, about 23% on the week, after Reuters reported SEC enforcement staff are examining potential accounting issues; the SEC declined to comment and no wrongdoing has been found (Reuters via TipRanks, Journalarta). Nvidia has not yet filed its 10-Q, due Dec 4 (FourWeekMBA). CFO Colette Kress is interim CEO.",
-      "odds": [
-        {
-          "source": "polymarket",
-          "label": "New Nvidia CEO named by Dec 31",
-          "prob": 14.5,
-          "slug": "new-nvidia-ceo-named-by-december-31-2026",
-          "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
-        },
-        {
-          "source": "polymarket",
-          "label": "Next Nvidia CEO is an outsider",
-          "prob": 56,
-          "slug": "will-nvidias-next-ceo-be-an-external-candidate",
-          "url": "https://polymarket.com/event/next-nvidia-ceo-internal-or-external"
-        },
-        {
-          "source": "polymarket",
-          "label": "Huang rejoins Nvidia by Dec 31",
-          "prob": 6.65,
-          "slug": "will-jensen-huang-rejoin-nvidia-by-december-31-2026",
-          "url": "https://polymarket.com/event/jensen-huang-rejoins-nvidia-byptptpt"
-        }
-      ]
+      "title": "Earnings: HPE guides far above estimates but slips after a 17% run; Dell and HP report Tuesday.",
+      "body": "Hewlett Packard Enterprise earned **$1.43** a share adjusted vs $1.27–1.29 expected on revenue of **$14.55B** vs $14.35–14.43B; its cloud and AI segment grew 68.6% to $11.26B. It guided Q1 EPS to $1.30–1.40 vs $1.08 expected and revenue to $14.0–14.6B vs $12.84B, raised fiscal 2027 EPS to $5.05–5.35 vs $4.74 and added a $5B buyback, yet the stock fell more than 6% after hours after jumping about 17% in the session (Investing.com, The Fly). Zoom earned $1.59 adjusted vs $1.49 on revenue of $1.29B vs $1.28B and raised its full-year EPS outlook, but its Q4 sales guide was in line and the stock eased 1.2% to $85.10 after hours (StockStory). Agilent's Q4 revenue rose 9.6% to $2.04B with non-GAAP EPS of $1.86, and it guided fiscal 2027 EPS to $6.73–6.86 (SEC 8-K). CrowdStrike closed **−8.9%** at $208.97 and Zscaler **+17.7%** at $229.24, about 3% below the deal's value at CrowdStrike's new price (1.135 × $208.97 ≈ $237) (FinanceFeeds). Tuesday after the close: Dell (guided adjusted EPS of about $6.50 on $49.0B; Polymarket has a beat of $6.71 at about 88%), HP Inc., Workday, Autodesk and Nutanix. Before the open: Analog Devices, Medtronic, Best Buy, Dick's, Dollar Tree, Burlington, Abercrombie and Kohl's; Deere reports Wednesday (StockTitan, FXEmpire)."
     },
     {
-      "title": "Earnings: CrowdStrike buys Zscaler for $43.9B; Dell and HP test AI hardware Tuesday.",
-      "body": "CrowdStrike agreed to buy Zscaler in an all-stock deal worth about **$43.9B**: 1.135 CrowdStrike shares per Zscaler share, about **$260.41** a share, a 34% premium to Friday's close, with about $1B of revenue and $500M of cost synergies targeted and closing in the second half of CrowdStrike's fiscal 2028 (joint release, SEC 8-K). Both reported this morning: CrowdStrike's Q3 revenue rose 28% to $1.58B with ARR at $6.26B (8-K), and it guided Q4 sales to $1.638–1.644B vs $1.62B expected; Zscaler's Q1 revenue rose 20% to $949.3M vs $938M est, adjusted EPS $1.23 vs $1.16 (Reuters via BNN Bloomberg). Before 8:05a Zscaler was up 13–16% and CrowdStrike down about 8% (Reuters, Seeking Alpha). Tonight: Hewlett Packard Enterprise (est $1.17–1.29), Zoom and Agilent. Dell reports Tuesday after the close, guided to adjusted EPS of about **$6.50** on **$49.0B** (Street $6.48–6.62), with HP Inc., Workday, Autodesk and Nutanix; Analog Devices, Medtronic, Best Buy, Dick's, Dollar Tree, Burlington, Abercrombie and Kohl's report before Tuesday's open, and Deere on Wednesday (StockTitan, FXEmpire, TipRanks)."
+      "title": "Oil sinks to a three-month low as Libya restarts a pipeline.",
+      "body": "Brent settled at **$89.37**, down $3.20 (3.5%), its lowest close since Aug 31, and January WTI at **$80.17**, down $3.24 (3.9%), its lowest since Aug 10 (Reuters via OK Energy Today, rallies.ai). Libya's Sharara pipeline has reopened and Middle East supplies rose, outweighing worries about attacks on shipping and refineries in the region. JPMorgan expects prices to fall to the high $70s in the first half of 2027 on a supply surplus. Energy (XLE) fell 1.1%, one of only two sectors down on the day. Brent lost 3.4% last week, its third straight weekly drop, and the IEA sees a surplus of about 2 million barrels a day this quarter (Palma Futures, Bloomberg via Rigzone). OPEC+ meets Nov 29 on 2027 output."
     },
     {
-      "title": "Anthropic starts its first full week of trading barely above its $83 IPO price.",
-      "body": "Anthropic (**ANT**) closed at **$88.91** Friday, down 8.5% from its $97.17 debut close, after trading as low as $83.05, five cents above the $83 IPO price; volume fell to about 400 million shares from 857 million on day one (FinanceFeeds citing Nasdaq.com and Yahoo Finance; TipRanks). It opened at $111.50 on its first trade Thursday, so it is now about 20% below that print. Seaport Research started coverage at Neutral with no price target, citing slowing revenue growth (FinanceFeeds). The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
+      "title": "Anthropic slips again while the rest of AI rallies, near its $83 IPO price.",
+      "body": "Anthropic (**ANT**) fell about **1.4%** Monday, its third day of trading, even as Nvidia jumped 31% (Reuters, FinanceFeeds); it was below $88 at 11:00a (Yahoo Finance). It closed Friday about 9% below its $97.17 debut close, after trading as low as $83.05, five cents above the $83 IPO price (FinanceFeeds, TipRanks). It opened at $111.50 on its first trade Thursday. Seaport Research started coverage at Neutral with no price target, citing slowing revenue growth (FinanceFeeds). The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
     },
     {
-      "title": "Oil slips Sunday evening after a third weekly loss on a supply glut.",
-      "body": "WTI was at **$82.71**, down 1.5%, at 6:23p Sunday (Yahoo Finance futures data). January WTI settled at **$83.41** Friday, up $0.97, and Brent at **$92.57**, up $0.59 (Newsquawk, Bloomberg via Rigzone), but Brent lost 3.4% on the week, its third straight weekly drop, and WTI about 6% (Palma Futures). The IEA sees a supply surplus of about 2 million barrels a day this quarter, and Energy Secretary Chris Wright said flows through the Strait of Hormuz are at a record (Bloomberg via Rigzone), even as tankers keep getting hit near Oman: UKMTO reported a tanker struck in its engine room about 6 miles north of Khasab on Nov 18, crew safe and no one blamed (Gulf News, Newsquawk). Gold fell about 9% last week to roughly $3,515–3,540 but was up 1.9% Sunday evening. OPEC+ meets Nov 29."
+      "title": "Asia steps in to steady markets: Taiwan bans short sales, China and Korea ease rules.",
+      "body": "Taiwan banned short sales below the prior close from Monday and its NT$500B stabilization fund is buying (FSC, Bloomberg via StockAnalysis); China's exchanges cut the minimum margin ratio to 80% from Nov 30; and South Korea readied stabilization funds and eased buyback limits. On Monday the Taiex closed **+2.2%**, but the Kospi fell **3.3%** to 4,708.54 after a 5.8% intraday drop; Hong Kong and Shanghai were flat and Japan was shut (AP, NERO). Reuters' Jamie McGeever said there is \"no room for complacency\" despite the steps. The Bank of Korea decides Thursday, with a 25bp hike to 3.25% expected (Newsquawk)."
     }
   ],
   "earningsOdds": {
-    "ZM": [
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Contact Center” on the call",
-        "prob": 97,
-        "ticker": "KXEARNINGSMENTIONZM-26NOV23-CONT",
-        "url": "https://kalshi.com/markets/kxearningsmentionzm"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “AI Companion” on the call",
-        "prob": 9,
-        "ticker": "KXEARNINGSMENTIONZM-26NOV23-AICO",
-        "url": "https://kalshi.com/markets/kxearningsmentionzm"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Enterprise” on the call",
-        "prob": 96,
-        "ticker": "KXEARNINGSMENTIONZM-26NOV23-ENTE",
-        "url": "https://kalshi.com/markets/kxearningsmentionzm"
-      }
-    ],
-    "HPE": [
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Automation” on the call",
-        "prob": 55,
-        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-AUTO",
-        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Government” on the call",
-        "prob": 45,
-        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-GOVE",
-        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Quantum” on the call",
-        "prob": 15,
-        "ticker": "KXEARNINGSMENTIONHPE-26NOV23-QUAN",
-        "url": "https://kalshi.com/markets/kxearningsmentionhpe"
-      }
-    ],
     "ADI": [
       {
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $3.92",
-        "prob": 87.5,
+        "prob": 91,
         "slug": "adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92",
         "url": "https://polymarket.com/event/adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92"
       }
@@ -349,7 +283,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $1.42",
-        "prob": 71,
+        "prob": 60,
         "slug": "will-dicks-sporting-goods-dks-beat-quarterly-earnings",
         "url": "https://polymarket.com/event/will-dicks-sporting-goods-dks-beat-quarterly-earnings"
       }
@@ -359,7 +293,7 @@
         "source": "polymarket",
         "kind": "beat",
         "label": "Beats non-GAAP EPS est. $6.71",
-        "prob": 86.5,
+        "prob": 87.5,
         "slug": "dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71",
         "url": "https://polymarket.com/event/dell-quarterly-earnings-nongaap-eps-11-24-2026-6pt71"
       },
@@ -416,6 +350,78 @@
     ]
   },
   "sources": [
+    {
+      "label": "SEC 8-K · Nvidia board reinstates Jensen Huang as president, CEO and director (Nov 23)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm"
+    },
+    {
+      "label": "Motley Fool · Stock market today, Nov 23: markets rebound from correction",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+    },
+    {
+      "label": "Motley Fool · Micron surges 19% as Nvidia CEO change calms AI fears (Nov 23)",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-micron-surges-19-as-nvidia-ceo-change-calms-ai-spending-fears/"
+    },
+    {
+      "label": "FinanceFeeds · Nasdaq jumps 6.5% as Huang returns (closes, VIX, movers)",
+      "url": "https://financefeeds.com/stock-market-today-nasdaq-jumps-6-5-percent-as-huang-returns/"
+    },
+    {
+      "label": "Pomegra · Dow gains 1,448, Nasdaq soars 6.5% (Nov 23 closes)",
+      "url": "https://pomegra.io/news/stock-market-today-dow-gains-1448-nasdaq-soars-65"
+    },
+    {
+      "label": "ad-hoc-news · Russell 2000 rebounds 3.40% to 2,669.66 (Nov 23)",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/russell-2000-rebounds-3-40-prozent-as-nvidia-relief-rally-spreads/70547865"
+    },
+    {
+      "label": "Reuters via WBOW · Trading Day: market euphoria as Huang returns to Nvidia",
+      "url": "https://1027wbow.com/2026/11/23/trading-day-market-euphoria-as-huang-returns-to-nvidia/"
+    },
+    {
+      "label": "Reuters via WBOW · Fed has 'work to do' to lower inflation, Williams says (Nov 23)",
+      "url": "https://1027wbow.com/2026/11/23/fed-has-work-to-do-to-lower-inflation-williams-says/"
+    },
+    {
+      "label": "vistapglobal · Stock market today Nov 23 (preliminary snapshot, VIX 27.39)",
+      "url": "https://vistapglobal.com/stock-market-today-november-23-2026-nasdaq-jumps-6-28-as-huang-strikes-back-nvidia-rally-powers-wall-street-rebound-amwl-dell-eprx-kymr-modd-nvda-ser-spcx/"
+    },
+    {
+      "label": "Newsquawk · US S&P Global composite PMI flash (Nov) 54.6",
+      "url": "https://www.newsquawk.com/headlines/us-sp-global-composite-pmi-flash-nov-546-prev-559"
+    },
+    {
+      "label": "QNC News · US flash PMI slips to 54.6 in November (mfg 54.5, services 54.7)",
+      "url": "https://qncnews.com/2026/11/23/us-flash-pmi-slips-to-54-6-in-november-as-business-activity-growth-hits-four-month-low/"
+    },
+    {
+      "label": "Reuters via OK Energy Today · Three-month low for crude oil prices (Nov 23 settles)",
+      "url": "https://okenergytoday.com/2026/11/three-month-low-for-crude-oil-prices/"
+    },
+    {
+      "label": "rallies.ai · Oil slumps to 3-month low on Middle East flows, Libyan pipeline restart",
+      "url": "https://rallies.ai/news/oil-slumps-to-3-month-low-on-increased-middle-east-flows-libyan-pipeline-restart-cdaa493c566a8d1f"
+    },
+    {
+      "label": "Investing.com · HPE beats and raises guidance, stock slips after hours",
+      "url": "https://ca.investing.com/news/earnings/hpe-stocks-falls-after-hours-despite-quarterly-results-guidance-beat-4976726"
+    },
+    {
+      "label": "The Fly via TipRanks · HPE Q4 EPS $1.43 vs $1.29 consensus",
+      "url": "https://www.tipranks.com/news/the-fly/hpe-reports-q4-eps-1-43-consensus-1-29-thefly-news"
+    },
+    {
+      "label": "StockStory · Zoom Q3 results and after-hours move",
+      "url": "https://stockstory.org/us/stocks/nasdaq/zm/news/earnings/zoom-surprises-with-q3-cy2026-sales"
+    },
+    {
+      "label": "SEC 8-K · Agilent Q4 fiscal 2026 results",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001090872/000109087226000082/exhibit991-q426pressrelease.htm"
+    },
+    {
+      "label": "Polymarket · Huang named Nvidia CEO and Nvidia above $4T end of 2026",
+      "url": "https://polymarket.com/event/jensen-huang-named-nvidia-ceo-and-nvidia-market-cap-above-4t-end-of-2026"
+    },
     {
       "label": "Polymarket · Analog Devices beat (Nov 24)",
       "url": "https://polymarket.com/event/adi-quarterly-earnings-nongaap-eps-11-24-2026-3pt92"
@@ -533,7 +539,7 @@
       "url": "https://investinglive.com/news/us-gdp-advance-for-the-3rd-quarter-3-4-vs-3-2-estimate/"
     },
     {
-      "label": "Market Brief live feed · ES/NQ/YM, 10Y, WTI, gold, bitcoin (Yahoo Finance), Mon 11/23 8:40a and Sun 11/22 6:23p; CNN Fear & Greed; Kalshi Fed odds",
+      "label": "Market Brief live feed · Yahoo Finance quotes, CNN Fear & Greed (Mon 11/23 5:25p), Kalshi Fed odds, sector ETFs; Mon 11/23 8:40a futures",
       "url": "https://marketbrief.kennykao.workers.dev/api/live"
     },
     {
@@ -621,7 +627,7 @@
       "url": "https://polymarket.com/event/core-pce-yoy-october-2026"
     },
     {
-      "label": "Polymarket · Nvidia CEO markets",
+      "label": "Polymarket · Nvidia CEO markets (Huang rejoin resolved Yes Nov 23)",
       "url": "https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026"
     },
     {
@@ -637,13 +643,13 @@
       "url": "https://kalshi.com/markets/kxfeddecision"
     },
     {
-      "label": "Kalshi · earnings-call mentions (Zoom, HPE, Dell, Deere)",
-      "url": "https://kalshi.com/markets/kxearningsmentionzm"
+      "label": "Kalshi · earnings-call mentions (Dell, Deere)",
+      "url": "https://kalshi.com/markets/kxearningsmentiondell"
     },
     {
       "label": "CNN · Fear & Greed index",
       "url": "https://www.cnn.com/markets/fear-and-greed"
     }
   ],
-  "oddsAsOf": "Mon 11/23 pre-market"
+  "oddsAsOf": "Mon 11/23 close"
 }
