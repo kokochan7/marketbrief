@@ -4,8 +4,8 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-23T22:48:24Z",
-    "dataAsOf": "Mon 11/23 close"
+    "updated": "2026-11-24T13:51:31Z",
+    "dataAsOf": "Tue 11/24 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
@@ -91,7 +91,8 @@
         "NTNX",
         "URBN",
         "AMBA"
-      ]
+      ],
+      "premarket": "8:37a: S&P futures **−1.2%**, Nasdaq 100 **−2.1%**, Dow −0.7% as chips give back part of Monday's surge (Nvidia about −5%) · 10Y about 4.89%, WTI about $80.8 · Asia jumped on Huang's return: Taiex **+9.0%**, a record point gain, Kospi +6.3% back above 5,000, Nikkei +3.9% · Sanofi buys Insmed for $175 a share ($41B) · Dick's, Best Buy and Abercrombie up 5–10% on beats, Analog Devices about −7% on its guide, Medtronic −3%"
     },
     {
       "date": "2026-11-25",
@@ -212,7 +213,7 @@
   "stories": [
     {
       "title": "Nvidia reinstates Huang, and stocks have their best day since April 2025.",
-      "body": "Nvidia's board unanimously reinstated Jensen Huang as president, CEO and director, effective immediately, 11 days after he resigned. Harvey Jones stays as chair and Colette Kress goes back to being CFO only. The board said it \"received input from senior levels of the United States government\" and is confident the move \"poses no national security risk\", while its independent committee looking into reports that Huang was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). \"Congratulations to NVIDIA on having made, what I consider to be, an absolutely GREAT decision!\" Trump posted (Yahoo Finance). Nvidia rose **31.5%** to **$165.05**, a market value of about $3.98T (FinanceFeeds, Motley Fool). The S&P 500 gained **4.73%** to 7,237.17, the Nasdaq **6.51%** to 24,089.56, the Dow 1,447.98 points (3.01%) to 49,595.31 and the Russell 2000 3.40% to 2,669.66, the best day for the big three since April 2025, ending the S&P's seven-session slide (Motley Fool, FinanceFeeds, Pomegra, ad-hoc-news; Reuters). Dell rose 20.5%, Micron 19%, Intel 16%, TSMC 14%, CoreWeave 22% and Nebius 20%, while Anthropic slipped 1.4%; tech (XLK) gained 9.0% and only energy and staples fell. Nomura's Charlie McElligott called it \"a massive surge of MECHANICAL buying\" that \"guarantees us nothing\" (Yahoo Finance). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA).",
+      "body": "Nvidia's board unanimously reinstated Jensen Huang as president, CEO and director, effective immediately, 11 days after he resigned. Harvey Jones stays as chair and Colette Kress goes back to being CFO only. The board said it \"received input from senior levels of the United States government\" and is confident the move \"poses no national security risk\", while its independent committee looking into reports that Huang was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). \"Congratulations to NVIDIA on having made, what I consider to be, an absolutely GREAT decision!\" Trump posted (Yahoo Finance). Nvidia rose **31.5%** to **$165.05**, a market value of about $3.98T (FinanceFeeds, Motley Fool). The S&P 500 gained **4.73%** to 7,237.17, the Nasdaq **6.51%** to 24,089.56, the Dow 1,447.98 points (3.01%) to 49,595.31 and the Russell 2000 3.40% to 2,669.66, the best day for the big three since April 2025, ending the S&P's seven-session slide (Motley Fool, FinanceFeeds, Pomegra, ad-hoc-news; Reuters). Dell rose 20.5%, Micron 19%, Intel 16%, TSMC 14%, CoreWeave 22% and Nebius 20%, while Anthropic slipped 1.4%; tech (XLK) gained 9.0% and only energy and staples fell. Nomura's Charlie McElligott called it \"a massive surge of MECHANICAL buying\" that \"guarantees us nothing\" (Yahoo Finance). Tuesday before the open Nvidia was down about 4–5%, with Micron, AMD and Marvell off 3–4% and CoreWeave and Nebius about 5% lower (Reuters, Yahoo Finance), while Asia's chipmakers caught up: TSMC +9.9% to its limit, SK hynix and Samsung about +6.7% (Focus Taiwan, NERO). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA).",
       "odds": [
         {
           "source": "polymarket",
@@ -225,7 +226,7 @@
     },
     {
       "title": "Williams says the Fed still has \"work to do\" as markets lock in a December hike.",
-      "body": "\"We must take actions over time that will ensure that we get inflation back to our 2% goal in a timely manner and on a sustained basis,\" NY Fed President Williams said Monday. \"There is still work to do to get that done.\" He sees inflation ending 2026 at 3.5%, falling to just above 2% next year and reaching 2% in 2028, with risks \"skewed to the upside\" (Reuters). Kalshi has a 25bp hike on December 9 at **94%**, a hold at 4% and a bigger hike at 3%; CME FedWatch had about 97% on 25bp as of Friday (Yahoo Finance, BigGo). Short-term yields rose about 7bp, with the 2Y near 4.69%, while the 10Y barely moved at about 4.93% (Reuters, CNBC). The 2-yr auction drew strong direct bidding but soft indirect demand (Reuters). November's flash PMIs cooled: composite 54.6, a four-month low, services 54.7 vs 55.6 expected, manufacturing 54.5 as expected, with cost pressures easing but still elevated (S&P Global via Newsquawk, QNC). On Sunday Treasury Secretary Bessent warned the Fed against over-tightening (CBS). Next: core PCE Wednesday at 8:30a (est 3.2% y/y) and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
+      "body": "\"We must take actions over time that will ensure that we get inflation back to our 2% goal in a timely manner and on a sustained basis,\" NY Fed President Williams said Monday. \"There is still work to do to get that done.\" He sees inflation ending 2026 at 3.5%, falling to just above 2% next year and reaching 2% in 2028, with risks \"skewed to the upside\" (Reuters). Kalshi has a 25bp hike on December 9 at **94%**, a hold at 4% and a bigger hike at 3%; CME FedWatch on Tuesday morning had 95% on 25bp and 5% on 50bp, a half-point chance that was zero a day earlier (Yahoo Finance, Reuters). Short-term yields rose about 7bp, with the 2Y near 4.69%, while the 10Y barely moved at about 4.93% (Reuters, CNBC). The 2-yr auction drew strong direct bidding but soft indirect demand (Reuters). November's flash PMIs cooled: composite 54.6, a four-month low, services 54.7 vs 55.6 expected, manufacturing 54.5 as expected, with cost pressures easing but still elevated (S&P Global via Newsquawk, QNC). On Sunday Treasury Secretary Bessent warned the Fed against over-tightening (CBS). Next: core PCE Wednesday at 8:30a (est 3.2% y/y) and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
       "odds": [
         {
           "source": "kalshi",
@@ -251,20 +252,20 @@
       ]
     },
     {
-      "title": "Earnings: HPE guides far above estimates but slips after a 17% run; Dell and HP report Tuesday.",
-      "body": "Hewlett Packard Enterprise earned **$1.43** a share adjusted vs $1.27–1.29 expected on revenue of **$14.55B** vs $14.35–14.43B; its cloud and AI segment grew 68.6% to $11.26B. It guided Q1 EPS to $1.30–1.40 vs $1.08 expected and revenue to $14.0–14.6B vs $12.84B, raised fiscal 2027 EPS to $5.05–5.35 vs $4.74 and added a $5B buyback, yet the stock fell more than 6% after hours after jumping about 17% in the session (Investing.com, The Fly). Zoom earned $1.59 adjusted vs $1.49 on revenue of $1.29B vs $1.28B and raised its full-year EPS outlook, but its Q4 sales guide was in line and the stock eased 1.2% to $85.10 after hours (StockStory). Agilent's Q4 revenue rose 9.6% to $2.04B with non-GAAP EPS of $1.86, and it guided fiscal 2027 EPS to $6.73–6.86 (SEC 8-K). CrowdStrike closed **−8.9%** at $208.97 and Zscaler **+17.7%** at $229.24, about 3% below the deal's value at CrowdStrike's new price (1.135 × $208.97 ≈ $237) (FinanceFeeds). Tuesday after the close: Dell (guided adjusted EPS of about $6.50 on $49.0B; Polymarket has a beat of $6.71 at about 88%), HP Inc., Workday, Autodesk and Nutanix. Before the open: Analog Devices, Medtronic, Best Buy, Dick's, Dollar Tree, Burlington, Abercrombie and Kohl's; Deere reports Wednesday (StockTitan, FXEmpire)."
+      "title": "Earnings: Dick's, Best Buy and Abercrombie jump, Analog Devices sinks on its guide; Dell and HP report after the close.",
+      "body": "Before the open, Dick's earned **$1.94** a share adjusted vs about $1.40 expected on sales of $5.13B vs $5.07–5.09B, with comps up 1.8% including Foot Locker (Dick's own stores +2.6%), and raised its 2026 adjusted EPS outlook to $11.45–12.30 from $11.00–12.00; the stock jumped about 5% (company release, StockStory, rallies.ai). Best Buy earned **$1.62** vs $1.49 on revenue of $10.2B vs $9.9B, with comps up 6.1%, its best quarter in five years, and raised guidance; shares rose about 5% (Yahoo Finance). Abercrombie beat on record Q3 sales of about $1.4B vs $1.37B and rose about 10% before the bell (Seeking Alpha, Investing.com). Analog Devices topped revenue estimates at $4.37B vs $4.32B but guided Q1 EPS to $3.82 ± $0.20 vs $3.86 expected and fell about **7%** (rallies.ai, Investing.com). Medtronic earned $1.34 vs $1.33, but revenue of $9.36B missed $9.48B; it kept its full-year outlook and slipped more than 3% (Reuters). Dollar Tree's comps rose 4.6%, above its outlook, and it raised its full-year adjusted EPS outlook to $8.05–8.25 (SEC 8-K). Kohl's rose about 4% as one-time gains lifted its profit outlook to $4.30–4.50 vs $2.14 expected (Investing.com). Burlington's comps rose 1%, the low end of its guide, and it cut its Q4 EPS outlook by $0.20 on fuel and freight costs (SEC 8-K). HPE was down about 9% pre-market despite Monday's beat and guide raise (Reuters, ADVFN). After the close: Dell (est about $6.62 on $49.3B, Newsquawk; Polymarket has a beat of $6.71 at about 88%), HP Inc. (est $0.75), Workday (est $2.74), Autodesk and Nutanix; Deere reports Wednesday."
     },
     {
       "title": "Oil sinks to a three-month low as Libya restarts a pipeline.",
       "body": "Brent settled at **$89.37**, down $3.20 (3.5%), its lowest close since Aug 31, and January WTI at **$80.17**, down $3.24 (3.9%), its lowest since Aug 10 (Reuters via OK Energy Today, rallies.ai). Libya's Sharara pipeline has reopened and Middle East supplies rose, outweighing worries about attacks on shipping and refineries in the region. JPMorgan expects prices to fall to the high $70s in the first half of 2027 on a supply surplus. Energy (XLE) fell 1.1%, one of only two sectors down on the day. Brent lost 3.4% last week, its third straight weekly drop, and the IEA sees a surplus of about 2 million barrels a day this quarter (Palma Futures, Bloomberg via Rigzone). OPEC+ meets Nov 29 on 2027 output."
     },
     {
-      "title": "Anthropic slips again while the rest of AI rallies, near its $83 IPO price.",
-      "body": "Anthropic (**ANT**) fell about **1.4%** Monday, its third day of trading, even as Nvidia jumped 31% (Reuters, FinanceFeeds); it was below $88 at 11:00a (Yahoo Finance). It closed Friday about 9% below its $97.17 debut close, after trading as low as $83.05, five cents above the $83 IPO price (FinanceFeeds, TipRanks). It opened at $111.50 on its first trade Thursday. Seaport Research started coverage at Neutral with no price target, citing slowing revenue growth (FinanceFeeds). The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
+      "title": "Anthropic dips below its $83 IPO price before the open.",
+      "body": "Anthropic (**ANT**) fell as much as 6% before Tuesday's open and traded at **$82.30** at 6:30a, below the $83 IPO price, before paring some of the loss (Yahoo Finance); Reuters had it down about 4%, on track for a third straight daily drop. Needham pointed to the company's capital needs, a possible insider-selling overhang and post-IPO profit-taking (Yahoo Finance). It fell about 1.4% Monday even as Nvidia jumped 31% (Reuters, FinanceFeeds), and closed Friday about 9% below its $97.17 debut close (FinanceFeeds, TipRanks). It opened at $111.50 on its first trade Thursday. The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
     },
     {
-      "title": "Asia steps in to steady markets: Taiwan bans short sales, China and Korea ease rules.",
-      "body": "Taiwan banned short sales below the prior close from Monday and its NT$500B stabilization fund is buying (FSC, Bloomberg via StockAnalysis); China's exchanges cut the minimum margin ratio to 80% from Nov 30; and South Korea readied stabilization funds and eased buyback limits. On Monday the Taiex closed **+2.2%**, but the Kospi fell **3.3%** to 4,708.54 after a 5.8% intraday drop; Hong Kong and Shanghai were flat and Japan was shut (AP, NERO). Reuters' Jamie McGeever said there is \"no room for complacency\" despite the steps. The Bank of Korea decides Thursday, with a 25bp hike to 3.25% expected (Newsquawk)."
+      "title": "Asia soars on Huang's return: Taiwan's biggest point gain ever, Kospi back above 5,000.",
+      "body": "Tuesday the Taiex closed **+8.99%** at 40,122.35, up 3,310 points, its largest one-day point gain, with TSMC up 9.85% to its daily limit (Focus Taiwan, NERO). The Kospi rose **6.32%** to 5,006.03 and the Nikkei 225 3.91% to 58,644.63 as it reopened after Monday's holiday, while Shanghai edged up 0.3% and Hong Kong slipped about 0.7% (NERO, The Independent via Yahoo). The steps from last week still apply: Taiwan banned short sales below the prior close and its NT$500B stabilization fund is buying (FSC, Bloomberg via StockAnalysis); China's exchanges cut the minimum margin ratio to 80% from Nov 30; and South Korea readied stabilization funds and eased buyback limits. On Monday the Taiex rose 2.2% but the Kospi fell 3.3% (AP, NERO). The Bank of Korea decides Thursday, with a 25bp hike to 3.25% expected (Newsquawk)."
     }
   ],
   "earningsOdds": {
@@ -350,6 +351,82 @@
     ]
   },
   "sources": [
+    {
+      "label": "Yahoo Finance · Stock market today, Tue Nov 24 (futures, Nvidia, Anthropic, Best Buy)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-rebound-090614276.html"
+    },
+    {
+      "label": "Reuters via Finwire · Wall St futures dip as chip stocks cool after Nvidia-fueled rally (Nov 24)",
+      "url": "https://finwire.io/news/economy-news/wall-st-futures-dip-as-chip-stocks-cool-after-nvidia-fueled-rally"
+    },
+    {
+      "label": "ADVFN via Yahoo Finance · US stock futures mixed after Nvidia-led rally (Nov 24)",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-mixed-nvidia-101442654.html"
+    },
+    {
+      "label": "Focus Taiwan · Taiwan shares close up 8.99% (Nov 24)",
+      "url": "https://focustaiwan.tw/business/202611240011"
+    },
+    {
+      "label": "NERO · Tokyo opened 1,100 points below Chicago's price (Asia closes, Nov 24)",
+      "url": "https://nerosignal.substack.com/p/tokyo-opened-1100-points-below-chicagos"
+    },
+    {
+      "label": "The Independent via Yahoo · Asian stocks soar after Huang's reinstatement (Nov 24)",
+      "url": "https://sg.news.yahoo.com/asian-stocks-soar-jensen-huang-070650261.html"
+    },
+    {
+      "label": "SEC 6-K · Sanofi to acquire Insmed for $175 per share (Nov 24)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001121404/000119312526473314/d130092dex991.htm"
+    },
+    {
+      "label": "PR Newswire · DICK'S Sporting Goods reports third quarter results (Nov 24)",
+      "url": "https://www.prnewswire.com/news-releases/dicks-sporting-goods-inc-reports-third-quarter-results-302948936.html"
+    },
+    {
+      "label": "StockStory · Dick's surprises with Q3 2026 sales, stock soars",
+      "url": "https://stockstory.org/us/stocks/nyse/dks/news/earnings/dicks-surprises-with-q3-2026-sales-stock-soars"
+    },
+    {
+      "label": "rallies.ai · Dick's Q3 adjusted EPS beats estimates",
+      "url": "https://rallies.ai/news/dicks-sporting-goods-q3-sales-5133-billion-vs-5092-billion-estimate-393e21b4779a1feb"
+    },
+    {
+      "label": "rallies.ai · Analog Devices drops after weak profit forecast (Nov 24)",
+      "url": "https://rallies.ai/news/analog-devices-q4-adjusted-eps-406-vs-estimate-of-388-53b8c52f8131abaf"
+    },
+    {
+      "label": "Investing.com · Analog Devices earnings beat, revenue tops estimates",
+      "url": "https://www.investing.com/news/earnings/analog-devices-earnings-beat-by-017-revenue-topped-estimates-5047913"
+    },
+    {
+      "label": "Reuters via 104.9 The Wolf · Medtronic posts mixed quarterly results, maintains annual forecast (Nov 24)",
+      "url": "https://www.1049thewolf.com/2026/11/24/medtronic-posts-mixed-quarterly-results-maintains-annual-forecast/"
+    },
+    {
+      "label": "SEC 8-K · Dollar Tree Q3 fiscal 2026 results (Nov 24)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000935703/000093570326000136/ex991q3-26earningspressrel.htm"
+    },
+    {
+      "label": "SEC 8-K · Burlington Stores Q3 fiscal 2026 results (Nov 24)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001579298/000119312526473122/burl-ex99_1.htm"
+    },
+    {
+      "label": "Investing.com · Kohl's jumps 4% in premarket as one-off gains inflate profit outlook (Nov 24)",
+      "url": "https://ca.investing.com/news/earnings/kohls-jumps-4-in-premarket-as-oneoff-gains-inflate-profit-outlook-4978035"
+    },
+    {
+      "label": "Seeking Alpha · Abercrombie & Fitch rises 10% in premarket (Nov 24)",
+      "url": "https://seekingalpha.com/news/4676131-abercrombie-fitch-rises-10-in-premarket-on-better-than-expected-results"
+    },
+    {
+      "label": "Investing.com · Abercrombie & Fitch earnings beat, revenue tops estimates (Nov 24)",
+      "url": "https://www.investing.com/news/earnings/abercrombiefitch-earnings-beat-by-073-revenue-topped-estimates-5048014"
+    },
+    {
+      "label": "Newsquawk · Daily US earnings estimates, Nov 24 (MDT, ADI, DELL)",
+      "url": "https://www.newsquawk.com/headlines/newsquawk-daily-us-earnings-estimates---24th-november-2026-mdt-adi-dell"
+    },
     {
       "label": "SEC 8-K · Nvidia board reinstates Jensen Huang as president, CEO and director (Nov 23)",
       "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm"
