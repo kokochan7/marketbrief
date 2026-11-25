@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-24T22:44:59Z",
-    "dataAsOf": "Tue 11/24 close"
+    "updated": "2026-11-25T14:05:00Z",
+    "dataAsOf": "Wed 11/25 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
     "title": "Wed 11/25 · PCE inflation, Q3 GDP, durable goods and jobless claims all land at 8:30a",
-    "body": "Thanksgiving squeezes the week's data into Wednesday morning. October core PCE, the Fed's preferred inflation gauge, is expected to rise **0.3%** on the month and **3.2%** on the year, up from 3.1%, with headline PCE seen at 3.8% from 3.6% (AskTraders, FXEmpire, Newsquawk); Polymarket puts exactly 3.2% at about 58%. The second estimate of Q3 GDP (advance **3.4%**), October durable goods and jobless claims, moved up a day, come out at the same time, then new home sales at 10:00a and the Fed's Beige Book at 2:00p. A December 9 hike is almost fully priced after last week's hawkish minutes, so a hot print could revive talk of a half-point move, while a soft one would back Treasury Secretary Bessent's Sunday warning against over-tightening. Consumer confidence jumped to 103.3 on Tuesday, well above the 92 expected, and Dell beat by a wide margin after the close. Markets are shut Thursday and close at 1:00p Friday."
+    "body": "Thanksgiving squeezed the week's data into Wednesday morning, and it came in hot and strong: October core PCE, the Fed's preferred inflation gauge, rose **0.3%** on the month and **3.3%** on the year vs 3.2% expected (prior 3.1%), with headline PCE at 3.8% as forecast. Q3 GDP was revised up to **4.3%** from 3.4%, durable goods rose 0.2% vs about 0.5% expected, and jobless claims, moved up a day, fell to 189K. A December 9 hike was already almost fully priced after last week's hawkish minutes; futures were down about 2% before the data on the overnight AI selloff in Asia and changed little after it. New home sales come at 10:00a and the Fed's Beige Book at 2:00p. Markets are shut Thursday and close at 1:00p Friday."
   },
   "days": [
     {
@@ -103,17 +103,17 @@
         {
           "time": "8:30a",
           "level": "high",
-          "text": "PCE prices (Oct) · core est **+0.3%** m/m, **3.2%** y/y (prior 3.1%) · headline est +0.3%, 3.8% y/y (prior 3.6%) · income est +0.4%, spending est +0.4%"
+          "text": "PCE prices (Oct) · core **+0.3%** m/m as expected, **3.3%** y/y vs est 3.2%, prior 3.1% · headline +0.3%, **3.8%** y/y as expected · income **+0.7%** vs est 0.3–0.4% · real spending slipped slightly · saving rate 4.1%"
         },
         {
           "time": "8:30a",
           "level": "high",
-          "text": "GDP (Q3, 2nd est.) est 3.4–3.5%, advance 3.4%"
+          "text": "GDP (Q3, 2nd est.) **4.3%** vs est 3.4–3.5%, advance 3.4%"
         },
         {
           "time": "8:30a",
           "level": "medium",
-          "text": "Durable goods (Oct) est +0.4–0.5%, prior +1.8% · jobless claims est 201K, prior 203K (moved up for Thanksgiving)"
+          "text": "Durable goods (Oct) **+0.2%** vs est 0.4–0.5%, Sep revised to +2.0% · jobless claims **189K** vs est 200–201K, prior 202K (revised) (moved up for Thanksgiving)"
         },
         {
           "time": "10:00a",
@@ -137,7 +137,8 @@
         "BZ",
         "GDS"
       ],
-      "amc": []
+      "amc": [],
+      "premarket": "8:38a: S&P 500 futures **−2.0%**, Nasdaq 100 futures **−3.1%**, Dow futures −1.3% as the AI selloff spreads through Asia · Kospi **−6.2%** to 4,697.51 (Samsung −9.9%, SK Hynix −11.1%), Taiex −4.8%, Nikkei −2.8% (SoftBank −14.8%) · 10Y about 4.84%, down 7bp · gold −1.4%, bitcoin about $58.3K · core PCE **3.3%** y/y vs 3.2% est, Q3 GDP revised up to **4.3%**, claims 189K · Deere about −4% on a weak 2027 outlook"
     },
     {
       "date": "2026-11-26",
@@ -213,7 +214,7 @@
   "stories": [
     {
       "title": "Chips give back part of Monday's surge as the Dow closes above 50,000 for the first time.",
-      "body": "A day after Nvidia's board reinstated Jensen Huang and stocks had their best day since April 2025, chipmakers reversed: the Philadelphia semiconductor index fell **7.9%** with all 30 members lower (Options Oracle, TradingKey). Nvidia fell **5.9%** to about $155.38, after Monday's 31.5% jump to $165.05; Micron lost 11%, AMD 8.9%, Intel 8.2% and Broadcom 4% (StockTitan, Investing.com). The S&P 500 slipped **0.50%** to 7,201.09 and the Nasdaq **1.48%** to 23,733.54, while the Dow rose 423.39 points (0.85%) to **50,018.70**, its first close above 50,000, helped by Amgen, Nike and Salesforce, and the Russell 2000 gained 0.57% to 2,684.94 (Vista Partners, Sell The News, ad-hoc-news). Health care (XLV) rose 3.0% and staples 1.7%, while tech (XLK) fell 3.3%. Goldman's positioning gauge is at the 36th percentile, the lowest since Liberation Day (24/7 Wall St.). Nvidia's board said it got \"input from senior levels of the United States government\" before reinstating Huang, and its independent committee looking into reports that he was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO fell to about 36% from 50% on Monday.",
+      "body": "A day after Nvidia's board reinstated Jensen Huang and stocks had their best day since April 2025, chipmakers reversed: the Philadelphia semiconductor index fell **7.9%** with all 30 members lower (Options Oracle, TradingKey). Nvidia fell **5.9%** to about $155.38, after Monday's 31.5% jump to $165.05; Micron lost 11%, AMD 8.9%, Intel 8.2% and Broadcom 4% (StockTitan, Investing.com). The S&P 500 slipped **0.50%** to 7,201.09 and the Nasdaq **1.48%** to 23,733.54, while the Dow rose 423.39 points (0.85%) to **50,018.70**, its first close above 50,000, helped by Amgen, Nike and Salesforce, and the Russell 2000 gained 0.57% to 2,684.94 (Vista Partners, Sell The News, ad-hoc-news). Health care (XLV) rose 3.0% and staples 1.7%, while tech (XLK) fell 3.3%. Goldman's positioning gauge is at the 36th percentile, the lowest since Liberation Day (24/7 Wall St.). Nvidia's board said it got \"input from senior levels of the United States government\" before reinstating Huang, and its independent committee looking into reports that he was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO fell to about 36% from 50% on Monday. Overnight the selloff spread to Asia: Korea's Kospi fell **6.2%** to 4,697.51 with Samsung down 9.9% and SK Hynix 11.1%, Taiwan's Taiex fell 4.8% after being down more than 8% intraday, and the Nikkei 2.8% with SoftBank down 14.8% (AP via KSAT, S Ziņas). At 8:38a S&P 500 futures were down **2.0%** and Nasdaq 100 futures **3.1%**, with Nvidia about 5% lower before the bell; reports that the administration plans new tariffs on China and other partners added to the pressure (Yahoo Finance, AP).",
       "odds": [
         {
           "source": "polymarket",
@@ -226,15 +227,15 @@
     },
     {
       "title": "Dell crushes estimates and raises its outlook after the close; HP jumps, Workday and Nutanix slip.",
-      "body": "Dell earned **$9.45** a share adjusted vs about $6.56–6.63 expected on revenue of **$54.94B** vs $49.2–50.6B, guided Q4 revenue to $56.3B vs about $53.6B and EPS to $8.40 vs about $7.50, and raised its full-year adjusted EPS outlook to $29.68 from $25.50 and revenue to $202B from $192B; its AI server backlog is $132.3B and it added a $25B buyback (Investing.com, FinanceFeeds). The stock had fallen 11.8% to $295.28 in the regular session and was up about 2–4% after hours. HP Inc. earned $0.83 vs $0.75 on revenue of $16.0B vs $15.4B, guided fiscal 2027 EPS to $3.15–3.45 vs $3.18 expected and rose about 9% after hours. Workday beat ($2.82 vs $2.75; revenue $2.71B vs $2.69B) but its Q4 subscription guide of $2.60B was a touch below $2.61B, and it fell about 4%. Autodesk beat ($3.20 vs $3.07) and Nutanix beat ($0.73 vs $0.61) but its full-year revenue guide midpoint was below estimates; they fell about 4% and 9%. Urban Outfitters earned $1.54 vs $1.52 on in-line sales and fell about 11% (after-hours moves from Investing.com at 4:25p). Deere reports Wednesday before the open."
+      "body": "Dell earned **$9.45** a share adjusted vs about $6.56–6.63 expected on revenue of **$54.94B** vs $49.2–50.6B, guided Q4 revenue to $56.3B vs about $53.6B and EPS to $8.40 vs about $7.50, and raised its full-year adjusted EPS outlook to $29.68 from $25.50 and revenue to $202B from $192B; its AI server backlog is $132.3B and it added a $25B buyback (Investing.com, FinanceFeeds). The stock had fallen 11.8% to $295.28 in the regular session and was up about 2–4% after hours. HP Inc. earned $0.83 vs $0.75 on revenue of $16.0B vs $15.4B, guided fiscal 2027 EPS to $3.15–3.45 vs $3.18 expected and rose about 9% after hours. Workday beat ($2.82 vs $2.75; revenue $2.71B vs $2.69B) but its Q4 subscription guide of $2.60B was a touch below $2.61B, and it fell about 4%. Autodesk beat ($3.20 vs $3.07) and Nutanix beat ($0.73 vs $0.61) but its full-year revenue guide midpoint was below estimates; they fell about 4% and 9%. Urban Outfitters earned $1.54 vs $1.52 on in-line sales and fell about 11% (after-hours moves from Investing.com at 4:25p). Before Wednesday's open, Deere earned $3.89 a share vs $4.05 expected, ending a six-quarter beat streak, on revenue of $12.12B vs $10.34B, and forecast fiscal 2027 net income of $4.50–5.25B vs $5.91B expected (including a $250–400M pension charge); the stock fell about 4% premarket (Reuters via WTAQ, 24/7 Wall St.). Li Auto delivered 99,964 vehicles in Q3 on revenue of RMB28.8B with a 15.3% vehicle margin and a net loss of RMB309.7M, and guided Q4 deliveries to 110,000–115,000 (company 6-K)."
     },
     {
       "title": "Retailers and health care lead: Abercrombie and Kohl's jump about 20%, Insmed gets a $41B bid, Analog Devices sinks 17%.",
       "body": "Abercrombie rose **19.7%** after record Q3 sales of about $1.4B beat estimates, and Kohl's **19.5%** as one-time gains lifted its profit outlook to $4.30–4.50 a share vs $2.14 expected (StockTitan, Investing.com, Seeking Alpha). Dick's gained 14.6% after earning $1.94 adjusted vs about $1.40 and raising its 2026 outlook to $11.45–12.30; Dollar Tree rose 11.2% after comps of 4.6% and a higher full-year outlook of $8.05–8.25; Burlington rose 3.9% despite cutting its Q4 outlook by $0.20 on fuel and freight; and Best Buy 2.7% after earning $1.62 vs $1.49 with comps up 6.1% (company releases, SEC 8-Ks, StockTitan). Sanofi agreed to buy Insmed for **$175 a share** in cash, about $41B; Insmed rose 14% to about $170 and Sanofi's US shares 11% (Sanofi release, Vista Partners, StockTitan). Health care (XLV) gained 3.0%, the best sector. On the other side, Analog Devices fell **17.4%** after guiding Q1 EPS to $3.82 ± $0.20 vs $3.86 expected despite revenue of $4.37B vs $4.32B, and HPE fell 16.3% despite Monday's beat and guide raise (StockTitan, Investing.com). Medtronic slipped more than 3% before the open after revenue of $9.36B missed $9.48B (Reuters)."
     },
     {
-      "title": "Consumer confidence jumps to a near two-year high as markets lock in a December hike before PCE.",
-      "body": "The Conference Board's index rose to **103.3** in November from a revised 91.9, above every estimate in Bloomberg's survey (consensus about 92) and the highest since January 2025. The present-situation index climbed 13.7 points to 132.8 and expectations 9.9 points to 83.6; 30.8% said jobs were plentiful, up from 26.2%, the most since May 2025 (Conference Board via StockAnalysis, Reuters via rallies.ai). Senior economist Fergus McCormick tied the gain to \"lower uncertainty following the midterm elections,\" while consumers \"continued to express frustration with high prices.\" CME FedWatch has about 95% on a 25bp hike on December 9 and 5% on 50bp (Yahoo Finance); Kalshi has 25bp at **92%**, a hold at 5% and a bigger hike at 3% (Tue 11/24 close). On Monday NY Fed President Williams said there is \"still work to do\" on inflation, seeing it at 3.5% at the end of 2026 and 2% in 2028 (Reuters). The 10Y ended about 4.90%, down 1bp. Next: core PCE Wednesday at 8:30a (est 3.2% y/y; Polymarket about 58% on exactly 3.2%), Q3 GDP, durable goods and claims at the same time, and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
+      "title": "Core PCE runs hot at 3.3% and Q3 GDP is revised up to 4.3%, with a December hike already priced.",
+      "body": "October core PCE rose **0.3%** on the month as expected but **3.3%** on the year, above the 3.2% forecast and up from 3.1%; headline PCE rose 0.3% and 3.8% as expected, personal income jumped 0.7% and real spending slipped slightly (BEA via Unusual Whales, The Earnings Madness, PANews). Q3 GDP was revised up to **4.3%** from 3.4% (BEA via Breaking The News, Benzinga), October durable goods rose 0.2% vs about 0.5% expected, and jobless claims fell to 189K vs 200K expected (PANews, InstaForex). Stock futures barely moved on the data, already down about 2% on the AI selloff (Unusual Whales). The Conference Board's index rose to **103.3** in November from a revised 91.9, above every estimate in Bloomberg's survey (consensus about 92) and the highest since January 2025. The present-situation index climbed 13.7 points to 132.8 and expectations 9.9 points to 83.6; 30.8% said jobs were plentiful, up from 26.2%, the most since May 2025 (Conference Board via StockAnalysis, Reuters via rallies.ai). Senior economist Fergus McCormick tied the gain to \"lower uncertainty following the midterm elections,\" while consumers \"continued to express frustration with high prices.\" CME FedWatch has about 95% on a 25bp hike on December 9 and 5% on 50bp (Yahoo Finance); Kalshi has 25bp at **92%**, a hold at 5% and a bigger hike at 3% (Tue 11/24 close). On Monday NY Fed President Williams said there is \"still work to do\" on inflation, seeing it at 3.5% at the end of 2026 and 2% in 2028 (Reuters). The 10Y ended about 4.90%, down 1bp. Still ahead: new home sales at 10:00a and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
       "odds": [
         {
           "source": "kalshi",
@@ -249,13 +250,6 @@
           "prob": 3,
           "ticker": "KXFEDDECISION-26DEC-H26",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
-        },
-        {
-          "source": "polymarket",
-          "label": "Oct core PCE 3.2% y/y",
-          "prob": 57.5,
-          "slug": "will-core-pce-yoy-be-3pt2pct-in-october-2026",
-          "url": "https://polymarket.com/event/core-pce-yoy-october-2026"
         }
       ]
     },
@@ -724,6 +718,62 @@
     {
       "label": "Al Jazeera · Hormuz oil traffic is down 40 percent (Nov 24)",
       "url": "https://aljazeera.com/news/2026/11/24/hormuz-oil-traffic-is-down-40-percent-are-irans-tanker-attacks-working"
+    },
+    {
+      "label": "Unusual Whales · October PCE 3.8% vs 3.8% forecast; core 3.3% (Nov 25)",
+      "url": "https://unusualwhales.com/news/october-pce-prices-match-forecast-core-tops-2026-11-25"
+    },
+    {
+      "label": "The Earnings Madness · PCE prices rise 0.3% in October (Nov 25)",
+      "url": "https://theearningsmadness.com/news/pce-prices-october-2026"
+    },
+    {
+      "label": "PANews · Jobless claims 189,000; core PCE 3.3% (Nov 25)",
+      "url": "https://panews.io/articles/01a212e6-cf2d-70fb-a468-f4775abb0864"
+    },
+    {
+      "label": "Breaking The News · US Q3 GDP growth revised up to 4.3%",
+      "url": "https://breakingthenews.net/Article/US-Q3-GDP-growth-revised-up-to-4.3/67639366"
+    },
+    {
+      "label": "Benzinga · PCE inflation 3.8%, Q3 GDP revised up to 4.3%",
+      "url": "https://www.benzinga.com/markets/economic-data/26/11/63619838/pce-inflation-october-gdp-second-estimate"
+    },
+    {
+      "label": "Breaking The News · US durable goods orders up 0.2% in October",
+      "url": "https://breakingthenews.net/Article/US-durable-goods-orders-up-0.2-in-October/67639371"
+    },
+    {
+      "label": "InstaForex · US durable goods orders stall in October (Nov 25)",
+      "url": "https://www.instaforex.com/forex-news/3304272"
+    },
+    {
+      "label": "Yahoo Finance · Stock market today, Wed Nov 25 (futures fall before inflation data)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-25-dow-sp-500-nasdaq-pce-inflation-data-091428237.html"
+    },
+    {
+      "label": "AP via KSAT · Asian stocks decline as AI shares tumble (Nov 25)",
+      "url": "https://www.ksat.com/business/2026/11/25/asian-stocks-mostly-decline-as-ai-shares-tumble-after-a-retreat-on-wall-street/"
+    },
+    {
+      "label": "S Ziņas · Asian stocks tumble: Kospi −6.2%, Taiex −4.8% (Nov 25)",
+      "url": "https://szinas.com/en/ekonomika/asian-stocks-tumble-kospi-down-6-2-percent-taiwan-briefly-off-8/"
+    },
+    {
+      "label": "Reuters via WTAQ · Deere forecasts fiscal 2027 net income below estimates (Nov 25)",
+      "url": "https://wtaq.com/2026/11/25/deere-forecasts-fiscal-2027-net-income-below-estimates/"
+    },
+    {
+      "label": "24/7 Wall St. · Deere Q4 2026 earnings",
+      "url": "https://247wallst.com/cards/deere-q4-2026-earnings-de-01m896f2r0dxh6tmx5b73g159t"
+    },
+    {
+      "label": "Li Auto · Q3 2026 results (SEC 6-K exhibit)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001791706/000110465926131768/tm2630657d1_ex99-1.htm"
+    },
+    {
+      "label": "Kanzhun · Q3 2026 results (SEC 6-K exhibit)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001842827/000110465926131805/tm2630442d1_ex99-1.htm"
     }
   ],
   "oddsAsOf": "Tue 11/24 close"
