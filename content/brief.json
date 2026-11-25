@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-25T14:05:00Z",
-    "dataAsOf": "Wed 11/25 pre-market"
+    "updated": "2026-11-25T22:46:00Z",
+    "dataAsOf": "Wed 11/25 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Wed 11/25 · PCE inflation, Q3 GDP, durable goods and jobless claims all land at 8:30a",
-    "body": "Thanksgiving squeezed the week's data into Wednesday morning, and it came in hot and strong: October core PCE, the Fed's preferred inflation gauge, rose **0.3%** on the month and **3.3%** on the year vs 3.2% expected (prior 3.1%), with headline PCE at 3.8% as forecast. Q3 GDP was revised up to **4.3%** from 3.4%, durable goods rose 0.2% vs about 0.5% expected, and jobless claims, moved up a day, fell to 189K. A December 9 hike was already almost fully priced after last week's hawkish minutes; futures were down about 2% before the data on the overnight AI selloff in Asia and changed little after it. New home sales come at 10:00a and the Fed's Beige Book at 2:00p. Markets are shut Thursday and close at 1:00p Friday."
+    "title": "Wed 11/25 · Hot inflation, a steep morning selloff and a late comeback before Thanksgiving",
+    "body": "Wednesday's data came in hot and strong: core PCE rose **3.3%** on the year vs 3.2% expected, Q3 GDP was revised up to **4.3%**, claims fell to 189K and new home sales jumped 14.2% to **701K**, the most since December 2025. Stocks opened sharply lower as the AI selloff spread from Asia and the administration proposed new tariffs on 16 trading partners; around 11:00a the S&P 500 fund (SPY) was down 2.8% and the Nasdaq 100 fund (QQQ) 4.4%, and the Dow was down more than 1,100 points at its worst. Buyers came back through the afternoon: the S&P 500 closed **−0.25%**, the Nasdaq **−0.62%**, and the Dow (+0.33%) and Russell 2000 (+0.78%) finished higher. The Beige Book said prices rose moderately and input costs outpaced selling prices. A 25bp hike on December 9 stays almost fully priced. Markets are shut Thursday and close at 1:00p Friday; OPEC+ meets Sunday and the Fed's pre-meeting blackout starts Saturday."
   },
   "days": [
     {
@@ -97,8 +97,8 @@
     {
       "date": "2026-11-25",
       "label": "Wed 11/25",
-      "tag": "PCE, GDP, Beige Book",
-      "tone": "red",
+      "tag": "Hot PCE, late comeback",
+      "tone": "orange",
       "macro": [
         {
           "time": "8:30a",
@@ -118,7 +118,7 @@
         {
           "time": "10:00a",
           "level": "low",
-          "text": "New home sales (Oct) est 649–650K, prior 676K"
+          "text": "New home sales (Oct) **701K** vs est 650K, **+14.2%**, highest since Dec 2025 · Sep revised down to 614K from 676K · median price $391,300, −3.2% y/y · 8.0 months of supply"
         },
         {
           "time": "1:00p",
@@ -128,7 +128,7 @@
         {
           "time": "2:00p",
           "level": "medium",
-          "text": "Fed Beige Book"
+          "text": "Fed Beige Book · 8 of 12 districts grew slightly to moderately, 4 unchanged · consumer spending little changed · prices rose moderately, input costs outpaced selling prices · employment up slightly"
         }
       ],
       "bmo": [
@@ -138,7 +138,7 @@
         "GDS"
       ],
       "amc": [],
-      "premarket": "8:38a: S&P 500 futures **−2.0%**, Nasdaq 100 futures **−3.1%**, Dow futures −1.3% as the AI selloff spreads through Asia · Kospi **−6.2%** to 4,697.51 (Samsung −9.9%, SK Hynix −11.1%), Taiex −4.8%, Nikkei −2.8% (SoftBank −14.8%) · 10Y about 4.84%, down 7bp · gold −1.4%, bitcoin about $58.3K · core PCE **3.3%** y/y vs 3.2% est, Q3 GDP revised up to **4.3%**, claims 189K · Deere about −4% on a weak 2027 outlook"
+      "result": "S&P 500 **−0.25%** (7,182.78), Nasdaq **−0.62%** (23,585.80), Dow **+0.33%** (50,182.95), Russell 2000 **+0.78%** (2,705.84) · a steep morning selloff faded: SPY was −2.8% and QQQ −4.4% around 11:00a and the Dow erased a loss of more than 1,100 points · Nvidia −3.9% to $149.30, Micron −4.5%, Lam Research and Sandisk about −6%, Amazon −3.1%, Alphabet −2.1%; Meta +3.4% · HP Inc. **+11.5%**, Deere **+4.4%** after a weak premarket, Kanzhun +12.6%, Li Auto +11.0%, Dell +0.6%, Workday +0.7% · Ambarella **−19.8%** on its guide, Nutanix −15.2% as its CEO steps down, Urban Outfitters −10.3% · Anthropic +1.1% to $82.79, just below its $83 IPO price · materials (XLB) +2.1%, tech (XLK) −0.8%, health care −0.6% · VIX 28.29, +7.3% (Cboe) · 10Y about 4.85%, down 6bp · Jan WTI about $84.1, +2.5% · core PCE 3.3% y/y vs 3.2% est, GDP 4.3%, new home sales 701K vs 650K est · USTR proposed new tariffs on 16 partners (China 20%, EU, Japan and South Korea 15%)"
     },
     {
       "date": "2026-11-26",
@@ -178,33 +178,33 @@
     }
   ],
   "mood": {
-    "asOf": "Tue 11/24 close",
+    "asOf": "Wed 11/25 close",
     "fearGreed": {
-      "score": 17.42,
+      "score": 15.23,
       "label": "Extreme fear",
-      "asOf": "Tue 11/24 5:22p",
-      "weekAgo": 25.95,
+      "asOf": "Wed 11/25 5:24p",
+      "weekAgo": 29.89,
       "monthAgo": 16.69,
-      "yearAgo": 13.69
+      "yearAgo": 15.03
     },
     "regime": {
       "label": "Rotation",
       "tone": "orange",
-      "text": "Tuesday split the market: the Dow rose 0.85% to its first close above 50,000 and the Russell 2000 gained 0.57%, while the Nasdaq fell 1.48% and the S&P 500 0.50% as chipmakers gave back part of Monday's surge (SOX −7.9%). Health care, staples and real estate led; tech (XLK) fell 3.3%. CNN's Fear & Greed is still in extreme fear at 17, and PCE inflation lands Wednesday at 8:30a."
+      "text": "A second day of the same split: the Dow rose 0.33% and the Russell 2000 0.78%, while the Nasdaq fell 0.62% and the S&P 500 0.25% as chips and megacaps kept sliding (Nvidia −3.9%). Stocks had been down much more in the morning, with the Dow off more than 1,100 points, before buyers stepped in. Materials, real estate, communication services and industrials led; tech (XLK) fell 0.8%. CNN's Fear & Greed slipped to 15, deeper in extreme fear, and the VIX rose 7% to 28."
     },
     "vix": {
-      "value": "26.36",
+      "value": "28.29",
       "label": "Elevated",
       "tone": "orange",
-      "text": "Tue 11/24 close, −1.0% from 26.62 (Vista Partners, Investing.com; Cboe's own feed couldn't be reached) · still well above its Nov 13 close of 19.30"
+      "text": "Wed 11/25 close, +7.3% from 26.36 (Cboe; Vista Partners had 27.98 at 4:00p) · highest close since Fri 11/20 (35.89, FRED)"
     },
     "breadth": {
       "value": "All red",
       "text": "Last week: all 11 sectors fell · tech (XLK) −12.5% · chip index (SOX) −17.1%, its worst week since Sept 2001 (Palma Futures) · only staples rose Friday"
     },
     "havens": {
-      "value": "Health care, staples",
-      "text": "Tue 11/24: money moved into defensive stocks, with health care (XLV) +3.0%, staples (XLP) +1.7%, real estate +1.3% (sector ETFs) · gold fell 2.7% to about $3,552 and the dollar index 0.5% to about 103.8 (Vista Partners, site feed) · 10Y about 4.90%, down 1bp; 2Y about 4.67–4.69% (Vista Partners, CNBC) · bitcoin about $60K, −2%"
+      "value": "Treasuries, gold",
+      "text": "Wed 11/25: the 10Y fell about 6bp to 4.85% and the 2Y to about 4.65% (Vista Partners, site feed, CNBC) · gold rose to about $3,600–3,620 (Vista Partners, site feed) · the dollar index slipped 0.1% to about 103.7 · materials (XLB) +2.1%, real estate +0.9%, while health care gave back 0.6% after leading Tuesday (sector ETFs) · bitcoin about $60.1K, +0.6%"
     },
     "fedwatch": {
       "text": "25bp hike in Dec ≈95% · 50bp ≈5% (CME FedWatch via Yahoo Finance)",
@@ -213,8 +213,8 @@
   },
   "stories": [
     {
-      "title": "Chips give back part of Monday's surge as the Dow closes above 50,000 for the first time.",
-      "body": "A day after Nvidia's board reinstated Jensen Huang and stocks had their best day since April 2025, chipmakers reversed: the Philadelphia semiconductor index fell **7.9%** with all 30 members lower (Options Oracle, TradingKey). Nvidia fell **5.9%** to about $155.38, after Monday's 31.5% jump to $165.05; Micron lost 11%, AMD 8.9%, Intel 8.2% and Broadcom 4% (StockTitan, Investing.com). The S&P 500 slipped **0.50%** to 7,201.09 and the Nasdaq **1.48%** to 23,733.54, while the Dow rose 423.39 points (0.85%) to **50,018.70**, its first close above 50,000, helped by Amgen, Nike and Salesforce, and the Russell 2000 gained 0.57% to 2,684.94 (Vista Partners, Sell The News, ad-hoc-news). Health care (XLV) rose 3.0% and staples 1.7%, while tech (XLK) fell 3.3%. Goldman's positioning gauge is at the 36th percentile, the lowest since Liberation Day (24/7 Wall St.). Nvidia's board said it got \"input from senior levels of the United States government\" before reinstating Huang, and its independent committee looking into reports that he was the target of a foreign intelligence effort \"will proceed to conclusion\" (Nvidia release, SEC 8-K). Still open: the SEC accounting review reported Friday, and the 10-Q due Dec 4 (FourWeekMBA). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO fell to about 36% from 50% on Monday. Overnight the selloff spread to Asia: Korea's Kospi fell **6.2%** to 4,697.51 with Samsung down 9.9% and SK Hynix 11.1%, Taiwan's Taiex fell 4.8% after being down more than 8% intraday, and the Nikkei 2.8% with SoftBank down 14.8% (AP via KSAT, S Ziņas). At 8:38a S&P 500 futures were down **2.0%** and Nasdaq 100 futures **3.1%**, with Nvidia about 5% lower before the bell; reports that the administration plans new tariffs on China and other partners added to the pressure (Yahoo Finance, AP).",
+      "title": "Stocks claw back a steep morning selloff as chips slide again and the Dow finishes higher.",
+      "body": "The AI selloff spread through Asia overnight (Kospi **−6.2%**, Taiex −4.8%, Nikkei −2.8%) and hit Wall Street at the open: around 11:00a the S&P 500 fund (SPY) was down **2.8%** and the Nasdaq 100 fund (QQQ) **4.4%**, and the Dow was off more than 1,100 points at its worst (StockTitan, Motley Fool, AP via KSAT). Buyers came back through the afternoon as yields fell: the S&P 500 closed **−0.25%** at 7,182.78, the Nasdaq **−0.62%** at 23,585.80, while the Dow rose 0.33% to 50,182.95 and the Russell 2000 0.78% to 2,705.84 (Vista Partners, Motley Fool, Longbridge). Nvidia fell **3.9%** to $149.30, its third straight drop since Monday's 31.5% jump to $165.05 on Jensen Huang's return; Micron lost 4.5%, Lam Research and Sandisk about 6%, and AMD, Micron, Marvell and Intel were each down more than 9% at the lows (StockTitan, Longbridge, 247 Wall St., Vista Partners). Among megacaps, Amazon fell 3.1% and Alphabet 2.1% while Meta rose 3.4%. Materials (XLB) gained 2.1% and tech (XLK) lost 0.8% (sector ETFs). Anthropic (**ANT**) rose 1.1% to $82.79 after trading as low as $79.65, still just below its $83 IPO price (StockTitan, Motley Fool). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO are about 36%. Still open for Nvidia: the SEC accounting review reported last week and the 10-Q due Dec 4.",
       "odds": [
         {
           "source": "polymarket",
@@ -226,16 +226,16 @@
       ]
     },
     {
-      "title": "Dell crushes estimates and raises its outlook after the close; HP jumps, Workday and Nutanix slip.",
-      "body": "Dell earned **$9.45** a share adjusted vs about $6.56–6.63 expected on revenue of **$54.94B** vs $49.2–50.6B, guided Q4 revenue to $56.3B vs about $53.6B and EPS to $8.40 vs about $7.50, and raised its full-year adjusted EPS outlook to $29.68 from $25.50 and revenue to $202B from $192B; its AI server backlog is $132.3B and it added a $25B buyback (Investing.com, FinanceFeeds). The stock had fallen 11.8% to $295.28 in the regular session and was up about 2–4% after hours. HP Inc. earned $0.83 vs $0.75 on revenue of $16.0B vs $15.4B, guided fiscal 2027 EPS to $3.15–3.45 vs $3.18 expected and rose about 9% after hours. Workday beat ($2.82 vs $2.75; revenue $2.71B vs $2.69B) but its Q4 subscription guide of $2.60B was a touch below $2.61B, and it fell about 4%. Autodesk beat ($3.20 vs $3.07) and Nutanix beat ($0.73 vs $0.61) but its full-year revenue guide midpoint was below estimates; they fell about 4% and 9%. Urban Outfitters earned $1.54 vs $1.52 on in-line sales and fell about 11% (after-hours moves from Investing.com at 4:25p). Before Wednesday's open, Deere earned $3.89 a share vs $4.05 expected, ending a six-quarter beat streak, on revenue of $12.12B vs $10.34B, and forecast fiscal 2027 net income of $4.50–5.25B vs $5.91B expected (including a $250–400M pension charge); the stock fell about 4% premarket (Reuters via WTAQ, 24/7 Wall St.). Li Auto delivered 99,964 vehicles in Q3 on revenue of RMB28.8B with a 15.3% vehicle margin and a net loss of RMB309.7M, and guided Q4 deliveries to 110,000–115,000 (company 6-K)."
+      "title": "The administration proposes new tariffs on 16 trading partners, with 20% on China.",
+      "body": "The US Trade Representative proposed new duties on 16 major trading partners after an investigation into industrial subsidies and excess manufacturing capacity: **20%** on China and **15%** on the European Union, Japan, South Korea and Taiwan, with other rates for Southeast Asian exporters (MarketScreener, StockTitan, Vista Partners). Semiconductors, autos, steel and aluminum are excluded, and the duties aren't expected before January; the US-China trade truce runs out Jan 10 (Vista Partners). Public comments are due Jan 5 and hearings start Jan 25 (StockTitan). MarketScreener says the duties are meant to replace tariffs the Supreme Court struck down earlier this year. The proposal added to the morning selling, but stocks recovered most of the losses by the close; sources differed on some smaller countries' rates, so only the figures they agree on are shown here."
     },
     {
-      "title": "Retailers and health care lead: Abercrombie and Kohl's jump about 20%, Insmed gets a $41B bid, Analog Devices sinks 17%.",
-      "body": "Abercrombie rose **19.7%** after record Q3 sales of about $1.4B beat estimates, and Kohl's **19.5%** as one-time gains lifted its profit outlook to $4.30–4.50 a share vs $2.14 expected (StockTitan, Investing.com, Seeking Alpha). Dick's gained 14.6% after earning $1.94 adjusted vs about $1.40 and raising its 2026 outlook to $11.45–12.30; Dollar Tree rose 11.2% after comps of 4.6% and a higher full-year outlook of $8.05–8.25; Burlington rose 3.9% despite cutting its Q4 outlook by $0.20 on fuel and freight; and Best Buy 2.7% after earning $1.62 vs $1.49 with comps up 6.1% (company releases, SEC 8-Ks, StockTitan). Sanofi agreed to buy Insmed for **$175 a share** in cash, about $41B; Insmed rose 14% to about $170 and Sanofi's US shares 11% (Sanofi release, Vista Partners, StockTitan). Health care (XLV) gained 3.0%, the best sector. On the other side, Analog Devices fell **17.4%** after guiding Q1 EPS to $3.82 ± $0.20 vs $3.86 expected despite revenue of $4.37B vs $4.32B, and HPE fell 16.3% despite Monday's beat and guide raise (StockTitan, Investing.com). Medtronic slipped more than 3% before the open after revenue of $9.36B missed $9.48B (Reuters)."
+      "title": "HP jumps 11% and Deere reverses higher; Ambarella and Nutanix sink.",
+      "body": "HP Inc. rose **11.5%** after beating estimates ($0.83 vs $0.75 a share, revenue $16.0B vs $15.4B) and guiding fiscal 2027 EPS to $3.15–3.45 (StockTitan, Motley Fool, Longbridge). Deere closed **+4.4%** after falling about 3–4% before the open on EPS of $3.89 vs $4.05 expected and a fiscal 2027 net income forecast of $4.50–5.25B vs $5.91B expected (StockTitan, Reuters via WTAQ, The Fly). Dell finished +0.6% after trading down about 5% at midday despite its big beat and raise, an AI backlog of $132.3B and a $25B buyback; Workday rose 0.7% (StockTitan, Motley Fool via MyAllies). On the other side, Ambarella fell **19.8%** after guiding Q4 revenue to $70–75M from $115.2M in Q3, with its CEO citing memory prices, Nutanix fell **15.2%** as CEO Rajiv Ramaswami will step down, and Urban Outfitters lost 10.3% (StockTitan, The Fly). China's Kanzhun (+12.6%) and Li Auto (+11.0%) rose after their reports. Markets are closed Thursday and there are no major earnings Friday."
     },
     {
-      "title": "Core PCE runs hot at 3.3% and Q3 GDP is revised up to 4.3%, with a December hike already priced.",
-      "body": "October core PCE rose **0.3%** on the month as expected but **3.3%** on the year, above the 3.2% forecast and up from 3.1%; headline PCE rose 0.3% and 3.8% as expected, personal income jumped 0.7% and real spending slipped slightly (BEA via Unusual Whales, The Earnings Madness, PANews). Q3 GDP was revised up to **4.3%** from 3.4% (BEA via Breaking The News, Benzinga), October durable goods rose 0.2% vs about 0.5% expected, and jobless claims fell to 189K vs 200K expected (PANews, InstaForex). Stock futures barely moved on the data, already down about 2% on the AI selloff (Unusual Whales). The Conference Board's index rose to **103.3** in November from a revised 91.9, above every estimate in Bloomberg's survey (consensus about 92) and the highest since January 2025. The present-situation index climbed 13.7 points to 132.8 and expectations 9.9 points to 83.6; 30.8% said jobs were plentiful, up from 26.2%, the most since May 2025 (Conference Board via StockAnalysis, Reuters via rallies.ai). Senior economist Fergus McCormick tied the gain to \"lower uncertainty following the midterm elections,\" while consumers \"continued to express frustration with high prices.\" CME FedWatch has about 95% on a 25bp hike on December 9 and 5% on 50bp (Yahoo Finance); Kalshi has 25bp at **92%**, a hold at 5% and a bigger hike at 3% (Tue 11/24 close). On Monday NY Fed President Williams said there is \"still work to do\" on inflation, seeing it at 3.5% at the end of 2026 and 2% in 2028 (Reuters). The 10Y ended about 4.90%, down 1bp. Still ahead: new home sales at 10:00a and the Beige Book at 2:00p; the pre-meeting blackout starts Saturday.",
+      "title": "Core PCE runs hot at 3.3%, GDP is revised up to 4.3% and new home sales jump 14%, keeping a December hike priced.",
+      "body": "October core PCE rose **0.3%** on the month as expected but **3.3%** on the year, above the 3.2% forecast and up from 3.1%; headline PCE rose 3.8% as expected and personal income jumped 0.7% (BEA via Unusual Whales, PANews). Q3 GDP was revised up to **4.3%** from 3.4%, durable goods rose 0.2% vs about 0.5% expected, and jobless claims fell to 189K (Breaking The News, InstaForex). New home sales jumped **14.2%** to a 701,000 rate in October vs 650,000 expected, the most since December 2025, though September was revised down to 614,000 from 676,000; the median price fell 3.2% from a year earlier to $391,300 and supply fell to 8.0 months (Commerce Department via Reuters/WHBL, Anadolu). The Fed's Beige Book said 8 of 12 districts grew slightly to moderately and 4 were flat; \"prices increased moderately overall,\" input costs \"generally outpaced\" selling prices, and wages rose moderately, \"an uptick\" from the prior report (Federal Reserve). The 10Y fell about 6bp to 4.85%. CME FedWatch had about 95% on a 25bp hike on December 9 as of Tuesday (Yahoo Finance); Kalshi has 25bp at **92%**, a hold at 5% and a bigger hike at 3% (Wed 11/25 close). The pre-meeting blackout starts Saturday.",
       "odds": [
         {
           "source": "kalshi",
@@ -254,42 +254,15 @@
       ]
     },
     {
-      "title": "Anthropic closes below its $83 IPO price.",
-      "body": "Anthropic (**ANT**) fell about **6.5%** to $81.91, its first close below the $83 IPO price and a third straight drop (Investing.com, Vista Partners). Needham pointed to the company's capital needs, a possible insider-selling overhang and post-IPO profit-taking (Yahoo Finance). It slipped 1.4% Monday even as Nvidia jumped 31%, and is now about 16% below its $97.17 debut close and 27% below the $111.50 opening trade on Thursday (FinanceFeeds, TipRanks). The deal raised about $93.5B including selling holders, plus a $26B private placement at $83 with Microsoft, Google, Nvidia, AMD and Broadcom (TipRanks). Its fade from the opening print was one of the triggers of last week's AI selloff (AP, Reuters)."
+      "title": "Oil climbs as Yemen's Houthis say they attacked Saudi Arabia's Ras Tanura refinery.",
+      "body": "The Iran-aligned Houthis said they attacked Ras Tanura, Saudi Arabia's largest refinery and part of a major crude export complex, and Riyadh's financial district; no Saudi response was reported (Reuters via GV Wire, RTÉ). Brent was up 1.8% at $93.06 at 9:48a and January WTI ended the session about **$84.1**, up about 2.5% (Reuters, Vista Partners, site feed); final settlements couldn't be confirmed. On Tuesday Brent settled at $91.40 and WTI at $82.05, up more than 2% after Monday's three-month lows (Goodman Macro). PVM's Tamas Varga pointed to a rising geopolitical risk premium and short-covering before Thanksgiving. Ship attacks near the Strait of Hormuz continue (UKMTO), while glut worries persist: Libya's Sharara pipeline has reopened and the API reported a small US crude build. OPEC+ meets Nov 29 on 2027 output, with the UAE no longer bound by group policy and Iraq seeking more capacity (Reuters)."
     },
     {
-      "title": "Oil bounces off a three-month low as ships are hit near Hormuz.",
-      "body": "January WTI ended the session about **$81.5**, up about 1.6%, after touching $79.07 intraday, its weakest since Aug 10, and Brent dipped as low as $88.10, its lowest since Aug 27 (Vista Partners, Reuters via MarineLink); final settlements couldn't be confirmed. Three vessels were struck by unidentified projectiles while sailing east through the Strait of Hormuz on Monday, with all crews accounted for (UKMTO), and Iran's Revolutionary Guards said a container ship was targeted; Al Jazeera puts Hormuz oil traffic down about 40%. \"Expectations for excess supply continue to restrain the recovery\": Deutsche Bank says October inventories imply an oversupply of 1.7 million barrels a day, Libya's Sharara pipeline has reopened, and China and India are on track for record Russian imports (Reuters via MarineLink, rallies.ai). On Monday Brent settled at $89.37 and January WTI at $80.17, three-month lows (Reuters via OK Energy Today). OPEC+ meets Nov 29 on 2027 output."
+      "title": "Tuesday's winners: Abercrombie and Kohl's jumped about 20% and Insmed got a $41B bid, while Analog Devices sank 17%.",
+      "body": "Abercrombie rose **19.7%** after record Q3 sales of about $1.4B beat estimates, and Kohl's **19.5%** as one-time gains lifted its profit outlook to $4.30–4.50 a share vs $2.14 expected (StockTitan, Investing.com, Seeking Alpha). Dick's gained 14.6% after earning $1.94 adjusted vs about $1.40 and raising its 2026 outlook to $11.45–12.30; Dollar Tree rose 11.2% after comps of 4.6% and a higher full-year outlook of $8.05–8.25; Burlington rose 3.9% despite cutting its Q4 outlook by $0.20 on fuel and freight; and Best Buy 2.7% after earning $1.62 vs $1.49 with comps up 6.1% (company releases, SEC 8-Ks, StockTitan). Sanofi agreed to buy Insmed for **$175 a share** in cash, about $41B; Insmed rose 14% to about $170 and Sanofi's US shares 11% (Sanofi release, Vista Partners, StockTitan). Health care (XLV) gained 3.0%, the best sector. On the other side, Analog Devices fell **17.4%** after guiding Q1 EPS to $3.82 ± $0.20 vs $3.86 expected despite revenue of $4.37B vs $4.32B, and HPE fell 16.3% despite Monday's beat and guide raise (StockTitan, Investing.com). Medtronic slipped more than 3% before the open after revenue of $9.36B missed $9.48B (Reuters)."
     }
   ],
-  "earningsOdds": {
-    "DE": [
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Dividend” on the call",
-        "prob": 78,
-        "ticker": "KXEARNINGSMENTIONDE-26NOV25-DIVI",
-        "url": "https://kalshi.com/markets/kxearningsmentionde"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Warranty” on the call",
-        "prob": 46,
-        "ticker": "KXEARNINGSMENTIONDE-26NOV25-WARR",
-        "url": "https://kalshi.com/markets/kxearningsmentionde"
-      },
-      {
-        "source": "kalshi",
-        "kind": "mention",
-        "label": "Says “Manufacturing” on the call",
-        "prob": 53,
-        "ticker": "KXEARNINGSMENTIONDE-26NOV25-MANU",
-        "url": "https://kalshi.com/markets/kxearningsmentionde"
-      }
-    ]
-  },
+  "earningsOdds": {},
   "sources": [
     {
       "label": "Yahoo Finance · Stock market today, Tue Nov 24 (futures, Nvidia, Anthropic, Best Buy)",
@@ -774,7 +747,71 @@
     {
       "label": "Kanzhun · Q3 2026 results (SEC 6-K exhibit)",
       "url": "https://www.sec.gov/Archives/edgar/data/0001842827/000110465926131805/tm2630442d1_ex99-1.htm"
+    },
+    {
+      "label": "Vista Partners · Stocks close mixed on Wed Nov 25, 2026 (hot PCE, new tariff plans, AI sell-off)",
+      "url": "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+    },
+    {
+      "label": "Motley Fool · Stock Market Today, Nov 25: Dow erases 1,100-point loss",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-dow-erases-1-100-point-loss-as-wall-street-stages-dramatic-late-day-comeback/"
+    },
+    {
+      "label": "Longbridge (Zhitong) · US stock market close, Nov 25",
+      "url": "https://longbridge.com/en/news/306824866"
+    },
+    {
+      "label": "24/7 Wall St. · Money kept rotating out of tech (Nov 25 close)",
+      "url": "https://247wallst.com/cards/money-kept-rotating-out-of-tech-into-old-economy-names-on-th-gspc-market-bell-01m8a8b6rxkn4pffmb6jtqtxe7"
+    },
+    {
+      "label": "StockTitan · Stock market today live, Nov 25, 2026",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-25-2026"
+    },
+    {
+      "label": "Cboe · VIX (Nov 25 trade data)",
+      "url": "https://www.cboe.com/tradable-products/vix"
+    },
+    {
+      "label": "FRED · VIXCLS",
+      "url": "https://fred.stlouisfed.org/series/vixcls"
+    },
+    {
+      "label": "Reuters via WHBL · US new home sales surge to 10-month high in October",
+      "url": "https://whbl.com/2026/11/25/us-new-home-sales-surge-to-10-month-high-in-october/"
+    },
+    {
+      "label": "Anadolu · US new home sales jump 14.2% in October",
+      "url": "https://www.aa.com.tr/en/americas/us-new-home-sales-jump-142-in-october/4137935"
+    },
+    {
+      "label": "Federal Reserve · Beige Book, November 2026 (national summary)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202611-summary.htm"
+    },
+    {
+      "label": "Reuters via GV Wire · Oil rises after Houthis say they attacked Saudi refinery (Nov 25)",
+      "url": "https://gvwire.com/2026/11/25/oil-prices-rise-over-1-after-houthis-say-they-attacked-saudi-refinery/"
+    },
+    {
+      "label": "RTÉ · Oil up over 1% as Houthis say they attacked Saudi plant",
+      "url": "https://www.rte.ie/news/business/2026/1125/1600623-world-oil-prices/"
+    },
+    {
+      "label": "Goodman Macro · Oil, Nov 25 (Tue 11/24 settlements)",
+      "url": "https://www.goodman-macro.com/en/articles/20261125-oil/"
+    },
+    {
+      "label": "MarketScreener · Good news, bad timing (tariff proposal, Nov 25)",
+      "url": "https://www.marketscreener.com/news/good-news-bad-timing-ce7851d8d88afe2c"
+    },
+    {
+      "label": "The Fly via TipRanks · Morning movers: Ambarella and Deere sink (Nov 25)",
+      "url": "https://www.tipranks.com/news/the-fly/morning-movers-ambarella-and-deere-sink-after-quarterly-results-thefly-news"
+    },
+    {
+      "label": "Motley Fool via MyAllies · Dell shares decline despite record Q3",
+      "url": "https://news.apps.myallies.com/article/615399/dell-technologies-shares-decline-despite-record-q3-fiscal-2027-earnings-and"
     }
   ],
-  "oddsAsOf": "Tue 11/24 close"
+  "oddsAsOf": "Wed 11/25 close"
 }
