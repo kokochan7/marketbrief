@@ -4,13 +4,13 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-27T13:51:00Z",
-    "dataAsOf": "Fri 11/27 pre-market"
+    "updated": "2026-11-27T22:45:00Z",
+    "dataAsOf": "Fri 11/27 close"
   },
   "mainEvent": {
     "kicker": "The main event",
-    "title": "Wed 11/25 · Hot inflation, a steep morning selloff and a late comeback before Thanksgiving",
-    "body": "Wednesday's data came in hot and strong: core PCE rose **3.3%** on the year vs 3.2% expected, Q3 GDP was revised up to **4.3%**, claims fell to 189K and new home sales jumped 14.2% to **701K**, the most since December 2025. Stocks opened sharply lower as the AI selloff spread from Asia and the administration proposed new tariffs on 16 trading partners; around 11:00a the S&P 500 fund (SPY) was down 2.8% and the Nasdaq 100 fund (QQQ) 4.4%, and the Dow was down more than 1,100 points at its worst. Buyers came back through the afternoon: the S&P 500 closed **−0.25%**, the Nasdaq **−0.62%**, and the Dow (+0.33%) and Russell 2000 (+0.78%) finished higher. The Beige Book said prices rose moderately and input costs outpaced selling prices. A 25bp hike on December 9 stays almost fully priced. Markets are shut Thursday and close at 1:00p Friday; OPEC+ meets Sunday and the Fed's pre-meeting blackout starts Saturday."
+    "title": "Fri 11/27 · A half-day rally caps a 5.6% rebound week for the S&P 500",
+    "body": "Stocks bounced hard in the holiday-shortened week after the S&P 500 fell into a correction on Nov 20: the S&P 500 gained about **5.6%**, the Nasdaq **6.7%**, the Dow 5.5% and the Russell 2000 6.5% (Vista Partners, AP via Political.org). Monday's surge on Jensen Huang's return to Nvidia (S&P 500 +4.7%, its best day since April 2025) gave way to two days of chip selling, including a steep Wednesday morning drop on hot core PCE (3.3%) and new tariff proposals, before Friday's half-day rally: S&P 500 **+1.60%** to 7,297.49, Nasdaq **+2.31%** to 24,129.50. The VIX fell to 23.81 from 35.89 a week earlier (Cboe), but CNN's Fear & Greed is still in extreme fear at 25. Next: OPEC+ meets Sunday, the Fed's pre-meeting blackout starts Saturday with a 25bp hike on Dec 9 almost fully priced, job openings are out Tue 12/1, and Nvidia's 10-Q is due Dec 4."
   },
   "days": [
     {
@@ -159,8 +159,8 @@
     {
       "date": "2026-11-27",
       "label": "Fri 11/27",
-      "tag": "Black Friday, 1:00p close",
-      "tone": "grey",
+      "tag": "Half-day rally caps big week",
+      "tone": "green",
       "macro": [
         {
           "time": "8:30a",
@@ -170,42 +170,42 @@
         {
           "time": "1:00p",
           "level": "medium",
-          "text": "US stocks close early"
+          "text": "US stocks closed early at 1:00p · bond market closed at 2:00p (SIFMA)"
         }
       ],
       "bmo": [],
       "amc": [],
-      "premarket": "8:37a: S&P 500 futures **+1.6%**, Nasdaq 100 futures **+2.3%**, Dow futures +1.3% as chips rebound and China stocks surge on a rare State Council pledge to support the market (Shanghai **+3.7%**, Kospi +4.3%, Nikkei about +2%) · 10Y about 4.90%, up 5bp · WTI $84.60, +1.1% from Wednesday; Brent hit its highest since Nov 6 after a projectile struck Saudi Aramco's Jazan refinery Thursday · gold about +3.8% · goods trade deficit $149.5B vs est $133B · stocks close at 1:00p"
+      "result": "S&P 500 **+1.60%** (7,297.49), Nasdaq **+2.31%** (24,129.50), Dow **+1.18%** (+591.99, 50,774.94), Russell 2000 **+1.71%** (2,750.30) in a half-day session · week: S&P 500 about +5.6%, Nasdaq +6.7%, Dow +5.5%, Russell 2000 +6.5% · chips bounced as China's chip index had its biggest day on record: Sandisk **+16%**, Micron +7.6%, Nvidia +0.8% to $150.49 · Amazon about +4%, Meta and Broadcom about +3–4% · Anthropic **+11%** to $91.88, back above its $83 IPO price · Brazil ADRs soared after Lula picked Bradesco chairman Luiz Carlos Trabuco as finance minister: XP +18%, Bradesco +15%, EWZ +9.8% · Vertex −5.2% on an FDA review delay, Alvotech −12% · all 11 sector funds rose, led by tech (XLK) +2.8% · VIX **23.81**, −11.2% (Cboe) · 10Y about 4.93%, up about 9bp · Jan WTI settled $83.08, −0.7%; Brent $95.44, −1.2% but about +3% on the week · gold about $3,670 · bitcoin about $59.8K, −1.4% · goods trade deficit $149.5B vs est $133B"
     }
   ],
   "mood": {
-    "asOf": "Wed 11/25 close",
+    "asOf": "Fri 11/27 close",
     "fearGreed": {
-      "score": 15.23,
+      "score": 24.89,
       "label": "Extreme fear",
-      "asOf": "Wed 11/25 5:24p",
-      "weekAgo": 29.89,
-      "monthAgo": 16.69,
-      "yearAgo": 15.03
+      "asOf": "Fri 11/27 5:23p",
+      "weekAgo": 18.59,
+      "monthAgo": 32.89,
+      "yearAgo": 17.66
     },
     "regime": {
-      "label": "Rotation",
-      "tone": "orange",
-      "text": "A second day of the same split: the Dow rose 0.33% and the Russell 2000 0.78%, while the Nasdaq fell 0.62% and the S&P 500 0.25% as chips and megacaps kept sliding (Nvidia −3.9%). Stocks had been down much more in the morning, with the Dow off more than 1,100 points, before buyers stepped in. Materials, real estate, communication services and industrials led; tech (XLK) fell 0.8%. CNN's Fear & Greed slipped to 15, deeper in extreme fear, and the VIX rose 7% to 28."
+      "label": "Rebound",
+      "tone": "green",
+      "text": "A broad half-day rally: all 11 sector funds rose, led by tech (XLK +2.8%), consumer discretionary (+2.1%) and communication services (+2.0%), while utilities, health care and staples lagged at under +0.5%. Chips bounced again (Sandisk +16%, Micron +7.6%) and small caps kept pace (Russell 2000 +1.7%). The S&P 500 gained about 5.6% on the week after last week's correction, but CNN's Fear & Greed is still in extreme fear at 25, up from 15 on Wednesday."
     },
     "vix": {
-      "value": "28.29",
+      "value": "23.81",
       "label": "Elevated",
       "tone": "orange",
-      "text": "Wed 11/25 close, +7.3% from 26.36 (Cboe; Vista Partners had 27.98 at 4:00p) · highest close since Fri 11/20 (35.89, FRED)"
+      "text": "Fri 11/27 close, −2.99 (−11.2%) (Cboe, Vista Partners) · lowest of the week · 35.89 on Fri 11/20 · Cboe lists Wednesday's close as 26.80, not the 28.29 its page showed Wednesday evening"
     },
     "breadth": {
       "value": "All red",
       "text": "Last week: all 11 sectors fell · tech (XLK) −12.5% · chip index (SOX) −17.1%, its worst week since Sept 2001 (Palma Futures) · only staples rose Friday"
     },
     "havens": {
-      "value": "Treasuries, gold",
-      "text": "Wed 11/25: the 10Y fell about 6bp to 4.85% and the 2Y to about 4.65% (Vista Partners, site feed, CNBC) · gold rose to about $3,600–3,620 (Vista Partners, site feed) · the dollar index slipped 0.1% to about 103.7 · materials (XLB) +2.1%, real estate +0.9%, while health care gave back 0.6% after leading Tuesday (sector ETFs) · bitcoin about $60.1K, +0.6%"
+      "value": "Gold",
+      "text": "Fri 11/27: gold rose to about $3,670, up about 3–4% from Wednesday (Vista Partners, site feed) · Treasuries sold off as stocks rallied: the 10Y rose about 9bp to 4.93% (Vista Partners, AP via Political.org) and the 2Y to about 4.71% (site feed) · the dollar index rose about 0.3% to 104.0 · bitcoin slipped 1.4% to about $59.8K · utilities, health care and staples lagged at under +0.5% (sector ETFs)"
     },
     "fedwatch": {
       "text": "25bp hike in Dec ≈95% · 50bp ≈5% (CME FedWatch via Yahoo Finance)",
@@ -214,12 +214,8 @@
   },
   "stories": [
     {
-      "title": "Futures jump for Black Friday as Beijing pledges to back its stock market and chips rebound across Asia.",
-      "body": "S&P 500 futures were up **1.6%** and Nasdaq 100 futures **2.3%** at 8:37a, with Dow futures +1.3%, ahead of a session that ends at 1:00p (site feed, ZeroHedge, TipRanks). China's State Council made a rare midday pledge to channel more long-term money into stocks, give the state-backed \"national team\" a bigger buying role and push companies toward dividends and buybacks; the Shanghai Composite closed **+3.7%** at about 3,607, the Shenzhen Component +7.2% and the CSI 300 about +4.2% (Trading Economics, ZeroHedge, Ted Pillows). Chip stocks led the rest of Asia after a bruising week for AI shares: the Kospi rose **4.3%** to 4,916, the Kosdaq about 6.7%, and the Nikkei about 2% (Ted Pillows, Wisevoter via InvestingLive, site feed). Europe's STOXX 600 was up about 1.1% by midday. Treasuries reopened lower: the 10Y was about 4.90%, up 5bp (site feed, TipRanks). Gold rose about 3.8% to near $3,670. The 8:30a data showed the October goods trade deficit widening to **$149.5B** vs $133B expected, as imports rose 6.1% to a record on capital goods, and wholesale inventories rose 0.9% vs 0.5% expected (ActionForex, Breaking The News, TipRanks). Adobe expects Black Friday online sales of $12.9B, up 9.2% (via Nexus Research). The Fed's pre-meeting blackout starts Saturday, with a 25bp hike on Dec 9 almost fully priced."
-    },
-    {
-      "title": "Stocks claw back a steep morning selloff as chips slide again and the Dow finishes higher.",
-      "body": "The AI selloff spread through Asia overnight (Kospi **−6.2%**, Taiex −4.8%, Nikkei −2.8%) and hit Wall Street at the open: around 11:00a the S&P 500 fund (SPY) was down **2.8%** and the Nasdaq 100 fund (QQQ) **4.4%**, and the Dow was off more than 1,100 points at its worst (StockTitan, Motley Fool, AP via KSAT). Buyers came back through the afternoon as yields fell: the S&P 500 closed **−0.25%** at 7,182.78, the Nasdaq **−0.62%** at 23,585.80, while the Dow rose 0.33% to 50,182.95 and the Russell 2000 0.78% to 2,705.84 (Vista Partners, Motley Fool, Longbridge). Nvidia fell **3.9%** to $149.30, its third straight drop since Monday's 31.5% jump to $165.05 on Jensen Huang's return; Micron lost 4.5%, Lam Research and Sandisk about 6%, and AMD, Micron, Marvell and Intel were each down more than 9% at the lows (StockTitan, Longbridge, 247 Wall St., Vista Partners). Among megacaps, Amazon fell 3.1% and Alphabet 2.1% while Meta rose 3.4%. Materials (XLB) gained 2.1% and tech (XLK) lost 0.8% (sector ETFs). Anthropic (**ANT**) rose 1.1% to $82.79 after trading as low as $79.65, still just below its $83 IPO price (StockTitan, Motley Fool). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO are about 36%. Still open for Nvidia: the SEC accounting review reported last week and the 10-Q due Dec 4.",
+      "title": "A half-day Black Friday rally caps a big rebound week as chips bounce and Anthropic climbs back above its IPO price.",
+      "body": "The S&P 500 rose **1.60%** to 7,297.49, the Nasdaq **2.31%** to 24,129.50, the Dow 1.18% (+591.99) to 50,774.94 and the Russell 2000 1.71% to 2,750.30 in a session that ended at 1:00p (Vista Partners, AP via Political.org, ad-hoc-news). For the week the S&P 500 gained about **5.6%**, the Nasdaq **6.7%**, the Dow 5.5% and the Russell 2000 6.5%, after the S&P 500 fell into a correction on Nov 20; Vista Partners calls it the Dow's best week since October 2022. Chips led again after China's chip index posted its biggest one-day gain on record (CNBC via StockTitan, Vista Partners): Sandisk rose **16%**, Micron 7.6% and Nvidia 0.8% to $150.49, still 8.8% below Monday's close (StockTitan). Amazon gained about 4% and Meta and Broadcom about 3–4% (Vista Partners, AP via Political.org). Anthropic (**ANT**) jumped **11%** to $91.88, back above its $83 IPO price (StockTitan, Vista Partners). All 11 sector funds rose, led by tech (XLK) +2.8% (sector ETFs). Vertex fell 5.2% after the FDA pushed its povetacicept decision to Feb 28, and Alvotech 12% after a US court blocked its Simponi copy (StockTitan). The VIX fell 11% to 23.81 (Cboe), while the 10Y rose about 9bp to 4.93%. Bloomberg reported that Nvidia Blackwell chips barred from China were installed at a Shanghai data center (via StockTitan). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO are about 36%; its 10-Q is due Dec 4.",
       "odds": [
         {
           "source": "polymarket",
@@ -231,21 +227,13 @@
       ]
     },
     {
-      "title": "The administration proposes new tariffs on 16 trading partners, with 20% on China.",
-      "body": "The US Trade Representative proposed new duties on 16 major trading partners after an investigation into industrial subsidies and excess manufacturing capacity: **20%** on China and **15%** on the European Union, Japan, South Korea and Taiwan, with other rates for Southeast Asian exporters (MarketScreener, StockTitan, Vista Partners). Semiconductors, autos, steel and aluminum are excluded, and the duties aren't expected before January; the US-China trade truce runs out Jan 10 (Vista Partners). Public comments are due Jan 5 and hearings start Jan 25 (StockTitan). MarketScreener says the duties are meant to replace tariffs the Supreme Court struck down earlier this year. The proposal added to the morning selling, but stocks recovered most of the losses by the close; sources differed on some smaller countries' rates, so only the figures they agree on are shown here."
-    },
-    {
-      "title": "HP jumps 11% and Deere reverses higher; Ambarella and Nutanix sink.",
-      "body": "HP Inc. rose **11.5%** after beating estimates ($0.83 vs $0.75 a share, revenue $16.0B vs $15.4B) and guiding fiscal 2027 EPS to $3.15–3.45 (StockTitan, Motley Fool, Longbridge). Deere closed **+4.4%** after falling about 3–4% before the open on EPS of $3.89 vs $4.05 expected and a fiscal 2027 net income forecast of $4.50–5.25B vs $5.91B expected (StockTitan, Reuters via WTAQ, The Fly). Dell finished +0.6% after trading down about 5% at midday despite its big beat and raise, an AI backlog of $132.3B and a $25B buyback; Workday rose 0.7% (StockTitan, Motley Fool via MyAllies). On the other side, Ambarella fell **19.8%** after guiding Q4 revenue to $70–75M from $115.2M in Q3, with its CEO citing memory prices, Nutanix fell **15.2%** as CEO Rajiv Ramaswami will step down, and Urban Outfitters lost 10.3% (StockTitan, The Fly). China's Kanzhun (+12.6%) and Li Auto (+11.0%) rose after their reports. Markets are closed Thursday and there are no major earnings Friday."
-    },
-    {
       "title": "Core PCE runs hot at 3.3%, GDP is revised up to 4.3% and new home sales jump 14%, keeping a December hike priced.",
-      "body": "October core PCE rose **0.3%** on the month as expected but **3.3%** on the year, above the 3.2% forecast and up from 3.1%; headline PCE rose 3.8% as expected and personal income jumped 0.7% (BEA via Unusual Whales, PANews). Q3 GDP was revised up to **4.3%** from 3.4%, durable goods rose 0.2% vs about 0.5% expected, and jobless claims fell to 189K (Breaking The News, InstaForex). New home sales jumped **14.2%** to a 701,000 rate in October vs 650,000 expected, the most since December 2025, though September was revised down to 614,000 from 676,000; the median price fell 3.2% from a year earlier to $391,300 and supply fell to 8.0 months (Commerce Department via Reuters/WHBL, Anadolu). The Fed's Beige Book said 8 of 12 districts grew slightly to moderately and 4 were flat; \"prices increased moderately overall,\" input costs \"generally outpaced\" selling prices, and wages rose moderately, \"an uptick\" from the prior report (Federal Reserve). The 10Y fell about 6bp to 4.85%. CME FedWatch had about 95% on a 25bp hike on December 9 as of Tuesday (Yahoo Finance); Kalshi has 25bp at **92%**, a hold at 5% and a bigger hike at 3% (Wed 11/25 close). The pre-meeting blackout starts Saturday.",
+      "body": "October core PCE rose **0.3%** on the month as expected but **3.3%** on the year, above the 3.2% forecast and up from 3.1%; headline PCE rose 3.8% as expected and personal income jumped 0.7% (BEA via Unusual Whales, PANews). Q3 GDP was revised up to **4.3%** from 3.4%, durable goods rose 0.2% vs about 0.5% expected, and jobless claims fell to 189K (Breaking The News, InstaForex). New home sales jumped **14.2%** to a 701,000 rate in October vs 650,000 expected, the most since December 2025, though September was revised down to 614,000 from 676,000; the median price fell 3.2% from a year earlier to $391,300 and supply fell to 8.0 months (Commerce Department via Reuters/WHBL, Anadolu). The Fed's Beige Book said 8 of 12 districts grew slightly to moderately and 4 were flat; \"prices increased moderately overall,\" input costs \"generally outpaced\" selling prices, and wages rose moderately, \"an uptick\" from the prior report (Federal Reserve). The 10Y fell about 6bp to 4.85% Wednesday, then rose back to about 4.93% Friday as stocks rallied. CME FedWatch had about 95% on a 25bp hike on December 9 as of Tuesday (Yahoo Finance); Kalshi has 25bp at **94%**, a hold at 5% and a bigger hike at 3% (Fri 11/27 close). The pre-meeting blackout starts Saturday.",
       "odds": [
         {
           "source": "kalshi",
           "label": "Fed hikes 25bp on Dec 9",
-          "prob": 92,
+          "prob": 94,
           "ticker": "KXFEDDECISION-26DEC-H25",
           "url": "https://kalshi.com/markets/kxfeddecision/fed-meeting/kxfeddecision-26dec"
         },
@@ -259,8 +247,20 @@
       ]
     },
     {
-      "title": "Oil heads for its first weekly gain in four weeks after a projectile hits Saudi Aramco's Jazan refinery.",
-      "body": "Saudi Aramco's Jazan refinery temporarily halted some operations after a projectile struck it on Thursday, killing a Nepalese worker and wounding several others, Saudi Arabia's Energy Ministry said; it came a day after Yemen's Houthis claimed attacks on the Ras Tanura refinery and the Red Sea ports of Jeddah and Jazan (Reuters via Yahoo Finance and RTÉ). Brent gained nearly $2 on Thursday to settle at its highest since Nov 6 and was at **$97.71** at 2:45a Friday, up 1.2%; WTI, which had no Thursday settlement because of Thanksgiving, was at $86.27 then but had eased to **$84.60** by 8:37a, still up 1.1% from Wednesday (Reuters, site feed). Iranian attacks on tankers near the Strait of Hormuz continue, and Ukraine has stepped up drone strikes on Russian refineries (Reuters). ANZ says Brent \"can still push above $100 a barrel without another major escalation.\" OPEC+ meets Sunday, Nov 29, and is likely to keep its output targets for at least the first quarter of 2027, sources told Reuters."
+      "title": "Oil posts its first weekly gain of November after a projectile hits Saudi Aramco's Jazan refinery.",
+      "body": "Brent for January settled at **$95.44** on Friday, down 1.2%, but rose about 3% on the week, snapping a three-week losing streak; WTI settled at **$83.08**, down 0.7% from Wednesday and 0.9% for the week (Bloomberg via Rigzone, Political.org). There was no Thursday settlement because of Thanksgiving. Saudi Aramco's Jazan refinery temporarily halted some operations after a projectile struck it Thursday, killing a worker, Saudi Arabia's Energy Ministry said; it followed claimed Houthi attacks on Ras Tanura (Reuters via rallies.ai, Political.org). Tankers in and around the Strait of Hormuz were attacked again this week, though traffic has stayed resilient according to Vortexa ship tracking, and a Ukrainian drone strike set a Russian refinery in the Krasnodar region on fire (Bloomberg via Rigzone, Reuters via rallies.ai). Oil is still down nearly 20% in November (Political.org). OPEC+ meets Sunday, Nov 29, and is set to keep its first-quarter 2027 output targets unchanged, three people with knowledge of the talks told Reuters."
+    },
+    {
+      "title": "Brazilian assets surge as Lula picks Bradesco chairman Luiz Carlos Trabuco as finance minister.",
+      "body": "Trabuco, 75, Bradesco's chairman and its CEO from 2009 to 2018, accepted Lula's invitation on Thursday after meeting him in Brasília (Reuters via KELO); Bradesco said in a filing he will take the job starting in 2027 (StockTitan). Citi called the pick a sign of a \"somewhat more market-friendly approach\" after markets fell on Lula's October election win over Flavio Bolsonaro, who had promised deep spending cuts; public debt is near 83% of GDP and the policy rate is 13.75% (Reuters). The real strengthened as much as **4.7%** to 5.47 per dollar Friday before trading around 5.55, from about 5.88 on Wednesday, and the Bovespa rose as much as 3.9% after jumping 6% Thursday (Reuters via KELO, The Company Chronicle). In New York the Brazil fund (EWZ) rose **9.8%**, XP **18%**, Bradesco 15% and Inter&Co about 16%, and Petrobras was up 13% before the open (StockTitan). Analysts expect Trabuco to push further pension reform and revisit indexation (Reuters)."
+    },
+    {
+      "title": "Black Friday spending is tracking higher online, with Adobe forecasting a record $12.9B.",
+      "body": "Adobe Analytics expects US shoppers to spend a record **$12.9B** online on Black Friday, up 9.2% from $11.8B last year, and $15.1B on Cyber Monday; online spending from Nov 1 to 22 was **$82.5B**, up 9.1% (Adobe via roic.ai, Vista Partners). Adobe's actual tally is due Saturday. The NRF expects 182.7 million people to shop over the Thanksgiving weekend, down from 202.9 million last year (via roic.ai). Vista Partners says shoppers are favoring Walmart and Costco, while Gap lowered its outlook and Gap and TJX flagged warm weather as a drag. Consumer discretionary (XLY) rose 2.1% Friday and Amazon about 4% (sector ETFs, Vista Partners). The catch is inflation: core PCE is running at 3.3% and AAA says gas prices are up about 18% from a year ago (Vista Partners)."
+    },
+    {
+      "title": "The administration proposes new tariffs on 16 trading partners, with 20% on China.",
+      "body": "The US Trade Representative proposed new duties on 16 major trading partners after an investigation into industrial subsidies and excess manufacturing capacity: **20%** on China and **15%** on the European Union, Japan, South Korea and Taiwan, with other rates for Southeast Asian exporters (MarketScreener, StockTitan, Vista Partners). Semiconductors, autos, steel and aluminum are excluded, and the duties aren't expected before January; the US-China trade truce runs out Jan 10 (Vista Partners). Public comments are due Jan 5 and hearings start Jan 25 (StockTitan). MarketScreener says the duties are meant to replace tariffs the Supreme Court struck down earlier this year. The proposal added to the morning selling, but stocks recovered most of the losses by the close; sources differed on some smaller countries' rates, so only the figures they agree on are shown here."
     }
   ],
   "earningsOdds": {},
@@ -852,7 +852,51 @@
     {
       "label": "Nexus Research · Retail morning note, Nov 27 (Adobe forecasts)",
       "url": "https://nexusresearchreports.substack.com/p/nexus-retail-morning-note-795"
+    },
+    {
+      "label": "Vista Partners · Weekly market summary, week ending Nov 27, 2026 (Fri closes, VIX, 10Y, gold, oil)",
+      "url": "https://vistapglobal.com/weekly-market-summary-stocks-stage-a-sharp-rebound-in-a-thanksgiving-holiday-shortened-week-ending-november-27-2026-ant-bby-eprx-gap-googl-ko-modd-mo-nvda-ser-sndk-skhy-spcx-wmt/"
+    },
+    {
+      "label": "AP via Political.org · Stocks surge in holiday-shortened session (Nov 27 closes, weekly changes, yields, oil)",
+      "url": "https://political.org/2026/11/27/stocks-surge-in-holiday-shortened-session-dow-gains-592-points-nasdaq-jumps-2-3/"
+    },
+    {
+      "label": "ad-hoc-news · Russell 2000 closes 1.71% higher (Nov 27)",
+      "url": "https://www.ad-hoc-news.de/boerse/news/marktberichte/russell-2000-closes-1-71-prozent-higher-as-ai-fears-ease/70563104"
+    },
+    {
+      "label": "StockTitan · Stock market today, Nov 27, 2026 (ETF closes, movers)",
+      "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-27-2026"
+    },
+    {
+      "label": "Cboe · VIX (Nov 27 close 23.81)",
+      "url": "https://www.cboe.com/tradable-products/vix/"
+    },
+    {
+      "label": "Bloomberg via Rigzone · Oil swings with rising Middle East attacks in focus (Nov 27 settles)",
+      "url": "https://www.rigzone.com/news/oil_swings_with_rising_me_attacks_in_focus-27-nov-2026-185191-article"
+    },
+    {
+      "label": "Political.org · Oil posts first weekly gain of November (Nov 27)",
+      "url": "https://political.org/2026/11/27/oil-posts-first-weekly-gain-of-november-as-attacks-on-tankers-and-saudi-facilities-revive-supply-fears/"
+    },
+    {
+      "label": "Reuters via rallies.ai · Oil notches first weekly gain in November on supply fears",
+      "url": "https://rallies.ai/news/oil-notches-first-weekly-gain-in-november-on-supply-fears-24b1b0295756c425"
+    },
+    {
+      "label": "Reuters via KELO · Brazilian markets rally after Lula taps Bradesco chairman for finance chief (Nov 27)",
+      "url": "https://kelo.com/2026/11/27/brazilian-markets-rally-after-lula-taps-bradesco-chairman-for-finance-chief/"
+    },
+    {
+      "label": "The Company Chronicle · Brazil's real rallies as Lula picks Trabuco (Nov 27)",
+      "url": "https://thecompanychronicle.com/story/brazil-real-rallies-lula-picks-bradesco-trabuco-finance-minister-5-88-to-5-53-november-27-2026"
+    },
+    {
+      "label": "roic.ai · Adobe expects record $12.9B online Black Friday sales (Nov 27)",
+      "url": "https://www.roic.ai/news/holiday-spending-set-to-rise-54-but-inflation-erodes-real-growth-11-27-2026"
     }
   ],
-  "oddsAsOf": "Wed 11/25 close"
+  "oddsAsOf": "Fri 11/27 close"
 }
