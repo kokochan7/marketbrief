@@ -4,8 +4,8 @@
     "weekEnd": "2026-11-27",
     "range": "November 23 – 27, 2026",
     "kicker": "This week",
-    "updated": "2026-11-25T22:46:00Z",
-    "dataAsOf": "Wed 11/25 close"
+    "updated": "2026-11-27T13:51:00Z",
+    "dataAsOf": "Fri 11/27 pre-market"
   },
   "mainEvent": {
     "kicker": "The main event",
@@ -165,7 +165,7 @@
         {
           "time": "8:30a",
           "level": "low",
-          "text": "Advance goods trade balance and inventories (Oct)"
+          "text": "Advance goods trade balance (Oct) **−$149.5B** vs est −$133B, prior −$135.1B · imports +6.1% to a record $365.3B, led by capital goods (+8.5%) · wholesale inventories **+0.9%** vs est 0.5%"
         },
         {
           "time": "1:00p",
@@ -174,7 +174,8 @@
         }
       ],
       "bmo": [],
-      "amc": []
+      "amc": [],
+      "premarket": "8:37a: S&P 500 futures **+1.6%**, Nasdaq 100 futures **+2.3%**, Dow futures +1.3% as chips rebound and China stocks surge on a rare State Council pledge to support the market (Shanghai **+3.7%**, Kospi +4.3%, Nikkei about +2%) · 10Y about 4.90%, up 5bp · WTI $84.60, +1.1% from Wednesday; Brent hit its highest since Nov 6 after a projectile struck Saudi Aramco's Jazan refinery Thursday · gold about +3.8% · goods trade deficit $149.5B vs est $133B · stocks close at 1:00p"
     }
   ],
   "mood": {
@@ -212,6 +213,10 @@
     }
   },
   "stories": [
+    {
+      "title": "Futures jump for Black Friday as Beijing pledges to back its stock market and chips rebound across Asia.",
+      "body": "S&P 500 futures were up **1.6%** and Nasdaq 100 futures **2.3%** at 8:37a, with Dow futures +1.3%, ahead of a session that ends at 1:00p (site feed, ZeroHedge, TipRanks). China's State Council made a rare midday pledge to channel more long-term money into stocks, give the state-backed \"national team\" a bigger buying role and push companies toward dividends and buybacks; the Shanghai Composite closed **+3.7%** at about 3,607, the Shenzhen Component +7.2% and the CSI 300 about +4.2% (Trading Economics, ZeroHedge, Ted Pillows). Chip stocks led the rest of Asia after a bruising week for AI shares: the Kospi rose **4.3%** to 4,916, the Kosdaq about 6.7%, and the Nikkei about 2% (Ted Pillows, Wisevoter via InvestingLive, site feed). Europe's STOXX 600 was up about 1.1% by midday. Treasuries reopened lower: the 10Y was about 4.90%, up 5bp (site feed, TipRanks). Gold rose about 3.8% to near $3,670. The 8:30a data showed the October goods trade deficit widening to **$149.5B** vs $133B expected, as imports rose 6.1% to a record on capital goods, and wholesale inventories rose 0.9% vs 0.5% expected (ActionForex, Breaking The News, TipRanks). Adobe expects Black Friday online sales of $12.9B, up 9.2% (via Nexus Research). The Fed's pre-meeting blackout starts Saturday, with a 25bp hike on Dec 9 almost fully priced."
+    },
     {
       "title": "Stocks claw back a steep morning selloff as chips slide again and the Dow finishes higher.",
       "body": "The AI selloff spread through Asia overnight (Kospi **−6.2%**, Taiex −4.8%, Nikkei −2.8%) and hit Wall Street at the open: around 11:00a the S&P 500 fund (SPY) was down **2.8%** and the Nasdaq 100 fund (QQQ) **4.4%**, and the Dow was off more than 1,100 points at its worst (StockTitan, Motley Fool, AP via KSAT). Buyers came back through the afternoon as yields fell: the S&P 500 closed **−0.25%** at 7,182.78, the Nasdaq **−0.62%** at 23,585.80, while the Dow rose 0.33% to 50,182.95 and the Russell 2000 0.78% to 2,705.84 (Vista Partners, Motley Fool, Longbridge). Nvidia fell **3.9%** to $149.30, its third straight drop since Monday's 31.5% jump to $165.05 on Jensen Huang's return; Micron lost 4.5%, Lam Research and Sandisk about 6%, and AMD, Micron, Marvell and Intel were each down more than 9% at the lows (StockTitan, Longbridge, 247 Wall St., Vista Partners). Among megacaps, Amazon fell 3.1% and Alphabet 2.1% while Meta rose 3.4%. Materials (XLB) gained 2.1% and tech (XLK) lost 0.8% (sector ETFs). Anthropic (**ANT**) rose 1.1% to $82.79 after trading as low as $79.65, still just below its $83 IPO price (StockTitan, Motley Fool). Polymarket's odds of Nvidia ending 2026 above $4T with Huang as CEO are about 36%. Still open for Nvidia: the SEC accounting review reported last week and the 10-Q due Dec 4.",
@@ -254,12 +259,8 @@
       ]
     },
     {
-      "title": "Oil climbs as Yemen's Houthis say they attacked Saudi Arabia's Ras Tanura refinery.",
-      "body": "The Iran-aligned Houthis said they attacked Ras Tanura, Saudi Arabia's largest refinery and part of a major crude export complex, and Riyadh's financial district; no Saudi response was reported (Reuters via GV Wire, RTÉ). Brent was up 1.8% at $93.06 at 9:48a and January WTI ended the session about **$84.1**, up about 2.5% (Reuters, Vista Partners, site feed); final settlements couldn't be confirmed. On Tuesday Brent settled at $91.40 and WTI at $82.05, up more than 2% after Monday's three-month lows (Goodman Macro). PVM's Tamas Varga pointed to a rising geopolitical risk premium and short-covering before Thanksgiving. Ship attacks near the Strait of Hormuz continue (UKMTO), while glut worries persist: Libya's Sharara pipeline has reopened and the API reported a small US crude build. OPEC+ meets Nov 29 on 2027 output, with the UAE no longer bound by group policy and Iraq seeking more capacity (Reuters)."
-    },
-    {
-      "title": "Tuesday's winners: Abercrombie and Kohl's jumped about 20% and Insmed got a $41B bid, while Analog Devices sank 17%.",
-      "body": "Abercrombie rose **19.7%** after record Q3 sales of about $1.4B beat estimates, and Kohl's **19.5%** as one-time gains lifted its profit outlook to $4.30–4.50 a share vs $2.14 expected (StockTitan, Investing.com, Seeking Alpha). Dick's gained 14.6% after earning $1.94 adjusted vs about $1.40 and raising its 2026 outlook to $11.45–12.30; Dollar Tree rose 11.2% after comps of 4.6% and a higher full-year outlook of $8.05–8.25; Burlington rose 3.9% despite cutting its Q4 outlook by $0.20 on fuel and freight; and Best Buy 2.7% after earning $1.62 vs $1.49 with comps up 6.1% (company releases, SEC 8-Ks, StockTitan). Sanofi agreed to buy Insmed for **$175 a share** in cash, about $41B; Insmed rose 14% to about $170 and Sanofi's US shares 11% (Sanofi release, Vista Partners, StockTitan). Health care (XLV) gained 3.0%, the best sector. On the other side, Analog Devices fell **17.4%** after guiding Q1 EPS to $3.82 ± $0.20 vs $3.86 expected despite revenue of $4.37B vs $4.32B, and HPE fell 16.3% despite Monday's beat and guide raise (StockTitan, Investing.com). Medtronic slipped more than 3% before the open after revenue of $9.36B missed $9.48B (Reuters)."
+      "title": "Oil heads for its first weekly gain in four weeks after a projectile hits Saudi Aramco's Jazan refinery.",
+      "body": "Saudi Aramco's Jazan refinery temporarily halted some operations after a projectile struck it on Thursday, killing a Nepalese worker and wounding several others, Saudi Arabia's Energy Ministry said; it came a day after Yemen's Houthis claimed attacks on the Ras Tanura refinery and the Red Sea ports of Jeddah and Jazan (Reuters via Yahoo Finance and RTÉ). Brent gained nearly $2 on Thursday to settle at its highest since Nov 6 and was at **$97.71** at 2:45a Friday, up 1.2%; WTI, which had no Thursday settlement because of Thanksgiving, was at $86.27 then but had eased to **$84.60** by 8:37a, still up 1.1% from Wednesday (Reuters, site feed). Iranian attacks on tankers near the Strait of Hormuz continue, and Ukraine has stepped up drone strikes on Russian refineries (Reuters). ANZ says Brent \"can still push above $100 a barrel without another major escalation.\" OPEC+ meets Sunday, Nov 29, and is likely to keep its output targets for at least the first quarter of 2027, sources told Reuters."
     }
   ],
   "earningsOdds": {},
@@ -811,6 +812,46 @@
     {
       "label": "Motley Fool via MyAllies · Dell shares decline despite record Q3",
       "url": "https://news.apps.myallies.com/article/615399/dell-technologies-shares-decline-despite-record-q3-fiscal-2027-earnings-and"
+    },
+    {
+      "label": "ActionForex · US goods trade deficit widens to $149.5B (Nov 27)",
+      "url": "https://www.actionforex.com/live-comments/662315-us-goods-trade-deficit-widens-to-149-5b-as-capital-goods-imports-surge/"
+    },
+    {
+      "label": "Breaking The News · US trade deficit widens to $149.5 billion in October",
+      "url": "https://breakingthenews.net/Article/US-trade-deficit-widens-to-dollar149.5-billion-in-October/67654006"
+    },
+    {
+      "label": "TipRanks · October trade deficit and inventory reports preview (consensus)",
+      "url": "https://www.tipranks.com/news/october-trade-deficit-and-inventory-reports-put-q4-growth-and-yields-on-trial-this-black-friday"
+    },
+    {
+      "label": "ZeroHedge · Nasdaq futures jump in Black Friday tech rebound as Beijing unleashes the national team",
+      "url": "https://www.zerohedge.com/markets/nasdaq-futures-jump-25-black-friday-tech-rebound-beijing-unleashes-national-team"
+    },
+    {
+      "label": "Ted Pillows · Crypto & Finance market report, Nov 27",
+      "url": "https://tedpillows.substack.com/p/crypto-and-finance-market-report-834"
+    },
+    {
+      "label": "Wisevoter via InvestingLive · Kosdaq surges 6.7% as chip stocks lead Asia (Nov 27)",
+      "url": "https://wisevoter.com/world/2026/11/27/kosdaq-jumps-asian-chip-stocks-lead-gains"
+    },
+    {
+      "label": "Trading Economics · China stock market news feed (Nov 27 headlines: China Stocks Surge on Support Pledge)",
+      "url": "https://tradingeconomics.com/china/stock-market/news/597873"
+    },
+    {
+      "label": "Reuters via Yahoo Finance · Oil on track to snap three-week losing streak (Nov 27)",
+      "url": "https://finance.yahoo.com/energy/articles/oil-track-snap-3-week-082519990.html"
+    },
+    {
+      "label": "RTÉ · Oil on track to snap 3-week losing streak on supply fears (Nov 27)",
+      "url": "https://www.rte.ie/news/business/2026/1127/1600877-world-oil-prices/"
+    },
+    {
+      "label": "Nexus Research · Retail morning note, Nov 27 (Adobe forecasts)",
+      "url": "https://nexusresearchreports.substack.com/p/nexus-retail-morning-note-795"
     }
   ],
   "oddsAsOf": "Wed 11/25 close"
